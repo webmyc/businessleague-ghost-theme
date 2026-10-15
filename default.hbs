@@ -123,79 +123,110 @@
 <div class="bl-reading-progress" id="bl-reading-progress" aria-hidden="true"></div>
 
 <div class="bl-viewport">
-    {{!-- Sticky Glassmorphic Editorial Header --}}
+    {{!-- Sticky Two-Row Editorial Masthead Header --}}
     <header class="bl-header" role="banner">
-        <div class="bl-header-inner">
-            <a class="bl-brand" href="{{@site.url}}" aria-label="{{@site.title}} Home">
-                <img class="bl-brand-logo"
-                     src="{{asset "images/bl-logo.png"}}"
-                     alt="BusinessLeague"
-                     width="136"
-                     height="36"
-                     fetchpriority="high" />
-                <span class="bl-brand-badge">Chronicles</span>
-            </a>
-
-            {{!-- Editorial Pillar Navigation --}}
-            <nav class="bl-nav" aria-label="Editorial Categories">
-                <a class="bl-nav-link is-active" href="{{@site.url}}/" data-pillar-link="all" data-i18n="nav_all">Toate</a>
-                <a class="bl-nav-link" href="{{@site.url}}/#pillar-data" data-pillar-link="data" data-i18n="nav_data">Radiografii &amp; Date</a>
-                <a class="bl-nav-link" href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="nav_interviews">Interviuri &amp; Studii de Caz</a>
-                <a class="bl-nav-link" href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="nav_playbooks">Playbooks &amp; Strategie</a>
-                <a class="bl-nav-link" href="{{@site.url}}/#pillar-competition" data-pillar-link="competition" data-i18n="nav_competition">Competiție &amp; Evenimente</a>
-                <a class="bl-nav-link" href="{{@site.url}}/#pillar-product" data-pillar-link="product" data-i18n="nav_product">Produs &amp; Tech</a>
-                <a class="bl-nav-link" href="{{@site.url}}/#pillar-corporate" data-pillar-link="corporate" data-i18n="nav_corporate">2Performant &amp; BVB</a>
-            </nav>
-
-            {{!-- Right Controls: Live Autocomplete Search + 4-Language Switcher + Theme Toggle + CTA --}}
-            <div class="bl-header-actions">
-                <div class="bl-search-wrap" id="bl-search-wrap">
-                    <div class="bl-search-field">
-                        <svg class="bl-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                        <input type="search"
-                               id="bl-search-input"
-                               class="bl-search-input"
-                               placeholder="Caută articole, branduri, cifre..."
-                               data-i18n-placeholder="search_placeholder"
-                               autocomplete="off"
-                               spellcheck="false"
-                               aria-label="Search articles"
-                               aria-expanded="false"
-                               aria-controls="bl-search-dropdown" />
-                        <button type="button" class="bl-search-clear" id="bl-search-clear" aria-label="Clear search" hidden>&times;</button>
-                        <kbd class="bl-search-kbd" id="bl-search-kbd">⌘K</kbd>
-                    </div>
-                    <div class="bl-search-dropdown" id="bl-search-dropdown" role="listbox" aria-label="Autocomplete search results" hidden></div>
-                </div>
-
-                <div class="bl-lang-switcher" role="group" aria-label="Select Editorial Language">
-                    <button type="button" class="bl-lang-btn" data-set-lang="ro" title="Română">RO</button>
-                    <button type="button" class="bl-lang-btn" data-set-lang="en" title="English">EN</button>
-                    <button type="button" class="bl-lang-btn" data-set-lang="bg" title="Български">BG</button>
-                    <button type="button" class="bl-lang-btn" data-set-lang="es" title="Español">ES</button>
-                </div>
-
-                <button class="bl-theme-btn" id="bl-theme-toggle" type="button" aria-label="Toggle Dark / Light Mode" title="Toggle Dark / Light Mode">
-                    <svg class="bl-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="bl-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-
-                <a class="bl-cta-btn" href="https://businessleague.com" target="_blank" rel="noopener">
-                    <span data-i18n="cta_join">Intră în Ligă</span>
-                    <span aria-hidden="true">↗</span>
+        {{!-- ROW 1: Brand Identity + Live Autocomplete Search + Market Edition Switcher + Theme + CTA --}}
+        <div class="bl-header-top">
+            <div class="bl-header-top-inner">
+                <a class="bl-brand" href="{{@site.url}}" aria-label="{{@site.title}} Home">
+                    <img class="bl-brand-logo"
+                         src="{{asset "images/bl-logo.png"}}"
+                         alt="BusinessLeague"
+                         width="148"
+                         height="36"
+                         fetchpriority="high" />
+                    <span class="bl-brand-badge">Editorial</span>
+                    <span class="bl-brand-tagline" data-i18n="header_tagline">Performance Marketing Journal</span>
                 </a>
+
+                <div class="bl-header-actions">
+                    <div class="bl-search-wrap" id="bl-search-wrap" role="search">
+                        <div class="bl-search-field">
+                            <svg class="bl-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            <input type="search"
+                                   id="bl-search-input"
+                                   class="bl-search-input"
+                                   placeholder="Caută articole, studii, branduri..."
+                                   data-i18n-placeholder="search_placeholder"
+                                   autocomplete="off"
+                                   spellcheck="false"
+                                   aria-label="Search articles"
+                                   aria-expanded="false"
+                                   aria-controls="bl-search-dropdown" />
+                            <button type="button" class="bl-search-clear" id="bl-search-clear" aria-label="Clear search" hidden>&times;</button>
+                            <kbd class="bl-search-kbd" id="bl-search-kbd">/</kbd>
+                        </div>
+                        <div class="bl-search-dropdown" id="bl-search-dropdown" role="listbox" aria-label="Autocomplete search results" hidden></div>
+                    </div>
+
+                    <div class="bl-lang-switcher" role="group" aria-label="Select Editorial Language">
+                        <button type="button" class="bl-lang-btn" data-set-lang="ro" title="Română">
+                            <span class="bl-lang-flag" aria-hidden="true">🇷🇴</span>
+                            <span>RO</span>
+                        </button>
+                        <button type="button" class="bl-lang-btn" data-set-lang="en" title="English">
+                            <span class="bl-lang-flag" aria-hidden="true">🇬🇧</span>
+                            <span>EN</span>
+                        </button>
+                        <button type="button" class="bl-lang-btn" data-set-lang="bg" title="Български">
+                            <span class="bl-lang-flag" aria-hidden="true">🇧🇬</span>
+                            <span>BG</span>
+                        </button>
+                        <button type="button" class="bl-lang-btn" data-set-lang="es" title="Español">
+                            <span class="bl-lang-flag" aria-hidden="true">🇪🇸</span>
+                            <span>ES</span>
+                        </button>
+                    </div>
+
+                    <button class="bl-theme-btn" id="bl-theme-toggle" type="button" aria-label="Toggle Dark / Light Mode" title="Toggle Dark / Light Mode">
+                        <svg class="bl-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="bl-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <a class="bl-cta-btn" href="https://businessleague.com" target="_blank" rel="noopener">
+                        <span data-i18n="cta_join">Intră în Ligă</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {{!-- ROW 2: Full-Width Editorial Rubric Bar + Ecosystem Quicklinks --}}
+        <div class="bl-header-bottom">
+            <div class="bl-header-bottom-inner">
+                <nav class="bl-nav" aria-label="Editorial Categories">
+                    <a class="bl-nav-link is-active" href="{{@site.url}}/" data-pillar-link="all" data-i18n="pillar_all">Toate Secțiunile</a>
+                    <a class="bl-nav-link" href="{{@site.url}}/#pillar-data" data-pillar-link="data" data-i18n="pillar_data">Date &amp; Radiografii de Piață</a>
+                    <a class="bl-nav-link" href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="pillar_interviews">Interviuri &amp; Studii de Caz</a>
+                    <a class="bl-nav-link" href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="pillar_playbooks">Playbooks &amp; Strategie</a>
+                    <a class="bl-nav-link" href="{{@site.url}}/#pillar-competition" data-pillar-link="competition" data-i18n="pillar_competition">Competiție &amp; Evenimente</a>
+                    <a class="bl-nav-link" href="{{@site.url}}/#pillar-product" data-pillar-link="product" data-i18n="pillar_product">Produs &amp; Tech</a>
+                    <a class="bl-nav-link" href="{{@site.url}}/#pillar-corporate" data-pillar-link="corporate" data-i18n="pillar_corporate">2Performant &amp; BVB</a>
+                </nav>
+
+                <div class="bl-header-quicklinks">
+                    <a class="bl-nav-quicklink" href="https://start.businessleague.com" target="_blank" rel="noopener">
+                        <span class="bl-live-dot" aria-hidden="true"></span>
+                        <span>Community Hub</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a class="bl-nav-quicklink" href="https://newsroom.businessleague.com" target="_blank" rel="noopener">
+                        <span>Substack</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
