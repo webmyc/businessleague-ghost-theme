@@ -1,0 +1,36 @@
+{{!< default}}
+
+<main id="site-main" class="bl-main">
+    <div class="bl-container">
+        {{#author}}
+        <section class="bl-masthead">
+            <div class="bl-masthead-top" style="align-items:center;justify-content:flex-start;gap:20px;">
+                {{#if profile_image}}
+                    <img class="bl-byline-avatar" src="{{img_url profile_image size="m"}}" alt="{{name}}" style="width:72px;height:72px;" />
+                {{/if}}
+                <div>
+                    <div class="bl-masthead-eyebrow">
+                        <span class="bl-pulse-dot" aria-hidden="true"></span>
+                        <span>EDITORIAL AUTHOR</span>
+                    </div>
+                    <h1 class="bl-masthead-title">{{name}}</h1>
+                    {{#if bio}}
+                        <p class="bl-masthead-subtitle">{{bio}}</p>
+                    {{/if}}
+                </div>
+            </div>
+        </section>
+        {{/author}}
+
+        <section class="bl-section">
+            <div class="bl-grid-3">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+            <div class="bl-load-more-wrap">
+                {{pagination}}
+            </div>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" data-theme="dark" data-bl-lang="ro" class="dark-mode">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{meta_title}}</title>
+
+    {{!-- Synchronous Zero-Flicker Language & Theme Detection Engine --}}
+    <script>
+    (function() {
+        var SUPPORTED = ['ro', 'en', 'bg', 'es'];
+        var html = document.documentElement;
+
+        // 1. Theme resolution (Default: BusinessLeague Signature Dark Mode)
+        var savedTheme = null;
+        try { savedTheme = localStorage.getItem('bl_theme'); } catch (e) {}
+        var theme = (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : 'dark';
+        html.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            html.classList.add('dark-mode');
+        } else {
+            html.classList.remove('dark-mode');
+        }
+
+        // 2. Language resolution: ?lang= param -> /tag/{lang}/ -> saved preference -> browser navigator.language
+        var urlParams = new URLSearchParams(window.location.search);
+        var queryLang = (urlParams.get('lang') || '').toLowerCase();
+        var pathMatch = window.location.pathname.match(/^\/tag\/(ro|en|bg|es)(\/|$)/i);
+        var pathLang = pathMatch ? pathMatch[1].toLowerCase() : '';
+        var savedLang = '';
+        try { savedLang = (localStorage.getItem('bl_lang') || '').toLowerCase(); } catch (e) {}
+
+        var browserLang = '';
+        var navLangs = navigator.languages || [navigator.language || 'ro'];
+        for (var i = 0; i < navLangs.length; i++) {
+            var code = String(navLangs[i] || '').slice(0, 2).toLowerCase();
+            if (SUPPORTED.indexOf(code) !== -1) {
+                browserLang = code;
+                break;
+            }
+        }
+
+        var activeLang = 'ro';
+        if (SUPPORTED.indexOf(queryLang) !== -1) {
+            activeLang = queryLang;
+        } else if (SUPPORTED.indexOf(pathLang) !== -1) {
+            activeLang = pathLang;
+        } else if (SUPPORTED.indexOf(savedLang) !== -1) {
+            activeLang = savedLang;
+        } else if (SUPPORTED.indexOf(browserLang) !== -1) {
+            activeLang = browserLang;
+        }
+
+        html.setAttribute('data-bl-lang', activeLang);
+        html.setAttribute('lang', activeLang);
+        try { localStorage.setItem('bl_lang', activeLang); } catch (e) {}
+    })();
+    </script>
+
+    {{!-- Google Fonts: Onest (Display/Headings), Inter (Body), Roboto Mono (Metadata) --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    {{!-- Base Ghost Koenig Card Styles + BusinessLeague Editorial Design System --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen-fixed.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/businessleague-editorial.css"}}" />
+
+    {{!-- Organization & WebSite Structured Data for SEO / AEO / GEO / LLMs --}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://businessleague.com/#organization",
+                "name": "BusinessLeague by 2Performant",
+                "url": "https://businessleague.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://start.businessleague.com/img/logo-horizontal-dark.png"
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/company/2performant/",
+                    "https://www.facebook.com/2Performant",
+                    "https://www.youtube.com/@2Performant",
+                    "https://ro.2performant.com"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "{{@site.url}}/#website",
+                "url": "{{@site.url}}",
+                "name": "{{@site.title}}",
+                "description": "{{@site.description}}",
+                "publisher": {
+                    "@id": "https://businessleague.com/#organization"
+                },
+                "inLanguage": ["ro", "en", "bg", "es"]
+            }
+        ]
+    }
+    </script>
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+<div class="bl-reading-progress" id="bl-reading-progress" aria-hidden="true"></div>
+
+<div class="bl-viewport">
+    {{!-- Sticky Glassmorphic Editorial Header --}}
+    <header class="bl-header" role="banner">
+        <div class="bl-header-inner">
+            <a class="bl-brand" href="{{@site.url}}" aria-label="{{@site.title}} Home">
+                <img class="bl-brand-logo bl-logo-dark"
+                     src="https://start.businessleague.com/img/logo-horizontal-dark.png"
+                     alt="BusinessLeague"
+                     width="172"
+                     height="32"
+                     fetchpriority="high" />
+                <img class="bl-brand-logo bl-logo-light"
+                     src="https://start.businessleague.com/img/logo-horizontal-light.png"
+                     alt="BusinessLeague"
+                     width="172"
+                     height="32"
+                     fetchpriority="high" />
+                <span class="bl-brand-badge">Editorial</span>
+            </a>
+
+            {{!-- Editorial Pillar Navigation --}}
+            <nav class="bl-nav" aria-label="Editorial Categories">
+                <a class="bl-nav-link is-active" href="{{@site.url}}/" data-pillar-link="all" data-i18n="nav_all">Toate</a>
+                <a class="bl-nav-link" href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="nav_interviews">Interviuri &amp; Studii de Caz</a>
+                <a class="bl-nav-link" href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="nav_playbooks">Playbooks &amp; Strategie</a>
+                <a class="bl-nav-link" href="{{@site.url}}/#pillar-competition" data-pillar-link="competition" data-i18n="nav_competition">Competiție &amp; Evenimente</a>
+                <a class="bl-nav-link" href="{{@site.url}}/#pillar-product" data-pillar-link="product" data-i18n="nav_product">Produs &amp; Tech</a>
+                <a class="bl-nav-link" href="{{@site.url}}/#pillar-corporate" data-pillar-link="corporate" data-i18n="nav_corporate">2Performant &amp; BVB</a>
+            </nav>
+
+            {{!-- Right Controls: Search + 4-Language Switcher + Theme Toggle + CTA --}}
+            <div class="bl-header-actions">
+                <button class="bl-search-btn" type="button" data-ghost-search aria-label="Search articles">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span class="bl-search-label" data-i18n="search_label">Caută</span>
+                    <kbd class="bl-search-kbd">⌘K</kbd>
+                </button>
+
+                <div class="bl-lang-switcher" role="group" aria-label="Select Editorial Language">
+                    <button type="button" class="bl-lang-btn" data-set-lang="ro" title="Română">RO</button>
+                    <button type="button" class="bl-lang-btn" data-set-lang="en" title="English">EN</button>
+                    <button type="button" class="bl-lang-btn" data-set-lang="bg" title="Български">BG</button>
+                    <button type="button" class="bl-lang-btn" data-set-lang="es" title="Español">ES</button>
+                </div>
+
+                <button class="bl-theme-btn" id="bl-theme-toggle" type="button" aria-label="Toggle Dark / Light Mode" title="Toggle Dark / Light Mode">
+                    <svg class="bl-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="bl-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <a class="bl-cta-btn" href="https://businessleague.com" target="_blank" rel="noopener">
+                    <span data-i18n="cta_join">Intră în Ligă</span>
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Main Template Content --}}
+    <div class="site-content">
+        {{{body}}}
+    </div>
+
+    {{!-- Editorial Footer --}}
+    <footer class="bl-footer" role="contentinfo">
+        <div class="bl-container">
+            <div class="bl-footer-grid">
+                <div>
+                    <a class="bl-brand" href="{{@site.url}}">
+                        <img class="bl-brand-logo bl-logo-dark"
+                             src="https://start.businessleague.com/img/logo-horizontal-dark.png"
+                             alt="BusinessLeague"
+                             width="160"
+                             height="30"
+                             loading="lazy" />
+                        <img class="bl-brand-logo bl-logo-light"
+                             src="https://start.businessleague.com/img/logo-horizontal-light.png"
+                             alt="BusinessLeague"
+                             width="160"
+                             height="30"
+                             loading="lazy" />
+                    </a>
+                    <p class="bl-footer-desc" data-i18n="footer_desc">
+                        Publicația oficială a ecosistemului de marketing descentralizat #1 din Europa Centrală și de Est. Studii de caz reale, strategii de performanță și povești de creștere în e-commerce.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="bl-footer-col-title" data-i18n="footer_pillars">Piloni Editoriali</h4>
+                    <ul class="bl-footer-links">
+                        <li><a href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="nav_interviews">Interviuri &amp; Studii de Caz</a></li>
+                        <li><a href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="nav_playbooks">Playbooks &amp; Strategie</a></li>
+                        <li><a href="{{@site.url}}/#pillar-competition" data-pillar-link="competition" data-i18n="nav_competition">Competiție &amp; Evenimente</a></li>
+                        <li><a href="{{@site.url}}/#pillar-product" data-pillar-link="product" data-i18n="nav_product">Produs &amp; Tech</a></li>
+                        <li><a href="{{@site.url}}/#pillar-corporate" data-pillar-link="corporate" data-i18n="nav_corporate">2Performant &amp; BVB</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="bl-footer-col-title" data-i18n="footer_editions">Ediții Lingvistice</h4>
+                    <ul class="bl-footer-links">
+                        <li><a href="{{@site.url}}/?lang=ro" data-set-lang="ro">🇷🇴 Ediția în Română (RO)</a></li>
+                        <li><a href="{{@site.url}}/?lang=en" data-set-lang="en">🇬🇧 English Edition (EN)</a></li>
+                        <li><a href="{{@site.url}}/?lang=bg" data-set-lang="bg">🇧🇬 Българско издание (BG)</a></li>
+                        <li><a href="{{@site.url}}/?lang=es" data-set-lang="es">🇪🇸 Edición en Español (ES)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="bl-footer-col-title">BusinessLeague</h4>
+                    <ul class="bl-footer-links">
+                        <li><a href="https://businessleague.com" target="_blank" rel="noopener">BusinessLeague Platform ↗</a></li>
+                        <li><a href="https://start.businessleague.com" target="_blank" rel="noopener">Start in BusinessLeague ↗</a></li>
+                        <li><a href="https://ro.2performant.com" target="_blank" rel="noopener">2Performant Network ↗</a></li>
+                        <li><a href="https://www.linkedin.com/company/2performant/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bl-footer-bottom">
+                <div>&copy; {{date format="YYYY"}} <a href="https://businessleague.com" style="color:inherit;text-decoration:underline;">BusinessLeague by 2Performant</a>. All rights reserved.</div>
+                <div>Built on BusinessLeague Design System &bull; Powered by Ghost</div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{{#is "post, page"}}
+    {{> "lightbox"}}
+{{/is}}
+
+<script src="{{asset "built/casper.js"}}" defer></script>
+<script src="{{asset "js/businessleague-editorial.js"}}" defer></script>
+
+{{ghost_foot}}
+</body>
+</html>

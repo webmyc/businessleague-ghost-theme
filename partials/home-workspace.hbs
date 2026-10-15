@@ -1,0 +1,140 @@
+{{!-- BusinessLeague Per-Language Editorial Workspace Partial --}}
+<div class="bl-lang-workspace" data-lang-panel="{{lang_code}}">
+    {{#get "posts" filter=lang_filter include="tags,authors" limit="36" as |lang_posts|}}
+        {{#if lang_posts}}
+            {{!-- 1. 7:5 EDITORIAL HERO SPLIT --}}
+            <section class="bl-hero-split" data-hero-section>
+                {{#foreach lang_posts from="1" to="1"}}
+                <article class="bl-lead-card"
+                         data-post-id="{{id}}"
+                         data-post-slug="{{slug}}"
+                         data-tags="{{#foreach tags visibility="all"}}{{slug}},{{/foreach}}">
+                    {{#if feature_image}}
+                    <a class="bl-lead-media" href="{{url}}" aria-label="{{title}}">
+                        <img src="{{img_url feature_image size="xl"}}"
+                             srcset="{{img_url feature_image size="m"}} 600w,
+                                     {{img_url feature_image size="l"}} 1000w,
+                                     {{img_url feature_image size="xl"}} 2000w"
+                             sizes="(max-width: 1120px) 94vw, 760px"
+                             alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                             fetchpriority="high" />
+                    </a>
+                    {{/if}}
+                    <div class="bl-lead-body">
+                        <div class="bl-meta-row">
+                            <span class="bl-pillar-badge" data-pillar-badge>
+                                {{#primary_tag}}{{name}}{{else}}Lead Story{{/primary_tag}}
+                            </span>
+                            <time class="bl-meta-time" datetime="{{date format="YYYY-MM-DD"}}">
+                                {{date format="DD MMM YYYY"}}
+                                {{#if reading_time}}&bull; {{reading_time}}{{/if}}
+                            </time>
+                        </div>
+                        <h2 class="bl-lead-title">
+                            <a href="{{url}}">{{title}}</a>
+                        </h2>
+                        {{#if excerpt}}
+                            <p class="bl-lead-excerpt">{{excerpt words="42"}}</p>
+                        {{/if}}
+                        <footer class="bl-card-footer">
+                            {{#primary_author}}
+                            <a class="bl-author-chip" href="{{url}}">
+                                {{#if profile_image}}
+                                    <img class="bl-author-avatar" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                {{/if}}
+                                <span>{{name}}</span>
+                            </a>
+                            {{/primary_author}}
+                            <a class="bl-read-cta" href="{{url}}">
+                                <span data-i18n="read_lead">Citește articolul principal</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </footer>
+                    </div>
+                </article>
+                {{/foreach}}
+
+                <div class="bl-hero-side">
+                    <div class="bl-side-header">
+                        <h3 class="bl-side-heading" data-i18n="hero_side_title">În Prim-Plan &bull; Selecția Redacției</h3>
+                    </div>
+
+                    {{#foreach lang_posts from="2" to="4"}}
+                    <article class="bl-side-card"
+                             data-post-id="{{id}}"
+                             data-post-slug="{{slug}}"
+                             data-tags="{{#foreach tags visibility="all"}}{{slug}},{{/foreach}}">
+                        {{#if feature_image}}
+                        <a class="bl-side-media" href="{{url}}" aria-label="{{title}}">
+                            <img src="{{img_url feature_image size="m"}}"
+                                 alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                                 loading="lazy" />
+                        </a>
+                        {{/if}}
+                        <div>
+                            <div class="bl-meta-row" style="margin-bottom:4px;">
+                                <span class="bl-pillar-badge" data-pillar-badge style="font-size:10px;padding:2px 8px;">
+                                    {{#primary_tag}}{{name}}{{else}}Editorial{{/primary_tag}}
+                                </span>
+                                <time class="bl-meta-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                            </div>
+                            <h4 class="bl-side-title">
+                                <a href="{{url}}">{{title}}</a>
+                            </h4>
+                        </div>
+                    </article>
+                    {{/foreach}}
+
+                    {{!-- BusinessLeague Ecosystem Spotlight Card --}}
+                    <div class="bl-ecosystem-card">
+                        <span class="bl-section-eyebrow">BUSINESSLEAGUE ECOSYSTEM</span>
+                        <h4 class="bl-ecosystem-title" data-i18n="eco_title">Crește-ți vânzările sau câștigă comisioane prin performanță pură</h4>
+                        <p class="bl-ecosystem-desc" data-i18n="eco_desc">
+                            Peste 14,7 milioane de vânzări generate și 696 milioane EUR pentru magazinele online din CEE.
+                        </p>
+                        <div class="bl-ecosystem-actions">
+                            <a class="bl-cta-btn" href="https://start.businessleague.com/companies" target="_blank" rel="noopener">
+                                <span data-i18n="eco_btn_companies">Pentru Magazine ↗</span>
+                            </a>
+                            <a class="bl-filter-pill" href="https://start.businessleague.com/marketers" target="_blank" rel="noopener" style="text-decoration:none;">
+                                <span data-i18n="eco_btn_marketers">Pentru Marketeri ↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {{!-- 2. DYNAMIC CURATED EDITORIAL SECTIONS (Populated & Organized by Pillar Engine) --}}
+            <div class="bl-curated-container" data-curated-sections></div>
+
+            {{!-- 3. COMPLETE CHRONOLOGICAL FEED FOR THIS LANGUAGE --}}
+            <section class="bl-section" id="pillar-latest-{{lang_code}}" data-feed-section>
+                <div class="bl-section-header">
+                    <div>
+                        <span class="bl-section-eyebrow" data-i18n="latest_eyebrow">ARHIVA EDITORIALĂ COMPLETĂ</span>
+                        <h2 class="bl-section-title" data-i18n="latest_title">Toate Articolele Recente</h2>
+                    </div>
+                </div>
+                <div class="bl-grid-3" data-workspace-grid>
+                    {{#foreach lang_posts from="5"}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                </div>
+            </section>
+        {{else}}
+            {{!-- Empty / Preparing Edition Fallback --}}
+            <section class="bl-section" style="text-align:center;padding:64px 20px;background:var(--bl-bg-card);border-radius:20px;border:1px solid var(--bl-border);">
+                <span class="bl-section-eyebrow">EDITION INITIALIZING</span>
+                <h2 class="bl-section-title" style="margin-bottom:12px !important;" data-i18n="empty_lang_title">Ediția în această limbă este în curs de sincronizare</h2>
+                <p style="color:var(--bl-text-secondary);max-width:520px;margin:0 auto 24px;" data-i18n="empty_lang_desc">
+                    Scriptul automat de traducere BusinessLeague pregătește articolele în această limbă. Între timp, poți explora edițiile în Română, Engleză sau Bulgară.
+                </p>
+                <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+                    <button type="button" class="bl-cta-btn" data-set-lang="ro">🇷🇴 Română (RO)</button>
+                    <button type="button" class="bl-filter-pill" data-set-lang="en">🇬🇧 English (EN)</button>
+                    <button type="button" class="bl-filter-pill" data-set-lang="bg">🇧🇬 Български (BG)</button>
+                </div>
+            </section>
+        {{/if}}
+    {{/get}}
+</div>

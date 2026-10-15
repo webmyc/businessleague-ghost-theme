@@ -1,0 +1,60 @@
+{{!< default}}
+
+<main id="site-main" class="bl-main">
+    <div class="bl-container">
+
+        {{!-- Editorial Masthead & Pillar Filter Bar --}}
+        <section class="bl-masthead">
+            <div class="bl-masthead-top">
+                <div>
+                    <div class="bl-masthead-eyebrow">
+                        <span class="bl-pulse-dot" aria-hidden="true"></span>
+                        <span data-i18n="masthead_eyebrow">PUBLICAȚIA OFICIALĂ BUSINESSLEAGUE &bull; 2PERFORMANT</span>
+                    </div>
+                    <h1 class="bl-masthead-title" data-i18n="masthead_title">
+                        Performanță în E-Commerce, Studii de Caz &amp; Strategii din Liga Campionilor
+                    </h1>
+                    <p class="bl-masthead-subtitle" data-i18n="masthead_subtitle">
+                        Interviuri cu liderii din afiliere și e-commerce, analize tactice aplicabile imediat și noutăți din ecosistemul BusinessLeague.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bl-filter-bar" role="region" aria-label="Editorial Category Filters">
+                <div class="bl-filter-pills">
+                    <button type="button" class="bl-filter-pill is-active" data-filter-pillar="all">
+                        <span class="bl-filter-dot"></span>
+                        <span data-i18n="pillar_all">Toate Secțiunile</span>
+                    </button>
+                    <button type="button" class="bl-filter-pill" data-filter-pillar="interviews">
+                        <span class="bl-filter-dot"></span>
+                        <span data-i18n="pillar_interviews">Interviuri &amp; Studii de Caz</span>
+                    </button>
+                    <button type="button" class="bl-filter-pill" data-filter-pillar="playbooks">
+                        <span class="bl-filter-dot"></span>
+                        <span data-i18n="pillar_playbooks">Playbooks &amp; Strategie</span>
+                    </button>
+                    <button type="button" class="bl-filter-pill" data-filter-pillar="competition">
+                        <span class="bl-filter-dot"></span>
+                        <span data-i18n="pillar_competition">Competiție &amp; Evenimente</span>
+                    </button>
+                    <button type="button" class="bl-filter-pill" data-filter-pillar="product">
+                        <span class="bl-filter-dot"></span>
+                        <span data-i18n="pillar_product">Produs &amp; Tech</span>
+                    </button>
+                    <button type="button" class="bl-filter-pill" data-filter-pillar="corporate">
+                        <span class="bl-filter-dot"></span>
+                        <span data-i18n="pillar_corporate">2Performant &amp; BVB</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        {{!-- 4 Strict Language Editorial Workspaces (Zero Cross-Language Mixing) --}}
+        {{> "home-workspace" lang_code="ro" lang_filter="tag:-en+tag:-bg+tag:-es"}}
+        {{> "home-workspace" lang_code="en" lang_filter="tag:en"}}
+        {{> "home-workspace" lang_code="bg" lang_filter="tag:bg"}}
+        {{> "home-workspace" lang_code="es" lang_filter="tag:es"}}
+
+    </div>
+</main>

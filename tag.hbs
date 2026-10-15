@@ -1,0 +1,37 @@
+{{!< default}}
+
+<main id="site-main" class="bl-main">
+    <div class="bl-container">
+        {{#tag}}
+        <section class="bl-masthead">
+            <div class="bl-masthead-top">
+                <div>
+                    <div class="bl-masthead-eyebrow">
+                        <span class="bl-pulse-dot" aria-hidden="true"></span>
+                        <span>COLLECTION &bull; {{slug}}</span>
+                    </div>
+                    <h1 class="bl-masthead-title">{{name}}</h1>
+                    <p class="bl-masthead-subtitle">
+                        {{#if description}}
+                            {{description}}
+                        {{else}}
+                            {{plural ../pagination.total empty='0 articles' singular='% article' plural='% articles'}}
+                        {{/if}}
+                    </p>
+                </div>
+            </div>
+        </section>
+        {{/tag}}
+
+        <section class="bl-section">
+            <div class="bl-grid-3">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+            <div class="bl-load-more-wrap">
+                {{pagination}}
+            </div>
+        </section>
+    </div>
+</main>

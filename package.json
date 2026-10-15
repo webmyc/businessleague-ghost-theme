@@ -1,0 +1,102 @@
+{
+    "name": "businessleague-editorial",
+    "description": "Award-grade multi-language editorial Ghost theme for BusinessLeague.com — built on the BusinessLeague Design System with uncropped imagery, 7:5 asymmetric editorial grids, instant RO/EN/BG/ES language switching, and full SEO/AEO/GEO/LLM optimization.",
+    "demo": "https://blog.businessleague.com",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "BusinessLeague & 2Performant",
+        "email": "support@businessleague.com",
+        "url": "https://businessleague.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Magazine",
+            "News",
+            "Multi-language"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "businessleague",
+        "editorial",
+        "multilingual"
+    ],
+    "config": {
+        "posts_per_page": 24,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1000
+            },
+            "xl": {
+                "width": 2000
+            }
+        },
+        "card_assets": true,
+        "custom": {
+            "color_scheme": {
+                "type": "select",
+                "options": [
+                    "Dark",
+                    "Light",
+                    "Auto"
+                ],
+                "default": "Dark"
+            },
+            "default_language": {
+                "type": "select",
+                "options": [
+                    "Auto",
+                    "ro",
+                    "en",
+                    "bg",
+                    "es"
+                ],
+                "default": "Auto"
+            },
+            "show_publication_cover": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "show_editorial_sections": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "primary_cta_url": {
+                "type": "text",
+                "default": "https://businessleague.com",
+                "group": "homepage"
+            },
+            "show_table_of_contents": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            },
+            "show_recent_posts_footer": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            }
+        }
+    }
+}
