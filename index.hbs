@@ -1,30 +1,68 @@
 {{!< default}}
 
 <main id="site-main" class="bl-main">
-    <div class="bl-container">
+    {{!-- SCROLL-STOPPING CINEMATIC MAVERICK MASTHEAD (Inspired by start.businessleague.com Arena + Wired/Bloomberg) --}}
+    <section class="bl-cinematic-masthead">
+        <canvas id="bl-hero-mesh" class="bl-hero-mesh" aria-hidden="true"></canvas>
 
-        {{!-- Editorial Masthead & Pillar Filter Bar --}}
-        <section class="bl-masthead">
-            <div class="bl-masthead-top">
-                <div>
-                    <div class="bl-masthead-eyebrow">
-                        <span class="bl-pulse-dot" aria-hidden="true"></span>
-                        <span data-i18n="masthead_eyebrow">PUBLICAȚIA OFICIALĂ BUSINESSLEAGUE &bull; 2PERFORMANT</span>
-                    </div>
-                    <h1 class="bl-masthead-title" data-i18n="masthead_title">
-                        Performanță în E-Commerce, Studii de Caz &amp; Strategii din Liga Campionilor
+        <div class="bl-container">
+            {{!-- Top Live Telemetry & Edition Bar --}}
+            <div class="bl-edition-bar">
+                <div class="bl-edition-left">
+                    <span class="bl-pulse-dot" aria-hidden="true"></span>
+                    <span data-i18n="masthead_eyebrow">CHRONICLES OF THE LEAGUE &bull; THE OUTLIER JOURNAL</span>
+                </div>
+
+                <div class="bl-edition-metrics" aria-label="BusinessLeague Live Scoreboard">
+                    <span class="bl-metric-item"><strong>2.28M</strong> <span data-i18n="metric_sales_2025">vânzări 2025</span></span>
+                    <span class="bl-metric-sep">&bull;</span>
+                    <span class="bl-metric-item"><strong>16.5M+</strong> <span data-i18n="metric_sales">vânzări totale</span></span>
+                    <span class="bl-metric-sep">&bull;</span>
+                    <span class="bl-metric-item"><strong>&euro;832M+</strong> <span data-i18n="metric_gmv">valoare generată</span></span>
+                    <span class="bl-metric-sep">&bull;</span>
+                    <span class="bl-metric-item"><strong>11.6x</strong> <span data-i18n="metric_roas">ROAS mediu</span></span>
+                </div>
+
+                <a class="bl-edition-film-pill" href="https://start.businessleague.com/#film" target="_blank" rel="noopener">
+                    <svg width="10" height="12" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.5v13l12-6.5z" fill="currentColor"/></svg>
+                    <span data-i18n="masthead_film_cta">Vezi Filmul (1:44)</span>
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            {{!-- Asymmetric Maverick Display Statement (Onest 200 Thin + Onest 800 Shine) --}}
+            <div class="bl-maverick-stage">
+                <div class="bl-maverick-headline-col">
+                    <h1 class="bl-masthead-title" data-i18n-html="masthead_title_html">
+                        <span class="bl-thin">Nu încă un blog de marketing.</span>
+                        <span class="bl-shine">Arena în care rebelii joacă pe cifre reale.</span>
                     </h1>
-                    <p class="bl-masthead-subtitle" data-i18n="masthead_subtitle">
-                        Interviuri cu liderii din afiliere și e-commerce, analize tactice aplicabile imediat și noutăți din ecosistemul BusinessLeague.
-                    </p>
+                </div>
+                <div class="bl-maverick-creed-col">
+                    <blockquote class="bl-maverick-creed" data-i18n="masthead_subtitle">
+                        Zero teorie. Zero clișee. Radiografii pe milioane de comenzi, conversații fără perdea cu campionii din e-commerce și arhitectura primului campionat descentralizat din lume.
+                    </blockquote>
+                    <div class="bl-maverick-meta-links">
+                        <a href="https://start.businessleague.com" target="_blank" rel="noopener" class="bl-inline-arrow-link">
+                            <span data-i18n="masthead_hub_link">Explorează Community Hub-ul</span> <span aria-hidden="true">→</span>
+                        </a>
+                        <a href="https://newsroom.businessleague.com" target="_blank" rel="noopener" class="bl-inline-arrow-link">
+                            <span>Substack Newsroom (14,000+)</span> <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            {{!-- Editorial Pillar Filter Bar --}}
             <div class="bl-filter-bar" role="region" aria-label="Editorial Category Filters">
                 <div class="bl-filter-pills">
                     <button type="button" class="bl-filter-pill is-active" data-filter-pillar="all">
                         <span class="bl-filter-dot"></span>
                         <span data-i18n="pillar_all">Toate Secțiunile</span>
+                    </button>
+                    <button type="button" class="bl-filter-pill" data-filter-pillar="data">
+                        <span class="bl-filter-dot"></span>
+                        <span data-i18n="pillar_data">Date &amp; Radiografii de Piață</span>
                     </button>
                     <button type="button" class="bl-filter-pill" data-filter-pillar="interviews">
                         <span class="bl-filter-dot"></span>
@@ -48,13 +86,14 @@
                     </button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <div class="bl-container">
         {{!-- 4 Strict Language Editorial Workspaces (Zero Cross-Language Mixing) --}}
         {{> "home-workspace" lang_code="ro" lang_filter="tag:-en+tag:-bg+tag:-es"}}
         {{> "home-workspace" lang_code="en" lang_filter="tag:en"}}
         {{> "home-workspace" lang_code="bg" lang_filter="tag:bg"}}
         {{> "home-workspace" lang_code="es" lang_filter="tag:es"}}
-
     </div>
 </main>

@@ -57,13 +57,23 @@
         html.setAttribute('data-bl-lang', activeLang);
         html.setAttribute('lang', activeLang);
         try { localStorage.setItem('bl_lang', activeLang); } catch (e) {}
+
+        // 3. Reader Typography & Layout Preferences (Font Size, Sans/Serif, Standard/Zen)
+        try {
+            var rSize = localStorage.getItem('bl_reading_size') || 'md';
+            var rFont = localStorage.getItem('bl_reading_font') || 'sans';
+            var rLayout = localStorage.getItem('bl_reading_layout') || 'standard';
+            html.setAttribute('data-reading-size', rSize);
+            html.setAttribute('data-reading-font', rFont);
+            html.setAttribute('data-reading-layout', rLayout);
+        } catch (e) {}
     })();
     </script>
 
-    {{!-- Google Fonts: Onest (Display/Headings), Inter (Body), Roboto Mono (Metadata) --}}
+    {{!-- Google Fonts: Onest (200 Thin to 800 ExtraBold Display), Inter (Body), Newsreader (Editorial Longform Serif), Roboto Mono (Telemetry) --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Onest:wght@200;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     {{!-- Base Ghost Koenig Card Styles + BusinessLeague Editorial Design System --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen-fixed.css"}}" />
@@ -81,13 +91,15 @@
                 "url": "https://businessleague.com",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://start.businessleague.com/img/logo-horizontal-dark.png"
+                    "url": "{{@site.url}}/assets/images/bl-logo.png"
                 },
                 "sameAs": [
+                    "https://start.businessleague.com",
+                    "https://newsroom.businessleague.com",
                     "https://www.linkedin.com/company/2performant/",
                     "https://www.facebook.com/2Performant",
                     "https://www.youtube.com/@2Performant",
-                    "https://ro.2performant.com"
+                    "https://2performant.com"
                 ]
             },
             {
@@ -115,24 +127,19 @@
     <header class="bl-header" role="banner">
         <div class="bl-header-inner">
             <a class="bl-brand" href="{{@site.url}}" aria-label="{{@site.title}} Home">
-                <img class="bl-brand-logo bl-logo-dark"
-                     src="https://start.businessleague.com/img/logo-horizontal-dark.png"
+                <img class="bl-brand-logo"
+                     src="{{asset "images/bl-logo.png"}}"
                      alt="BusinessLeague"
-                     width="172"
-                     height="32"
+                     width="136"
+                     height="36"
                      fetchpriority="high" />
-                <img class="bl-brand-logo bl-logo-light"
-                     src="https://start.businessleague.com/img/logo-horizontal-light.png"
-                     alt="BusinessLeague"
-                     width="172"
-                     height="32"
-                     fetchpriority="high" />
-                <span class="bl-brand-badge">Editorial</span>
+                <span class="bl-brand-badge">Chronicles</span>
             </a>
 
             {{!-- Editorial Pillar Navigation --}}
             <nav class="bl-nav" aria-label="Editorial Categories">
                 <a class="bl-nav-link is-active" href="{{@site.url}}/" data-pillar-link="all" data-i18n="nav_all">Toate</a>
+                <a class="bl-nav-link" href="{{@site.url}}/#pillar-data" data-pillar-link="data" data-i18n="nav_data">Radiografii &amp; Date</a>
                 <a class="bl-nav-link" href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="nav_interviews">Interviuri &amp; Studii de Caz</a>
                 <a class="bl-nav-link" href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="nav_playbooks">Playbooks &amp; Strategie</a>
                 <a class="bl-nav-link" href="{{@site.url}}/#pillar-competition" data-pillar-link="competition" data-i18n="nav_competition">Competiție &amp; Evenimente</a>
@@ -140,13 +147,26 @@
                 <a class="bl-nav-link" href="{{@site.url}}/#pillar-corporate" data-pillar-link="corporate" data-i18n="nav_corporate">2Performant &amp; BVB</a>
             </nav>
 
-            {{!-- Right Controls: Search + 4-Language Switcher + Theme Toggle + CTA --}}
+            {{!-- Right Controls: Live Autocomplete Search + 4-Language Switcher + Theme Toggle + CTA --}}
             <div class="bl-header-actions">
-                <button class="bl-search-btn" type="button" data-ghost-search aria-label="Search articles">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                    <span class="bl-search-label" data-i18n="search_label">Caută</span>
-                    <kbd class="bl-search-kbd">⌘K</kbd>
-                </button>
+                <div class="bl-search-wrap" id="bl-search-wrap">
+                    <div class="bl-search-field">
+                        <svg class="bl-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="search"
+                               id="bl-search-input"
+                               class="bl-search-input"
+                               placeholder="Caută articole, branduri, cifre..."
+                               data-i18n-placeholder="search_placeholder"
+                               autocomplete="off"
+                               spellcheck="false"
+                               aria-label="Search articles"
+                               aria-expanded="false"
+                               aria-controls="bl-search-dropdown" />
+                        <button type="button" class="bl-search-clear" id="bl-search-clear" aria-label="Clear search" hidden>&times;</button>
+                        <kbd class="bl-search-kbd" id="bl-search-kbd">⌘K</kbd>
+                    </div>
+                    <div class="bl-search-dropdown" id="bl-search-dropdown" role="listbox" aria-label="Autocomplete search results" hidden></div>
+                </div>
 
                 <div class="bl-lang-switcher" role="group" aria-label="Select Editorial Language">
                     <button type="button" class="bl-lang-btn" data-set-lang="ro" title="Română">RO</button>
@@ -185,68 +205,8 @@
         {{{body}}}
     </div>
 
-    {{!-- Editorial Footer --}}
-    <footer class="bl-footer" role="contentinfo">
-        <div class="bl-container">
-            <div class="bl-footer-grid">
-                <div>
-                    <a class="bl-brand" href="{{@site.url}}">
-                        <img class="bl-brand-logo bl-logo-dark"
-                             src="https://start.businessleague.com/img/logo-horizontal-dark.png"
-                             alt="BusinessLeague"
-                             width="160"
-                             height="30"
-                             loading="lazy" />
-                        <img class="bl-brand-logo bl-logo-light"
-                             src="https://start.businessleague.com/img/logo-horizontal-light.png"
-                             alt="BusinessLeague"
-                             width="160"
-                             height="30"
-                             loading="lazy" />
-                    </a>
-                    <p class="bl-footer-desc" data-i18n="footer_desc">
-                        Publicația oficială a ecosistemului de marketing descentralizat #1 din Europa Centrală și de Est. Studii de caz reale, strategii de performanță și povești de creștere în e-commerce.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="bl-footer-col-title" data-i18n="footer_pillars">Piloni Editoriali</h4>
-                    <ul class="bl-footer-links">
-                        <li><a href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="nav_interviews">Interviuri &amp; Studii de Caz</a></li>
-                        <li><a href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="nav_playbooks">Playbooks &amp; Strategie</a></li>
-                        <li><a href="{{@site.url}}/#pillar-competition" data-pillar-link="competition" data-i18n="nav_competition">Competiție &amp; Evenimente</a></li>
-                        <li><a href="{{@site.url}}/#pillar-product" data-pillar-link="product" data-i18n="nav_product">Produs &amp; Tech</a></li>
-                        <li><a href="{{@site.url}}/#pillar-corporate" data-pillar-link="corporate" data-i18n="nav_corporate">2Performant &amp; BVB</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="bl-footer-col-title" data-i18n="footer_editions">Ediții Lingvistice</h4>
-                    <ul class="bl-footer-links">
-                        <li><a href="{{@site.url}}/?lang=ro" data-set-lang="ro">🇷🇴 Ediția în Română (RO)</a></li>
-                        <li><a href="{{@site.url}}/?lang=en" data-set-lang="en">🇬🇧 English Edition (EN)</a></li>
-                        <li><a href="{{@site.url}}/?lang=bg" data-set-lang="bg">🇧🇬 Българско издание (BG)</a></li>
-                        <li><a href="{{@site.url}}/?lang=es" data-set-lang="es">🇪🇸 Edición en Español (ES)</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="bl-footer-col-title">BusinessLeague</h4>
-                    <ul class="bl-footer-links">
-                        <li><a href="https://businessleague.com" target="_blank" rel="noopener">BusinessLeague Platform ↗</a></li>
-                        <li><a href="https://start.businessleague.com" target="_blank" rel="noopener">Start in BusinessLeague ↗</a></li>
-                        <li><a href="https://ro.2performant.com" target="_blank" rel="noopener">2Performant Network ↗</a></li>
-                        <li><a href="https://www.linkedin.com/company/2performant/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bl-footer-bottom">
-                <div>&copy; {{date format="YYYY"}} <a href="https://businessleague.com" style="color:inherit;text-decoration:underline;">BusinessLeague by 2Performant</a>. All rights reserved.</div>
-                <div>Built on BusinessLeague Design System &bull; Powered by Ghost</div>
-            </div>
-        </div>
-    </footer>
+    {{!-- Common Shared Ecosystem Footer (BusinessLeague + 2Performant) --}}
+    {{> "common-footer"}}
 </div>
 
 {{#is "post, page"}}

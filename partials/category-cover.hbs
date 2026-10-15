@@ -1,0 +1,19 @@
+{{!--
+    BusinessLeague Predefined Category Cover Template Generator
+    Renders a clean editorial SVG canvas + sharp typographic overlay (no pills!)
+    when a post has no `feature_image`.
+--}}
+<div class="bl-generated-cover" data-generated-cover data-cover-pillar="interviews">
+    <img class="bl-generated-cover-bg"
+         src="{{asset "images/covers/cover-interviews.svg"}}"
+         data-cover-bg
+         alt="{{title}}"
+         loading="lazy" />
+    <div class="bl-generated-cover-overlay">
+        <span class="bl-generated-cover-kicker" data-cover-kicker>
+            {{#primary_tag}}{{name}}{{else}}BUSINESSLEAGUE EDITORIAL{{/primary_tag}}
+        </span>
+        <span class="bl-generated-cover-headline">{{title}}</span>
+        <span class="bl-generated-cover-brand">BUSINESSLEAGUE // 2PERFORMANT</span>
+    </div>
+</div>

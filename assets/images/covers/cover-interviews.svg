@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0d20"/>
+      <stop offset="52%" stop-color="#17143a"/>
+      <stop offset="100%" stop-color="#2a1458"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="82%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#7839ee" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#7839ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="15%" cy="85%" r="45%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glow1)"/>
+  <rect width="1200" height="675" fill="url(#glow2)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <!-- Editorial Spotlight Rings -->
+  <circle cx="960" cy="338" r="240" fill="none" stroke="rgba(167,139,250,0.18)" stroke-width="1.5" stroke-dasharray="6 8"/>
+  <circle cx="960" cy="338" r="175" fill="none" stroke="rgba(167,139,250,0.28)" stroke-width="1.5"/>
+  <circle cx="960" cy="338" r="110" fill="rgba(120,57,238,0.18)" stroke="rgba(167,139,250,0.45)" stroke-width="2"/>
+  <!-- Giant Editorial Quote Motif -->
+  <text x="910" y="395" font-family="Georgia, serif" font-size="190" font-weight="700" fill="rgba(167,139,250,0.35)">“</text>
+  </svg>

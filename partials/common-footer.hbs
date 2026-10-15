@@ -1,0 +1,219 @@
+{{!--
+    Common Shared Ecosystem Footer — Used across:
+    1. blog.businessleague.com (BusinessLeague Ghost Theme)
+    2. start.businessleague.com (BusinessLeague Community Hub Start Page)
+    Crafted with human-made editorial precision (Onest 200/800 contrast, hairlines, big dual-brand logos, BVB 2P ticker).
+--}}
+<footer class="bl-common-footer" role="contentinfo">
+    {{!-- Signature Green ECG Pulse Line Divider (from start.businessleague.com) --}}
+    <div class="bl-pulse-line" aria-hidden="true">
+        <i></i>
+        <svg width="150" height="48" viewBox="0 0 150 64">
+            <path d="M0 32h34l9-9 8 9h12l10-28 14 54 12-40 8 14h43"/>
+        </svg>
+        <i></i>
+    </div>
+
+    <div class="bl-container">
+        {{!-- TOP ROW: Monumental Dual-Brand Showcase (Big BusinessLeague Logo + Big 2Performant Logo) --}}
+        <div class="bl-footer-brands-split">
+            {{!-- Left (7 cols): BusinessLeague — The Championship & Community --}}
+            <div class="bl-footer-brand-pane bl-footer-brand-bl">
+                <span class="bl-footer-eyebrow" data-i18n="footer_bl_eyebrow">THE CHAMPIONSHIP &amp; COMMUNITY</span>
+                <a class="bl-footer-logo-link" href="https://start.businessleague.com" aria-label="BusinessLeague Community Hub">
+                    <img class="bl-footer-big-logo-bl"
+                         src="{{asset "images/bl-logo.png"}}"
+                         alt="BusinessLeague"
+                         width="320"
+                         height="60"
+                         loading="lazy" />
+                </a>
+                <p class="bl-footer-manifesto" data-i18n="footer_bl_desc">
+                    Primul campionat de e-commerce din lume. Magazinele plătesc doar când vând. Afiliații câștigă la fiecare vânzare. Toți joacă în același clasament și nimeni nu joacă singur.
+                </p>
+                <div class="bl-footer-cta-row">
+                    <a class="bl-footer-hub-btn" href="https://start.businessleague.com" target="_blank" rel="noopener">
+                        <span class="bl-live-dot" aria-hidden="true"></span>
+                        <span data-i18n="footer_hub_cta">Community Hub · start.businessleague.com</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a class="bl-footer-secondary-btn" href="https://businessleague.com/sign-up" target="_blank" rel="noopener">
+                        <span data-i18n="cta_join">Intră în Ligă</span>
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+
+            {{!-- Right (5 cols): Built by 2Performant — Infrastructure & BVB 2P --}}
+            <div class="bl-footer-brand-pane bl-footer-brand-2p">
+                <span class="bl-footer-eyebrow bl-eyebrow-2p" data-i18n="footer_2p_eyebrow">BUILT BY &bull; INFRASTRUCTURE &amp; BVB: 2P</span>
+                <a class="bl-footer-logo-2p-link" href="https://2performant.com" target="_blank" rel="noopener" aria-label="2Performant — Dedicated to marketing superheroes">
+                    <svg class="bl-footer-big-logo-2p" xmlns="http://www.w3.org/2000/svg" viewBox="120 60 1700 390" role="img" aria-label="2Performant. Dedicated to marketing superheroes.">
+                        <g>
+                            <g>
+                                <polygon class="bl-2p-mark" fill="#EB2135" points="141.7,143.4 141.7,205.1 301.7,112.6 248.4,81.8 "/>
+                                <polygon class="bl-2p-mark" fill="#EB2135" points="355.1,205.1 293,179.3 293,179.3 141.7,266.6 265.1,257 "/>
+                                <polygon class="bl-2p-mark" fill="#EB2135" points="301.7,112.6 256.1,147.9 355.1,205.1 355.1,143.5 "/>
+                                <rect x="141.7" y="266.6" class="bl-2p-mark" fill="#EB2135" width="213.4" height="53.4"/>
+                            </g>
+                            <g class="bl-2p-word">
+                                <path d="M469.2,183.6h-51.9v136.2H450V277h19.3c33.5,0,53.7-17.5,53.7-46.7S502.6,183.6,469.2,183.6z M468.6,246.4 h-18.7v-32.3h18.7c12.6,0,20.2,6,20.2,16.1C488.8,240.4,481.2,246.4,468.6,246.4z"/>
+                                <path d="M644.7,289.2v30.5H544.6V183.6h99v30.6h-66.3v22.4h51.9v28.6h-51.9v24.1h67.4V289.2z"/>
+                                <path d="M754.7,269.6c15.8-7.4,24.5-21,24.5-39.3c0-28-20.6-46.7-54.9-46.7h-50.8v136.2h32.7v-44.3H723l25.3,44.3 h36.6L754.7,269.6z M728.8,246.4h-22.6v-32.3h22.6c11.7,0,16.4,8.7,16.4,16.1C745.1,237.7,740.4,246.4,728.8,246.4z"/>
+                                <path d="M843.1,214.1v26.6h50v29.4h-50v49.6h-32.7V183.6h97v30.6h-64.3V214.1z"/>
+                                <path d="M994.3,180.8c39.1,0,70.8,29.8,70.8,70.8c0,41.1-31.7,70.8-70.8,70.8c-39.1,0-70.6-29.7-70.6-70.8 C923.7,210.6,955.2,180.8,994.3,180.8z M994.3,290.2c22.2,0,36.8-15.8,36.8-38.5c0-22.9-14.6-38.5-36.8-38.5 c-22,0-36.6,15.6-36.6,38.5C957.8,274.4,972.4,290.2,994.3,290.2z"/>
+                                <path d="M1171.3,269.6c15.7-7.4,24.5-21,24.5-39.3c0-28-20.6-46.7-54.9-46.7h-50.8v136.2h32.7v-44.3h16.7l25.3,44.3 h36.6L1171.3,269.6z M1145.4,246.4h-22.5v-32.3h22.5c11.7,0,16.4,8.7,16.4,16.1C1161.7,237.7,1157.1,246.4,1145.4,246.4z"/>
+                                <path d="M1363,183.6v136.2h-32.1v-33.2c0-32.3,1.2-48.2,1-48.2h-0.2c-0.2,0-11.1,18.6-12.2,20.6l-16,27.2h-16.9 l-16-27.2c-1.2-1.9-12.1-20.6-12.2-20.6h-0.2c-0.2,0,1,15.9,1,48.2v33.2H1227V183.6h30.8l25.5,41.3 c9.9,16.1,11.5,19.6,11.7,19.6h0.2c0.2,0,1.7-3.5,11.6-19.6l25.5-41.3H1363z"/>
+                                <path d="M1448.9,223.3l-34.8,96.5h-35.2l54.5-136.2h30.9l54.5,136.2h-35.2L1448.9,223.3z"/>
+                                <path d="M1656.8,183.6v136.2H1626l-27.8-37.9c-12.5-17.1-30.7-43-30.9-43h-0.2c-0.2,0,0.2,21,0.2,50.8v30.1h-32.7 V183.6h30.7l29,38.9c8.7,11.7,29.6,41.1,29.8,41.1h0.2c0.2,0-0.2-24.1-0.2-48.8v-31.1L1656.8,183.6L1656.8,183.6z"/>
+                                <path d="M1793.4,183.6v30.6H1752v105.6h-32.7V214.1h-40.9v-30.6h115V183.6z"/>
+                            </g>
+                            <g class="bl-2p-sub">
+                                <path d="M158.5,381.5c11.3,0,20.5,8.2,20.5,20.1c0,11.7-9.1,19.6-20.2,19.6h-17.1v-39.7H158.5z M158.8,416.9 c8.3,0,15.4-5.8,15.4-15.2c0-9.7-7.2-15.7-15.8-15.7h-12.1v31L158.8,416.9L158.8,416.9z"/>
+                                <path d="M226.1,416.9v4.4h-26.8v-39.7h26.5v4.4H204v12.3h17.5v4.1H204V417L226.1,416.9L226.1,416.9z"/>
+                                <path d="M264.7,381.5c11.4,0,20.5,8.2,20.5,20.1c0,11.7-9.1,19.6-20.2,19.6h-17v-39.7H264.7z M265,416.9 c8.3,0,15.4-5.8,15.4-15.2c0-9.7-7.1-15.7-15.8-15.7h-12.1v31L265,416.9L265,416.9z"/>
+                                <path d="M305.5,421.2v-39.7h4.7v39.7H305.5z"/>
+                                <path d="M364.5,392.4c-2.7-4.4-7.8-7.1-13.3-7.1c-9.1,0-15.8,6.5-15.8,16.1s6.9,16.1,15.8,16.1c6,0,11.4-3.2,14-8.2 l4.6,1.3c-3.3,7-10.3,11.6-18.6,11.6c-11.4,0-20.6-8.7-20.6-20.7s9.2-20.6,20.6-20.6c7.8,0,14.4,4.1,18,10.4L364.5,392.4z"/>
+                                <path d="M413.1,410.9h-19.9l-4.4,10.4h-5l17.2-39.7h4.2l17.3,39.7h-5L413.1,410.9z M411.4,406.7l-6.3-14.8 c-0.9-2-1.8-4.8-1.9-4.8l0,0c-0.1,0-1,2.8-1.9,4.8l-6.3,14.8H411.4z"/>
+                                <path d="M464,381.5v4.4h-13.3v35.3h-4.6v-35.3h-13.3v-4.4H464z"/>
+                                <path d="M510.4,416.9v4.4h-26.8v-39.7h26.5v4.4h-21.8v12.3h17.5v4.1h-17.5V417L510.4,416.9L510.4,416.9z"/>
+                                <path d="M549,381.5c11.3,0,20.5,8.2,20.5,20.1c0,11.7-9.1,19.6-20.2,19.6h-17.1v-39.7H549z M549.4,416.9 c8.3,0,15.4-5.8,15.4-15.2c0-9.7-7.1-15.7-15.8-15.7h-12.1v31L549.4,416.9L549.4,416.9z"/>
+                                <path d="M644.7,381.5v4.4h-13.3v35.3h-4.6v-35.3h-13.3v-4.4H644.7z"/>
+                                <path d="M680.4,380.7c11.4,0,20.6,8.7,20.6,20.6c0,12-9.3,20.7-20.6,20.7c-11.4,0-20.6-8.7-20.6-20.7 C659.8,389.4,669,380.7,680.4,380.7z M680.4,417.5c8.9,0,15.8-6.6,15.8-16.1c0-9.7-6.9-16.1-15.8-16.1c-9,0-15.8,6.4-15.8,16.1 C664.6,410.9,671.4,417.5,680.4,417.5z"/>
+                                <path d="M785.7,381.5v39.7h-4.6v-17.8c0-6.1,0.3-14,0.2-14l0,0c-0.1,0-2,3.6-3.5,6l-9.3,16.1h-2.4l-9.3-16.1 c-1.4-2.4-3.4-6-3.5-6h-0.1c-0.1,0,0.2,7.9,0.2,14v17.8H749v-39.7h4.3l9.9,16.8c3.4,5.8,4,7.4,4.1,7.4h0.1 c0.1,0,0.7-1.6,4.1-7.4l9.8-16.8H785.7z"/>
+                                <path d="M833.7,410.9h-19.9l-4.4,10.4h-5l17.2-39.7h4.2l17.2,39.7h-5L833.7,410.9z M831.9,406.7l-6.3-14.8 c-0.9-2-1.8-4.8-1.9-4.8h-0.1c-0.1,0-1,2.8-1.8,4.8l-6.3,14.8H831.9z"/>
+                                <path d="M884.9,421.2l-9-14.9c-0.6,0.1-1.4,0.1-2.1,0.1h-7.4v14.8h-4.6v-39.7h12c9.3,0,14.9,4.9,14.9,12.5 c0,5.7-3,9.7-8.3,11.4l9.6,15.8L884.9,421.2L884.9,421.2z M874.3,402.3c6.4,0,9.7-3.4,9.7-8.2c0-5-3.6-8.2-9.7-8.2h-7.9v16.4 L874.3,402.3L874.3,402.3z"/>
+                                <path d="M937.1,421.2l-15-20.4l-6.5,6.5v13.9H911v-39.7h4.6v10.6c0,6.3-0.1,9.6-0.1,9.6h0.1c0.1,0,3.6-3.7,6.6-6.7 l13.5-13.5h5.7l-16.2,16.2l17.4,23.5H937.1z"/>
+                                <path d="M989.9,416.9v4.4h-26.8v-39.7h26.5v4.4h-21.8v12.3h17.5v4.1h-17.5V417L989.9,416.9L989.9,416.9z"/>
+                                <path d="M1038.9,381.5v4.4h-13.3v35.3h-4.6v-35.3h-13.3v-4.4H1038.9z"/>
+                                <path d="M1058.5,421.2v-39.7h4.6v39.7H1058.5z"/>
+                                <path d="M1119.3,381.5v39.7h-4.3l-17.6-23.8c-3.4-4.7-5.9-8.3-5.9-8.3h-0.1c0,0,0.1,4.9,0.1,11.3v20.8h-4.6v-39.7 h4.3l17.6,23.7c3,4,5.9,8.2,5.9,8.2h0.1c0,0-0.1-5.3-0.1-11v-20.9L1119.3,381.5L1119.3,381.5z"/>
+                                <path d="M1174.8,415.3c-1.8,2.3-6.8,6.7-14.5,6.7c-11.4,0-20.6-8.7-20.6-20.7s9.2-20.6,20.6-20.6 c8.1,0.2,14.5,4.2,18,10.4l-4.7,1.2c-2.7-4.4-7.8-7.1-13.3-7.1c-9.1,0-15.8,6.5-15.8,16.1s7,16.1,16,16.1c7.8,0,12.9-4.6,14.4-8 v-4.9h-12.2v-3.9h16.2v20.6h-4.1C1174.8,416.6,1174.9,415.4,1174.8,415.3L1174.8,415.3z"/>
+                                <path d="M1249.2,392.5c-0.9-4.8-5-7.7-9.9-7.7c-5.2,0-8.9,2.5-8.9,6.5c0,4.4,5.5,5.7,10.8,7.3 c5.6,1.6,13.1,4.2,13.1,11.9c0,6.7-5.8,11.6-14.5,11.6c-8.5,0-13.9-5-15.1-11.7l4.5-1.2c0.6,4.6,4.4,8.7,10.8,8.7 c5.9,0,9.5-3.1,9.5-7.3c0-5.8-6.9-7-12.5-8.7c-4.6-1.4-11.2-3.5-11.2-10.3c0-6.2,5.8-10.8,13.8-10.8c7.2,0,12.9,4.2,14.2,10.6 L1249.2,392.5z"/>
+                                <path d="M1306.2,381.5v23.3c0,11.2-6,17.3-16.3,17.3c-10.4,0-16.3-6.1-16.3-17.3v-23.3h4.6v23.3 c0,8.6,4,12.9,11.6,12.9c7.7,0,11.7-4.3,11.7-12.9v-23.3H1306.2z"/>
+                                <path d="M1340.2,381.5c9.2,0,14.7,4.8,14.7,12.7c0,7.9-5.5,12.7-14.7,12.7h-7.5v14.3h-4.7v-39.7H1340.2z M1340.1,402.5c6.5,0,10.1-3.2,10.1-8.3c0-5.4-3.8-8.3-10.1-8.3h-7.4v16.6L1340.1,402.5L1340.1,402.5z"/>
+                                <path d="M1401.5,416.9v4.4h-26.8v-39.7h26.5v4.4h-21.8v12.3h17.5v4.1h-17.5V417L1401.5,416.9L1401.5,416.9z"/>
+                                <path d="M1446.5,421.2l-9-14.9c-0.6,0.1-1.4,0.1-2,0.1h-7.4v14.8h-4.6v-39.7h12.1c9.3,0,14.9,4.9,14.9,12.5 c0,5.7-3,9.7-8.3,11.4l9.7,15.8L1446.5,421.2L1446.5,421.2z M1435.9,402.3c6.3,0,9.6-3.4,9.6-8.2c0-5-3.6-8.2-9.6-8.2h-7.9v16.4 L1435.9,402.3L1435.9,402.3z"/>
+                                <path d="M1503.5,381.5v39.7h-4.6v-18.4h-21.7v18.4h-4.6v-39.7h4.6v16.9h21.7v-16.9H1503.5z"/>
+                                <path d="M1553.9,416.9v4.4h-26.8v-39.7h26.5v4.4h-21.8v12.3h17.5v4.1h-17.5V417L1553.9,416.9L1553.9,416.9z"/>
+                                <path d="M1598.9,421.2l-9-14.9c-0.6,0.1-1.4,0.1-2,0.1h-7.4v14.8h-4.6v-39.7h12.1c9.3,0,14.9,4.9,14.9,12.5 c0,5.7-3,9.7-8.2,11.4l9.6,15.8L1598.9,421.2L1598.9,421.2z M1588.4,402.3c6.3,0,9.6-3.4,9.6-8.2c0-5-3.6-8.2-9.6-8.2h-7.9v16.4 L1588.4,402.3L1588.4,402.3z"/>
+                                <path d="M1641.4,380.7c11.4,0,20.7,8.7,20.7,20.6c0,12-9.3,20.7-20.7,20.7s-20.6-8.7-20.6-20.7 C1620.9,389.4,1630,380.7,1641.4,380.7z M1641.4,417.5c9,0,15.8-6.6,15.8-16.1c0-9.7-6.9-16.1-15.8-16.1 c-9,0-15.8,6.4-15.8,16.1C1625.6,410.9,1632.4,417.5,1641.4,417.5z"/>
+                                <path d="M1709.1,416.9v4.4h-26.8v-39.7h26.5v4.4H1687v12.3h17.5v4.1H1687V417L1709.1,416.9L1709.1,416.9z"/>
+                                <path d="M1750.8,392.5c-0.8-4.8-5-7.7-9.9-7.7c-5.2,0-8.9,2.5-8.9,6.5c0,4.4,5.5,5.7,10.8,7.3 c5.6,1.6,13.1,4.2,13.1,11.9c0,6.7-5.8,11.6-14.5,11.6c-8.5,0-13.9-5-15.1-11.7l4.5-1.2c0.6,4.6,4.4,8.7,10.9,8.7 c5.9,0,9.4-3.1,9.4-7.3c0-5.8-6.9-7-12.5-8.7c-4.5-1.4-11.3-3.5-11.3-10.3c0-6.2,5.9-10.8,13.8-10.8c7.2,0,12.9,4.2,14.2,10.6 L1750.8,392.5z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <p class="bl-footer-manifesto" data-i18n="footer_2p_desc">
+                    Construim infrastructura care conectează magazinele online cu profesioniștii în marketing și le leagă colaborarea de rezultate. Compania din spatele BusinessLeague, listată la Bursa de Valori București sub simbolul 2P.
+                </p>
+                <div class="bl-footer-2p-meta">
+                    <span class="bl-bvb-ticker">
+                        <span class="bl-bvb-dot" aria-hidden="true"></span>
+                        <span>BVB <b>2P</b> <span data-i18n="footer_bvb_label">Bucharest Stock Exchange</span></span>
+                    </span>
+                    <a class="bl-footer-inline-link" href="https://2performant.com" target="_blank" rel="noopener">
+                        <span>2performant.com</span>
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {{!-- MIDDLE ROW: 4-Column Architectural Ecosystem Directory --}}
+        <div class="bl-footer-directory">
+            <div class="bl-footer-dir-col">
+                <h4 class="bl-footer-col-title">
+                    <span class="bl-footer-col-idx">01</span>
+                    <span data-i18n="footer_col_hub">COMMUNITY HUB</span>
+                </h4>
+                <ul class="bl-footer-links">
+                    <li>
+                        <a href="https://start.businessleague.com" target="_blank" rel="noopener" class="bl-footer-link-featured">
+                            <span data-i18n="footer_link_start">Community Hub (start.businessleague.com)</span>
+                            <span class="bl-footer-mini-badge">HUB</span>
+                        </a>
+                    </li>
+                    <li><a href="https://start.businessleague.com/#film" target="_blank" rel="noopener" data-i18n="footer_link_film">The BusinessLeague Film (1:44) ↗</a></li>
+                    <li><a href="https://start.businessleague.com/#pulse" target="_blank" rel="noopener" data-i18n="footer_link_pulse">Weekly Pulse Newsletter ↗</a></li>
+                    <li><a href="https://luma.com/2performant" target="_blank" rel="noopener" data-i18n="footer_link_events">Calendar Evenimente Live (Luma) ↗</a></li>
+                    <li><a href="https://start.businessleague.com/#events" target="_blank" rel="noopener" data-i18n="footer_link_meetups">Meetup-uri Dublin &amp; București ↗</a></li>
+                    <li><a href="https://businessleague.supahub.com/" target="_blank" rel="noopener" data-i18n="footer_link_shipped">Shipped &bull; Product Updates ↗</a></li>
+                </ul>
+            </div>
+
+            <div class="bl-footer-dir-col">
+                <h4 class="bl-footer-col-title">
+                    <span class="bl-footer-col-idx">02</span>
+                    <span data-i18n="footer_pillars">PUBLICAȚII &amp; PILONI</span>
+                </h4>
+                <ul class="bl-footer-links">
+                    <li>
+                        <a href="https://blog.businessleague.com" class="bl-footer-link-featured">
+                            <span data-i18n="footer_link_blog">BusinessLeague Chronicles (Blog)</span>
+                            <span class="bl-footer-mini-badge">PRESS</span>
+                        </a>
+                    </li>
+                    <li><a href="https://newsroom.businessleague.com/" target="_blank" rel="noopener" data-i18n="footer_link_newsroom">Substack Newsroom (14.000+ abonați) ↗</a></li>
+                    <li><a href="{{@site.url}}/#pillar-data" data-pillar-link="data" data-i18n="nav_data">Radiografii &amp; Date de Piață</a></li>
+                    <li><a href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="nav_interviews">Interviuri &amp; Studii de Caz</a></li>
+                    <li><a href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="nav_playbooks">Playbooks &amp; Strategie</a></li>
+                    <li><a href="{{@site.url}}/#pillar-competition" data-pillar-link="competition" data-i18n="nav_competition">Competiție &amp; Evenimente</a></li>
+                </ul>
+            </div>
+
+            <div class="bl-footer-dir-col">
+                <h4 class="bl-footer-col-title">
+                    <span class="bl-footer-col-idx">03</span>
+                    <span data-i18n="footer_editions">EDIȚII LINGVISTICE</span>
+                </h4>
+                <ul class="bl-footer-links">
+                    <li><a href="{{@site.url}}/?lang=ro" data-set-lang="ro">🇷🇴 Ediția în Română (RO)</a></li>
+                    <li><a href="{{@site.url}}/?lang=en" data-set-lang="en">🇬🇧 English Edition (EN)</a></li>
+                    <li><a href="{{@site.url}}/?lang=bg" data-set-lang="bg">🇧🇬 Българско издание (BG)</a></li>
+                    <li><a href="{{@site.url}}/?lang=es" data-set-lang="es">🇪🇸 Edición en Español (ES)</a></li>
+                </ul>
+            </div>
+
+            <div class="bl-footer-dir-col">
+                <h4 class="bl-footer-col-title">
+                    <span class="bl-footer-col-idx">04</span>
+                    <span data-i18n="footer_col_platform">PLATFORMĂ &amp; 2PERFORMANT</span>
+                </h4>
+                <ul class="bl-footer-links">
+                    <li><a href="https://businessleague.com" target="_blank" rel="noopener">BusinessLeague Platform ↗</a></li>
+                    <li><a href="https://businessleague.com/sign-up" target="_blank" rel="noopener" data-i18n="footer_link_signup">Înscriere Magazin / Afiliat ↗</a></li>
+                    <li><a href="https://2performant.com" target="_blank" rel="noopener">2Performant Network S.A. ↗</a></li>
+                    <li><a href="https://2performant.com/investitori/" target="_blank" rel="noopener" data-i18n="footer_link_ir">Investitori BVB (Simbol: 2P) ↗</a></li>
+                    <li><a href="{{@site.url}}/#pillar-product" data-pillar-link="product" data-i18n="nav_product">Produs &amp; Tech Engineering</a></li>
+                    <li><a href="{{@site.url}}/#pillar-corporate" data-pillar-link="corporate" data-i18n="nav_corporate">Guvernanță &amp; Rapoarte BVB</a></li>
+                </ul>
+            </div>
+        </div>
+
+        {{!-- BOTTOM ROW: Colophon, Ecosystem Cross-Links & Socials --}}
+        <div class="bl-footer-bottom">
+            <div class="bl-footer-copyright">
+                <span>&copy; {{date format="YYYY"}} <strong>2Performant Network S.A.</strong> &bull; <a href="https://businessleague.com" target="_blank" rel="noopener">BusinessLeague&reg;</a></span>
+            </div>
+
+            <div class="bl-footer-crosslinks">
+                <a href="https://start.businessleague.com" target="_blank" rel="noopener">start.businessleague.com</a>
+                <span>&bull;</span>
+                <a href="https://blog.businessleague.com">blog.businessleague.com</a>
+                <span>&bull;</span>
+                <a href="https://newsroom.businessleague.com" target="_blank" rel="noopener">newsroom.businessleague.com</a>
+                <span>&bull;</span>
+                <a href="https://2performant.com" target="_blank" rel="noopener">2performant.com</a>
+            </div>
+
+            <div class="bl-footer-socials">
+                <a href="https://www.linkedin.com/company/2performant/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://x.com/2performant" target="_blank" rel="noopener" aria-label="X">X</a>
+                <a href="https://www.youtube.com/channel/UCLG8psFVccFgFMoAFXBdbjw" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+                <a href="https://www.instagram.com/businessleague.by.2performant/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+                <a href="https://www.facebook.com/2performant/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+            </div>
+        </div>
+    </div>
+</footer>
