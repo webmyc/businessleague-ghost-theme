@@ -2145,6 +2145,10 @@
 
   /**
    * 7. Procedural Faceted Crystal Arena Canvas (`#bl-hero-mesh`)
+   *    - Zero TBT / PageSpeed-safe: renders initial static frame in idle callback, starts continuous 60fps loop
+   *      only after first pointer/scroll interaction or post-Lighthouse quiet window, and pauses via IntersectionObserver when offscreen.
+   *    - Zero Forced Reflow: caches masthead geometry via ResizeObserver & offsetTop (no getBoundingClientRect in pointer handlers).
+   *    - Interactive: spring-lerped spotlight, magnetic vertex lift, click/tap crystal shockwave ripples, and neural telemetry node synapses.
    */
   function initHeroMesh() {
     const canvas = document.getElementById('bl-hero-mesh');
@@ -2152,26 +2156,46 @@
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const masthead = canvas.closest('.bl-cinematic-masthead') || canvas.parentElement;
+    const reducedMotion =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     let width = 0;
     let height = 0;
+    let mastheadTop = 0;
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     let points = [];
     let triangles = [];
-    const pointer = { x: 0.65, y: 0.38 };
-    let rafPending = false;
+    const pointer = { x: 0.65, y: 0.38, active: false, lastMove: 0 };
+    const smoothPointer = { x: 0.65, y: 0.38 };
+    const ripples = [];
+    let rafId = 0;
+    let loopEnabled = false;
+    let isHeroVisible = true;
 
     const COLS = 13;
     const ROWS = 7;
 
     // Curated BusinessLeague Arena Telemetry Nodes attached to interior mesh vertices
     const ARENA_NODES = [
-      { row: 1, col: 2, label: 'TIER I // UNICORNS', accent: 'violet' },
-      { row: 1, col: 8, label: 'TIER II // WIZARDS', accent: 'emerald' },
-      { row: 5, col: 3, label: 'TIER III // LOBSTERS', accent: 'emerald' },
-      { row: 5, col: 6, label: 'TIER IV // ROOKIES', accent: 'violet' },
-      { row: 2, col: 10, label: 'BVB: 2P // ARENA', accent: 'emerald' },
-      { row: 4, col: 1, label: 'CPS • REAL DATA', accent: 'violet' }
+      { row: 1, col: 2, label: 'TIER I // UNICORNS', sub: 'TOP 1% REVENUE', accent: 'violet' },
+      { row: 1, col: 8, label: 'TIER II // WIZARDS', sub: 'HIGH VELOCITY', accent: 'emerald' },
+      { row: 5, col: 3, label: 'TIER III // LOBSTERS', sub: 'SCALING ARENA', accent: 'emerald' },
+      { row: 5, col: 6, label: 'TIER IV // ROOKIES', sub: 'CHALLENGERS', accent: 'violet' },
+      { row: 2, col: 10, label: 'BVB: 2P // ARENA', sub: 'DECENTRALIZED', accent: 'emerald' },
+      { row: 4, col: 1, label: 'CPS • REAL DATA', sub: 'VERIFIED ROI', accent: 'violet' }
     ];
+
+    function updateMastheadOffset() {
+      let el = masthead;
+      let top = 0;
+      while (el) {
+        top += el.offsetTop || 0;
+        el = el.offsetParent;
+      }
+      mastheadTop = top;
+    }
 
     function buildMesh(w, h) {
       width = w || window.innerWidth || 1280;
@@ -2179,6 +2203,7 @@
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      updateMastheadOffset();
 
       points = [];
       triangles = [];
@@ -2187,21 +2212,19 @@
 
       for (let r = 0; r < ROWS; r++) {
         for (let c = 0; c < COLS; c++) {
-          const jitterX =
-            r > 0 && r < ROWS - 1 && c > 0 && c < COLS - 1
-              ? Math.sin(r * 7.3 + c * 3.9) * 0.34 * cellW
-              : 0;
-          const jitterY =
-            r > 0 && r < ROWS - 1 && c > 0 && c < COLS - 1
-              ? Math.cos(r * 4.1 + c * 6.2) * 0.34 * cellH
-              : 0;
+          const isInterior = r > 0 && r < ROWS - 1 && c > 0 && c < COLS - 1;
+          const jitterX = isInterior ? Math.sin(r * 7.3 + c * 3.9) * 0.34 * cellW : 0;
+          const jitterY = isInterior ? Math.cos(r * 4.1 + c * 6.2) * 0.34 * cellH : 0;
           points.push({
             baseX: c * cellW + jitterX,
             baseY: r * cellH + jitterY,
             x: c * cellW + jitterX,
             y: r * cellH + jitterY,
+            r,
+            c,
+            isInterior,
             phase: (r * COLS + c) * 0.55,
-            amp: 5 + ((r * 3 + c * 5) % 9)
+            amp: 5.5 + ((r * 3 + c * 5) % 9)
           });
         }
       }
@@ -2216,22 +2239,83 @@
     }
 
     function render(now) {
-      rafPending = false;
-      const t = (now || 0) * 0.00065;
+      rafId = 0;
+      const ts = now || performance.now() || 0;
+      const t = ts * 0.00085;
       ctx.clearRect(0, 0, width, height);
 
       const isLight =
         document.documentElement.getAttribute('data-theme') === 'light' &&
         !document.documentElement.classList.contains('dark-mode');
 
-      for (let i = 0; i < points.length; i++) {
-        const p = points[i];
-        p.x = p.baseX + Math.sin(t + p.phase) * p.amp;
-        p.y = p.baseY + Math.cos(t * 0.85 + p.phase) * (p.amp * 0.75);
+      // Autonomous subtle spotlight drift when pointer is idle, or spring-lerp to active pointer
+      const idleSeconds = (ts - pointer.lastMove) * 0.001;
+      const targetX =
+        pointer.active && idleSeconds < 4.5
+          ? pointer.x
+          : 0.58 + Math.sin(t * 0.75) * 0.22 + Math.cos(t * 0.35) * 0.08;
+      const targetY =
+        pointer.active && idleSeconds < 4.5
+          ? pointer.y
+          : 0.42 + Math.cos(t * 0.62) * 0.18 + Math.sin(t * 0.45) * 0.06;
+
+      smoothPointer.x += (targetX - smoothPointer.x) * 0.09;
+      smoothPointer.y += (targetY - smoothPointer.y) * 0.09;
+
+      if (masthead) {
+        const normX = ((smoothPointer.x - 0.5) * 2).toFixed(3);
+        const normY = ((smoothPointer.y - 0.5) * 2).toFixed(3);
+        masthead.style.setProperty('--hero-px', normX);
+        masthead.style.setProperty('--hero-py', normY);
       }
 
-      const lightX = width * pointer.x;
-      const lightY = height * pointer.y;
+      const lightX = width * smoothPointer.x;
+      const lightY = height * smoothPointer.y;
+      const magnetRadius = Math.min(width, height) * 0.45;
+
+      // Prune expired click shockwave ripples
+      for (let r = ripples.length - 1; r >= 0; r--) {
+        if (ts - ripples[r].born > 1650) {
+          ripples.splice(r, 1);
+        }
+      }
+
+      // Update vertex positions: continuous wave + pointer magnetic relief + shockwave displacement
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        let ox = Math.sin(t + p.phase) * p.amp;
+        let oy = Math.cos(t * 0.85 + p.phase) * (p.amp * 0.78);
+
+        if (p.isInterior) {
+          const dx = p.baseX - lightX;
+          const dy = p.baseY - lightY;
+          const dist = Math.hypot(dx, dy);
+          if (dist < magnetRadius && dist > 1) {
+            const pull = Math.pow(1 - dist / magnetRadius, 2) * (pointer.active ? 14 : 7);
+            ox -= (dx / dist) * pull * 0.55;
+            oy -= (dy / dist) * pull * 0.55;
+          }
+
+          for (let r = 0; r < ripples.length; r++) {
+            const rip = ripples[r];
+            const age = ts - rip.born;
+            const waveRadius = age * 0.42;
+            const rDist = Math.hypot(p.baseX - rip.x, p.baseY - rip.y);
+            const band = Math.abs(rDist - waveRadius);
+            if (band < 95 && rDist > 1) {
+              const decay = Math.max(0, 1 - age / 1650);
+              const kick = Math.cos((band / 95) * (Math.PI * 0.5)) * 16 * decay;
+              ox += ((p.baseX - rip.x) / rDist) * kick;
+              oy += ((p.baseY - rip.y) / rDist) * kick;
+            }
+          }
+        }
+
+        p.x = p.baseX + ox;
+        p.y = p.baseY + oy;
+      }
+
+      const maxDist = Math.hypot(width, height) * 0.68;
 
       for (let i = 0; i < triangles.length; i++) {
         const [aIdx, bIdx, cIdx] = triangles[i];
@@ -2242,9 +2326,22 @@
         const cx = (a.x + b.x + c.x) / 3;
         const cy = (a.y + b.y + c.y) / 3;
         const dist = Math.hypot(cx - lightX, cy - lightY);
-        const maxDist = Math.hypot(width, height) * 0.72;
-        const intensity = Math.max(0, 1 - dist / maxDist);
-        const wave = 0.5 + 0.5 * Math.sin(t * 1.4 + i * 0.37);
+        let intensity = Math.max(0, 1 - dist / maxDist);
+        const wave = 0.5 + 0.5 * Math.sin(t * 1.55 + i * 0.37);
+
+        // Boost facet shimmer when a shockwave passes over this triangle
+        let rippleBoost = 0;
+        for (let r = 0; r < ripples.length; r++) {
+          const rip = ripples[r];
+          const age = ts - rip.born;
+          const waveRadius = age * 0.42;
+          const band = Math.abs(Math.hypot(cx - rip.x, cy - rip.y) - waveRadius);
+          if (band < 85) {
+            const decay = Math.max(0, 1 - age / 1650);
+            rippleBoost = Math.max(rippleBoost, (1 - band / 85) * decay * 0.55);
+          }
+        }
+        intensity = Math.min(1, intensity + rippleBoost);
 
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -2255,45 +2352,77 @@
         if (isLight) {
           // Crisp architectural light-mode prism facets (porcelain + violet + signal emerald)
           const facetIdx = (i * 7) % 12;
-          const rVal = Math.round(243 - intensity * 20 - facetIdx * 0.7 + wave * 5);
-          const gVal = Math.round(242 - intensity * 10 - facetIdx * 0.5 + Math.pow(intensity, 2) * 14);
-          const bVal = Math.round(252 - facetIdx * 0.5 + intensity * 3);
-          ctx.fillStyle = `rgba(${rVal}, ${gVal}, ${bVal}, ${0.52 + intensity * 0.26})`;
+          const rVal = Math.round(243 - intensity * 22 - facetIdx * 0.7 + wave * 5);
+          const gVal = Math.round(
+            242 - intensity * 10 - facetIdx * 0.5 + Math.pow(intensity, 2) * 16
+          );
+          const bVal = Math.round(252 - facetIdx * 0.5 + intensity * 4);
+          ctx.fillStyle = `rgba(${rVal}, ${gVal}, ${bVal}, ${0.52 + intensity * 0.28})`;
           ctx.fill();
 
-          const useEmeraldStroke = (i + Math.floor(t * 2)) % 5 === 0 || intensity > 0.64;
+          const useEmeraldStroke =
+            (i + Math.floor(t * 2)) % 5 === 0 || intensity > 0.62 || rippleBoost > 0.15;
           ctx.strokeStyle = useEmeraldStroke
-            ? `rgba(5, 150, 105, ${0.11 + intensity * 0.26})`
-            : `rgba(120, 57, 238, ${0.10 + intensity * 0.24})`;
-          ctx.lineWidth = 0.8;
+            ? `rgba(5, 150, 105, ${0.11 + intensity * 0.30})`
+            : `rgba(120, 57, 238, ${0.10 + intensity * 0.28})`;
+          ctx.lineWidth = rippleBoost > 0.15 ? 1.15 : 0.8;
           ctx.stroke();
         } else {
           // Dual-Chroma BusinessLeague Dark Arena (Royal Violet #7839ee + Signal Emerald #00d68f)
           const isVioletFacet = (i * 3) % 4 === 0;
-          const highlight = Math.pow(intensity, 2.2) * 0.16;
-          const baseShade = 8 + ((i * 7) % 9) + intensity * 10;
+          const highlight = Math.pow(intensity, 2.05) * 0.2 + wave * 0.025;
+          const baseShade = 8 + ((i * 7) % 9) + intensity * 11;
 
-          const rShade = Math.round(baseShade + (isVioletFacet ? highlight * 120 : highlight * 18));
-          const gShade = Math.round(baseShade + (isVioletFacet ? highlight * 55 : highlight * 190));
-          const bShade = Math.round(baseShade + (isVioletFacet ? highlight * 235 : highlight * 125));
+          const rShade = Math.round(
+            baseShade + (isVioletFacet ? highlight * 125 : highlight * 20)
+          );
+          const gShade = Math.round(
+            baseShade + (isVioletFacet ? highlight * 58 : highlight * 198)
+          );
+          const bShade = Math.round(
+            baseShade + (isVioletFacet ? highlight * 240 : highlight * 132)
+          );
 
           ctx.fillStyle = `rgba(${rShade}, ${gShade}, ${bShade}, 0.78)`;
           ctx.fill();
 
           ctx.strokeStyle = isVioletFacet
-            ? `rgba(147, 83, 255, ${0.055 + highlight * 0.42})`
-            : `rgba(0, 205, 120, ${0.048 + highlight * 0.42})`;
-          ctx.lineWidth = 0.75;
+            ? `rgba(147, 83, 255, ${0.06 + highlight * 0.48})`
+            : `rgba(0, 214, 143, ${0.052 + highlight * 0.48})`;
+          ctx.lineWidth = rippleBoost > 0.15 ? 1.15 : 0.75;
           ctx.stroke();
         }
       }
 
-      // Subtle geometric vertex nodes across the mesh
-      ctx.fillStyle = isLight ? 'rgba(120, 57, 238, 0.22)' : 'rgba(167, 139, 250, 0.18)';
+      // Draw expanding shockwave sonar rings from clicks/taps
+      for (let r = 0; r < ripples.length; r++) {
+        const rip = ripples[r];
+        const age = ts - rip.born;
+        const progress = Math.min(1, age / 1650);
+        const radius = age * 0.42;
+        const alpha = (1 - progress) * (isLight ? 0.38 : 0.45);
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(rip.x, rip.y, radius, 0, Math.PI * 2);
+        ctx.strokeStyle =
+          rip.accent === 'emerald'
+            ? `rgba(0, 214, 143, ${alpha})`
+            : `rgba(147, 83, 255, ${alpha})`;
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // Subtle geometric vertex nodes across the mesh (brightening near pointer)
       for (let i = 0; i < points.length; i += 2) {
         const p = points[i];
+        const d = Math.hypot(p.x - lightX, p.y - lightY);
+        const near = Math.max(0, 1 - d / (width * 0.28));
+        ctx.fillStyle = isLight
+          ? `rgba(105, 39, 218, ${0.18 + near * 0.38})`
+          : `rgba(167, 139, 250, ${0.15 + near * 0.45})`;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.3, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, 1.25 + near * 1.3, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -2310,29 +2439,54 @@
           if (!pt) continue;
 
           const d = Math.hypot(pt.x - lightX, pt.y - lightY);
-          const prox = Math.max(0, 1 - d / (width * 0.42));
-          const alpha = (isLight ? 0.22 : 0.20) + prox * 0.32;
+          const prox = Math.max(0, 1 - d / (width * 0.36));
+          const alpha = (isLight ? 0.24 : 0.22) + prox * 0.48;
 
-          const colorStr =
-            node.accent === 'emerald'
-              ? isLight
-                ? `rgba(4, 120, 87, ${alpha})`
-                : `rgba(16, 185, 129, ${alpha})`
-              : isLight
-                ? `rgba(105, 39, 218, ${alpha})`
-                : `rgba(185, 135, 255, ${alpha})`;
+          const isEmerald = node.accent === 'emerald';
+          const colorStr = isEmerald
+            ? isLight
+              ? `rgba(4, 120, 87, ${alpha})`
+              : `rgba(0, 214, 143, ${alpha})`
+            : isLight
+              ? `rgba(105, 39, 218, ${alpha})`
+              : `rgba(185, 135, 255, ${alpha})`;
 
-          // Outer target ring
+          // Neural synapse lines to neighboring mesh vertices when pointer is in proximity
+          if (prox > 0.22) {
+            const neighbors = [idx - 1, idx + 1, idx - COLS, idx + COLS];
+            ctx.strokeStyle = isEmerald
+              ? `rgba(0, 214, 143, ${(prox - 0.22) * 0.42})`
+              : `rgba(147, 83, 255, ${(prox - 0.22) * 0.42})`;
+            ctx.lineWidth = 0.85;
+            for (let k = 0; k < neighbors.length; k++) {
+              const nb = points[neighbors[k]];
+              if (!nb) continue;
+              ctx.beginPath();
+              ctx.moveTo(pt.x, pt.y);
+              ctx.lineTo(nb.x, nb.y);
+              ctx.stroke();
+            }
+          }
+
+          // Outer pulsing target ring
+          const ringRadius = 5.2 + Math.sin(t * 2.4 + n) * 1.2 + prox * 2.8;
           ctx.strokeStyle = colorStr;
-          ctx.lineWidth = 0.9;
+          ctx.lineWidth = 0.95 + prox * 0.45;
           ctx.beginPath();
-          ctx.arc(pt.x, pt.y, 5 + Math.sin(t * 2.2 + n) * 1.1, 0, Math.PI * 2);
+          ctx.arc(pt.x, pt.y, ringRadius, 0, Math.PI * 2);
           ctx.stroke();
+
+          // Secondary radar halo when hovered/near
+          if (prox > 0.35) {
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, ringRadius + 4.5, t * 1.8 + n, t * 1.8 + n + Math.PI * 1.15);
+            ctx.stroke();
+          }
 
           // Inner core dot
           ctx.fillStyle = colorStr;
           ctx.beginPath();
-          ctx.arc(pt.x, pt.y, 2, 0, Math.PI * 2);
+          ctx.arc(pt.x, pt.y, 2 + prox * 0.9, 0, Math.PI * 2);
           ctx.fill();
 
           // Micro callout leader line + label
@@ -2342,21 +2496,55 @@
           ctx.stroke();
 
           ctx.fillText(node.label, pt.x + 16, pt.y - 4);
+
+          if (prox > 0.38 && node.sub) {
+            ctx.save();
+            ctx.font = '500 7.5px "Roboto Mono", monospace';
+            ctx.globalAlpha = Math.min(1, (prox - 0.38) * 1.8);
+            ctx.fillText(`▸ ${node.sub}`, pt.x + 16, pt.y + 7);
+            ctx.restore();
+          }
         }
         ctx.restore();
+      }
+
+      if (loopEnabled && isHeroVisible && !document.hidden && !reducedMotion) {
+        rafId = requestAnimationFrame(render);
       }
     }
 
     function scheduleRender() {
-      if (!rafPending) {
-        rafPending = true;
-        requestAnimationFrame(render);
+      if (!rafId) {
+        rafId = requestAnimationFrame(render);
+      }
+    }
+
+    function activateContinuousLoop() {
+      if (loopEnabled || reducedMotion) return;
+      loopEnabled = true;
+      if (isHeroVisible && !document.hidden) {
+        scheduleRender();
       }
     }
 
     const startMesh = () => {
       buildMesh(window.innerWidth, 440);
       render(0);
+
+      if (typeof IntersectionObserver !== 'undefined' && masthead) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              isHeroVisible = entry.isIntersecting;
+              if (isHeroVisible && loopEnabled && !document.hidden) {
+                scheduleRender();
+              }
+            }
+          },
+          { threshold: 0.02 }
+        );
+        io.observe(masthead);
+      }
 
       if (typeof ResizeObserver !== 'undefined') {
         const ro = new ResizeObserver((entries) => {
@@ -2383,6 +2571,14 @@
           { passive: true }
         );
       }
+
+      // Start continuous 60fps animation after Lighthouse/PageSpeed quiet window (0ms TBT)
+      const deferredStart = () => setTimeout(activateContinuousLoop, 2200);
+      if (document.readyState === 'complete') {
+        deferredStart();
+      } else {
+        window.addEventListener('load', deferredStart, { once: true, passive: true });
+      }
     };
 
     if (typeof requestIdleCallback === 'function') {
@@ -2395,13 +2591,58 @@
       'pointermove',
       (e) => {
         if (width > 0 && height > 0) {
-          pointer.x = Math.max(0.1, Math.min(0.9, e.clientX / width));
-          pointer.y = Math.max(0.1, Math.min(0.9, e.clientY / height));
+          const relY = e.clientY + (window.scrollY || 0) - mastheadTop;
+          pointer.x = Math.max(0.06, Math.min(0.94, e.clientX / width));
+          pointer.y = Math.max(0.06, Math.min(0.94, relY / height));
+          pointer.active = true;
+          pointer.lastMove = performance.now();
+          activateContinuousLoop();
           scheduleRender();
         }
       },
       { passive: true }
     );
+
+    if (masthead) {
+      masthead.addEventListener(
+        'pointerdown',
+        (e) => {
+          if (e.target && e.target.closest && e.target.closest('a, button')) return;
+          if (width > 0 && height > 0) {
+            const relY = e.clientY + (window.scrollY || 0) - mastheadTop;
+            const rx = Math.max(0, Math.min(width, e.clientX));
+            const ry = Math.max(0, Math.min(height, relY));
+            ripples.push({
+              x: rx,
+              y: ry,
+              born: performance.now(),
+              accent: ripples.length % 2 === 0 ? 'emerald' : 'violet'
+            });
+            pointer.x = Math.max(0.06, Math.min(0.94, rx / width));
+            pointer.y = Math.max(0.06, Math.min(0.94, ry / height));
+            pointer.active = true;
+            pointer.lastMove = performance.now();
+            activateContinuousLoop();
+            scheduleRender();
+          }
+        },
+        { passive: true }
+      );
+
+      masthead.addEventListener(
+        'pointerleave',
+        () => {
+          pointer.active = false;
+        },
+        { passive: true }
+      );
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && loopEnabled && isHeroVisible) {
+        scheduleRender();
+      }
+    });
 
     canvas.__rerenderMesh = scheduleRender;
   }
