@@ -19,6 +19,29 @@
   const READING_LAYOUT_KEY = 'bl_reading_layout';
   const SUPPORTED_LANGS = ['ro', 'en', 'bg', 'es'];
 
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function safeRun(label, fn) {
+    try {
+      return fn();
+    } catch (err) {
+      if (typeof window !== 'undefined') {
+        window.__blRuntimeErrors = window.__blRuntimeErrors || [];
+        window.__blRuntimeErrors.push({ label, message: err && err.message ? err.message : String(err) });
+      }
+      if (typeof console !== 'undefined' && console.error) {
+        console.error(`[BL Editorial Runtime] Error in ${label}:`, err);
+      }
+      return undefined;
+    }
+  }
+
   const READING_SIZES = ['sm', 'md', 'lg', 'xl'];
   const READING_SIZE_LABELS = {
     sm: '90%',
@@ -3223,37 +3246,14 @@
       }
     });
 
-    initWorkspacesAndSections(currentLang, currentPillar);
-    syncPillarNavState(currentPillar);
-    applyTranslations(currentLang);
-    initLiveSearch(() => currentLang);
-    initHeroMesh();
-    initReadingControls();
-    initSinglePostEnhancements();
-    initCommunityEvents(() => currentLang);
-
-    if (currentPillar !== 'all') {
-      const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
-      const targetSec = activeWs && (
-        currentPillar === 'reports'
-          ? activeWs.querySelector('[data-reports-section]')
-          : activeWs.querySelector('[data-feed-section]')
-      );
-      if (targetSec) {
-        setTimeout(() => {
-          targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 60);
-      }
-    }
-
     window.addEventListener('hashchange', () => {
       const nextPillar = resolveInitialPillar();
       const hasWorkspaces = document.querySelectorAll('.bl-lang-workspace[data-lang-panel]').length > 0;
       if (hasWorkspaces) {
         if (nextPillar !== currentPillar) {
           currentPillar = nextPillar;
-          syncPillarNavState(currentPillar);
-          initWorkspacesAndSections(currentLang, currentPillar);
+          safeRun('hashchange:syncPillarNavState', () => syncPillarNavState(currentPillar));
+          safeRun('hashchange:initWorkspacesAndSections', () => initWorkspacesAndSections(currentLang, currentPillar));
         }
         if (currentPillar !== 'all') {
           const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
@@ -3262,7 +3262,7 @@
               ? activeWs.querySelector('[data-reports-section]')
               : activeWs.querySelector('[data-feed-section]')
           );
-          if (targetSec) {
+          if (targetSec && typeof targetSec.scrollIntoView === 'function') {
             targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
@@ -3293,8 +3293,10 @@
       });
     }
 
-    // Delegated clicks for Language Switchers & Pillar Filters
+    // Delegated clicks for Language Switchers & Pillar Filters (registered before subsystem boot)
     document.addEventListener('click', (e) => {
+      if (!e.target || typeof e.target.closest !== 'function') return;
+
       // 1. Language Switcher (`[data-set-lang]` or `[data-lang-switch]`)
       const langBtn = e.target.closest('[data-set-lang], [data-lang-switch]');
       if (langBtn) {
@@ -3327,15 +3329,19 @@
             return;
           }
 
-          const url = new URL(window.location.href);
-          url.searchParams.set('lang', currentLang);
-          window.history.replaceState({}, '', url.toString());
+          try {
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', currentLang);
+            window.history.replaceState({}, '', url.toString());
+          } catch (_) {}
 
-          initWorkspacesAndSections(currentLang, currentPillar);
-          applyTranslations(currentLang);
-          if (typeof window.__blSyncCommunityEvents === 'function') {
-            window.__blSyncCommunityEvents(currentLang);
-          }
+          safeRun('langSwitch:initWorkspacesAndSections', () => initWorkspacesAndSections(currentLang, currentPillar));
+          safeRun('langSwitch:applyTranslations', () => applyTranslations(currentLang));
+          safeRun('langSwitch:syncCommunityEvents', () => {
+            if (typeof window.__blSyncCommunityEvents === 'function') {
+              window.__blSyncCommunityEvents(currentLang);
+            }
+          });
         }
         return;
       }
@@ -3360,7 +3366,7 @@
 
         e.preventDefault();
         currentPillar = targetPillar;
-        syncPillarNavState(currentPillar);
+        safeRun('pillarClick:syncPillarNavState', () => syncPillarNavState(currentPillar));
 
         try {
           const url = new URL(window.location.href);
@@ -3369,7 +3375,7 @@
           window.history.replaceState({}, '', url.toString());
         } catch (_) {}
 
-        initWorkspacesAndSections(currentLang, currentPillar);
+        safeRun('pillarClick:initWorkspacesAndSections', () => initWorkspacesAndSections(currentLang, currentPillar));
 
         if (currentPillar !== 'all') {
           const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
@@ -3378,7 +3384,7 @@
               ? activeWs.querySelector('[data-reports-section]')
               : activeWs.querySelector('[data-feed-section]')
           );
-          if (targetSec) {
+          if (targetSec && typeof targetSec.scrollIntoView === 'function') {
             targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
@@ -3671,6 +3677,34 @@
           });
       }
     });
+
+    if (typeof window !== 'undefined') {
+      window.__blGetRuntimeState = () => ({ currentLang, currentPillar });
+    }
+
+    // Boot all subsystems inside error boundaries after critical navigation listeners are active
+    safeRun('initWorkspacesAndSections', () => initWorkspacesAndSections(currentLang, currentPillar));
+    safeRun('syncPillarNavState', () => syncPillarNavState(currentPillar));
+    safeRun('applyTranslations', () => applyTranslations(currentLang));
+    safeRun('initLiveSearch', () => initLiveSearch(() => currentLang));
+    safeRun('initHeroMesh', () => initHeroMesh());
+    safeRun('initReadingControls', () => initReadingControls());
+    safeRun('initSinglePostEnhancements', () => initSinglePostEnhancements());
+    safeRun('initCommunityEvents', () => initCommunityEvents(() => currentLang));
+
+    if (currentPillar !== 'all') {
+      const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
+      const targetSec = activeWs && (
+        currentPillar === 'reports'
+          ? activeWs.querySelector('[data-reports-section]')
+          : activeWs.querySelector('[data-feed-section]')
+      );
+      if (targetSec && typeof targetSec.scrollIntoView === 'function') {
+        setTimeout(() => {
+          targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
   }
 
   if (document.readyState === 'loading') {
