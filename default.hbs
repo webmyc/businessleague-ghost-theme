@@ -5,10 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="UT1oN-h5ElyvHfRewqnOVPeUpzojVF9qsQIt_VWtUjI" />
 
     <title>{{meta_title}}</title>
 
+    {{!-- Social Crawler / OpenGraph / X Card Metadata First (Must precede inline scripts for Twitterbot) --}}
+    {{ghost_head}}
+    {{#is "home"}}
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-ro-v3.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {{else is "post, page"}}
+        {{#if og_image}}
+    <meta name="twitter:image:src" content="{{og_image}}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+        {{else if feature_image}}
+    <meta property="og:image" content="{{img_url feature_image size="xl" format="jpeg" absolute="true"}}" />
+    <meta name="twitter:image" content="{{img_url feature_image size="xl" format="jpeg" absolute="true"}}" />
+    <meta name="twitter:image:src" content="{{img_url feature_image size="xl" format="jpeg" absolute="true"}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+        {{else}}
+            {{#has tag="reports-case-studies, data, statistici"}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-data-og-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-data-og-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-data-og-v3.jpg" />
+            {{else has tag="interviews, interviuri"}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-interviews-og-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-interviews-og-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-interviews-og-v3.jpg" />
+            {{else has tag="tutorials, ghiduri"}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-playbooks-og-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-playbooks-og-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-playbooks-og-v3.jpg" />
+            {{else has tag="product-updates"}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-product-og-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-product-og-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-cover-product-og-v3.jpg" />
+            {{else has tag="en"}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-en-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-en-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-en-v3.jpg" />
+            {{else has tag="bg"}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-bg-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-bg-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-bg-v3.jpg" />
+            {{else has tag="es"}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-es-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-es-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-es-v3.jpg" />
+            {{else}}
+    <meta property="og:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-ro-v3.jpg" />
+    <meta name="twitter:image" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-ro-v3.jpg" />
+    <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-ro-v3.jpg" />
+            {{/has}}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+        {{/if}}
+    {{else}}
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {{/is}}
+
     {{!-- Synchronous Zero-Flicker Language & Theme Detection Engine --}}
+    <meta name="color-scheme" content="dark light" />
     <script>
     (function() {
         var SUPPORTED = ['ro', 'en', 'bg', 'es'];
@@ -16,32 +79,26 @@
 
         // 1. Theme resolution (Default: BusinessLeague Signature Dark Mode)
         var savedTheme = null;
-        try { savedTheme = localStorage.getItem('bl_theme'); } catch (e) {}
+        try { savedTheme = localStorage.getItem('bl_theme') || localStorage.getItem('bl_editorial_theme'); } catch (e) {}
         var theme = (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : 'dark';
         html.setAttribute('data-theme', theme);
+        var csMeta = document.querySelector('meta[name="color-scheme"]');
+        if (csMeta) csMeta.content = theme;
         if (theme === 'dark') {
             html.classList.add('dark-mode');
         } else {
             html.classList.remove('dark-mode');
         }
 
-        // 2. Language resolution: ?lang= param -> /tag/{lang}/ -> saved preference -> browser navigator.language
+        // 2. Language resolution: ?lang= param -> /tag/{lang}/ -> saved preference -> default 'ro'
         var urlParams = new URLSearchParams(window.location.search);
         var queryLang = (urlParams.get('lang') || '').toLowerCase();
         var pathMatch = window.location.pathname.match(/^\/tag\/(ro|en|bg|es)(\/|$)/i);
         var pathLang = pathMatch ? pathMatch[1].toLowerCase() : '';
         var savedLang = '';
-        try { savedLang = (localStorage.getItem('bl_lang') || '').toLowerCase(); } catch (e) {}
-
-        var browserLang = '';
-        var navLangs = navigator.languages || [navigator.language || 'ro'];
-        for (var i = 0; i < navLangs.length; i++) {
-            var code = String(navLangs[i] || '').slice(0, 2).toLowerCase();
-            if (SUPPORTED.indexOf(code) !== -1) {
-                browserLang = code;
-                break;
-            }
-        }
+        try {
+            savedLang = (localStorage.getItem('bl_editorial_lang') || localStorage.getItem('bl_lang') || '').toLowerCase();
+        } catch (e) {}
 
         var activeLang = 'ro';
         if (SUPPORTED.indexOf(queryLang) !== -1) {
@@ -50,13 +107,15 @@
             activeLang = pathLang;
         } else if (SUPPORTED.indexOf(savedLang) !== -1) {
             activeLang = savedLang;
-        } else if (SUPPORTED.indexOf(browserLang) !== -1) {
-            activeLang = browserLang;
         }
 
         html.setAttribute('data-bl-lang', activeLang);
+        html.setAttribute('data-active-lang', activeLang);
         html.setAttribute('lang', activeLang);
-        try { localStorage.setItem('bl_lang', activeLang); } catch (e) {}
+        try {
+            localStorage.setItem('bl_lang', activeLang);
+            localStorage.setItem('bl_editorial_lang', activeLang);
+        } catch (e) {}
 
         // 3. Reader Typography & Layout Preferences (Font Size, Sans/Serif, Standard/Zen)
         try {
@@ -70,14 +129,18 @@
     })();
     </script>
 
-    {{!-- Google Fonts: Onest (200 Thin to 800 ExtraBold Display), Inter (Body), Newsreader (Editorial Longform Serif), Roboto Mono (Telemetry) --}}
+    {{!-- Google Fonts + Ghost Image CDN Preconnect & Non-Blocking Font Stylesheet --}}
+    <link rel="preconnect" href="https://storage.ghost.io" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Onest:wght@200;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Onest:wght@200;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Onest:wght@200;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap"></noscript>
 
-    {{!-- Base Ghost Koenig Card Styles + BusinessLeague Editorial Design System --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen-fixed.css"}}" />
+    {{!-- BusinessLeague Editorial Design System + Conditional Ghost Card Styles on Posts/Pages --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/businessleague-editorial.css"}}" />
+    {{#is "post, page"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen-fixed.css"}}" media="print" onload="this.media='all'" />
+    {{/is}}
 
     {{!-- Organization & WebSite Structured Data for SEO / AEO / GEO / LLMs --}}
     <script type="application/ld+json">
@@ -116,8 +179,6 @@
         ]
     }
     </script>
-
-    {{ghost_head}}
 </head>
 <body class="{{body_class}}">
 <div class="bl-reading-progress" id="bl-reading-progress" aria-hidden="true"></div>
@@ -132,9 +193,9 @@
                     <img class="bl-brand-logo"
                          src="{{asset "images/bl-logo.png"}}"
                          alt="BusinessLeague"
-                         width="148"
+                         width="122"
                          height="36"
-                         fetchpriority="high" />
+                         decoding="async" />
                     <span class="bl-brand-badge">Editorial</span>
                     <span class="bl-brand-tagline" data-i18n="header_tagline">Performance Marketing Journal</span>
                 </a>
@@ -146,6 +207,8 @@
                             <input type="search"
                                    id="bl-search-input"
                                    class="bl-search-input"
+                                   role="combobox"
+                                   aria-autocomplete="list"
                                    placeholder="Caută articole, studii, branduri..."
                                    data-i18n-placeholder="search_placeholder"
                                    autocomplete="off"
@@ -199,15 +262,29 @@
                         <span data-i18n="cta_join">Intră în Ligă</span>
                         <span aria-hidden="true">↗</span>
                     </a>
+
+                    <button class="bl-mobile-menu-btn" id="bl-mobile-menu-toggle" type="button" aria-label="Deschide meniul de secțiuni" aria-expanded="false" aria-controls="bl-header-bottom">
+                        <svg class="bl-icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <svg class="bl-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        <span class="bl-mobile-menu-label" data-i18n="mobile_menu_label">Secțiuni</span>
+                    </button>
                 </div>
             </div>
         </div>
 
         {{!-- ROW 2: Full-Width Editorial Rubric Bar + Ecosystem Quicklinks --}}
-        <div class="bl-header-bottom">
+        <div class="bl-header-bottom" id="bl-header-bottom">
             <div class="bl-header-bottom-inner">
                 <nav class="bl-nav" aria-label="Editorial Categories">
                     <a class="bl-nav-link is-active" href="{{@site.url}}/" data-pillar-link="all" data-i18n="pillar_all">Toate Secțiunile</a>
+                    <a class="bl-nav-link" href="{{@site.url}}/#pillar-reports" data-pillar-link="reports" data-i18n="pillar_reports">Rapoarte &amp; Whitepapers</a>
                     <a class="bl-nav-link" href="{{@site.url}}/#pillar-data" data-pillar-link="data" data-i18n="pillar_data">Date &amp; Radiografii de Piață</a>
                     <a class="bl-nav-link" href="{{@site.url}}/#pillar-interviews" data-pillar-link="interviews" data-i18n="pillar_interviews">Interviuri &amp; Studii de Caz</a>
                     <a class="bl-nav-link" href="{{@site.url}}/#pillar-playbooks" data-pillar-link="playbooks" data-i18n="pillar_playbooks">Playbooks &amp; Strategie</a>
@@ -222,8 +299,8 @@
                         <span>Community Hub</span>
                         <span aria-hidden="true">↗</span>
                     </a>
-                    <a class="bl-nav-quicklink" href="https://newsroom.businessleague.com" target="_blank" rel="noopener">
-                        <span>Substack</span>
+                    <a class="bl-cta-btn bl-mobile-drawer-cta" href="https://businessleague.com" target="_blank" rel="noopener">
+                        <span data-i18n="cta_join">Intră în Ligă</span>
                         <span aria-hidden="true">↗</span>
                     </a>
                 </div>
@@ -244,8 +321,22 @@
     {{> "lightbox"}}
 {{/is}}
 
-<script src="{{asset "built/casper.js"}}" defer></script>
-<script src="{{asset "js/businessleague-editorial.js"}}" defer></script>
+{{!-- Server-Rendered Multilingual Search Index inside inert <template> (Zero DOM bloat & Zero API Key Required) --}}
+{{#get "posts" limit="150" include="tags" as |search_posts|}}
+    {{#if search_posts}}
+        <template id="bl-ghost-search-data">
+            {{#foreach search_posts}}
+                <span data-s-slug="{{slug}}"
+                      data-s-url="{{url}}"
+                      data-s-title="{{title}}"
+                      data-s-date="{{date format="DD MMM YYYY"}}"
+                      data-s-tags="{{#foreach tags visibility="all"}}{{slug}},{{/foreach}}"></span>
+            {{/foreach}}
+        </template>
+    {{/if}}
+{{/get}}
+
+<script src="{{asset "built/businessleague-editorial.js"}}" defer></script>
 
 {{ghost_foot}}
 </body>

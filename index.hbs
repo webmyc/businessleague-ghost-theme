@@ -5,32 +5,40 @@
     <section class="bl-cinematic-masthead">
         <canvas id="bl-hero-mesh" class="bl-hero-mesh" aria-hidden="true"></canvas>
 
+        {{!-- Fine-Line BusinessLeague Winged Citadel, 4-Tier Arena Rings & ECG Pulse Tattoo Watermark --}}
+        <svg class="bl-tattoo-bg-ink" viewBox="0 0 400 400" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="0.95">
+                {{!-- 4 Concentric Championship Tier Rings (Unicorns, Wizards, Lobsters, Rookies) --}}
+                <circle cx="200" cy="200" r="188" stroke-dasharray="2 6"/>
+                <circle cx="200" cy="200" r="154"/>
+                <circle cx="200" cy="200" r="118" stroke-dasharray="5 4"/>
+                <circle cx="200" cy="200" r="82" stroke-opacity="0.55"/>
+                {{!-- Crosshair Axes --}}
+                <line x1="200" y1="6" x2="200" y2="394" stroke-dasharray="3 6" stroke-opacity="0.5"/>
+                <line x1="6" y1="200" x2="394" y2="200" stroke-dasharray="3 6" stroke-opacity="0.5"/>
+                {{!-- BusinessLeague Iconic Winged Citadel Skyline (Fine-Line Blueprint) --}}
+                {{!-- Central Spire --}}
+                <path d="M200 42 L213 128 L217 306 L183 306 L187 128 Z" fill="currentColor" fill-opacity="0.08"/>
+                <line x1="200" y1="42" x2="200" y2="306"/>
+                <polygon points="200,98 206,114 200,130 194,114" fill="currentColor" fill-opacity="0.22"/>
+                {{!-- Inner Flanking Prism Towers --}}
+                <path d="M150 138 L177 112 L177 306 L150 306 Z" fill="currentColor" fill-opacity="0.05"/>
+                <line x1="163" y1="125" x2="163" y2="306" stroke-dasharray="2 4"/>
+                <path d="M223 102 L250 130 L250 306 L223 306 Z" fill="currentColor" fill-opacity="0.06"/>
+                <line x1="236" y1="116" x2="236" y2="306" stroke-dasharray="2 4"/>
+                {{!-- Outer Citadel Towers --}}
+                <path d="M120 186 L144 168 L144 306 L120 306 Z"/>
+                <path d="M256 172 L280 192 L280 306 L256 306 Z"/>
+                {{!-- Ascending Left & Right BusinessLeague Wings --}}
+                <path d="M72 224 L114 264 L114 306 L92 306 Z" fill="currentColor" fill-opacity="0.12"/>
+                <path d="M328 220 L286 264 L286 306 L308 306 Z" fill="currentColor" fill-opacity="0.12"/>
+                {{!-- Signature BusinessLeague ECG Pulse Baseline --}}
+                <path d="M36 324 H146 L160 310 L172 324 H190 L204 286 L220 354 L234 304 L246 324 H364" stroke-width="1.25"/>
+            </g>
+        </svg>
+
         <div class="bl-container">
-            {{!-- Top Live Telemetry & Edition Bar --}}
-            <div class="bl-edition-bar">
-                <div class="bl-edition-left">
-                    <span class="bl-pulse-dot" aria-hidden="true"></span>
-                    <span data-i18n="masthead_eyebrow">BUSINESSLEAGUE EDITORIAL &bull; PERFORMANȚĂ PE CIFRE REALE</span>
-                </div>
-
-                <div class="bl-edition-metrics" aria-label="BusinessLeague Live Scoreboard">
-                    <span class="bl-metric-item"><strong>2.28M</strong> <span data-i18n="metric_sales_2025">vânzări 2025</span></span>
-                    <span class="bl-metric-sep">&bull;</span>
-                    <span class="bl-metric-item"><strong>16.5M+</strong> <span data-i18n="metric_sales">vânzări totale</span></span>
-                    <span class="bl-metric-sep">&bull;</span>
-                    <span class="bl-metric-item"><strong>&euro;832M+</strong> <span data-i18n="metric_gmv">valoare generată</span></span>
-                    <span class="bl-metric-sep">&bull;</span>
-                    <span class="bl-metric-item"><strong>11.6x</strong> <span data-i18n="metric_roas">ROAS mediu</span></span>
-                </div>
-
-                <a class="bl-edition-film-pill" href="https://start.businessleague.com/#film" target="_blank" rel="noopener">
-                    <svg width="10" height="12" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.5v13l12-6.5z" fill="currentColor"/></svg>
-                    <span data-i18n="masthead_film_cta">Vezi Filmul (1:44)</span>
-                    <span aria-hidden="true">↗</span>
-                </a>
-            </div>
-
-            {{!-- Asymmetric Maverick Display Statement (Onest 200 Thin + Onest 800 Shine) --}}
+            {{!-- Asymmetric Maverick Display Statement (Onest 300 Thin Single-Line + Onest 800 Shine Next-Line) --}}
             <div class="bl-maverick-stage">
                 <div class="bl-maverick-headline-col">
                     <h1 class="bl-masthead-title" data-i18n-html="masthead_title_html">
@@ -39,15 +47,28 @@
                     </h1>
                 </div>
                 <div class="bl-maverick-creed-col">
+                    <div class="bl-tattoo-crest" title="BusinessLeague Citadel — In Numbers We Trust">
+                        <svg class="bl-tattoo-sigil" viewBox="0 0 48 48" aria-hidden="true">
+                            <circle cx="24" cy="24" r="21.5" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/>
+                            {{!-- BusinessLeague Winged Citadel Mini-Sigil --}}
+                            <path d="M24 6 L27 17 L27.5 36 L20.5 36 L21 17 Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.15"/>
+                            <path d="M14.5 19 L19 15 L19 36 L14.5 36 Z" fill="none" stroke="currentColor" stroke-width="1.05"/>
+                            <path d="M29 14 L33.5 18 L33.5 36 L29 36 Z" fill="none" stroke="currentColor" stroke-width="1.05"/>
+                            <path d="M7.5 25 L13 30 L13 36 L10 36 Z" fill="currentColor"/>
+                            <path d="M40.5 25 L35 30 L35 36 L38 36 Z" fill="currentColor"/>
+                            <path d="M9 39 H20 L22.5 35 L25.5 42 L28 39 H39" fill="none" stroke="currentColor" stroke-width="1.15"/>
+                        </svg>
+                        <div class="bl-tattoo-motto">
+                            <span class="bl-tattoo-latin">SINE FICTIONE // IN DATA VERITAS</span>
+                            <span class="bl-tattoo-sub">SKIN IN THE GAME &bull; EST. MMVIII</span>
+                        </div>
+                    </div>
                     <blockquote class="bl-maverick-creed" data-i18n="masthead_subtitle">
                         Zero teorie. Zero clișee. Radiografii pe milioane de comenzi, conversații fără perdea cu campionii din e-commerce și arhitectura primului campionat descentralizat din lume.
                     </blockquote>
                     <div class="bl-maverick-meta-links">
                         <a href="https://start.businessleague.com" target="_blank" rel="noopener" class="bl-inline-arrow-link">
                             <span data-i18n="masthead_hub_link">Explorează Community Hub-ul</span> <span aria-hidden="true">→</span>
-                        </a>
-                        <a href="https://newsroom.businessleague.com" target="_blank" rel="noopener" class="bl-inline-arrow-link">
-                            <span>Substack Newsroom (14,000+)</span> <span aria-hidden="true">↗</span>
                         </a>
                     </div>
                 </div>
@@ -56,10 +77,26 @@
     </section>
 
     <div class="bl-container">
-        {{!-- 4 Strict Language Editorial Workspaces (Zero Cross-Language Mixing) --}}
-        {{> "home-workspace" lang_code="ro" lang_filter="tag:-en+tag:-bg+tag:-es"}}
-        {{> "home-workspace" lang_code="en" lang_filter="tag:en"}}
-        {{> "home-workspace" lang_code="bg" lang_filter="tag:bg"}}
-        {{> "home-workspace" lang_code="es" lang_filter="tag:es"}}
+        {{!-- 4 Strict Language Editorial Workspaces (Zero Cross-Language Mixing, non-default languages wrapped in inert <template> until activated) --}}
+        {{> "home-workspace" lang_code="ro" is_default_lang=true lang_filter="tag:-[en,hash-en,bg,hash-bg,es,hash-es]"}}
+        {{> "home-workspace" lang_code="en" lang_filter="tag:[en,hash-en]"}}
+        {{> "home-workspace" lang_code="bg" lang_filter="tag:[bg,hash-bg]"}}
+        {{> "home-workspace" lang_code="es" lang_filter="tag:[es,hash-es]"}}
     </div>
+    <script>
+    (function(){
+        var lang = document.documentElement.getAttribute('data-bl-lang') || 'ro';
+        if (lang !== 'ro') {
+            var roWs = document.querySelector('.bl-lang-workspace[data-lang-panel="ro"]');
+            var targetWs = document.querySelector('.bl-lang-workspace[data-lang-panel="' + lang + '"]');
+            if (roWs) { roWs.classList.remove('is-active'); roWs.hidden = true; }
+            if (targetWs) {
+                var tpl = targetWs.querySelector('template[data-ws-template]');
+                if (tpl) { targetWs.appendChild(tpl.content.cloneNode(true)); tpl.remove(); }
+                targetWs.hidden = false;
+                targetWs.classList.add('is-active');
+            }
+        }
+    })();
+    </script>
 </main>

@@ -44,6 +44,7 @@
       cover_story_tag: 'COVER STORY // #01',
       nav_home: 'Toate Secțiunile',
       nav_all: 'Toate Secțiunile',
+      nav_reports: 'Rapoarte & Whitepapers (PDF)',
       nav_interviews: 'Interviuri & Studii de Caz',
       nav_data: 'Date & Radiografii de Piață',
       nav_playbooks: 'Playbooks & Strategie',
@@ -51,16 +52,25 @@
       nav_product: 'Produs & Tech',
       nav_corporate: '2Performant & BVB',
       pillar_all: 'Toate Secțiunile',
+      pillar_reports: 'Rapoarte & Whitepapers',
       pillar_data: 'Date & Radiografii de Piață',
       pillar_interviews: 'Interviuri & Studii de Caz',
       pillar_playbooks: 'Playbooks & Strategie',
       pillar_competition: 'Competiție & Evenimente',
       pillar_product: 'Produs & Tech',
       pillar_corporate: '2Performant & BVB',
+      sec_reports_eyebrow: 'RAPOARTE DE CATEGORIE & WHITEPAPERS // STUDII PDF COMPLETE',
+      sec_reports_title: 'Radiografiile E-Commerce BusinessLeague (PDF)',
+      sec_reports_subtitle:
+        'Descarcă sau deschide în tab nou rapoartele integrale pe verticale — bazate pe milioane de comenzi reale din ecosistemul BusinessLeague.',
+      report_open_pdf: 'Deschide PDF-ul',
+      report_read_article: 'Citește sinteza →',
+      report_all_data: 'Toate analizele de piață →',
       search_placeholder: 'Caută articole, studii, branduri...',
       search_no_results: 'Niciun articol găsit pentru căutarea ta.',
       search_results_label: 'REZULTATE INSTANT',
       cta_join: 'Intră în Ligă',
+      mobile_menu_label: 'Secțiuni',
       read_lead: 'Citește Cover Story-ul',
       read_article: 'Citește',
       hero_side_title: 'În Prim-Plan • Selecția Redacției',
@@ -119,13 +129,34 @@
       footer_col_pillars: 'RUBRICI EDITORIALE',
       footer_col_editions: 'EDIȚII & CANALE',
       footer_col_2p: '2PERFORMANT & IR',
+      footer_bl_desc:
+        'Primul campionat deschis și descentralizat de performance marketing din lume. Marketerii și magazinele online concurează pe vânzări reale și transparente — într-un ecosistem care funcționează ca o comunitate.',
+      footer_2p_desc:
+        'BusinessLeague este dezvoltat de 2Performant Network SA — prima companie românească de tehnologie (martech) listată la Bursa de Valori București (BVB: 2P). 17+ ani de inovație în afiliere și e-commerce.',
+      footer_hub_cta: 'Explorează Hub-ul Comunității',
+      footer_bvb_label: 'Listată pe Bursa de Valori București',
+      footer_pillars: 'Piloni Editoriali',
+      footer_editions: 'Ediții & Ecosistem',
+      footer_col_platform: 'Platformă & 2Performant',
+      pulse_sub_kicker: 'THE LEAGUE PULSE • WEEKLY BRIEFING',
+      pulse_sub_archive_badge: 'ARHIVA /PULSE ↗',
+      pulse_sub_title: 'Abonează-te la The League Pulse',
+      pulse_sub_desc: '1 email pe săptămână cu clasamentele live, studii de caz pe cifre reale și mișcările din campionat.',
+      pulse_sub_placeholder: 'Adresa ta de email...',
+      pulse_sub_btn: 'Abonează-te →',
+      pulse_sub_direct_link: 'Abonare directă (#pulse) ↗',
+      pulse_sub_archive_link: 'Citește Arhiva /pulse ↗',
+      pulse_sub_note: 'Fără spam. Direct pe',
       badge_interviews: 'INTERVIU & STUDIU DE CAZ',
       badge_data: 'DATE & ANALIZĂ PIAȚĂ',
       badge_playbooks: 'PLAYBOOK & STRATEGIE',
       badge_competition: 'COMPETIȚIE & LIGĂ',
       badge_product: 'PRODUS & TECH',
       badge_corporate: '2PERFORMANT & BVB',
-      badge_general: 'EDITORIAL'
+      badge_general: 'EDITORIAL',
+      load_more_btn: 'Încarcă mai multe articole',
+      load_more_loading: 'Se încarcă arhiva...',
+      load_more_done: 'Toate articolele au fost încărcate'
     },
     en: {
       header_tagline: 'THE PERFORMANCE MARKETING JOURNAL',
@@ -143,6 +174,7 @@
       cover_story_tag: 'COVER STORY // #01',
       nav_home: 'All Sections',
       nav_all: 'All Sections',
+      nav_reports: 'Reports & Whitepapers (PDF)',
       nav_interviews: 'Interviews & Case Studies',
       nav_data: 'Market Data & Reports',
       nav_playbooks: 'Playbooks & Strategy',
@@ -150,16 +182,25 @@
       nav_product: 'Product & Tech',
       nav_corporate: '2Performant & IR',
       pillar_all: 'All Sections',
+      pillar_reports: 'Reports & Whitepapers',
       pillar_data: 'Market Data & Reports',
       pillar_interviews: 'Interviews & Case Studies',
       pillar_playbooks: 'Playbooks & Strategy',
       pillar_competition: 'Competition & Events',
       pillar_product: 'Product & Tech',
       pillar_corporate: '2Performant & IR',
+      sec_reports_eyebrow: 'CATEGORY REPORTS & WHITEPAPERS // FULL PDF STUDIES',
+      sec_reports_title: 'BusinessLeague E-Commerce Sector Reports (PDF)',
+      sec_reports_subtitle:
+        'Open or download the complete vertical whitepapers in a new tab — built on millions of verified e-commerce orders across BusinessLeague.',
+      report_open_pdf: 'Open Full PDF',
+      report_read_article: 'Read breakdown →',
+      report_all_data: 'All market intelligence →',
       search_placeholder: 'Search stories, case studies, brands...',
       search_no_results: 'No matching stories found.',
       search_results_label: 'INSTANT RESULTS',
       cta_join: 'Enter the League',
+      mobile_menu_label: 'Sections',
       read_lead: 'Read Cover Story',
       read_article: 'Read story',
       hero_side_title: 'Spotlight • Editor’s Picks',
@@ -218,13 +259,34 @@
       footer_col_pillars: 'EDITORIAL PILLARS',
       footer_col_editions: 'EDITIONS & CHANNELS',
       footer_col_2p: '2PERFORMANT & IR',
+      footer_bl_desc:
+        'The world’s first open, decentralized performance marketing championship. Marketers and online stores compete on real, transparent sales — inside an ecosystem that operates as a community.',
+      footer_2p_desc:
+        'BusinessLeague is built by 2Performant Network SA — the first Romanian martech company listed on the Bucharest Stock Exchange (BVB: 2P). 17+ years of affiliate & e-commerce innovation.',
+      footer_hub_cta: 'Explore the Community Hub',
+      footer_bvb_label: 'Listed on the Bucharest Stock Exchange',
+      footer_pillars: 'Editorial Pillars',
+      footer_editions: 'Editions & Ecosystem',
+      footer_col_platform: 'Platform & 2Performant',
+      pulse_sub_kicker: 'THE LEAGUE PULSE • WEEKLY BRIEFING',
+      pulse_sub_archive_badge: 'ARCHIVE /PULSE ↗',
+      pulse_sub_title: 'Subscribe to The League Pulse',
+      pulse_sub_desc: '1 email per week with live championship standings, real-numbers case studies, and key arena moves.',
+      pulse_sub_placeholder: 'Your email address...',
+      pulse_sub_btn: 'Subscribe →',
+      pulse_sub_direct_link: 'Direct subscribe (#pulse) ↗',
+      pulse_sub_archive_link: 'Read /pulse Archive ↗',
+      pulse_sub_note: 'Zero spam. Powered by',
       badge_interviews: 'INTERVIEW & CASE STUDY',
       badge_data: 'MARKET INTELLIGENCE',
       badge_playbooks: 'GROWTH PLAYBOOK',
       badge_competition: 'COMPETITION & ARENA',
       badge_product: 'PRODUCT & TECH',
-      badge_corporate: '2PERFORMANT & IR',
-      badge_general: 'EDITORIAL'
+      badge_corporate: '2PERFORMANT & BVB',
+      badge_general: 'EDITORIAL',
+      load_more_btn: 'Load more articles',
+      load_more_loading: 'Loading archive...',
+      load_more_done: 'All articles loaded'
     },
     bg: {
       header_tagline: 'ИЗДАНИЕ ЗА ПЪРФОРМАНС МАРКЕТИНГ',
@@ -242,6 +304,7 @@
       cover_story_tag: 'ВОДЕЩА ТЕМА // #01',
       nav_home: 'Всички Секции',
       nav_all: 'Всички Секции',
+      nav_reports: 'Доклади и Whitepapers (PDF)',
       nav_interviews: 'Интервюта и Казуси',
       nav_data: 'Пазарни Данни',
       nav_playbooks: 'Стратегии и Наръчници',
@@ -249,16 +312,25 @@
       nav_product: 'Продукт и Технологии',
       nav_corporate: '2Performant & BVB',
       pillar_all: 'Всички Секции',
+      pillar_reports: 'Доклади и Whitepapers',
       pillar_data: 'Пазарни Данни и Анализи',
       pillar_interviews: 'Интервюта и Казуси',
       pillar_playbooks: 'Стратегии и Наръчници',
       pillar_competition: 'Състезание и Класации',
       pillar_product: 'Продукт и Технологии',
       pillar_corporate: '2Performant & Инвеститори',
+      sec_reports_eyebrow: 'СЕКТОРНИ ДОКЛАДИ И WHITEPAPERS // ПЪЛНИ PDF ИЗСЛЕДВАНИЯ',
+      sec_reports_title: 'Секторни Доклади за Е-Търговията на BusinessLeague (PDF)',
+      sec_reports_subtitle:
+        'Отворете в нов таб пълните PDF изследвания по вертикали — базирани на милиони реални поръчки в екосистемата на BusinessLeague.',
+      report_open_pdf: 'Отвори PDF доклада',
+      report_read_article: 'Прочети анализа →',
+      report_all_data: 'Всички пазарни анализи →',
       search_placeholder: 'Търсене на статии, анализи, брандове...',
       search_no_results: 'Няма намерени статии.',
       search_results_label: 'РЕЗУЛТАТИ',
       cta_join: 'Влез в Лигата',
+      mobile_menu_label: 'Рубрики',
       read_lead: 'Прочети водещата статия',
       read_article: 'Прочети',
       hero_side_title: 'На Фокус • Изборът на Редакцията',
@@ -317,13 +389,34 @@
       footer_col_pillars: 'РЕДАКЦИОННИ РУБРИКИ',
       footer_col_editions: 'ИЗДАНИЯ И КАНАЛИ',
       footer_col_2p: '2PERFORMANT & IR',
+      footer_bl_desc:
+        'Първият отворен децентрализиран шампионат по пърформанс маркетинг в света. Маркетолози и онлайн магазини се състезават на база реални и прозрачни продажби.',
+      footer_2p_desc:
+        'BusinessLeague се разработва от 2Performant Network SA — първата румънска martech компания, листната на Букурещката фондова борса (BVB: 2P).',
+      footer_hub_cta: 'Разгледай Общностния Хъб',
+      footer_bvb_label: 'Листната на Букурещката фондова борса',
+      footer_pillars: 'Редакционни Рубрики',
+      footer_editions: 'Издания и Екосистема',
+      footer_col_platform: 'Платформа и 2Performant',
+      pulse_sub_kicker: 'THE LEAGUE PULSE • СЕДМИЧЕН БЮЛЕТИН',
+      pulse_sub_archive_badge: 'АРХИВ /PULSE ↗',
+      pulse_sub_title: 'Абонирайте се за The League Pulse',
+      pulse_sub_desc: '1 имейл седмично с класации на живо, казуси с реални числа и новини от шампионата.',
+      pulse_sub_placeholder: 'Вашият имейл адрес...',
+      pulse_sub_btn: 'Абонирай се →',
+      pulse_sub_direct_link: 'Директен абонамент (#pulse) ↗',
+      pulse_sub_archive_link: 'Виж Архива /pulse ↗',
+      pulse_sub_note: 'Без спам. Директно в',
       badge_interviews: 'ИНТЕРВЮ И КАЗУС',
       badge_data: 'ПАЗАРЕН АНАЛИЗ',
       badge_playbooks: 'ПРАКТИЧЕСКИ НАРЪЧНИК',
       badge_competition: 'СЪСТЕЗАНИЕ',
       badge_product: 'ПРОДУКТ И ТЕХНОЛОГИИ',
       badge_corporate: '2PERFORMANT & BVB',
-      badge_general: 'РЕДАКЦИОННО'
+      badge_general: 'РЕДАКЦИОННО',
+      load_more_btn: 'Зареди още статии',
+      load_more_loading: 'Зареждане на архива...',
+      load_more_done: 'Всички статии са заредени'
     },
     es: {
       header_tagline: 'PUBLICACIÓN DE PERFORMANCE MARKETING',
@@ -341,6 +434,7 @@
       cover_story_tag: 'PORTADA // #01',
       nav_home: 'Todas las Secciones',
       nav_all: 'Todas las Secciones',
+      nav_reports: 'Informes y Whitepapers (PDF)',
       nav_interviews: 'Entrevistas y Casos',
       nav_data: 'Datos y Mercado',
       nav_playbooks: 'Playbooks y Estrategia',
@@ -348,16 +442,25 @@
       nav_product: 'Producto y Tech',
       nav_corporate: '2Performant e IR',
       pillar_all: 'Todas las Secciones',
+      pillar_reports: 'Informes y Whitepapers',
       pillar_data: 'Datos y Análisis de Mercado',
       pillar_interviews: 'Entrevistas y Casos de Estudio',
       pillar_playbooks: 'Playbooks y Estrategia',
       pillar_competition: 'Competición y Eventos',
       pillar_product: 'Producto y Tech',
       pillar_corporate: '2Performant e Inversores',
+      sec_reports_eyebrow: 'INFORMES DE CATEGORÍA Y WHITEPAPERS // ESTUDIOS PDF COMPLETOS',
+      sec_reports_title: 'Radiografías de E-Commerce BusinessLeague (PDF)',
+      sec_reports_subtitle:
+        'Abre o descarga en una nueva pestaña los informes completos por vertical — basados en millones de pedidos reales en BusinessLeague.',
+      report_open_pdf: 'Abrir PDF completo',
+      report_read_article: 'Leer resumen →',
+      report_all_data: 'Todos los análisis de mercado →',
       search_placeholder: 'Buscar artículos, estudios, marcas...',
       search_no_results: 'No se encontraron artículos.',
       search_results_label: 'RESULTADOS INSTANTÁNEOS',
       cta_join: 'Entrar en la Liga',
+      mobile_menu_label: 'Secciones',
       read_lead: 'Leer Artículo de Portada',
       read_article: 'Leer',
       hero_side_title: 'En Primer Plano • Selección Editorial',
@@ -415,15 +518,552 @@
       footer_col_pillars: 'PILARES EDITORIALES',
       footer_col_editions: 'EDICIONES Y CANALES',
       footer_col_2p: '2PERFORMANT & IR',
+      footer_bl_desc:
+        'El primer campeonato abierto y descentralizado de performance marketing del mundo. Marketers y tiendas online compiten con ventas reales y transparentes.',
+      footer_2p_desc:
+        'BusinessLeague es desarrollado por 2Performant Network SA — la primera empresa tecnológica (martech) rumana cotizada en la Bolsa de Valores de Bucarest (BVB: 2P).',
+      footer_hub_cta: 'Explorar el Community Hub',
+      footer_bvb_label: 'Cotizada en la Bolsa de Valores de Bucarest',
+      footer_pillars: 'Pilares Editoriales',
+      footer_editions: 'Ediciones y Ecosistema',
+      footer_col_platform: 'Plataforma y 2Performant',
+      pulse_sub_kicker: 'THE LEAGUE PULSE • BOLETÍN SEMANAL',
+      pulse_sub_archive_badge: 'ARCHIVO /PULSE ↗',
+      pulse_sub_title: 'Suscríbete a The League Pulse',
+      pulse_sub_desc: '1 email por semana con clasificaciones en vivo, casos de estudio con cifras reales y novedades de la liga.',
+      pulse_sub_placeholder: 'Tu correo electrónico...',
+      pulse_sub_btn: 'Suscribirse →',
+      pulse_sub_direct_link: 'Suscripción directa (#pulse) ↗',
+      pulse_sub_archive_link: 'Leer Archivo /pulse ↗',
+      pulse_sub_note: 'Cero spam. Directo en',
       badge_interviews: 'ENTREVISTA Y CASO',
       badge_data: 'ANÁLISIS DE MERCADO',
       badge_playbooks: 'PLAYBOOK Y ESTRATEGIA',
       badge_competition: 'COMPETICIÓN',
       badge_product: 'PRODUCTO Y TECH',
       badge_corporate: '2PERFORMANT & BVB',
-      badge_general: 'EDITORIAL'
+      badge_general: 'EDITORIAL',
+      load_more_btn: 'Cargar más artículos',
+      load_more_loading: 'Cargando archivo...',
+      load_more_done: 'Todos los artículos cargados'
     }
   };
+
+  /**
+   * 0A. Category Reports & Whitepapers (PDF) Registry
+   * Maps all 5 official BusinessLeague category reports with their rendered PDF cover images,
+   * direct PDF URLs (RO & EN), key metrics, and sibling article slugs across all 4 languages.
+   */
+  const CATEGORY_REPORTS = [
+    {
+      id: 'pharma',
+      clusterId: 'cluster-pharma-1-3m-2026',
+      dateLabel: 'OCT 2026',
+      kicker: {
+        ro: 'RAPORT CATEGORIE // PHARMA',
+        en: 'SECTOR REPORT // PHARMA',
+        bg: 'СЕКТОРЕН ДОКЛАД // ФАРМА',
+        es: 'INFORME SECTORIAL // PHARMA'
+      },
+      title: {
+        ro: 'Pharma & Health: 1,31M comenzi unice în 33 de luni',
+        en: 'Pharma & Health: 1.31M Unique Orders in 33 Months',
+        bg: 'Фарма и Здраве: 1,31 млн. поръчки за 33 месеца',
+        es: 'Pharma y Salud: 1,31M de pedidos únicos en 33 meses'
+      },
+      desc: {
+        ro: 'Radiografia completă a categoriei Pharma în BusinessLeague: €38,15M vânzări fără TVA, 29 de farmacii și magazine analizate, sezonalitate și comportament de achiziție.',
+        en: 'Complete breakdown of the Pharma vertical in BusinessLeague: €38.15M net sales across 29 stores, conversion benchmarks, and mobile vs. desktop buyer behavior.',
+        bg: 'Пълна рентгенова снимка на категория Фарма в BusinessLeague: €38,15 млн. продажби без ДДС, 29 магазина, сезонност и потребителско поведение.',
+        es: 'Radiografía completa de la categoría Pharma en BusinessLeague: €38,15M en ventas netas, 29 tiendas analizadas, estacionalidad y conversión.'
+      },
+      metrics: {
+        ro: ['1,31M comenzi', '€38,15M vânzări', '29 magazine'],
+        en: ['1.31M orders', '€38.15M sales', '29 stores'],
+        bg: ['1,31M поръчки', '€38,15M продажби', '29 магазина'],
+        es: ['1,31M pedidos', '€38,15M ventas', '29 tiendas']
+      },
+      pdf: {
+        ro: 'https://blog.businessleague.com/content/files/2026/10/BusinessLeague_Pharma_RO_v6.pdf',
+        en: 'https://blog.businessleague.com/content/files/2026/10/BusinessLeague_Pharma_EN_v6.pdf'
+      },
+      cover: {
+        ro: '/assets/images/reports/pharma-ro.webp',
+        en: '/assets/images/reports/pharma-en.webp'
+      },
+      articleSlugs: {
+        ro: 'pharma-peste-1-3-milioane-de-comenzi-unice-in-33-de-luni',
+        en: 'pharma-over-1-3-million-unique-orders-in-33-months-across-businessleague',
+        bg: 'pharma-nad-1-3-miliona-unikalni-porachki-za-33-meseca-v-businessleague-bg',
+        es: 'pharma-mas-de-1-3-millones-de-pedidos-unicos-en-33-meses-en-businessleague-es'
+      }
+    },
+    {
+      id: 'electronics',
+      clusterId: 'cluster-electronics-itc-2026',
+      dateLabel: 'SEP 2026',
+      kicker: {
+        ro: 'RAPORT CATEGORIE // IT&C',
+        en: 'SECTOR REPORT // IT&C',
+        bg: 'СЕКТОРЕН ДОКЛАД // ЕЛЕКТРОНИКА',
+        es: 'INFORME SECTORIAL // IT&C'
+      },
+      title: {
+        ro: 'Electronics & IT&C: 428.184 comenzi și €74,37M vânzări',
+        en: 'Electronics & IT&C: 428,184 Orders & €74.37M Sales',
+        bg: 'Електроника и IT&C: 428 184 поръчки и €74,37M продажби',
+        es: 'Electrónica y TIC: 428.184 pedidos y €74,37M en ventas'
+      },
+      desc: {
+        ro: 'Analiza celor 148 de magazine din categoria Electronics & IT&C: coș mediu de €173,7, evoluția Black Friday și distribuția comenzilor pe subcategorii.',
+        en: 'Deep-dive across 148 Electronics & IT&C stores: €173.7 average order value, Black Friday spikes, and conversion patterns across 32 months.',
+        bg: 'Анализ на 148 магазина в сектор Електроника и IT&C: средна стойност на поръчката €173,7, Black Friday пикове и конверсии.',
+        es: 'Análisis de 148 tiendas de Electrónica y TIC: ticket medio de €173,7, picos de Black Friday y comportamiento de compra en 32 meses.'
+      },
+      metrics: {
+        ro: ['428.184 comenzi', '€74,37M vânzări', '148 magazine'],
+        en: ['428,184 orders', '€74.37M sales', '148 stores'],
+        bg: ['428 184 поръчки', '€74,37M продажби', '148 магазина'],
+        es: ['428.184 pedidos', '€74,37M ventas', '148 tiendas']
+      },
+      pdf: {
+        ro: 'https://blog.businessleague.com/content/files/2026/09/BusinessLeague_Electronics_ITC_RO.pdf',
+        en: 'https://blog.businessleague.com/content/files/2026/09/BusinessLeague_Electronics_ITC_EN3.pdf'
+      },
+      cover: {
+        ro: '/assets/images/reports/electronics-ro.webp',
+        en: '/assets/images/reports/electronics-en.webp'
+      },
+      articleSlugs: {
+        ro: 'electronics-it-c-428-184-comenzi-unice-in-26-de-luni',
+        en: 'electronics-it-c-428-184-unique-orders-across-26-months',
+        bg: 'elektronika-i-it-428-184-unikalni-porachki-za-32-meseca-bg',
+        es: 'electronica-y-tic-428-184-pedidos-unicos-en-32-meses-es'
+      }
+    },
+    {
+      id: 'books',
+      clusterId: 'cluster-books-30m-market-2026',
+      dateLabel: 'AUG 2026',
+      kicker: {
+        ro: 'RAPORT CATEGORIE // BOOKS',
+        en: 'SECTOR REPORT // BOOKS',
+        bg: 'СЕКТОРЕН ДОКЛАД // КНИГИ',
+        es: 'INFORME SECTORIAL // LIBROS'
+      },
+      title: {
+        ro: 'Cum se cumpără cărți online: Piață de €29,8M și 1,23M comenzi',
+        en: 'How Books Are Bought Online: €29.8M Market & 1.23M Orders',
+        bg: 'Как се купуват книги онлайн: Пазар за €29,8M и 1,23M поръчки',
+        es: 'Cómo se compran libros online: Mercado de €29,8M y 1,23M pedidos'
+      },
+      desc: {
+        ro: '41,1% dintre comenzile de cărți conțin un singur produs. Radiografia completă a 1.236.336 de comenzi generate pentru 43 de librării online.',
+        en: '41.1% of online book orders contain a single item. Complete radiography of 1,236,336 orders across 43 online bookstores in BusinessLeague.',
+        bg: '41,1% от онлайн поръчките на книги съдържат един продукт. Пълна рентгенова снимка на 1 236 336 поръчки в 43 онлайн книжарници.',
+        es: 'El 41,1% de los pedidos de libros online contiene un solo artículo. Radiografía completa de 1.236.336 pedidos en 43 librerías online.'
+      },
+      metrics: {
+        ro: ['1,24M comenzi', '€29,8M vânzări', '43 librării'],
+        en: ['1.24M orders', '€29.8M sales', '43 bookstores'],
+        bg: ['1,24M поръчки', '€29,8M продажби', '43 книжарници'],
+        es: ['1,24M pedidos', '€29,8M ventas', '43 librerías']
+      },
+      pdf: {
+        ro: 'https://blog.businessleague.com/content/files/2026/08/Cum-se-cumpara-carti-online-2026-1.pdf',
+        en: 'https://blog.businessleague.com/content/files/2026/08/How-books-are-bought-online-2026-1.pdf'
+      },
+      cover: {
+        ro: '/assets/images/reports/books-ro.webp',
+        en: '/assets/images/reports/books-en.webp'
+      },
+      articleSlugs: {
+        ro: '41-1-dintre-comenzile-de-carti-online-contin-un-singur-produs-cum-arata-radiografia-completa-a-unei-piete-de-30-de-milioane-de-euro',
+        en: '41-1-of-online-book-orders-contain-a-single-item-the-complete-breakdown-of-a-eur30-million-market',
+        bg: '41-1-ot-onlayn-porachkite-na-knigi-sadarzhat-edin-produkt-palna-rentgenova-snimka-na-pazar-za-30-mln-evro-bg',
+        es: 'el-41-1-de-los-pedidos-de-libros-online-contiene-un-solo-articulo-radiografia-de-un-mercado-de-30-millones-de-euros-es'
+      }
+    },
+    {
+      id: 'home-garden',
+      clusterId: 'cluster-home-garden-84-5-2026',
+      dateLabel: 'JUL 2026',
+      kicker: {
+        ro: 'RAPORT CATEGORIE // HOME & GARDEN',
+        en: 'SECTOR REPORT // HOME & GARDEN',
+        bg: 'СЕКТОРЕН ДОКЛАД // ДОМ И ГРАДИНА',
+        es: 'INFORME SECTORIAL // HOGAR Y JARDÍN'
+      },
+      title: {
+        ro: 'Home & Garden: 84,5% comenzi cu un singur produs (€44,7M)',
+        en: 'Home & Garden: 84.5% Single-Item Purchases (€44.7M)',
+        bg: 'Дом и Градина: 84,5% поръчки с един продукт (€44,7M)',
+        es: 'Hogar y Jardín: 84,5% pedidos de un solo producto (€44,7M)'
+      },
+      desc: {
+        ro: 'Studiu pe 337.834 de comenzi și 229 de magazine Home & Garden: de ce 84,5% dintre achiziții conțin un singur articol și când sunt vârfurile de conversie.',
+        en: 'Study across 337,834 orders and 229 Home & Garden stores: why 84.5% of orders are single-item purchases and how seasonality shapes ROAS.',
+        bg: 'Изследване върху 337 834 поръчки и 229 магазина за Дом и Градина: защо 84,5% от покупките са с един артикул и кога са пиковете.',
+        es: 'Estudio sobre 337.834 pedidos y 229 tiendas de Hogar y Jardín: por qué el 84,5% de las compras son de un solo producto.'
+      },
+      metrics: {
+        ro: ['337.834 comenzi', '€44,7M vânzări', '229 magazine'],
+        en: ['337,834 orders', '€44.7M sales', '229 stores'],
+        bg: ['337 834 поръчки', '€44,7M продажби', '229 магазина'],
+        es: ['337.834 pedidos', '€44,7M ventas', '229 tiendas']
+      },
+      pdf: {
+        ro: 'https://blog.businessleague.com/content/files/2026/07/HG_report_RO--1-.pdf',
+        en: 'https://blog.businessleague.com/content/files/2026/07/HG_report_EN--1-.pdf'
+      },
+      cover: {
+        ro: '/assets/images/reports/home-garden-ro.webp',
+        en: '/assets/images/reports/home-garden-en.webp'
+      },
+      articleSlugs: {
+        ro: '84-5-din-toate-comenzile-home-garden-sunt-achizitii-cu-un-singur-produs',
+        en: '84-5-of-all-home-garden-orders-are-single-product-purchases',
+        bg: '84-5-ot-vsichki-porachki-v-home-garden-sa-pokupki-s-edin-produkt-bg',
+        es: 'el-84-5-de-todos-los-pedidos-de-hogar-y-jardin-son-compras-de-un-solo-producto-es'
+      }
+    },
+    {
+      id: 'fashion',
+      clusterId: 'cluster-iphone-fashion-24-2026',
+      dateLabel: 'JUN 2026',
+      kicker: {
+        ro: 'RAPORT CATEGORIE // FASHION',
+        en: 'SECTOR REPORT // FASHION',
+        bg: 'СЕКТОРЕН ДОКЛАД // МОДА',
+        es: 'INFORME SECTORIAL // MODA'
+      },
+      title: {
+        ro: 'Fashion Buying Report: Utilizatorii iPhone cheltuie cu 24% mai mult',
+        en: 'Fashion Buying Report: iPhone Users Spend 24% More',
+        bg: 'Fashion Buying Report: Потребителите на iPhone харчат с 24% повече',
+        es: 'Fashion Buying Report: Los usuarios de iPhone gastan un 24% más'
+      },
+      desc: {
+        ro: '25,1 milioane de click-uri, €49,9M vânzări și 186 de magazine Fashion analizate: diferențe iOS vs. Android, ore de vârf și rata de conversie.',
+        en: '25.1 million clicks, €49.9M in sales, and 186 Fashion stores analyzed: iOS vs. Android AOV gaps, peak shopping hours, and conversion benchmarks.',
+        bg: '25,1 милиона клика, €49,9M продажби и 186 модни магазина: разлики между iOS и Android, пикови часове и конверсии.',
+        es: '25,1 millones de clics, €49,9M en ventas y 186 tiendas de moda analizadas: brecha entre iOS y Android, horas punta y conversión.'
+      },
+      metrics: {
+        ro: ['25,1M click-uri', '€49,9M vânzări', '186 magazine'],
+        en: ['25.1M clicks', '€49.9M sales', '186 stores'],
+        bg: ['25,1M клика', '€49,9M продажби', '186 магазина'],
+        es: ['25,1M clics', '€49,9M ventas', '186 tiendas']
+      },
+      pdf: {
+        ro: 'https://blog.businessleague.com/content/files/2026/06/BusinessLeague_Fashion_Buying_Report_EN-1.pdf',
+        en: 'https://blog.businessleague.com/content/files/2026/06/BusinessLeague_Fashion_Buying_Report_EN-1.pdf'
+      },
+      cover: {
+        ro: '/assets/images/reports/fashion-en.webp',
+        en: '/assets/images/reports/fashion-en.webp'
+      },
+      articleSlugs: {
+        ro: 'userii-de-iphone-cheltuie-cu-24-mai-mult-pe-fashion-si-alte-5-lucruri-pe-care-ni-le-spun-datele',
+        en: 'iphone-users-spend-24-more-on-fashion-plus-5-other-things-the-data-is-telling-us',
+        bg: 'potrebitelite-na-iphone-harchat-s-24-poveche-za-moda-i-oshte-5-neshta-koito-dannite-ni-kazvat-bg',
+        es: 'los-usuarios-de-iphone-gastan-un-24-mas-en-moda-y-otras-5-cosas-que-nos-dicen-los-datos-es'
+      }
+    }
+  ];
+
+  /**
+   * 0. Canonical Cross-Language Article Translation Map (RO <-> EN <-> BG <-> ES)
+   * Maps every translated article slug to its exact language equivalents.
+   * Also merges with `window.__BL_TRANSLATIONS__` if injected via Ghost Code Injection.
+   */
+  const TRANSLATION_CLUSTERS = [
+    {
+      id: 'cluster-apiland-2026',
+      pillar: 'interviews',
+      ro: 'georgiana-irimus-apiland-ro-pregatim-reduceri-de-black-friday-dar-aniversarea-apiland-ramane-momentul-nostru-special-din-an',
+      en: 'georgiana-irimus-apiland-ro-were-preparing-black-friday-discounts-but-the-apiland-anniversary-remains-our-special-moment-of-the-year',
+      bg: 'georgiana-irimus-apiland-ro-podgotvyame-namaleniya-za-black-friday-no-godishninata-na-apiland-ostava-nashiyat-specialen-moment-bg',
+      es: 'georgiana-irimus-apiland-ro-preparamos-descuentos-de-black-friday-pero-el-aniversario-de-apiland-sigue-siendo-nuestro-momento-especial-es'
+    },
+    {
+      id: 'cluster-sept-champions-2026',
+      pillar: 'competition',
+      ro: 'anuntam-campionii-afiliati-si-castigatorii-bonusurilor-din-septembrie',
+      en: 'announcing-our-september-affiliate-champions-incentive-winners',
+      bg: 'obyavyavame-nashite-afilieyt-shampioni-i-pechelivshi-ot-bonusite-prez-septemvri-bg',
+      es: 'anunciamos-nuestros-campeones-afiliados-y-ganadores-de-incentivos-de-septiembre-es'
+    },
+    {
+      id: 'cluster-pharma-1-3m-2026',
+      pillar: 'data',
+      ro: 'pharma-peste-1-3-milioane-de-comenzi-unice-in-33-de-luni',
+      en: 'pharma-over-1-3-million-unique-orders-in-33-months-across-businessleague',
+      bg: 'pharma-nad-1-3-miliona-unikalni-porachki-za-33-meseca-v-businessleague-bg',
+      es: 'pharma-mas-de-1-3-millones-de-pedidos-unicos-en-33-meses-en-businessleague-es'
+    },
+    {
+      id: 'cluster-agrafa-2026',
+      pillar: 'interviews',
+      ro: 'agrafa-de-la-cani-la-banere-intr-o-casa-cu-multe-camere',
+      en: 'agrafa-from-mugs-to-banners-in-a-house-with-lots-of-rooms',
+      bg: 'agrafa-ot-chashi-do-baneri-v-kashta-s-mnogo-stai-bg',
+      es: 'agrafa-de-tazas-a-banners-en-una-casa-con-muchas-habitaciones-es'
+    },
+    {
+      id: 'cluster-3-shops-commissions-2026',
+      pillar: 'competition',
+      ro: '3-magazine-cresc-comisioanele-si-si-cauta-campionii-afiliati',
+      en: '3-shops-raise-their-commissions-and-look-for-their-affiliate-champions',
+      bg: '3-magazina-uvellichavat-komisionite-si-i-tarsyat-svoite-afilieyt-shampioni-bg',
+      es: '3-tiendas-aumentan-sus-comisiones-y-buscan-a-sus-campeones-afiliados-es'
+    },
+    {
+      id: 'cluster-bucuresti-dublin-meetups-2026',
+      pillar: 'corporate',
+      ro: 'bucuresti-si-dublin-doua-meetup-uri-doua-baruri-pline',
+      en: 'bucuresti-and-dublin-two-meetups-two-full-house-bars',
+      bg: 'bukuresht-i-dablin-dve-sreshti-dva-palni-bara-bg',
+      es: 'bucarest-y-dublin-dos-meetups-dos-bares-llenos-es'
+    },
+    {
+      id: 'cluster-electronics-itc-2026',
+      pillar: 'data',
+      ro: 'electronics-it-c-428-184-comenzi-unice-in-26-de-luni',
+      en: 'electronics-it-c-428-184-unique-orders-across-26-months',
+      bg: 'elektronika-i-it-428-184-unikalni-porachki-za-32-meseca-bg',
+      es: 'electronica-y-tic-428-184-pedidos-unicos-en-32-meses-es'
+    },
+    {
+      id: 'cluster-break-week-hackathon-2026',
+      pillar: 'product',
+      ro: 'pauza-competitionala-si-vacanta-s-au-terminat',
+      en: 'the-competition-break-and-summer-holidays-are-over',
+      bg: 'sastezatelnata-pauza-i-lyatnata-vakanciya-priklyuchiha-bg',
+      es: 'la-pausa-competitiva-y-las-vacaciones-de-verano-han-terminado-es'
+    },
+    {
+      id: 'cluster-books-and-people-2026',
+      pillar: 'playbooks',
+      ro: 'cartile-si-oamenii-care-le-vand-in-businessleague-si-in-afara-sa',
+      en: 'books-and-the-people-who-sell-them-in-businessleague-and-beyond',
+      bg: 'knigite-i-horata-koito-gi-prodavat-v-businessleague-i-izvan-neya-bg',
+      es: 'los-libros-y-las-personas-que-los-venden-en-businessleague-y-fuera-de-ella-es'
+    },
+    {
+      id: 'cluster-books-30m-market-2026',
+      pillar: 'data',
+      ro: '41-1-dintre-comenzile-de-carti-online-contin-un-singur-produs-cum-arata-radiografia-completa-a-unei-piete-de-30-de-milioane-de-euro',
+      en: '41-1-of-online-book-orders-contain-a-single-item-the-complete-breakdown-of-a-eur30-million-market',
+      bg: '41-1-ot-onlayn-porachkite-na-knigi-sadarzhat-edin-produkt-palna-rentgenova-snimka-na-pazar-za-30-mln-evro-bg',
+      es: 'el-41-1-de-los-pedidos-de-libros-online-contiene-un-solo-articulo-radiografia-de-un-mercado-de-30-millones-de-euros-es'
+    },
+    {
+      id: 'cluster-adrian-popa-paahome-2026',
+      pillar: 'interviews',
+      ro: 'adrian-popa-paa-home-ro-peste-90-dintre-comenzile-de-pe-site-vin-prin-afiliere',
+      en: 'adrian-popa-paa-home-ro-relative-to-the-companys-total-sales-approximately-23-come-from-affiliate-marketing',
+      bg: 'adrian-popa-paa-home-ro-nad-90-ot-porachkite-na-sayta-idvat-chrez-afilieyt-marketing-bg',
+      es: 'adrian-popa-paa-home-ro-mas-del-90-de-los-pedidos-en-la-web-llegan-a-traves-del-marketing-de-afiliacion-es'
+    },
+    {
+      id: 'cluster-elena-turcu-2026',
+      pillar: 'interviews',
+      ro: 'elena-turcu-afilierea-devine-simpla-numai-dupa-ce',
+      en: 'elena-turcu-affiliate-marketing-only-becomes-simple-once-you-learn-and-invest',
+      bg: 'elena-turcu-afilieyt-marketingat-stava-prost-edva-sled-kato-nauchish-i-investirash-bg',
+      es: 'elena-turcu-el-marketing-de-afiliacion-solo-se-vuelve-sencillo-cuando-aprendes-e-inviertes-es'
+    },
+    {
+      id: 'cluster-home-garden-84-5-2026',
+      pillar: 'data',
+      ro: '84-5-din-toate-comenzile-home-garden-sunt-achizitii-cu-un-singur-produs',
+      en: '84-5-of-all-home-garden-orders-are-single-product-purchases',
+      bg: '84-5-ot-vsichki-porachki-v-home-garden-sa-pokupki-s-edin-produkt-bg',
+      es: 'el-84-5-de-todos-los-pedidos-de-hogar-y-jardin-son-compras-de-un-solo-producto-es'
+    },
+    {
+      id: 'cluster-iphone-fashion-24-2026',
+      pillar: 'data',
+      ro: 'userii-de-iphone-cheltuie-cu-24-mai-mult-pe-fashion-si-alte-5-lucruri-pe-care-ni-le-spun-datele',
+      en: 'iphone-users-spend-24-more-on-fashion-plus-5-other-things-the-data-is-telling-us',
+      bg: 'potrebitelite-na-iphone-harchat-s-24-poveche-za-moda-i-oshte-5-neshta-koito-dannite-ni-kazvat-bg',
+      es: 'los-usuarios-de-iphone-gastan-un-24-mas-en-moda-y-otras-5-cosas-que-nos-dicen-los-datos-es'
+    },
+    {
+      id: 'cluster-retargeting-cpa-2026',
+      pillar: 'playbooks',
+      ro: 'retargetingul-afiliat-functioneaza-pe-model-cpa-magazinul-plateste-doar-la-vanzare-validata',
+      en: 'affiliate-retargeting-works-on-a-cpa-model-merchants-only-pay-for-validated-sales',
+      bg: 'afilieyt-retargetingat-raboti-po-cpa-model-magazinat-plashta-samo-pri-validirana-prodazhba-bg',
+      es: 'el-retargeting-de-afiliacion-funciona-bajo-modelo-cpa-la-tienda-paga-solo-por-venta-validada-es'
+    },
+    {
+      id: 'cluster-dorin-capital-increase-2026',
+      pillar: 'corporate',
+      ro: 'mesaj-de-la-dorin-boerescu-ceo-2performant-despre-majorarea-de-capital-si-planurile-companiei',
+      en: 'message-from-dorin-boerescu-ceo-2performant-on-the-share-capital-increase-and-company-plans',
+      bg: 'saobshtenie-ot-dorin-boerescu-ceo-2performant-za-uvelichenieto-na-kapitala-i-planovete-na-kompaniyata-bg',
+      es: 'mensaje-de-dorin-boerescu-ceo-de-2performant-sobre-la-ampliacion-de-capital-y-los-planes-de-la-compania-es'
+    },
+    {
+      id: 'cluster-alexandra-gogalniceanu-2026',
+      pillar: 'interviews',
+      ro: 'alexandra-gogalniceanu-bigger-picture-solutions-rankingul-dintre-afiliati-ne-ambitioneaza-si-ne-face-sa-ne-dam-si-mai-mult-silinta',
+      en: 'alexandra-gogalniceanu-bigger-picture-solutions-the-affiliates-ranking-motivates-even-more-to-generate-sales',
+      bg: 'alexandra-gogalniceanu-bigger-picture-solutions-klasiraneto-na-afilieitite-ni-motivira-bg',
+      es: 'alexandra-gogalniceanu-bigger-picture-solutions-el-ranking-de-afiliados-nos-motiva-a-vender-mas-es'
+    },
+    {
+      id: 'cluster-alin-vlad-otter-2026',
+      pillar: 'interviews',
+      ro: 'alin-vlad-e-commerce-director-otter-cine-se-supara-pe-retea-pentru-overlap-se-supara-si-pe-matematica',
+      en: 'alin-vlad-e-commerce-director-otter-anyone-who-blames-the-network-for-overlap-is-also-blaming-maths',
+      bg: 'alin-vlad-e-commerce-director-otter-koyto-se-sardi-na-mrezhata-za-overlap-se-sardi-na-matematikata-bg',
+      es: 'alin-vlad-e-commerce-director-otter-quien-culpa-a-la-red-por-el-overlap-culpa-a-las-matematicas-es'
+    },
+    {
+      id: 'cluster-madalina-alupei-shopilo-2026',
+      pillar: 'interviews',
+      ro: 'madalina-alupei-shopilo-in-romania-procesul-de-maturizare-al-afilierii-se-va-intampla-mai-repede-decat-a-durat-in-vest',
+      en: 'madalina-alupei-shopilo-in-romania-the-maturation-of-affiliate-marketing-will-happen-faster-than-it-took-in-the-west',
+      bg: 'madalina-alupei-shopilo-v-rumaniya-uzryavaneto-na-afilieyt-marketinga-shte-se-sluchi-po-barzo-bg',
+      es: 'madalina-alupei-shopilo-en-rumania-la-maduracion-del-marketing-de-afiliacion-sera-mas-rapida-es'
+    },
+    {
+      id: 'cluster-commercial-adjustments-july-2026',
+      pillar: 'corporate',
+      ro: 'ajustari-comerciale-de-la-1-iulie-2026',
+      en: 'commercial-adjustments-from-july-1st-2026',
+      bg: 'targovski-promeni-ot-1-yuli-2026-bg',
+      es: 'ajustes-comerciales-desde-el-1-de-julio-de-2026-es'
+    },
+    {
+      id: 'cluster-vladimir-rusu-gsmnet-2026',
+      pillar: 'interviews',
+      ro: 'vladimir-rusu-am-pornit-de-la-1100-de-conversii-in-februarie-si-am-ajuns-la-aproape-2500-in-aprilie',
+      en: 'vladimir-rusu-gsmnet-ro-we-started-at-1100-sales-in-february-and-got-to-2500-in-april',
+      bg: 'vladimir-rusu-gsmnet-ro-zapochnahme-ot-1100-prodazhbi-prez-fevruari-i-stignahme-do-2500-prez-april-bg',
+      es: 'vladimir-rusu-gsmnet-ro-empezamos-con-1100-ventas-en-febrero-y-llegamos-a-2500-en-abril-es'
+    },
+    {
+      id: 'cluster-mugur-ifrim-klikads-2026',
+      pillar: 'interviews',
+      ro: 'mugur-ifrim-klikads-ro-businessleague-e-singurul-loc-in-care-performance-marketing-ul-devine-sport-cu-clasament-premii-si-adrenalina-reala',
+      en: 'mugur-ifrim-klikads-ro-businessleague-is-the-only-place-where-performance-marketing-becomes-a-sport-with-rankings-prizes-and-real-adrenaline',
+      bg: 'mugur-ifrim-klikads-ro-businessleague-e-edinstvenoto-myasto-kadeto-performance-marketingat-se-prevrashta-v-sport-bg',
+      es: 'mugur-ifrim-klikads-ro-businessleague-es-el-unico-lugar-donde-el-performance-marketing-se-convierte-en-un-deporte-es'
+    },
+    {
+      id: 'cluster-ligia-rosu-drmax-2026',
+      pillar: 'interviews',
+      ro: 'ligia-rosu-dr-max-avem-un-parteneriat-de-aproape-5-ani-cu-2performant-si-inca-invatam-unii-de-la-altii-cum-sa-optimizam-fiecare-click-din-retea',
+      en: 'ligia-rosu-dr-max-weve-had-a-partnership-of-almost-5-years-with-2performant-and-were-still-learning-from-each-other-how-to-optimize-every-click-in-the-network',
+      bg: 'ligia-rosu-dr-max-imame-pochti-5-godishno-partnyorstvo-s-2performant-i-vse-oshte-se-uchim-kak-da-optimizirame-vseki-klik-bg',
+      es: 'ligia-rosu-dr-max-tenemos-una-colaboracion-de-casi-5-anos-con-2performant-y-seguimos-aprendiendo-a-optimizar-cada-clic-es'
+    },
+    {
+      id: 'cluster-stefan-mogyorosi-nailshop-2026',
+      pillar: 'interviews',
+      ro: 'stefan-mogyorosi-nailshop-ro-pentru-noi-afilierea-livreaza-din-ce-in-ce-mai-bine-fata-de-celelalte-canale-de-vanzare',
+      en: 'stefan-mogyorosi-nailshop-ro-for-us-affiliate-marketing-delivers-better-and-better-compared-to-other-sales-channels',
+      bg: 'stefan-mogyorosi-nailshop-ro-za-nas-afilieyt-marketingat-nosi-vse-po-dobri-rezultati-spryamo-ostanalite-kanali-bg',
+      es: 'stefan-mogyorosi-nailshop-ro-para-nosotros-el-marketing-de-afiliacion-rinde-cada-vez-mejor-frente-a-otros-canales-es'
+    },
+    {
+      id: 'cluster-dont-blame-commission-2026',
+      pillar: 'playbooks',
+      ro: 'nu-da-vina-pe-comision-mereu',
+      en: 'dont-blame-it-on-the-commission',
+      bg: 'ne-obvinyavayte-vinagi-komisionata-bg',
+      es: 'no-culpes-siempre-a-la-comision-es'
+    },
+    {
+      id: 'cluster-myth-or-reality-2026',
+      pillar: 'playbooks',
+      ro: 'mit-sau-realitate-un-program-de-afiliere-il-pornesti-o-data-si-l-lasi-sa-si-faca-treaba',
+      en: 'myth-or-reality-you-launch-an-affiliate-program-and-let-it-do-its-thing-for-month',
+      bg: 'mit-ili-realnost-puskash-afilieyt-programa-vednazh-i-ya-ostavyash-sama-da-si-varshi-rabotata-bg',
+      es: 'mito-o-realidad-lanzas-un-programa-de-afiliacion-una-vez-y-dejas-que-funcione-solo-es'
+    },
+    {
+      id: 'cluster-bogdan-arhip-viardigital-2026',
+      pillar: 'interviews',
+      ro: 'bogdan-arhip-viardigital-multe-magazine-nu-inteleg-ca-platesc-doar-pentru-rezultate-concrete-adica-pentru-vanzari-efectiv-realizate',
+      en: 'bogdan-arhip-viardigital-many-stores-dont-understand-that-they-only-pay-for-concrete-results-meaning-actual-sales-generated',
+      bg: 'bogdan-arhip-viardigital-mnogo-magazini-ne-razbirat-che-plashtat-samo-za-konkretni-rezultati-realno-generirani-prodazhbi-bg',
+      es: 'bogdan-arhip-viardigital-muchas-tiendas-no-entienden-que-solo-pagan-por-resultados-concretos-ventas-realmente-generadas-es'
+    },
+    {
+      id: 'cluster-bogdana-manolescu-fashiondays-2026',
+      pillar: 'interviews',
+      ro: 'bogdana-manolescu-fashiondays-ro-afiliatii-livreaza-constant-sunt-o-parte-esentiala-din-succesul-nostru',
+      en: 'bogdana-manolescu-fashiondays-ro-affiliates-deliver-consistently-they-are-an-essential-part-of-our-success'
+    },
+    {
+      id: 'cluster-shopify-app-store-2026',
+      pillar: 'product',
+      ro: 'shopify-x-businessleague-acum-disponibili-in-shopify-app-store',
+      en: 'shopify-meets-businessleague-risk-free-growth-is-just-a-click-away'
+    },
+    {
+      id: 'cluster-profitshare-acquisition-2025',
+      pillar: 'corporate',
+      ro: 'its-done-2performant-semneaza-contractul-final-pentru-achizitia-profitshare-romania-si-bulgaria',
+      en: '2performant-signs-final-contract-for-the-acquisition-of-profitshare-romania-and-bulgaria',
+      bg: '2performant-signs-final-contract-for-the-acquisition-of-profitshare-romania-and-bulgaria-bg'
+    },
+    {
+      id: 'cluster-product-feed-5-things-2026',
+      pillar: 'playbooks',
+      ro: '5-lucruri-pe-care-fiecare-magazin-online-trebuie-sa-le-verifice-azi-in-feed-ul-de-produse',
+      en: '5-things-every-e-commerce-store-needs-to-check-today-in-their-affiliate-product-feed',
+      bg: '5-neshta-koito-vseki-onlayn-magazin-tryabva-da-proveri-dnes-v-produktoviya-si-fiyd-bg',
+      es: '5-cosas-que-toda-tienda-online-debe-revisar-hoy-en-su-feed-de-productos-de-afiliacion-es'
+    },
+    {
+      id: 'cluster-gabriel-bonciu-search-traffic-2026',
+      pillar: 'interviews',
+      ro: 'gabriel-bonciu-bizdev-director-2performant-traficul-de-search-cu-intentie-ridicata-devine-din-nou-mai-puternic',
+      en: 'gabriel-bonciu-bizdev-director-2performant-high-intent-search-traffic-is-becoming-relatively-stronger-again',
+      bg: 'gabriel-bonciu-bizdev-director-2performant-search-trafikat-s-visoko-namerenie-otnovo-stava-po-silen-bg',
+      es: 'gabriel-bonciu-bizdev-director-2performant-el-trafico-de-busqueda-de-alta-intencion-vuelve-a-ganar-fuerza-es'
+    },
+    {
+      id: 'cluster-kristyna-grobnerova-selltoro-2026',
+      pillar: 'interviews',
+      ro: 'kristyna-grobnerova-selltoro-valoarea-vanzarilor-generate-in-aprilie-a-depasit-60-500-eur-in-businessleague',
+      en: 'kristyna-grobnerova-selltoro-our-generated-sales-value-has-crossed-eur60-500-in-businessleague',
+      bg: 'kristyna-grobnerova-selltoro-generiranite-ot-nas-prodazhbi-prez-april-nadminaha-60-500-eur-v-businessleague-bg',
+      es: 'kristyna-grobnerova-selltoro-el-valor-de-nuestras-ventas-generadas-en-abril-supero-los-60-500-eur-en-businessleague-es'
+    },
+    {
+      id: 'cluster-nimanka-perera-delupe-2026',
+      pillar: 'interviews',
+      ro: 'nimanka-perera-delupe-businessleague-este-cu-adevarat-un-ecosistem-profesionist-care-le-permite-magazinelor-sa-se-conecteze-si-sa-vanda',
+      en: 'nimanka-perera-delupe-businessleague-is-truly-a-professional-ecosystem-that-enables-shops-to-connect-and-make-sales',
+      bg: 'nimanka-perera-delupe-businessleague-e-istinski-profesionalna-ekosistema-koyato-pozvolyava-na-magazinite-da-prodavat-bg',
+      es: 'nimanka-perera-delupe-businessleague-es-realmente-un-ecosistema-profesional-que-permite-a-las-tiendas-conectarse-y-vender-es'
+    }
+  ];
+
+  const SLUG_TO_CLUSTER_MAP = {};
+  TRANSLATION_CLUSTERS.forEach((cluster) => {
+    SUPPORTED_LANGS.forEach((lang) => {
+      if (cluster[lang]) {
+        SLUG_TO_CLUSTER_MAP[cluster[lang]] = cluster;
+      }
+    });
+  });
+
+  function getTranslationSiblings(slug) {
+    if (!slug) return null;
+    const clean = String(slug).replace(/^\/+|\/+$/g, '').trim();
+    if (window.__BL_TRANSLATIONS__ && window.__BL_TRANSLATIONS__[clean]) {
+      return window.__BL_TRANSLATIONS__[clean];
+    }
+    return SLUG_TO_CLUSTER_MAP[clean] || null;
+  }
 
   /**
    * 1. Resolve Active Language
@@ -434,41 +1074,73 @@
     if (SUPPORTED_LANGS.includes(urlLang)) {
       try {
         localStorage.setItem(STORAGE_KEY, urlLang);
+        localStorage.setItem('bl_lang', urlLang);
       } catch (_) {}
       return urlLang;
     }
 
-    const articleEl = document.querySelector('.bl-article-shell[data-post-tags]');
-    if (articleEl) {
-      const tags = (articleEl.getAttribute('data-post-tags') || '').toLowerCase().split(',');
-      if (tags.includes('en')) return 'en';
-      if (tags.includes('bg')) return 'bg';
-      if (tags.includes('es')) return 'es';
+    const pathMatch = window.location.pathname.match(/^\/tag\/(ro|en|bg|es)(\/|$)/i);
+    if (pathMatch) {
+      const pathLang = pathMatch[1].toLowerCase();
+      if (SUPPORTED_LANGS.includes(pathLang)) {
+        try {
+          localStorage.setItem(STORAGE_KEY, pathLang);
+          localStorage.setItem('bl_lang', pathLang);
+        } catch (_) {}
+        return pathLang;
+      }
     }
 
-    const activeAttr = (document.documentElement.getAttribute('data-active-lang') || '').toLowerCase();
-    if (SUPPORTED_LANGS.includes(activeAttr)) {
-      return activeAttr;
+    const articleEl = document.querySelector('.bl-article-shell[data-post-tags], .bl-article-shell[data-post-slug]');
+    if (articleEl) {
+      const explicitLang = (articleEl.getAttribute('data-post-lang') || '').toLowerCase();
+      if (SUPPORTED_LANGS.includes(explicitLang)) {
+        return explicitLang;
+      }
+      const tags = (articleEl.getAttribute('data-post-tags') || '')
+        .toLowerCase()
+        .split(',')
+        .map((t) => t.trim());
+      if (tags.includes('en') || tags.includes('hash-en')) return 'en';
+      if (tags.includes('bg') || tags.includes('hash-bg')) return 'bg';
+      if (tags.includes('es') || tags.includes('hash-es')) return 'es';
+      return 'ro';
     }
 
     try {
-      const saved = (localStorage.getItem(STORAGE_KEY) || '').toLowerCase();
+      const saved = (localStorage.getItem(STORAGE_KEY) || localStorage.getItem('bl_lang') || '').toLowerCase();
       if (SUPPORTED_LANGS.includes(saved)) {
         return saved;
       }
     } catch (_) {}
 
+    const activeAttr = (
+      document.documentElement.getAttribute('data-active-lang') ||
+      document.documentElement.getAttribute('data-bl-lang') ||
+      ''
+    ).toLowerCase();
+    if (SUPPORTED_LANGS.includes(activeAttr)) {
+      return activeAttr;
+    }
+
     return 'ro';
   }
 
   /**
-   * 2. Editorial Pillar Classifier
+   * 2. Editorial Pillar Classifier (RO / EN / BG / ES)
    */
-  function classifyPillar(title, tagsCsv, excerpt) {
+  function classifyPillar(title, tagsCsv, excerpt, slug) {
+    if (slug) {
+      const siblingCluster = getTranslationSiblings(slug);
+      if (siblingCluster && siblingCluster.pillar) {
+        return siblingCluster.pillar;
+      }
+    }
+
     const hay = `${title || ''} ${tagsCsv || ''} ${excerpt || ''}`.toLowerCase();
 
     if (
-      /interviu|interview|интервю|entrevista|poveste|story|journey|podcast|conversa|dialog|cum a |how .* built|lessons from|sfaturi de la|secrets of|unicorn|top affiliate|top advertiser|brandului|fondator|ceo|specialist|marketerul|câștigător|castigator|winner|как |историята на/.test(
+      /interviu|interview|интервю|entrevista|poveste|story|journey|podcast|conversa|dialog|cum a |how .* built|lessons from|sfaturi de la|secrets of|unicorn|top affiliate|top advertiser|brandului|fondator|ceo|specialist|marketerul|câștigător|castigator|winner|как |историята на|georgiana irimus|agrafa|adrian popa|elena turcu|alexandra gogalniceanu|alin vlad|madalina alupei|vladimir rusu|mugur ifrim|ligia rosu|stefan mogyorosi|bogdan arhip|bogdana manolescu/.test(
         hay
       )
     ) {
@@ -476,7 +1148,7 @@
     }
 
     if (
-      /analiz|analysis|анализ|análisis|market|piaț|piat|пазар|mercado|studiu|study|statistic|report|raport|sector|vertical|fashion|beauty|pharma|home & garden|home and garden|electro|it&c|baby|toys|books|food|automotive|pet|trend|evoluți|evoluti|cifre|numbers|benchmark|insight|whitepaper|cât s-a|cat s-a/.test(
+      /analiz|analysis|анализ|análisis|radiograf|рентгенова|market|piaț|piat|пазар|mercado|studiu|study|statistic|report|raport|sector|vertical|fashion|moda|мода|beauty|pharma|фарма|home & garden|home and garden|hogar y jardín|electro|електроника|electrónica|it&c|baby|toys|books|cărți|книги|libros|food|automotive|pet|trend|evoluți|evoluti|cifre|numbers|benchmark|insight|whitepaper|cât s-a|cat s-a|milioane de comenzi|million unique orders|милиона уникални поръчки|millones de pedidos|428\.184|428,184|84\.5%|84,5%|41\.1%|41,1%|iphone/.test(
         hay
       )
     ) {
@@ -484,23 +1156,15 @@
     }
 
     if (
-      /google ads|facebook ads|tiktok|seo|ppc|ghid|guide|playbook|strateg|conversi|conversion|roas|traffic|trafic|optimiz|tips|sfaturi|cum să|cum sa|how to|tutorial|audit|landing page|shopping ads|keywords|campanii|campaigns|promovare|vânzări|vanzari|sales|трафик|кампании|продажби|ъпгрейд/.test(
+      /bvb|burs|invest|acționar|actionar|aga|raport financiar|financial|2performant|echipa|team|aniversare|anniversary|corporate|listare|acțiuni|actiuni|shares|capital|ampliación de capital|увеличението на капитала|profitshare|meetup|dublin|дъблин|dublín/.test(
         hay
       )
     ) {
-      return 'playbooks';
+      return 'corporate';
     }
 
     if (
-      /challenge|clasament|ranking|leaderboard|câștig|castig|premii|prizes|campionat|championship|cupa|cup|black friday|bf |round|etapa|top 10|top 5|record|sprint|maraton|marathon|liga|league|състезание|класация|шампионат|черен петък|пролетни/.test(
-        hay
-      )
-    ) {
-      return 'competition';
-    }
-
-    if (
-      /feature|update|lansare|launch|release|platform|tool|api|tracking|atribuire|attribution|feed|plugin|dashboard|automatiz|ai |product|produs|funcționalit|functionalit|b2b|account|upgrade|платформа|функционалност/.test(
+      /feature|update|lansare|launch|release|platform|tool|api|tracking|atribuire|attribution|feed|plugin|dashboard|automatiz|ai |product|produs|funcționalit|functionalit|b2b|account|upgrade|платформа|функционалност|shopify|hackathon|pauza competițională|competition break|състезателната пауза|pausa competitiva/.test(
         hay
       )
     ) {
@@ -508,11 +1172,19 @@
     }
 
     if (
-      /bvb|burs|invest|acționar|actionar|aga|raport financiar|financial|2performant|echipa|team|aniversare|anniversary|corporate|listare|acțiuni|actiuni|shares|capital/.test(
+      /challenge|clasament|ranking|leaderboard|câștig|castig|premii|prizes|campionat|championship|campeones|шампиони|cupa|cup|black friday|bf |round|etapa|top 10|top 5|record|sprint|maraton|marathon|liga|league|състезание|класация|шампионат|черен петък|пролетни|cresc comisioanele|raise their commissions|увеличават комисионите|aumentan sus comisiones|septembrie|september|септември|septiembre/.test(
         hay
       )
     ) {
-      return 'corporate';
+      return 'competition';
+    }
+
+    if (
+      /google ads|facebook ads|tiktok|seo|ppc|ghid|guide|playbook|strateg|conversi|conversion|roas|traffic|trafic|optimiz|tips|sfaturi|cum să|cum sa|how to|tutorial|audit|landing page|shopping ads|keywords|campanii|campaigns|promovare|vânzări|vanzari|sales|трафик|кампании|продажби|ъпгрейд|retargeting|cpa/.test(
+        hay
+      )
+    ) {
+      return 'playbooks';
     }
 
     return 'playbooks';
@@ -526,13 +1198,15 @@
     const titleEl = cardEl.querySelector('.bl-card-title, .bl-lead-title, .bl-side-title, .bl-article-title');
     const excerptEl = cardEl.querySelector('.bl-card-excerpt, .bl-lead-excerpt, .bl-article-dek');
     const tagsCsv = cardEl.getAttribute('data-tags') || cardEl.getAttribute('data-post-tags') || '';
+    const postSlug = cardEl.getAttribute('data-post-slug') || '';
 
     let pillar = cardEl.getAttribute('data-pillar');
     if (!pillar || pillar === 'auto') {
       pillar = classifyPillar(
         titleEl ? titleEl.textContent : '',
         tagsCsv,
-        excerptEl ? excerptEl.textContent : ''
+        excerptEl ? excerptEl.textContent : '',
+        postSlug
       );
       cardEl.setAttribute('data-pillar', pillar);
     }
@@ -543,6 +1217,12 @@
     cardEl.querySelectorAll('[data-pillar-badge], [data-card-badge]').forEach((badge) => {
       badge.setAttribute('data-pillar-type', pillar);
       badge.textContent = pillarLabel;
+      if (badge.tagName === 'A' || badge.hasAttribute('data-pillar-link')) {
+        badge.setAttribute('data-pillar-link', pillar);
+        if (badge.tagName === 'A') {
+          badge.setAttribute('href', `/?lang=${lang}#pillar-${pillar}`);
+        }
+      }
     });
 
     cardEl.querySelectorAll('.bl-generated-cover, [data-generated-cover]').forEach((coverEl) => {
@@ -568,7 +1248,12 @@
   function applyTranslations(lang) {
     const dict = I18N[lang] || I18N.ro;
     document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('data-bl-lang', lang);
     document.documentElement.setAttribute('data-active-lang', lang);
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+      localStorage.setItem('bl_lang', lang);
+    } catch (_) {}
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
@@ -595,12 +1280,100 @@
       const btnLang = btn.getAttribute('data-set-lang') || btn.getAttribute('data-lang-switch');
       const isActive = btnLang === lang;
       btn.classList.toggle('is-active', isActive);
-      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      if (btn.tagName === 'BUTTON' || btn.getAttribute('role') === 'button') {
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      } else {
+        btn.removeAttribute('aria-pressed');
+        if (isActive) {
+          btn.setAttribute('aria-current', 'true');
+        } else {
+          btn.removeAttribute('aria-current');
+        }
+      }
     });
 
     document.querySelectorAll('[data-article-lang]').forEach((pill) => {
       const pillLang = pill.getAttribute('data-article-lang');
       pill.classList.toggle('is-active', pillLang === lang);
+    });
+
+    document.querySelectorAll('.bl-breadcrumbs a[data-i18n="breadcrumb_home"]').forEach((homeCrumb) => {
+      homeCrumb.setAttribute('href', `/?lang=${lang}`);
+    });
+
+    document.querySelectorAll('.bl-breadcrumbs a[data-pillar-badge]').forEach((badgeCrumb) => {
+      const p =
+        badgeCrumb.getAttribute('data-pillar-type') ||
+        badgeCrumb.getAttribute('data-pillar-link') ||
+        'all';
+      badgeCrumb.setAttribute('data-pillar-link', p);
+      badgeCrumb.setAttribute('href', `/?lang=${lang}#pillar-${p}`);
+      if (dict[`badge_${p}`]) {
+        badgeCrumb.textContent = dict[`badge_${p}`];
+      }
+    });
+  }
+
+  /**
+   * 4B. 12-Column Auto-Balancing Engine (Real Article Cards Only — Zero Fake Promo Fillers)
+   * Ensures ZERO empty spaces in any row across Home, Category Filter, Language, and Single Post views
+   * by expanding the real article cards on any partial row to span the full 12 columns.
+   */
+  function balanceAllGridRows(root) {
+    const scope = root || document;
+
+    // Remove any legacy generated filler cards if present
+    scope
+      .querySelectorAll('.bl-grid-filler-card, [data-generated-filler="true"]')
+      .forEach((el) => el.remove());
+
+    // 1. Balance Bento Data Grids (.bl-bento-data-grid) using only real article cards
+    scope.querySelectorAll('.bl-bento-data-grid').forEach((bento) => {
+      const stack = bento.querySelector('.bl-bento-stack');
+      if (!stack) {
+        bento.setAttribute('data-bento-single', 'true');
+        return;
+      }
+      const visibleStackItems = Array.from(stack.children).filter(
+        (el) => el.style.display !== 'none' && !el.hidden
+      );
+      if (visibleStackItems.length === 0) {
+        bento.setAttribute('data-bento-single', 'true');
+        stack.style.display = 'none';
+      } else {
+        bento.removeAttribute('data-bento-single');
+        stack.style.display = '';
+      }
+    });
+
+    // 2. Balance all 12-column grids (.bl-hero-subgrid, .bl-grid-2, .bl-grid-3, .bl-grid-4, .bl-related-grid, .bl-masonry-grid)
+    const gridConfigs = [
+      { selector: '.bl-hero-subgrid', cols: 2, defaultSpan: 6 },
+      { selector: '.bl-grid-2', cols: 2, defaultSpan: 6 },
+      { selector: '.bl-grid-3', cols: 3, defaultSpan: 4 },
+      { selector: '.bl-grid-4', cols: 4, defaultSpan: 3 },
+      { selector: '.bl-related-grid', cols: 4, defaultSpan: 3 },
+      { selector: '.bl-masonry-grid', cols: 3, defaultSpan: 4 }
+    ];
+
+    gridConfigs.forEach(({ selector, cols, defaultSpan }) => {
+      scope.querySelectorAll(selector).forEach((grid) => {
+        const visibleCards = Array.from(grid.children).filter(
+          (el) => el.style.display !== 'none' && !el.hidden
+        );
+
+        visibleCards.forEach((c) => c.setAttribute('data-row-span', String(defaultSpan)));
+
+        if (visibleCards.length === 0) return;
+
+        const remainder = visibleCards.length % cols;
+        if (remainder !== 0) {
+          const expandedSpan = Math.floor(12 / remainder);
+          for (let i = visibleCards.length - remainder; i < visibleCards.length; i++) {
+            visibleCards[i].setAttribute('data-row-span', String(expandedSpan));
+          }
+        }
+      });
     });
   }
 
@@ -608,17 +1381,38 @@
    * 5. Build Curated Journalistic Magazine Sections inside each `.bl-lang-workspace`
    */
   function initWorkspacesAndSections(activeLang, activePillarFilter) {
+    document.documentElement.setAttribute('data-bl-lang', activeLang);
+    document.documentElement.setAttribute('data-active-lang', activeLang);
+
     const workspaces = document.querySelectorAll('.bl-lang-workspace[data-lang-panel]');
     if (!workspaces.length) {
-      // Single post or page view: still decorate any cards on page
+      // Single post or page view: still decorate any cards on page & balance related row
       document
         .querySelectorAll('.bl-card, .bl-lead-card, .bl-side-card, .bl-article-shell')
         .forEach((el) => decorateCardElement(el, activeLang));
+      balanceAllGridRows(document, activeLang);
       return;
     }
 
     workspaces.forEach((ws) => {
       const panelLang = ws.getAttribute('data-lang-panel') || 'ro';
+      const isPanelActive = panelLang === activeLang;
+      ws.classList.toggle('is-active', isPanelActive);
+      ws.hidden = !isPanelActive;
+      ws.style.display = isPanelActive ? 'block' : 'none';
+
+      // Skip DOM manipulation on inactive language workspaces until activated
+      if (!isPanelActive) {
+        return;
+      }
+
+      // Unwrap deferred <template data-ws-template> when this workspace becomes active
+      const deferredTpl = ws.querySelector('template[data-ws-template]');
+      if (deferredTpl) {
+        ws.appendChild(deferredTpl.content.cloneNode(true));
+        deferredTpl.remove();
+      }
+
       const dict = I18N[panelLang] || I18N.ro;
 
       // Decorate all cards in this language workspace
@@ -653,17 +1447,19 @@
         const url = titleLink ? titleLink.getAttribute('href') : '#';
         const imgEl = sourceEl.querySelector('img');
         const imgSrc = imgEl ? imgEl.getAttribute('src') : '';
+        const imgSrcset = imgEl ? imgEl.getAttribute('srcset') || '' : '';
         const excerptEl = sourceEl.querySelector('.bl-lead-excerpt');
         const excerpt = excerptEl ? excerptEl.textContent.trim() : '';
         const badgeText = dict[`badge_${pillar}`] || dict.badge_general;
+        const safeTitle = title.replace(/"/g, '&quot;');
 
         const article = document.createElement('article');
         article.className = 'bl-card post-card';
         article.setAttribute('data-post-slug', slug);
         article.setAttribute('data-pillar', pillar);
         article.innerHTML = `
-          <a class="bl-card-media" href="${url}" aria-label="${title.replace(/"/g, '&quot;')}">
-            <img src="${imgSrc}" alt="${title.replace(/"/g, '&quot;')}" loading="lazy" />
+          <a class="bl-card-media" href="${url}" aria-label="${safeTitle}">
+            <img src="${imgSrc}" ${imgSrcset ? `srcset="${imgSrcset}" sizes="(max-width: 680px) 320px, (max-width: 1120px) 280px, 340px"` : ''} alt="${safeTitle}" width="600" height="338" loading="lazy" decoding="async" />
           </a>
           <div class="bl-card-body">
             <div class="bl-meta-row">
@@ -674,7 +1470,7 @@
             ${excerpt ? `<p class="bl-card-excerpt">${excerpt}</p>` : ''}
             <footer class="bl-card-footer">
               <span class="bl-author-chip"><span>BusinessLeague</span></span>
-              <a class="bl-read-cta" href="${url}">
+              <a class="bl-read-cta" href="${url}" aria-label="${safeTitle}">
                 <span data-i18n="read_article">${dict.read_article}</span>
                 <span aria-hidden="true">&rarr;</span>
               </a>
@@ -704,6 +1500,129 @@
           uniquePool.push(card);
         }
       });
+
+      // Build Dedicated Category Reports & Whitepapers PDF Section (`[data-reports-section]`)
+      const reportsSection = ws.querySelector('[data-reports-section]');
+      if (reportsSection) {
+        reportsSection.id = isPanelActive ? 'pillar-reports' : `pillar-reports-${panelLang}`;
+      }
+      if (reportsSection && !reportsSection.hasAttribute('data-reports-built')) {
+        const sampleAsset = reportsSection.getAttribute('data-report-cover-sample') || '';
+        const assetVersionMatch = sampleAsset.match(/\?v=[^"'\s&]+/);
+        const assetSuffix = assetVersionMatch ? assetVersionMatch[0] : '';
+
+        reportsSection.innerHTML = '';
+
+        const header = document.createElement('div');
+        header.className = 'bl-section-header bl-reports-header';
+        header.innerHTML = `
+          <div class="bl-reports-header-copy">
+            <span class="bl-section-eyebrow" data-i18n="sec_reports_eyebrow">${dict.sec_reports_eyebrow}</span>
+            <h2 class="bl-section-title" data-i18n="sec_reports_title">${dict.sec_reports_title}</h2>
+            <p class="bl-reports-subtitle" data-i18n="sec_reports_subtitle">${dict.sec_reports_subtitle}</p>
+          </div>
+          <button type="button" class="bl-filter-pill" data-filter-pillar="reports">
+            <span data-i18n="nav_reports">${dict.nav_reports}</span>
+          </button>
+        `;
+        reportsSection.appendChild(header);
+
+        const reportsGrid = document.createElement('div');
+        reportsGrid.className = 'bl-reports-grid';
+
+        CATEGORY_REPORTS.forEach((rep) => {
+          const pdfObj = rep.pdf || {};
+          const coverObj = rep.cover || {};
+          const hasRoPdf = Boolean(pdfObj.ro);
+          const useRoPdf = panelLang === 'ro' && hasRoPdf;
+          const pdfUrl = useRoPdf ? pdfObj.ro : (pdfObj.en || pdfObj.ro || '#');
+          const rawCoverPath = useRoPdf ? (coverObj.ro || coverObj.en) : (coverObj.en || coverObj.ro);
+          const coverPath = rawCoverPath && assetSuffix && !rawCoverPath.includes('?')
+            ? `${rawCoverPath}${assetSuffix}`
+            : rawCoverPath;
+          const pdfBadgeLabel = useRoPdf
+            ? (dict.report_badge_pdf_ro || 'PDF • RO')
+            : (dict.report_badge_pdf_en || 'PDF • EN');
+          const altPdfUrl = (useRoPdf && pdfObj.en && pdfObj.en !== pdfObj.ro)
+            ? pdfObj.en
+            : (!useRoPdf && pdfObj.ro && pdfObj.ro !== pdfObj.en ? pdfObj.ro : '');
+          const altPdfLang = (useRoPdf && pdfObj.en && pdfObj.en !== pdfObj.ro)
+            ? (dict.report_also_en || 'EN PDF')
+            : (!useRoPdf && pdfObj.ro && pdfObj.ro !== pdfObj.en ? (dict.report_also_ro || 'RO PDF') : '');
+
+          const title = (rep.title && (rep.title[panelLang] || rep.title.ro)) || '';
+          const subtitle = (rep.desc && (rep.desc[panelLang] || rep.desc.ro)) || '';
+          const kickerText = (rep.kicker && (rep.kicker[panelLang] || rep.kicker.ro)) || '';
+          const dateLabel = (rep.dateLabel && (rep.dateLabel[panelLang] || rep.dateLabel.ro)) || '2026';
+          const metrics = Array.isArray(rep.metrics)
+            ? rep.metrics
+            : ((rep.metrics && (rep.metrics[panelLang] || rep.metrics.ro)) || []);
+          const articleSlug = (rep.articleSlugs && (rep.articleSlugs[panelLang] || rep.articleSlugs.ro)) || '';
+          const articleUrl = `/${articleSlug}/?lang=${panelLang}`;
+
+          const card = document.createElement('article');
+          card.className = 'bl-report-card';
+          card.setAttribute('data-report-id', rep.id);
+          card.innerHTML = `
+            <a class="bl-report-cover-link" href="${pdfUrl}" target="_blank" rel="noopener" aria-label="${title} — ${dict.report_open_pdf}">
+              <div class="bl-report-cover-frame">
+                <img
+                  class="bl-report-cover-img"
+                  src="${coverPath}"
+                  alt="${title} (${pdfBadgeLabel})"
+                  width="680"
+                  height="962"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="bl-report-cover-badges">
+                  <span class="bl-report-pdf-pill"><i></i>${pdfBadgeLabel}</span>
+                  <span class="bl-report-date-pill">${dateLabel}</span>
+                </div>
+                <div class="bl-report-cover-hover" aria-hidden="true">
+                  <span class="bl-report-cover-hover-btn">
+                    <span data-i18n="report_open_pdf">${dict.report_open_pdf}</span>
+                    <span>&#8599;</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+            <div class="bl-report-body">
+              <div class="bl-report-kicker">${kickerText}</div>
+              <h3 class="bl-report-title">
+                <a href="${pdfUrl}" target="_blank" rel="noopener">${title}</a>
+              </h3>
+              <p class="bl-report-desc">${subtitle}</p>
+              <div class="bl-report-metrics">
+                ${metrics.map((m) => `<span class="bl-report-metric-chip">${m}</span>`).join('')}
+              </div>
+              <div class="bl-report-actions">
+                <a class="bl-report-pdf-btn" href="${pdfUrl}" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                  <span data-i18n="report_open_pdf">${dict.report_open_pdf}</span>
+                  <span aria-hidden="true">&#8599;</span>
+                </a>
+                <div class="bl-report-subactions">
+                  <a class="bl-report-article-link" href="${articleUrl}">
+                    <span data-i18n="report_read_article">${dict.report_read_article}</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  ${altPdfUrl ? `<a class="bl-report-alt-pdf" href="${altPdfUrl}" target="_blank" rel="noopener" title="${altPdfLang}">${altPdfLang} &#8599;</a>` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+          reportsGrid.appendChild(card);
+        });
+
+        reportsSection.appendChild(reportsGrid);
+        reportsSection.setAttribute('data-reports-built', 'true');
+      }
 
       const curatedContainer = ws.querySelector('[data-curated-sections]');
       if (curatedContainer && !curatedContainer.hasAttribute('data-curated-built')) {
@@ -783,14 +1702,12 @@
             const leadClone = matches[0].cloneNode(true);
             grid.appendChild(leadClone);
 
-            if (matches.length > 1) {
-              const stack = document.createElement('div');
-              stack.className = 'bl-bento-stack';
-              matches.slice(1).forEach((m) => {
-                stack.appendChild(m.cloneNode(true));
-              });
-              grid.appendChild(stack);
-            }
+            const stack = document.createElement('div');
+            stack.className = 'bl-bento-stack';
+            matches.slice(1).forEach((m) => {
+              stack.appendChild(m.cloneNode(true));
+            });
+            grid.appendChild(stack);
           } else {
             matches.forEach((m) => {
               grid.appendChild(m.cloneNode(true));
@@ -808,14 +1725,22 @@
       const heroSec = ws.querySelector('[data-hero-section]');
       const pulseSec = ws.querySelector('.bl-section-pulse');
       const isFiltering = activePillarFilter && activePillarFilter !== 'all';
+      const isReportsFilter = activePillarFilter === 'reports';
 
       if (heroSec) heroSec.style.display = isFiltering ? 'none' : '';
       if (pulseSec) pulseSec.style.display = isFiltering ? 'none' : '';
       if (curatedContainer) curatedContainer.style.display = isFiltering ? 'none' : '';
+      if (reportsSection) {
+        reportsSection.style.display = (!isFiltering || isReportsFilter || activePillarFilter === 'data') ? '' : 'none';
+      }
 
       if (masonryGrid) {
         // Remove previously injected clones when filter changes
         masonryGrid.querySelectorAll('[data-cloned-filter-card]').forEach((el) => el.remove());
+
+        const reportSlugsForLang = new Set(
+          CATEGORY_REPORTS.map((r) => (r.articleSlugs && (r.articleSlugs[panelLang] || r.articleSlugs.ro)) || '')
+        );
 
         if (!isFiltering) {
           masonryCards.forEach((c) => {
@@ -824,7 +1749,10 @@
         } else {
           // Hide non-matching masonry cards
           masonryCards.forEach((c) => {
-            const match = c.getAttribute('data-pillar') === activePillarFilter;
+            const slug = c.getAttribute('data-post-slug') || '';
+            const match = isReportsFilter
+              ? reportSlugsForLang.has(slug)
+              : c.getAttribute('data-pillar') === activePillarFilter;
             c.style.display = match ? '' : 'none';
           });
           // Also include matching cards from the Hero zone so they appear in the filtered results
@@ -833,10 +1761,10 @@
           );
           uniquePool.forEach((poolCard) => {
             const slug = poolCard.getAttribute('data-post-slug');
-            if (
-              poolCard.getAttribute('data-pillar') === activePillarFilter &&
-              !existingMasonrySlugs.has(slug)
-            ) {
+            const matchesPool = isReportsFilter
+              ? reportSlugsForLang.has(slug)
+              : poolCard.getAttribute('data-pillar') === activePillarFilter;
+            if (matchesPool && !existingMasonrySlugs.has(slug)) {
               const clone = poolCard.cloneNode(true);
               clone.setAttribute('data-cloned-filter-card', 'true');
               masonryGrid.prepend(clone);
@@ -844,6 +1772,19 @@
           });
         }
       }
+
+      // Show Load More button when initial workspace has full batch of articles (12+ in Masonry = 19+ total)
+      const loadMoreWrap = ws.querySelector('[data-load-more-wrap]');
+      if (loadMoreWrap) {
+        const isExhausted = loadMoreWrap.getAttribute('data-exhausted') === 'true';
+        const allMasonryCards = masonryGrid
+          ? masonryGrid.querySelectorAll(':scope > .bl-card:not([data-cloned-filter-card])').length
+          : 0;
+        loadMoreWrap.hidden = isReportsFilter || isExhausted || allMasonryCards < 12;
+      }
+
+      // Guarantee 100% full rows in every section & archive wall for this workspace
+      balanceAllGridRows(ws, panelLang);
     });
   }
 
@@ -863,6 +1804,33 @@
 
     function buildSearchIndex() {
       const byKey = new Map();
+
+      // 0. Include Category Reports & Whitepapers PDFs directly in search index for all 4 languages
+      SUPPORTED_LANGS.forEach((langCode) => {
+        CATEGORY_REPORTS.forEach((rep) => {
+          const pdfObj = rep.pdf || {};
+          const coverObj = rep.cover || {};
+          const useRoPdf = langCode === 'ro' && Boolean(pdfObj.ro);
+          const pdfUrl = useRoPdf ? pdfObj.ro : (pdfObj.en || pdfObj.ro || '#');
+          const coverPath = useRoPdf ? (coverObj.ro || coverObj.en) : (coverObj.en || coverObj.ro);
+          const title = `[PDF] ${(rep.title && (rep.title[langCode] || rep.title.ro)) || ''}`;
+          const excerpt = (rep.desc && (rep.desc[langCode] || rep.desc.ro)) || '';
+          const dateStr = (rep.dateLabel && (rep.dateLabel[langCode] || rep.dateLabel.ro)) || '2026';
+          const kickerStr = (rep.kicker && (rep.kicker[langCode] || rep.kicker.ro)) || '';
+          const key = `${langCode}:pdf-${rep.id}`;
+          byKey.set(key, {
+            title,
+            url: pdfUrl,
+            slug: `pdf-${rep.id}`,
+            lang: langCode,
+            date: dateStr,
+            image: coverPath,
+            excerpt,
+            tags: 'pdf,whitepaper,report,raport,studiu,' + kickerStr,
+            pillar: 'data'
+          });
+        });
+      });
 
       // 1. Preloaded index from preview server or Ghost JSON (`window.__BL_SEARCH_INDEX__`)
       if (Array.isArray(window.__BL_SEARCH_INDEX__)) {
@@ -887,7 +1855,10 @@
       // 2. Also harvest every card rendered in the DOM across all language workspaces
       document.querySelectorAll('.bl-lang-workspace[data-lang-panel]').forEach((ws) => {
         const lang = (ws.getAttribute('data-lang-panel') || 'ro').toLowerCase();
-        ws.querySelectorAll('.bl-lead-card, .bl-side-card, .bl-card').forEach((card) => {
+        const searchScope = ws.querySelector('template[data-ws-template]')
+          ? ws.querySelector('template[data-ws-template]').content
+          : ws;
+        searchScope.querySelectorAll('.bl-lead-card, .bl-side-card, .bl-card').forEach((card) => {
           const linkEl = card.querySelector('.bl-lead-title a, .bl-side-title a, .bl-card-title a');
           if (!linkEl) return;
           const title = (linkEl.textContent || '').trim();
@@ -918,6 +1889,40 @@
           });
         });
       });
+
+      // 3. Also harvest server-rendered Ghost search index (`#bl-ghost-search-data` in `default.hbs`)
+      const searchTpl = document.getElementById('bl-ghost-search-data');
+      const searchRoot = searchTpl && searchTpl.content ? searchTpl.content : searchTpl;
+      if (searchRoot) {
+        searchRoot.querySelectorAll('[data-s-slug]').forEach((node) => {
+          const slug = node.getAttribute('data-s-slug') || '';
+          const url = node.getAttribute('data-s-url') || (slug ? `/${slug}/` : '');
+          const title = (node.getAttribute('data-s-title') || '').trim();
+          if (!slug || !title) return;
+          const date = node.getAttribute('data-s-date') || '';
+          const tags = (node.getAttribute('data-s-tags') || '').toLowerCase();
+          const tagList = tags.split(',').map((t) => t.trim());
+          let lang = 'ro';
+          if (tagList.includes('en') || tagList.includes('hash-en')) lang = 'en';
+          else if (tagList.includes('bg') || tagList.includes('hash-bg')) lang = 'bg';
+          else if (tagList.includes('es') || tagList.includes('hash-es')) lang = 'es';
+
+          const key = `${lang}:${slug}`;
+          if (byKey.has(key)) return;
+          const pillar = classifyPillar(title, tags, '', slug);
+          byKey.set(key, {
+            title,
+            url,
+            slug,
+            lang,
+            date,
+            image: '',
+            excerpt: '',
+            tags,
+            pillar
+          });
+        });
+      }
 
       searchIndex = Array.from(byKey.values());
     }
@@ -1030,9 +2035,12 @@
           const fallbackThumb = `/assets/images/covers/cover-${item.pillar || 'playbooks'}.svg`;
           const thumbSrc = item.image || fallbackThumb;
 
+          const isPdf = /\.pdf(\?|$)/i.test(item.url);
+
           return `
             <a class="bl-search-item${idx === 0 ? ' is-active' : ''}"
                href="${escapeHtml(item.url)}"
+               ${isPdf ? 'target="_blank" rel="noopener"' : ''}
                role="option"
                data-search-result-idx="${idx}">
               <div class="bl-search-thumb">
@@ -1146,17 +2154,28 @@
 
     let width = 0;
     let height = 0;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     let points = [];
     let triangles = [];
     const pointer = { x: 0.65, y: 0.38 };
+    let rafPending = false;
 
     const COLS = 13;
     const ROWS = 7;
 
-    function buildMesh() {
-      width = canvas.clientWidth || window.innerWidth;
-      height = canvas.clientHeight || 520;
+    // Curated BusinessLeague Arena Telemetry Nodes attached to interior mesh vertices
+    const ARENA_NODES = [
+      { row: 1, col: 2, label: 'TIER I // UNICORNS', accent: 'violet' },
+      { row: 1, col: 8, label: 'TIER II // WIZARDS', accent: 'emerald' },
+      { row: 5, col: 3, label: 'TIER III // LOBSTERS', accent: 'emerald' },
+      { row: 5, col: 6, label: 'TIER IV // ROOKIES', accent: 'violet' },
+      { row: 2, col: 10, label: 'BVB: 2P // ARENA', accent: 'emerald' },
+      { row: 4, col: 1, label: 'CPS • REAL DATA', accent: 'violet' }
+    ];
+
+    function buildMesh(w, h) {
+      width = w || window.innerWidth || 1280;
+      height = h || 440;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -1197,8 +2216,13 @@
     }
 
     function render(now) {
-      const t = now * 0.00065;
+      rafPending = false;
+      const t = (now || 0) * 0.00065;
       ctx.clearRect(0, 0, width, height);
+
+      const isLight =
+        document.documentElement.getAttribute('data-theme') === 'light' &&
+        !document.documentElement.classList.contains('dark-mode');
 
       for (let i = 0; i < points.length; i++) {
         const p = points[i];
@@ -1220,9 +2244,7 @@
         const dist = Math.hypot(cx - lightX, cy - lightY);
         const maxDist = Math.hypot(width, height) * 0.72;
         const intensity = Math.max(0, 1 - dist / maxDist);
-
-        const greenHighlight = Math.pow(intensity, 2.4) * 0.16;
-        const baseShade = 8 + ((i * 7) % 10) + intensity * 12;
+        const wave = 0.5 + 0.5 * Math.sin(t * 1.4 + i * 0.37);
 
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -1230,34 +2252,158 @@
         ctx.lineTo(c.x, c.y);
         ctx.closePath();
 
-        ctx.fillStyle = `rgba(${Math.round(baseShade)}, ${Math.round(
-          baseShade + greenHighlight * 195
-        )}, ${Math.round(baseShade + greenHighlight * 90)}, 0.78)`;
-        ctx.fill();
+        if (isLight) {
+          // Crisp architectural light-mode prism facets (porcelain + violet + signal emerald)
+          const facetIdx = (i * 7) % 12;
+          const rVal = Math.round(243 - intensity * 20 - facetIdx * 0.7 + wave * 5);
+          const gVal = Math.round(242 - intensity * 10 - facetIdx * 0.5 + Math.pow(intensity, 2) * 14);
+          const bVal = Math.round(252 - facetIdx * 0.5 + intensity * 3);
+          ctx.fillStyle = `rgba(${rVal}, ${gVal}, ${bVal}, ${0.52 + intensity * 0.26})`;
+          ctx.fill();
 
-        ctx.strokeStyle = `rgba(0, 195, 100, ${0.035 + greenHighlight * 0.38})`;
-        ctx.lineWidth = 0.7;
-        ctx.stroke();
+          const useEmeraldStroke = (i + Math.floor(t * 2)) % 5 === 0 || intensity > 0.64;
+          ctx.strokeStyle = useEmeraldStroke
+            ? `rgba(5, 150, 105, ${0.11 + intensity * 0.26})`
+            : `rgba(120, 57, 238, ${0.10 + intensity * 0.24})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        } else {
+          // Dual-Chroma BusinessLeague Dark Arena (Royal Violet #7839ee + Signal Emerald #00d68f)
+          const isVioletFacet = (i * 3) % 4 === 0;
+          const highlight = Math.pow(intensity, 2.2) * 0.16;
+          const baseShade = 8 + ((i * 7) % 9) + intensity * 10;
+
+          const rShade = Math.round(baseShade + (isVioletFacet ? highlight * 120 : highlight * 18));
+          const gShade = Math.round(baseShade + (isVioletFacet ? highlight * 55 : highlight * 190));
+          const bShade = Math.round(baseShade + (isVioletFacet ? highlight * 235 : highlight * 125));
+
+          ctx.fillStyle = `rgba(${rShade}, ${gShade}, ${bShade}, 0.78)`;
+          ctx.fill();
+
+          ctx.strokeStyle = isVioletFacet
+            ? `rgba(147, 83, 255, ${0.055 + highlight * 0.42})`
+            : `rgba(0, 205, 120, ${0.048 + highlight * 0.42})`;
+          ctx.lineWidth = 0.75;
+          ctx.stroke();
+        }
       }
 
-      requestAnimationFrame(render);
+      // Subtle geometric vertex nodes across the mesh
+      ctx.fillStyle = isLight ? 'rgba(120, 57, 238, 0.22)' : 'rgba(167, 139, 250, 0.18)';
+      for (let i = 0; i < points.length; i += 2) {
+        const p = points[i];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // BusinessLeague Arena Telemetry Callout Nodes (Unicorns, Wizards, Lobsters, Rookies, BVB: 2P)
+      if (width >= 680) {
+        ctx.save();
+        ctx.font = '600 8.5px "Roboto Mono", monospace';
+        ctx.textBaseline = 'middle';
+
+        for (let n = 0; n < ARENA_NODES.length; n++) {
+          const node = ARENA_NODES[n];
+          const idx = node.row * COLS + node.col;
+          const pt = points[idx];
+          if (!pt) continue;
+
+          const d = Math.hypot(pt.x - lightX, pt.y - lightY);
+          const prox = Math.max(0, 1 - d / (width * 0.42));
+          const alpha = (isLight ? 0.22 : 0.20) + prox * 0.32;
+
+          const colorStr =
+            node.accent === 'emerald'
+              ? isLight
+                ? `rgba(4, 120, 87, ${alpha})`
+                : `rgba(16, 185, 129, ${alpha})`
+              : isLight
+                ? `rgba(105, 39, 218, ${alpha})`
+                : `rgba(185, 135, 255, ${alpha})`;
+
+          // Outer target ring
+          ctx.strokeStyle = colorStr;
+          ctx.lineWidth = 0.9;
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, 5 + Math.sin(t * 2.2 + n) * 1.1, 0, Math.PI * 2);
+          ctx.stroke();
+
+          // Inner core dot
+          ctx.fillStyle = colorStr;
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, 2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Micro callout leader line + label
+          ctx.beginPath();
+          ctx.moveTo(pt.x + 6, pt.y);
+          ctx.lineTo(pt.x + 13, pt.y - 4);
+          ctx.stroke();
+
+          ctx.fillText(node.label, pt.x + 16, pt.y - 4);
+        }
+        ctx.restore();
+      }
     }
 
-    buildMesh();
-    window.addEventListener('resize', buildMesh, { passive: true });
+    function scheduleRender() {
+      if (!rafPending) {
+        rafPending = true;
+        requestAnimationFrame(render);
+      }
+    }
+
+    const startMesh = () => {
+      buildMesh(window.innerWidth, 440);
+      render(0);
+
+      if (typeof ResizeObserver !== 'undefined') {
+        const ro = new ResizeObserver((entries) => {
+          for (const entry of entries) {
+            const cr = entry.contentRect;
+            if (
+              cr.width > 0 &&
+              cr.height > 0 &&
+              (Math.abs(cr.width - width) > 4 || Math.abs(cr.height - height) > 4)
+            ) {
+              buildMesh(cr.width, cr.height);
+              scheduleRender();
+            }
+          }
+        });
+        ro.observe(canvas);
+      } else {
+        window.addEventListener(
+          'resize',
+          () => {
+            buildMesh(window.innerWidth, 440);
+            scheduleRender();
+          },
+          { passive: true }
+        );
+      }
+    };
+
+    if (typeof requestIdleCallback === 'function') {
+      requestIdleCallback(startMesh, { timeout: 600 });
+    } else {
+      setTimeout(startMesh, 250);
+    }
+
     window.addEventListener(
       'pointermove',
       (e) => {
-        const rect = canvas.getBoundingClientRect();
-        if (rect.width > 0 && rect.height > 0) {
-          pointer.x = Math.max(0.1, Math.min(0.9, (e.clientX - rect.left) / rect.width));
-          pointer.y = Math.max(0.1, Math.min(0.9, (e.clientY - rect.top) / rect.height));
+        if (width > 0 && height > 0) {
+          pointer.x = Math.max(0.1, Math.min(0.9, e.clientX / width));
+          pointer.y = Math.max(0.1, Math.min(0.9, e.clientY / height));
+          scheduleRender();
         }
       },
       { passive: true }
     );
 
-    requestAnimationFrame(render);
+    canvas.__rerenderMesh = scheduleRender;
   }
 
   /**
@@ -1369,8 +2515,10 @@
             h.id = `section-${idx + 1}`;
           }
           const li = document.createElement('li');
-          li.className = `bl-toc-item bl-toc-item--${h.tagName.toLowerCase()}`;
+          const tagLower = h.tagName.toLowerCase();
+          li.className = `bl-toc-item bl-toc-item--${tagLower}`;
           const a = document.createElement('a');
+          a.className = `bl-toc-link${tagLower === 'h3' ? ' is-h3' : ''}`;
           a.href = `#${h.id}`;
           a.textContent = h.textContent;
           li.appendChild(a);
@@ -1395,33 +2543,187 @@
         });
       });
     }
+
+    // Wire cross-language sibling links (`[data-article-lang]`) & SEO `<link rel="alternate" hreflang="...">`
+    const articleShell = document.querySelector('.bl-article-shell[data-post-slug]');
+    if (articleShell) {
+      const currentSlug = articleShell.getAttribute('data-post-slug') || '';
+      const siblings = getTranslationSiblings(currentSlug);
+
+      document.querySelectorAll('[data-article-lang]').forEach((pill) => {
+        const pillLang = (pill.getAttribute('data-article-lang') || '').toLowerCase();
+        if (!SUPPORTED_LANGS.includes(pillLang)) return;
+
+        if (siblings && siblings[pillLang]) {
+          pill.setAttribute('href', `/${siblings[pillLang]}/?lang=${pillLang}`);
+          pill.setAttribute('data-has-translation', 'true');
+        } else {
+          pill.setAttribute('href', `/?lang=${pillLang}`);
+          pill.setAttribute('data-has-translation', 'false');
+        }
+      });
+
+      if (siblings && document.head) {
+        SUPPORTED_LANGS.forEach((langCode) => {
+          const targetSlug = siblings[langCode];
+          if (!targetSlug) return;
+          if (!document.head.querySelector(`link[rel="alternate"][hreflang="${langCode}"]`)) {
+            const link = document.createElement('link');
+            link.rel = 'alternate';
+            link.hreflang = langCode;
+            link.href = `${window.location.origin}/${targetSlug}/`;
+            document.head.appendChild(link);
+          }
+        });
+      }
+    }
   }
 
   /**
    * 10. Main Initialization & Event Delegation
    */
+  const VALID_PILLARS = ['all', 'reports', 'data', 'interviews', 'playbooks', 'competition', 'product', 'corporate'];
+
+  function resolveInitialPillar() {
+    try {
+      const hash = (window.location.hash || '').replace(/^#/, '').toLowerCase();
+      if (hash === 'reports' || hash === 'pillar-reports' || hash.startsWith('pillar-reports-')) {
+        return 'reports';
+      }
+      if (hash.startsWith('pillar-')) {
+        const p = hash.slice('pillar-'.length);
+        if (VALID_PILLARS.includes(p)) return p;
+      }
+      const params = new URLSearchParams(window.location.search);
+      const qPillar = (params.get('pillar') || '').toLowerCase();
+      if (VALID_PILLARS.includes(qPillar)) return qPillar;
+    } catch (_) {}
+    return 'all';
+  }
+
+  function syncPillarNavState(activePillar) {
+    document.querySelectorAll('[data-filter-pillar]').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-filter-pillar') === activePillar);
+    });
+    document.querySelectorAll('.bl-nav-link[data-pillar-link]').forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('data-pillar-link') === activePillar);
+    });
+    const homeLink = document.querySelector('.bl-nav-link[data-i18n="nav_home"]');
+    if (homeLink) {
+      homeLink.classList.toggle('is-active', activePillar === 'all');
+    }
+  }
+
+  function applyThemeState(theme) {
+    const html = document.documentElement;
+    const resolved = theme === 'light' ? 'light' : 'dark';
+    html.setAttribute('data-theme', resolved);
+    if (resolved === 'dark') {
+      html.classList.add('dark-mode');
+    } else {
+      html.classList.remove('dark-mode');
+    }
+    const csMeta = document.querySelector('meta[name="color-scheme"]');
+    if (csMeta) {
+      csMeta.content = resolved;
+    }
+    const meshCanvas = document.getElementById('bl-hero-mesh');
+    if (meshCanvas && typeof meshCanvas.__rerenderMesh === 'function') {
+      meshCanvas.__rerenderMesh();
+    }
+  }
+
   function init() {
     let currentLang = resolveActiveLanguage();
-    let currentPillar = 'all';
+    let currentPillar = resolveInitialPillar();
 
-    applyTranslations(currentLang);
-    initWorkspacesAndSections(currentLang, currentPillar);
-    initLiveSearch(() => currentLang);
-    initHeroMesh();
-    initReadingControls();
-    initSinglePostEnhancements();
-
-    // Theme Toggle (`#bl-theme-toggle`)
+    // Theme Toggle (`#bl-theme-toggle`) + Cross-Tab Storage Sync bound first
     const themeToggle = document.getElementById('bl-theme-toggle');
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
         const html = document.documentElement;
         const current = html.getAttribute('data-theme') || 'dark';
         const next = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
+        applyThemeState(next);
         try {
           localStorage.setItem(THEME_KEY, next);
+          localStorage.setItem('bl_theme', next);
         } catch (_) {}
+      });
+    }
+
+    window.addEventListener('storage', (e) => {
+      if ((e.key === THEME_KEY || e.key === 'bl_theme') && (e.newValue === 'light' || e.newValue === 'dark')) {
+        applyThemeState(e.newValue);
+      }
+    });
+
+    initWorkspacesAndSections(currentLang, currentPillar);
+    syncPillarNavState(currentPillar);
+    applyTranslations(currentLang);
+    initLiveSearch(() => currentLang);
+    initHeroMesh();
+    initReadingControls();
+    initSinglePostEnhancements();
+
+    if (currentPillar !== 'all') {
+      const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
+      const targetSec = activeWs && (
+        currentPillar === 'reports'
+          ? activeWs.querySelector('[data-reports-section]')
+          : activeWs.querySelector('[data-feed-section]')
+      );
+      if (targetSec) {
+        setTimeout(() => {
+          targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
+
+    window.addEventListener('hashchange', () => {
+      const nextPillar = resolveInitialPillar();
+      const hasWorkspaces = document.querySelectorAll('.bl-lang-workspace[data-lang-panel]').length > 0;
+      if (hasWorkspaces) {
+        if (nextPillar !== currentPillar) {
+          currentPillar = nextPillar;
+          syncPillarNavState(currentPillar);
+          initWorkspacesAndSections(currentLang, currentPillar);
+        }
+        if (currentPillar !== 'all') {
+          const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
+          const targetSec = activeWs && (
+            currentPillar === 'reports'
+              ? activeWs.querySelector('[data-reports-section]')
+              : activeWs.querySelector('[data-feed-section]')
+          );
+          if (targetSec) {
+            targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+    });
+
+    // Mobile Sections Menu Toggle (`#bl-mobile-menu-toggle`)
+    const mobileMenuToggle = document.getElementById('bl-mobile-menu-toggle');
+    const headerEl = document.querySelector('.bl-header');
+    function closeMobileMenu() {
+      if (headerEl && headerEl.classList.contains('is-menu-open')) {
+        headerEl.classList.remove('is-menu-open');
+        if (mobileMenuToggle) {
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+    if (mobileMenuToggle && headerEl) {
+      mobileMenuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = headerEl.classList.toggle('is-menu-open');
+        mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeMobileMenu();
+        }
       });
     }
 
@@ -1438,14 +2740,24 @@
         ).toLowerCase();
         if (SUPPORTED_LANGS.includes(targetLang)) {
           currentLang = targetLang;
+          document.documentElement.setAttribute('data-bl-lang', currentLang);
+          document.documentElement.setAttribute('data-active-lang', currentLang);
           try {
             localStorage.setItem(STORAGE_KEY, currentLang);
+            localStorage.setItem('bl_lang', currentLang);
           } catch (_) {}
 
-          // If on single article view and switching language, navigate to home with ?lang=xx
+          // If on single article view and switching language, navigate directly to translated sibling article if available
           const hasWorkspaces = document.querySelectorAll('.bl-lang-workspace[data-lang-panel]').length > 0;
           if (!hasWorkspaces) {
-            window.location.href = `/?lang=${currentLang}`;
+            const articleShell = document.querySelector('.bl-article-shell[data-post-slug]');
+            const currentSlug = articleShell ? articleShell.getAttribute('data-post-slug') : '';
+            const siblings = getTranslationSiblings(currentSlug);
+            if (siblings && siblings[currentLang]) {
+              window.location.href = `/${siblings[currentLang]}/?lang=${currentLang}`;
+            } else {
+              window.location.href = `/?lang=${currentLang}`;
+            }
             return;
           }
 
@@ -1453,8 +2765,8 @@
           url.searchParams.set('lang', currentLang);
           window.history.replaceState({}, '', url.toString());
 
-          applyTranslations(currentLang);
           initWorkspacesAndSections(currentLang, currentPillar);
+          applyTranslations(currentLang);
         }
         return;
       }
@@ -1462,6 +2774,7 @@
       // 2. Pillar Filter Tabs (`[data-filter-pillar]`, `[data-pillar-link]`, `[data-pillar-filter]`)
       const pillarBtn = e.target.closest('[data-filter-pillar], [data-pillar-link], [data-pillar-filter]');
       if (pillarBtn) {
+        closeMobileMenu();
         const targetPillar =
           pillarBtn.getAttribute('data-filter-pillar') ||
           pillarBtn.getAttribute('data-pillar-link') ||
@@ -1470,34 +2783,323 @@
 
         const hasWorkspaces = document.querySelectorAll('.bl-lang-workspace[data-lang-panel]').length > 0;
         if (!hasWorkspaces) {
-          // On single post page, let link navigate to home and filter
+          e.preventDefault();
+          // On single post page, navigate to home and filter by pillar
           window.location.href = `/?lang=${currentLang}#pillar-${targetPillar}`;
           return;
         }
 
         e.preventDefault();
         currentPillar = targetPillar;
+        syncPillarNavState(currentPillar);
 
-        document.querySelectorAll('[data-filter-pillar]').forEach((btn) => {
-          btn.classList.toggle('is-active', btn.getAttribute('data-filter-pillar') === currentPillar);
-        });
-        document.querySelectorAll('.bl-nav-link[data-pillar-link]').forEach((link) => {
-          link.classList.toggle('is-active', link.getAttribute('data-pillar-link') === currentPillar);
-        });
-        const homeLink = document.querySelector('.bl-nav-link[data-i18n="nav_home"]');
-        if (homeLink) {
-          homeLink.classList.toggle('is-active', currentPillar === 'all');
-        }
+        try {
+          const url = new URL(window.location.href);
+          url.searchParams.set('lang', currentLang);
+          url.hash = currentPillar === 'all' ? '' : `pillar-${currentPillar}`;
+          window.history.replaceState({}, '', url.toString());
+        } catch (_) {}
 
         initWorkspacesAndSections(currentLang, currentPillar);
 
         if (currentPillar !== 'all') {
           const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
-          const feedSec = activeWs && activeWs.querySelector('[data-feed-section]');
-          if (feedSec) {
-            feedSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const targetSec = activeWs && (
+            currentPillar === 'reports'
+              ? activeWs.querySelector('[data-reports-section]')
+              : activeWs.querySelector('[data-feed-section]')
+          );
+          if (targetSec) {
+            targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
+        return;
+      }
+
+      // 3. Load More Archive Pagination (`[data-load-more]`)
+      const loadMoreBtn = e.target.closest('[data-load-more]');
+      if (loadMoreBtn && !loadMoreBtn.disabled) {
+        e.preventDefault();
+        const ws = loadMoreBtn.closest('.bl-lang-workspace');
+        const masonryGrid = ws ? ws.querySelector('[data-workspace-grid]') : null;
+        if (!ws || !masonryGrid) return;
+
+        const LANG_FILTERS = {
+          ro: 'tag:-[en,hash-en,bg,hash-bg,es,hash-es]',
+          en: 'tag:[en,hash-en]',
+          bg: 'tag:[bg,hash-bg]',
+          es: 'tag:[es,hash-es]'
+        };
+
+        const panelLang = (
+          loadMoreBtn.getAttribute('data-load-more') ||
+          ws.getAttribute('data-lang-panel') ||
+          currentLang ||
+          'ro'
+        ).toLowerCase();
+        const dict = I18N[panelLang] || I18N.ro;
+        const langFilter =
+          loadMoreBtn.getAttribute('data-lang-filter') ||
+          ws.getAttribute('data-lang-filter') ||
+          LANG_FILTERS[panelLang] ||
+          LANG_FILTERS.ro;
+        const nextPage = parseInt(loadMoreBtn.getAttribute('data-next-page') || '2', 10);
+        const coverSample =
+          loadMoreBtn.getAttribute('data-cover-sample') || '/assets/images/covers/cover-interviews.svg';
+        const labelEl = loadMoreBtn.querySelector('.bl-load-more-label');
+        const metaEl = ws.querySelector('[data-load-more-meta]');
+        const wrapEl = ws.querySelector('[data-load-more-wrap]');
+
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.classList.add('is-loading');
+        if (labelEl) labelEl.textContent = dict.load_more_loading;
+
+        const sodoScript = document.querySelector('script[data-sodo-search][data-key]');
+        const apiKey =
+          (sodoScript && sodoScript.getAttribute('data-key')) || '5b2bb73c870c40e21550d566b0';
+
+        const params = new URLSearchParams({
+          key: apiKey,
+          include: 'tags,authors',
+          limit: '22',
+          page: String(nextPage),
+          filter: langFilter
+        });
+
+        const apiUrl = `/ghost/api/content/posts/?${params.toString()}`;
+
+        fetch(apiUrl)
+          .then((res) => {
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            return res.json();
+          })
+          .then((data) => {
+            const posts = Array.isArray(data && data.posts) ? data.posts : [];
+            const pagination = (data && data.meta && data.meta.pagination) || {};
+
+            // Collect existing slugs in workspace to prevent duplicates
+            const existingSlugs = new Set();
+            ws.querySelectorAll('[data-post-slug]').forEach((el) => {
+              const s = el.getAttribute('data-post-slug');
+              if (s) existingSlugs.add(s);
+            });
+
+            const monthNames = [
+              'JAN',
+              'FEB',
+              'MAR',
+              'APR',
+              'MAY',
+              'JUN',
+              'JUL',
+              'AUG',
+              'SEP',
+              'OCT',
+              'NOV',
+              'DEC'
+            ];
+
+            function esc(str) {
+              return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+            }
+
+            function detectPostLanguage(post) {
+              const slug = String((post && post.slug) || '').toLowerCase();
+              const title = String((post && post.title) || '');
+              const tagSlugs = Array.isArray(post && post.tags)
+                ? post.tags.map((t) => String((t && t.slug) || '').toLowerCase()).filter(Boolean)
+                : [];
+
+              if (
+                tagSlugs.includes('bg') ||
+                tagSlugs.includes('hash-bg') ||
+                slug.endsWith('-bg') ||
+                /[а-яА-Я]/.test(title)
+              ) {
+                return 'bg';
+              }
+              if (tagSlugs.includes('es') || tagSlugs.includes('hash-es') || slug.endsWith('-es')) {
+                return 'es';
+              }
+              if (tagSlugs.includes('en') || tagSlugs.includes('hash-en')) {
+                return 'en';
+              }
+              const siblings = getTranslationSiblings(slug);
+              if (siblings) {
+                if (siblings.bg === slug && siblings.ro !== slug) return 'bg';
+                if (siblings.es === slug && siblings.ro !== slug) return 'es';
+                if (siblings.en === slug && siblings.ro !== slug) return 'en';
+                if (siblings.ro === slug) return 'ro';
+              }
+              return 'ro';
+            }
+
+            function toGhostWebp(url, width) {
+              const s = String(url || '');
+              if (s.includes('/content/images/') && !s.includes('/content/images/size/')) {
+                return s.replace('/content/images/', `/content/images/size/w${width}/format/webp/`);
+              }
+              return s;
+            }
+
+            posts.forEach((post) => {
+              if (!post || !post.slug || existingSlugs.has(post.slug)) return;
+              if (detectPostLanguage(post) !== panelLang) return;
+              existingSlugs.add(post.slug);
+
+              const pubDate = post.published_at ? new Date(post.published_at) : new Date();
+              const isoDate = !isNaN(pubDate.getTime())
+                ? pubDate.toISOString().slice(0, 10)
+                : '';
+              const dayStr = !isNaN(pubDate.getTime())
+                ? String(pubDate.getDate()).padStart(2, '0')
+                : '';
+              const monStr = !isNaN(pubDate.getTime()) ? monthNames[pubDate.getMonth()] : '';
+              const yearStr = !isNaN(pubDate.getTime()) ? pubDate.getFullYear() : '';
+              const formattedDate = dayStr ? `${dayStr} ${monStr} ${yearStr}` : '';
+              const readingTimeStr =
+                post.reading_time && post.reading_time > 0 ? `${post.reading_time} min read` : '';
+
+              const rawExcerpt = (post.custom_excerpt || post.excerpt || '')
+                .replace(/\s+/g, ' ')
+                .trim();
+              const words = rawExcerpt ? rawExcerpt.split(' ') : [];
+              const shortExcerpt =
+                words.length > 26 ? `${words.slice(0, 26).join(' ')}...` : rawExcerpt;
+
+              const tagsCsv = Array.isArray(post.tags)
+                ? `${post.tags.map((t) => t.slug).join(',')},`
+                : '';
+              const primaryTagName =
+                (post.primary_tag && post.primary_tag.name) || 'BusinessLeague';
+              const primaryAuthor =
+                post.primary_author || (Array.isArray(post.authors) && post.authors[0]) || null;
+              const postUrl = post.url || `/${post.slug}/`;
+
+              const article = document.createElement('article');
+              article.className = 'bl-card post-card';
+              article.setAttribute('data-post-id', post.id || '');
+              article.setAttribute('data-post-slug', post.slug);
+              article.setAttribute('data-published', isoDate);
+              article.setAttribute('data-tags', tagsCsv);
+              article.setAttribute('data-pillar', 'auto');
+
+              const img300 = post.feature_image ? toGhostWebp(post.feature_image, 300) : '';
+              const img600 = post.feature_image ? toGhostWebp(post.feature_image, 600) : '';
+
+              const mediaHtml = post.feature_image
+                ? `<img src="${esc(img600)}" srcset="${esc(img300)} 300w, ${esc(img600)} 600w" sizes="(max-width: 680px) 320px, (max-width: 1120px) 280px, 340px" alt="${esc(
+                    post.feature_image_alt || post.title
+                  )}" width="600" height="338" loading="lazy" decoding="async" onerror="this.style.display='none';if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}" />
+                   <div class="bl-generated-cover" data-cover-pillar="interviews" style="display:none;">
+                     <img class="bl-generated-cover-bg" src="${esc(
+                       coverSample
+                     )}" data-cover-template-img alt="" loading="lazy" decoding="async" />
+                     <div class="bl-generated-cover-overlay">
+                       <span class="bl-generated-cover-kicker" data-cover-kicker>${esc(
+                         primaryTagName
+                       )}</span>
+                       <span class="bl-generated-cover-headline">${esc(post.title)}</span>
+                       <span class="bl-generated-cover-brand">BUSINESSLEAGUE &bull; 2PERFORMANT</span>
+                     </div>
+                   </div>`
+                : `<div class="bl-generated-cover" data-generated-cover data-cover-pillar="interviews">
+                     <img class="bl-generated-cover-bg" src="${esc(
+                       coverSample
+                     )}" data-cover-bg alt="" loading="lazy" decoding="async" />
+                     <div class="bl-generated-cover-overlay">
+                       <span class="bl-generated-cover-kicker" data-cover-kicker>${esc(
+                         primaryTagName
+                       )}</span>
+                       <span class="bl-generated-cover-headline">${esc(post.title)}</span>
+                       <span class="bl-generated-cover-brand">BUSINESSLEAGUE // 2PERFORMANT</span>
+                     </div>
+                   </div>`;
+
+              const authorHtml = primaryAuthor
+                ? `<a class="bl-author-chip" href="${esc(primaryAuthor.url || '#')}">
+                     ${
+                       primaryAuthor.profile_image
+                         ? `<img class="bl-author-avatar" src="${esc(
+                             primaryAuthor.profile_image
+                           )}" alt="" width="36" height="36" loading="lazy" decoding="async" />`
+                         : ''
+                     }
+                     <span>${esc(primaryAuthor.name || 'BusinessLeague')}</span>
+                   </a>`
+                : `<span class="bl-author-chip"><span>BusinessLeague</span></span>`;
+
+              article.innerHTML = `
+                <a class="bl-card-media" href="${esc(postUrl)}" aria-label="${esc(post.title)}">
+                  ${mediaHtml}
+                </a>
+                <div class="bl-card-body">
+                  <div class="bl-meta-row">
+                    <span class="bl-pillar-badge" data-pillar-badge>${esc(primaryTagName)}</span>
+                    <time class="bl-meta-time" datetime="${esc(isoDate)}">
+                      ${esc(formattedDate)}${readingTimeStr ? ` &bull; ${esc(readingTimeStr)}` : ''}
+                    </time>
+                  </div>
+                  <h3 class="bl-card-title">
+                    <a href="${esc(postUrl)}">${esc(post.title)}</a>
+                  </h3>
+                  ${shortExcerpt ? `<p class="bl-card-excerpt">${esc(shortExcerpt)}</p>` : ''}
+                  <footer class="bl-card-footer">
+                    ${authorHtml}
+                    <a class="bl-read-cta" href="${esc(postUrl)}" aria-label="${esc(post.title)}">
+                      <span data-i18n="read_article">${esc(dict.read_article)}</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </a>
+                  </footer>
+                </div>
+              `;
+
+              const assignedPillar = decorateCardElement(article, panelLang);
+              if (currentPillar && currentPillar !== 'all' && assignedPillar !== currentPillar) {
+                article.style.display = 'none';
+              }
+
+              masonryGrid.appendChild(article);
+            });
+
+            balanceAllGridRows(ws, panelLang);
+
+            const totalLoaded =
+              7 +
+              masonryGrid.querySelectorAll(':scope > .bl-card:not([data-cloned-filter-card])')
+                .length;
+            const totalAvailable = pagination.total || totalLoaded;
+
+            if (metaEl && totalAvailable > 0) {
+              metaEl.textContent = `${Math.min(totalLoaded, totalAvailable)} / ${totalAvailable}`;
+            }
+
+            const hasMore = Boolean(pagination.next) && posts.length > 0;
+            if (hasMore) {
+              loadMoreBtn.setAttribute('data-next-page', String(nextPage + 1));
+              loadMoreBtn.disabled = false;
+              loadMoreBtn.classList.remove('is-loading');
+              if (labelEl) labelEl.textContent = dict.load_more_btn;
+            } else {
+              loadMoreBtn.classList.remove('is-loading');
+              if (labelEl) labelEl.textContent = dict.load_more_done;
+              if (wrapEl) {
+                wrapEl.setAttribute('data-exhausted', 'true');
+                setTimeout(() => {
+                  wrapEl.hidden = true;
+                }, 1400);
+              }
+            }
+          })
+          .catch(() => {
+            loadMoreBtn.disabled = false;
+            loadMoreBtn.classList.remove('is-loading');
+            if (labelEl) labelEl.textContent = dict.load_more_btn;
+          });
       }
     });
   }

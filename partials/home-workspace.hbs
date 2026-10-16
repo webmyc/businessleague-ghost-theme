@@ -1,6 +1,7 @@
 {{!-- BusinessLeague Per-Language Journalistic Magazine Workspace Partial --}}
-<div class="bl-lang-workspace" data-lang-panel="{{lang_code}}">
-    {{#get "posts" filter=lang_filter include="tags,authors" limit="40" as |lang_posts|}}
+<div class="bl-lang-workspace{{#if is_default_lang}} is-active{{/if}}" data-lang-panel="{{lang_code}}" data-lang-filter="{{lang_filter}}"{{#unless is_default_lang}} hidden{{/unless}}>
+    {{#unless is_default_lang}}<template data-ws-template="{{lang_code}}">{{/unless}}
+    {{#get "posts" filter=lang_filter include="tags,authors" limit="22" as |lang_posts|}}
         {{#if lang_posts}}
             {{!-- 1. FRONT PAGE 7:5 CINEMATIC MAVERICK HERO SPLIT --}}
             <section class="bl-hero-split" data-hero-section>
@@ -10,11 +11,11 @@
                         {{!-- Spinning Maverick Seal Stamp (from start.businessleague.com aesthetic) --}}
                         <svg class="bl-maverick-stamp" viewBox="0 0 124 124" aria-hidden="true">
                             <defs>
-                                <path id="bl-stamp-arc-{{../lang_code}}" d="M62 62 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/>
+                                <path id="bl-stamp-arc-{{../../lang_code}}" d="M62 62 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/>
                             </defs>
                             <circle class="s-disc" cx="62" cy="62" r="60"/>
                             <text>
-                                <textPath href="#bl-stamp-arc-{{../lang_code}}" textLength="280" lengthAdjust="spacing">THE OUTLIER · COVER STORY · REAL DATA ·</textPath>
+                                <textPath href="#bl-stamp-arc-{{../../lang_code}}" textLength="280" lengthAdjust="spacing">THE OUTLIER · COVER STORY · REAL DATA ·</textPath>
                             </text>
                             <path class="s-tri" d="M65 44L50 64h11l-2 16 15-20H63z"/>
                         </svg>
@@ -42,13 +43,16 @@
 
                             <a class="bl-lead-media" href="{{url}}" aria-label="{{title}}">
                                 {{#if feature_image}}
-                                <img src="{{img_url feature_image size="xl"}}"
-                                     srcset="{{img_url feature_image size="m"}} 600w,
-                                             {{img_url feature_image size="l"}} 1000w,
-                                             {{img_url feature_image size="xl"}} 2000w"
-                                     sizes="(max-width: 1120px) 94vw, 760px"
+                                <img src="{{img_url feature_image size="m" format="webp"}}"
+                                     srcset="{{img_url feature_image size="s" format="webp"}} 300w,
+                                             {{img_url feature_image size="m" format="webp"}} 600w,
+                                             {{img_url feature_image size="l" format="webp"}} 1000w,
+                                             {{img_url feature_image size="xl" format="webp"}} 2000w"
+                                     sizes="(max-width: 680px) 320px, (max-width: 1120px) 52vw, 600px"
+                                     width="600"
+                                     height="338"
                                      alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                                     fetchpriority="high" />
+                                     {{#if ../../is_default_lang}}fetchpriority="high"{{else}}loading="lazy" decoding="async"{{/if}} />
                                 {{else}}
                                     {{> "category-cover"}}
                                 {{/if}}
@@ -65,12 +69,12 @@
                                     {{#primary_author}}
                                     <a class="bl-author-chip" href="{{url}}">
                                         {{#if profile_image}}
-                                            <img class="bl-author-avatar" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                            <img class="bl-author-avatar" src="{{img_url profile_image size="xs" format="webp"}}" alt="" width="28" height="28" loading="lazy" decoding="async" />
                                         {{/if}}
                                         <span>{{name}}</span>
                                     </a>
                                     {{/primary_author}}
-                                    <a class="bl-cover-cta-btn" href="{{url}}">
+                                    <a class="bl-cover-cta-btn" href="{{url}}" aria-label="{{title}}">
                                         <span data-i18n="read_lead">Citește Cover Story-ul</span>
                                         <span aria-hidden="true">&rarr;</span>
                                     </a>
@@ -102,7 +106,13 @@
                              data-tags="{{#foreach tags visibility="all"}}{{slug}},{{/foreach}}">
                         <a class="bl-side-media" href="{{url}}" aria-label="{{title}}">
                             {{#if feature_image}}
-                            <img src="{{img_url feature_image size="m"}}"
+                            <img src="{{img_url feature_image size="s" format="webp"}}"
+                                 srcset="{{img_url feature_image size="xs" format="webp"}} 100w,
+                                         {{img_url feature_image size="s" format="webp"}} 300w"
+                                 sizes="116px"
+                                 width="300"
+                                 height="169"
+                                 decoding="async"
                                  alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
                                  loading="lazy" />
                             {{else}}
@@ -138,10 +148,8 @@
                                 Campionatul care e, de fapt, <span class="bl-thin">o comunitate.</span>
                             </h4>
                             <dl class="bl-dossier-dl">
-                                <dt>THE FILM</dt>
-                                <dd><a href="https://start.businessleague.com/#film" target="_blank" rel="noopener" data-i18n="dossier_film">Manifestul video BusinessLeague (1:44) ↗</a></dd>
                                 <dt>PULSE</dt>
-                                <dd><a href="https://start.businessleague.com/#pulse" target="_blank" rel="noopener" data-i18n="dossier_pulse">1 email/săptămână cu tot ce mișcă în Ligă ↗</a></dd>
+                                <dd><a href="https://start.businessleague.com/pulse" target="_blank" rel="noopener" data-i18n="dossier_pulse">1 email/săptămână cu tot ce mișcă în Ligă ↗</a></dd>
                                 <dt>MEETUPS</dt>
                                 <dd><a href="https://luma.com/2performant" target="_blank" rel="noopener" data-i18n="dossier_events">Dublin, București &amp; sesiuni live pe Luma ↗</a></dd>
                             </dl>
@@ -157,6 +165,44 @@
                             </div>
                         </aside>
                     </div>
+
+                    {{!-- Subscription Box to start.businessleague.com/pulse --}}
+                    <aside class="bl-pulse-subscribe-card" aria-label="Subscribe to BusinessLeague Pulse">
+                        <svg class="bl-pulse-sub-watermark" viewBox="0 0 150 64" fill="none" aria-hidden="true">
+                            <path d="M0 32h34l9-9 8 9h12l10-28 14 54 12-40 8 14h43" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="bl-pulse-sub-kicker-row">
+                            <div class="bl-pulse-sub-kicker">
+                                <span class="bl-pulse-sub-dot" aria-hidden="true"></span>
+                                <span data-i18n="pulse_sub_kicker">THE LEAGUE PULSE &bull; WEEKLY BRIEFING</span>
+                            </div>
+                            <a href="https://start.businessleague.com/pulse" target="_blank" rel="noopener" class="bl-pulse-sub-freq" data-i18n="pulse_sub_archive_badge">ARHIVA /PULSE ↗</a>
+                        </div>
+                        <h4 class="bl-pulse-sub-title" data-i18n="pulse_sub_title">Abonează-te la The League Pulse</h4>
+                        <p class="bl-pulse-sub-desc" data-i18n="pulse_sub_desc">
+                            1 email pe săptămână cu clasamentele live, studii de caz pe cifre reale și mișcările din campionat.
+                        </p>
+                        <form class="bl-pulse-sub-form" action="https://start.businessleague.com/pulse" method="get" target="_blank">
+                            <input type="email"
+                                   name="email"
+                                   class="bl-pulse-sub-input"
+                                   aria-label="Email address"
+                                   placeholder="Adresa ta de email..."
+                                   data-i18n-placeholder="pulse_sub_placeholder"
+                                   required />
+                            <button type="submit" class="bl-pulse-sub-btn">
+                                <span data-i18n="pulse_sub_btn">Abonează-te &rarr;</span>
+                            </button>
+                        </form>
+                        <div class="bl-pulse-sub-foot">
+                            <a href="https://start.businessleague.com/#pulse" target="_blank" rel="noopener" class="bl-pulse-sub-direct">
+                                <span data-i18n="pulse_sub_direct_link">Abonare directă (#pulse) ↗</span>
+                            </a>
+                            <a href="https://start.businessleague.com/pulse" target="_blank" rel="noopener" class="bl-pulse-sub-archive">
+                                <span data-i18n="pulse_sub_archive_link">Citește Arhiva /pulse ↗</span>
+                            </a>
+                        </div>
+                    </aside>
                 </div>
             </section>
 
@@ -169,11 +215,211 @@
                 <i></i>
             </div>
 
+            {{!-- 1B. CATEGORY REPORTS & WHITEPAPERS (PDF) SHOWCASE --}}
+            <section class="bl-section bl-reports-section" id="{{#if ../is_default_lang}}pillar-reports{{else}}pillar-reports-{{../lang_code}}{{/if}}" data-reports-section="{{../lang_code}}" data-report-cover-sample="{{asset "images/reports/pharma-ro.webp"}}">
+                <div class="bl-reports-header">
+                    <div class="bl-reports-header-copy">
+                        <span class="bl-section-eyebrow" data-i18n="sec_reports_eyebrow">RAPOARTE DE CATEGORIE &amp; WHITEPAPERS // STUDII PDF COMPLETE</span>
+                        <h2 class="bl-section-title" data-i18n="sec_reports_title">Radiografiile E-Commerce BusinessLeague (PDF)</h2>
+                        <p class="bl-reports-subtitle" data-i18n="sec_reports_subtitle">Studii de piață bazate pe milioane de comenzi reale din ecosistemul BusinessLeague. Apasă pe copertă sau pe buton pentru a deschide raportul PDF complet în tab nou.</p>
+                    </div>
+                    <button type="button" class="bl-filter-pill" data-filter-pillar="data">
+                        <span data-i18n="report_all_data">Toate analizele de piață &rarr;</span>
+                    </button>
+                </div>
+                <div class="bl-reports-grid">
+                    <article class="bl-report-card" data-report-id="pharma">
+                        <a class="bl-report-cover-link" href="https://blog.businessleague.com/content/files/2026/10/BusinessLeague_Pharma_RO_v6.pdf" target="_blank" rel="noopener" aria-label="Pharma &amp; Health: 1,31M comenzi unice în 33 de luni — Deschide PDF-ul">
+                            <div class="bl-report-cover-frame">
+                                <div class="bl-report-cover-badges">
+                                    <span class="bl-report-pdf-pill"><i></i>PDF &bull; RO</span>
+                                    <span class="bl-report-date-pill">OCT 2026</span>
+                                </div>
+                                <img class="bl-report-cover-img" src="{{asset "images/reports/pharma-ro.webp"}}" alt="Pharma &amp; Health: 1,31M comenzi unice în 33 de luni (PDF RO)" width="680" height="962" loading="lazy" decoding="async" />
+                                <span class="bl-report-cover-hover" aria-hidden="true">
+                                    <span class="bl-report-cover-hover-btn">
+                                        <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                        <span>&#8599;</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="bl-report-body">
+                            <span class="bl-report-kicker">RAPORT CATEGORIE // PHARMA</span>
+                            <h3 class="bl-report-title"><a href="https://blog.businessleague.com/content/files/2026/10/BusinessLeague_Pharma_RO_v6.pdf" target="_blank" rel="noopener">Pharma &amp; Health: 1,31M comenzi unice în 33 de luni</a></h3>
+                            <div class="bl-report-metrics">
+                                <span class="bl-report-metric-chip">1,31M comenzi</span>
+                                <span class="bl-report-metric-chip">€38,15M vânzări</span>
+                                <span class="bl-report-metric-chip">29 magazine</span>
+                            </div>
+                            <p class="bl-report-desc">Radiografia completă a categoriei Pharma în BusinessLeague: €38,15M vânzări fără TVA, 29 de farmacii și magazine analizate, sezonalitate și comportament de achiziție.</p>
+                            <div class="bl-report-actions">
+                                <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/10/BusinessLeague_Pharma_RO_v6.pdf" target="_blank" rel="noopener">
+                                    <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                    <span aria-hidden="true">&#8599;</span>
+                                </a>
+                                <div class="bl-report-subactions">
+                                    <a class="bl-report-article-link" href="/pharma-peste-1-3-milioane-de-comenzi-unice-in-33-de-luni/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
+                                    <a class="bl-report-alt-pdf" href="https://blog.businessleague.com/content/files/2026/10/BusinessLeague_Pharma_EN_v6.pdf" target="_blank" rel="noopener">EN PDF &#8599;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="bl-report-card" data-report-id="electronics">
+                        <a class="bl-report-cover-link" href="https://blog.businessleague.com/content/files/2026/09/BusinessLeague_Electronics_ITC_RO.pdf" target="_blank" rel="noopener" aria-label="Electronics &amp; IT&amp;C: 428.184 comenzi și €74,37M vânzări — Deschide PDF-ul">
+                            <div class="bl-report-cover-frame">
+                                <div class="bl-report-cover-badges">
+                                    <span class="bl-report-pdf-pill"><i></i>PDF &bull; RO</span>
+                                    <span class="bl-report-date-pill">SEP 2026</span>
+                                </div>
+                                <img class="bl-report-cover-img" src="{{asset "images/reports/electronics-ro.webp"}}" alt="Electronics &amp; IT&amp;C: 428.184 comenzi și €74,37M vânzări (PDF RO)" width="680" height="962" loading="lazy" decoding="async" />
+                                <span class="bl-report-cover-hover" aria-hidden="true">
+                                    <span class="bl-report-cover-hover-btn">
+                                        <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                        <span>&#8599;</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="bl-report-body">
+                            <span class="bl-report-kicker">RAPORT CATEGORIE // IT&amp;C</span>
+                            <h3 class="bl-report-title"><a href="https://blog.businessleague.com/content/files/2026/09/BusinessLeague_Electronics_ITC_RO.pdf" target="_blank" rel="noopener">Electronics &amp; IT&amp;C: 428.184 comenzi și €74,37M vânzări</a></h3>
+                            <div class="bl-report-metrics">
+                                <span class="bl-report-metric-chip">428.184 comenzi</span>
+                                <span class="bl-report-metric-chip">€74,37M vânzări</span>
+                                <span class="bl-report-metric-chip">148 magazine</span>
+                            </div>
+                            <p class="bl-report-desc">Analiza celor 148 de magazine din categoria Electronics &amp; IT&amp;C: coș mediu de €173,7, evoluția Black Friday și distribuția comenzilor pe subcategorii.</p>
+                            <div class="bl-report-actions">
+                                <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/09/BusinessLeague_Electronics_ITC_RO.pdf" target="_blank" rel="noopener">
+                                    <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                    <span aria-hidden="true">&#8599;</span>
+                                </a>
+                                <div class="bl-report-subactions">
+                                    <a class="bl-report-article-link" href="/electronics-it-c-428-184-comenzi-unice-in-26-de-luni/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
+                                    <a class="bl-report-alt-pdf" href="https://blog.businessleague.com/content/files/2026/09/BusinessLeague_Electronics_ITC_EN3.pdf" target="_blank" rel="noopener">EN PDF &#8599;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="bl-report-card" data-report-id="books">
+                        <a class="bl-report-cover-link" href="https://blog.businessleague.com/content/files/2026/08/Cum-se-cumpara-carti-online-2026-1.pdf" target="_blank" rel="noopener" aria-label="Cum se cumpără cărți online: Piață de €29,8M și 1,23M comenzi — Deschide PDF-ul">
+                            <div class="bl-report-cover-frame">
+                                <div class="bl-report-cover-badges">
+                                    <span class="bl-report-pdf-pill"><i></i>PDF &bull; RO</span>
+                                    <span class="bl-report-date-pill">AUG 2026</span>
+                                </div>
+                                <img class="bl-report-cover-img" src="{{asset "images/reports/books-ro.webp"}}" alt="Cum se cumpără cărți online: Piață de €29,8M și 1,23M comenzi (PDF RO)" width="680" height="962" loading="lazy" decoding="async" />
+                                <span class="bl-report-cover-hover" aria-hidden="true">
+                                    <span class="bl-report-cover-hover-btn">
+                                        <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                        <span>&#8599;</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="bl-report-body">
+                            <span class="bl-report-kicker">RAPORT CATEGORIE // BOOKS</span>
+                            <h3 class="bl-report-title"><a href="https://blog.businessleague.com/content/files/2026/08/Cum-se-cumpara-carti-online-2026-1.pdf" target="_blank" rel="noopener">Cum se cumpără cărți online: Piață de €29,8M și 1,23M comenzi</a></h3>
+                            <div class="bl-report-metrics">
+                                <span class="bl-report-metric-chip">1,24M comenzi</span>
+                                <span class="bl-report-metric-chip">€29,8M vânzări</span>
+                                <span class="bl-report-metric-chip">43 librării</span>
+                            </div>
+                            <p class="bl-report-desc">41,1% dintre comenzile de cărți conțin un singur produs. Radiografia completă a 1.236.336 de comenzi generate pentru 43 de librării online.</p>
+                            <div class="bl-report-actions">
+                                <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/08/Cum-se-cumpara-carti-online-2026-1.pdf" target="_blank" rel="noopener">
+                                    <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                    <span aria-hidden="true">&#8599;</span>
+                                </a>
+                                <div class="bl-report-subactions">
+                                    <a class="bl-report-article-link" href="/41-1-dintre-comenzile-de-carti-online-contin-un-singur-produs-cum-arata-radiografia-completa-a-unei-piete-de-30-de-milioane-de-euro/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
+                                    <a class="bl-report-alt-pdf" href="https://blog.businessleague.com/content/files/2026/08/How-books-are-bought-online-2026-1.pdf" target="_blank" rel="noopener">EN PDF &#8599;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="bl-report-card" data-report-id="home-garden">
+                        <a class="bl-report-cover-link" href="https://blog.businessleague.com/content/files/2026/07/HG_report_RO--1-.pdf" target="_blank" rel="noopener" aria-label="Home &amp; Garden: 84,5% comenzi cu un singur produs (€44,7M) — Deschide PDF-ul">
+                            <div class="bl-report-cover-frame">
+                                <div class="bl-report-cover-badges">
+                                    <span class="bl-report-pdf-pill"><i></i>PDF &bull; RO</span>
+                                    <span class="bl-report-date-pill">JUL 2026</span>
+                                </div>
+                                <img class="bl-report-cover-img" src="{{asset "images/reports/home-garden-ro.webp"}}" alt="Home &amp; Garden: 84,5% comenzi cu un singur produs (€44,7M) (PDF RO)" width="680" height="962" loading="lazy" decoding="async" />
+                                <span class="bl-report-cover-hover" aria-hidden="true">
+                                    <span class="bl-report-cover-hover-btn">
+                                        <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                        <span>&#8599;</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="bl-report-body">
+                            <span class="bl-report-kicker">RAPORT CATEGORIE // HOME &amp; GARDEN</span>
+                            <h3 class="bl-report-title"><a href="https://blog.businessleague.com/content/files/2026/07/HG_report_RO--1-.pdf" target="_blank" rel="noopener">Home &amp; Garden: 84,5% comenzi cu un singur produs (€44,7M)</a></h3>
+                            <div class="bl-report-metrics">
+                                <span class="bl-report-metric-chip">337.834 comenzi</span>
+                                <span class="bl-report-metric-chip">€44,7M vânzări</span>
+                                <span class="bl-report-metric-chip">229 magazine</span>
+                            </div>
+                            <p class="bl-report-desc">Studiu pe 337.834 de comenzi și 229 de magazine Home &amp; Garden: de ce 84,5% dintre achiziții conțin un singur articol și când sunt vârfurile de conversie.</p>
+                            <div class="bl-report-actions">
+                                <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/07/HG_report_RO--1-.pdf" target="_blank" rel="noopener">
+                                    <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                    <span aria-hidden="true">&#8599;</span>
+                                </a>
+                                <div class="bl-report-subactions">
+                                    <a class="bl-report-article-link" href="/84-5-din-toate-comenzile-home-garden-sunt-achizitii-cu-un-singur-produs/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
+                                    <a class="bl-report-alt-pdf" href="https://blog.businessleague.com/content/files/2026/07/HG_report_EN--1-.pdf" target="_blank" rel="noopener">EN PDF &#8599;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="bl-report-card" data-report-id="fashion">
+                        <a class="bl-report-cover-link" href="https://blog.businessleague.com/content/files/2026/06/BusinessLeague_Fashion_Buying_Report_EN-1.pdf" target="_blank" rel="noopener" aria-label="Fashion Buying Report: Utilizatorii iPhone cheltuie cu 24% mai mult — Deschide PDF-ul">
+                            <div class="bl-report-cover-frame">
+                                <div class="bl-report-cover-badges">
+                                    <span class="bl-report-pdf-pill"><i></i>PDF &bull; EN</span>
+                                    <span class="bl-report-date-pill">JUN 2026</span>
+                                </div>
+                                <img class="bl-report-cover-img" src="{{asset "images/reports/fashion-en.webp"}}" alt="Fashion Buying Report: Utilizatorii iPhone cheltuie cu 24% mai mult (PDF EN)" width="680" height="962" loading="lazy" decoding="async" />
+                                <span class="bl-report-cover-hover" aria-hidden="true">
+                                    <span class="bl-report-cover-hover-btn">
+                                        <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                        <span>&#8599;</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="bl-report-body">
+                            <span class="bl-report-kicker">RAPORT CATEGORIE // FASHION</span>
+                            <h3 class="bl-report-title"><a href="https://blog.businessleague.com/content/files/2026/06/BusinessLeague_Fashion_Buying_Report_EN-1.pdf" target="_blank" rel="noopener">Fashion Buying Report: Utilizatorii iPhone cheltuie cu 24% mai mult</a></h3>
+                            <div class="bl-report-metrics">
+                                <span class="bl-report-metric-chip">25,1M click-uri</span>
+                                <span class="bl-report-metric-chip">€49,9M vânzări</span>
+                                <span class="bl-report-metric-chip">186 magazine</span>
+                            </div>
+                            <p class="bl-report-desc">25,1 milioane de click-uri, €49,9M vânzări și 186 de magazine Fashion analizate: diferențe iOS vs. Android, ore de vârf și rata de conversie.</p>
+                            <div class="bl-report-actions">
+                                <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/06/BusinessLeague_Fashion_Buying_Report_EN-1.pdf" target="_blank" rel="noopener">
+                                    <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
+                                    <span aria-hidden="true">&#8599;</span>
+                                </a>
+                                <div class="bl-report-subactions">
+                                    <a class="bl-report-article-link" href="/userii-de-iphone-cheltuie-cu-24-mai-mult-pe-fashion-si-alte-5-lucruri-pe-care-ni-le-spun-datele/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
             {{!-- 2. DYNAMIC CURATED JOURNALISTIC MAGAZINE SECTIONS (Bento Data, 4-Col Interviews, 3-Col Playbooks, 2x2 Events) --}}
             <div class="bl-curated-container" data-curated-sections></div>
 
             {{!-- 3. MODERN MASONRY EDITORIAL ARCHIVE WALL --}}
-            <section class="bl-section" id="pillar-latest-{{lang_code}}" data-feed-section>
+            <section class="bl-section" id="pillar-latest-{{../lang_code}}" data-feed-section>
                 <div class="bl-section-header">
                     <div>
                         <span class="bl-section-eyebrow" data-i18n="latest_eyebrow">ARHIVA EDITORIALĂ COMPLETĂ &bull; MASONRY WALL</span>
@@ -184,6 +430,19 @@
                     {{#foreach lang_posts from="8"}}
                         {{> "post-card"}}
                     {{/foreach}}
+                </div>
+                <div class="bl-load-more-wrap" data-load-more-wrap="{{../lang_code}}">
+                    <button type="button"
+                            class="bl-load-more-btn"
+                            data-load-more="{{../lang_code}}"
+                            data-lang-filter="{{../lang_filter}}"
+                            data-next-page="2"
+                            data-cover-sample="{{asset "images/covers/cover-interviews.svg"}}">
+                        <span class="bl-load-more-spinner" aria-hidden="true"></span>
+                        <span class="bl-load-more-label" data-i18n="load_more_btn">Încarcă mai multe articole</span>
+                        <span class="bl-load-more-arrow" aria-hidden="true">&darr;</span>
+                    </button>
+                    <span class="bl-load-more-meta" data-load-more-meta="{{../lang_code}}"></span>
                 </div>
             </section>
         {{else}}
@@ -202,4 +461,5 @@
             </section>
         {{/if}}
     {{/get}}
+    {{#unless is_default_lang}}</template>{{/unless}}
 </div>

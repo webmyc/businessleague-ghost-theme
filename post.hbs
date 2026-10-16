@@ -83,7 +83,7 @@
                         <a href="{{url}}">{{name}}</a>
                         <span>/</span>
                     {{/primary_tag}}
-                    <span class="bl-pillar-badge" data-pillar-badge>Editorial</span>
+                    <a href="{{@site.url}}/#pillar-all" class="bl-pillar-badge" data-pillar-badge data-pillar-link="all">Editorial</a>
                 </nav>
 
                 {{!-- IN-ARTICLE LANGUAGE SWITCHER BAR (Key User Requirement) --}}
@@ -124,8 +124,8 @@
                     <div class="bl-byline-author">
                         {{#primary_author}}
                             {{#if profile_image}}
-                                <a href="{{url}}">
-                                    <img class="bl-byline-avatar" src="{{img_url profile_image size="s"}}" alt="{{name}}" />
+                                <a href="{{url}}" aria-label="{{name}}">
+                                    <img class="bl-byline-avatar" src="{{img_url profile_image size="s" format="webp"}}" alt="{{name}}" width="44" height="44" decoding="async" />
                                 </a>
                             {{/if}}
                             <div>
@@ -133,6 +133,7 @@
                                 <div class="bl-byline-meta">
                                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
                                     {{#if ../reading_time}} &bull; {{../reading_time}}{{/if}}
+                                    {{#if ../comments}} &bull; <a href="#bl-comments" class="bl-byline-comments-link">{{../comment_count empty="Comentează" singular="comentariu" plural="comentarii"}}</a>{{/if}}
                                 </div>
                             </div>
                         {{/primary_author}}
@@ -213,11 +214,14 @@
             {{!-- Uncropped Feature Image (100% intrinsic aspect ratio preserved) or Category Cover Fallback --}}
             <figure class="bl-article-hero-media">
                 {{#if feature_image}}
-                <img src="{{img_url feature_image size="xl"}}"
-                     srcset="{{img_url feature_image size="m"}} 600w,
-                             {{img_url feature_image size="l"}} 1000w,
-                             {{img_url feature_image size="xl"}} 2000w"
-                     sizes="(max-width: 1000px) 94vw, 960px"
+                <img src="{{img_url feature_image size="l" format="webp"}}"
+                     srcset="{{img_url feature_image size="s" format="webp"}} 300w,
+                             {{img_url feature_image size="m" format="webp"}} 600w,
+                             {{img_url feature_image size="l" format="webp"}} 1000w,
+                             {{img_url feature_image size="xl" format="webp"}} 2000w"
+                     sizes="(max-width: 680px) 360px, (max-width: 1000px) 92vw, 960px"
+                     width="1000"
+                     height="563"
                      alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
                      fetchpriority="high" />
                 {{#if feature_image_caption}}
@@ -260,6 +264,24 @@
                             </a>
                         </div>
                     </div>
+
+                    {{!-- Native Ghost Member Comments Section --}}
+                    {{#if comments}}
+                        <section class="bl-comments-section" id="bl-comments">
+                            <div class="bl-comments-header">
+                                <div class="bl-comments-title-wrap">
+                                    <span class="bl-section-eyebrow" data-i18n="comments_eyebrow">DISCUȚIE ÎN ARENĂ // COMUNITATE</span>
+                                    <h3 class="bl-comments-title" data-i18n="comments_title">Comentarii &amp; Dezbateri pe Cifre</h3>
+                                </div>
+                                <span class="bl-comments-count-badge">
+                                    {{comment_count empty="0 comentarii" singular="comentariu" plural="comentarii"}}
+                                </span>
+                            </div>
+                            <div class="bl-comments-embed">
+                                {{comments title="" count=false mode="auto"}}
+                            </div>
+                        </section>
+                    {{/if}}
                 </div>
 
                 {{!-- Sticky Right Rail: TOC + Language Switcher + Ecosystem Card --}}

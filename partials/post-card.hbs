@@ -8,17 +8,19 @@
 
     <a class="bl-card-media" href="{{url}}" aria-label="{{title}}">
         {{#if feature_image}}
-        <img src="{{img_url feature_image size="l"}}"
-             srcset="{{img_url feature_image size="s"}} 300w,
-                     {{img_url feature_image size="m"}} 600w,
-                     {{img_url feature_image size="l"}} 1000w,
-                     {{img_url feature_image size="xl"}} 1600w"
-             sizes="(max-width: 680px) 94vw, (max-width: 1120px) 46vw, 410px"
+        <img src="{{img_url feature_image size="m" format="webp"}}"
+             srcset="{{img_url feature_image size="s" format="webp"}} 300w,
+                     {{img_url feature_image size="m" format="webp"}} 600w,
+                     {{img_url feature_image size="l" format="webp"}} 1000w"
+             sizes="(max-width: 680px) 320px, (max-width: 1120px) 280px, 340px"
+             width="600"
+             height="338"
+             decoding="async"
              alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
              loading="lazy"
              onerror="this.style.display='none';if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}" />
         <div class="bl-generated-cover" data-cover-pillar="interviews" style="display:none;">
-            <img class="bl-generated-cover-bg" src="{{asset "images/covers/cover-interviews.svg"}}" data-cover-template-img alt="{{title}}" loading="lazy" />
+            <img class="bl-generated-cover-bg" src="{{asset "images/covers/cover-interviews.svg"}}" data-cover-template-img alt="" loading="lazy" decoding="async" />
             <div class="bl-generated-cover-overlay">
                 <span class="bl-generated-cover-kicker" data-cover-kicker>{{#primary_tag}}{{name}}{{else}}BUSINESSLEAGUE{{/primary_tag}}</span>
                 <span class="bl-generated-cover-headline">{{title}}</span>
@@ -53,13 +55,13 @@
             {{#primary_author}}
             <a class="bl-author-chip" href="{{url}}">
                 {{#if profile_image}}
-                    <img class="bl-author-avatar" src="{{img_url profile_image size="xs"}}" alt="{{name}}" loading="lazy" />
+                    <img class="bl-author-avatar" src="{{img_url profile_image size="xs" format="webp"}}" alt="" width="28" height="28" loading="lazy" decoding="async" />
                 {{/if}}
                 <span>{{name}}</span>
             </a>
             {{/primary_author}}
 
-            <a class="bl-read-cta" href="{{url}}">
+            <a class="bl-read-cta" href="{{url}}" aria-label="{{title}}">
                 <span data-i18n="read_article">Citește</span>
                 <span aria-hidden="true">&rarr;</span>
             </a>

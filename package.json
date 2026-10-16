@@ -50,53 +50,6 @@
                 "width": 2000
             }
         },
-        "card_assets": true,
-        "custom": {
-            "color_scheme": {
-                "type": "select",
-                "options": [
-                    "Dark",
-                    "Light",
-                    "Auto"
-                ],
-                "default": "Dark"
-            },
-            "default_language": {
-                "type": "select",
-                "options": [
-                    "Auto",
-                    "ro",
-                    "en",
-                    "bg",
-                    "es"
-                ],
-                "default": "Auto"
-            },
-            "show_publication_cover": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "show_editorial_sections": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "primary_cta_url": {
-                "type": "text",
-                "default": "https://businessleague.com",
-                "group": "homepage"
-            },
-            "show_table_of_contents": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            },
-            "show_recent_posts_footer": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            }
-        }
+        "card_assets": false
     }
 }
