@@ -84,11 +84,43 @@
                     </div>
                     {{/foreach}}
 
-                    {{!-- Secondary Dual Sub-Lead Stories Under Main Cover (Balances Left/Right Column Heights) --}}
+                    {{!-- Secondary Dual Sub-Lead Stories Under Main Cover --}}
                     <div class="bl-hero-subgrid">
                         {{#foreach lang_posts from="2" to="3"}}
                             {{> "post-card"}}
                         {{/foreach}}
+                    </div>
+
+                    {{!-- Tilted Maverick Ecosystem Dossier Card (Balances Left Column Under Sub-Lead Cards) --}}
+                    <div class="bl-outlier-dossier-wrap">
+                        <aside class="bl-outlier-dossier" aria-label="BusinessLeague Community Hub">
+                            <header class="bl-dossier-header">
+                                <span class="bl-dossier-live">
+                                    <span class="bl-live-dot" aria-hidden="true"></span>
+                                    <span>COMMUNITY HUB</span>
+                                </span>
+                                <span class="bl-dossier-code">start.businessleague.com</span>
+                            </header>
+                            <h4 class="bl-dossier-title" data-i18n-html="eco_title_html">
+                                Campionatul care e, de fapt, <span class="bl-thin">o comunitate.</span>
+                            </h4>
+                            <dl class="bl-dossier-dl">
+                                <dt>PULSE</dt>
+                                <dd><a href="https://start.businessleague.com/pulse" target="_blank" rel="noopener" data-i18n="dossier_pulse">1 email/săptămână cu tot ce mișcă în Ligă ↗</a></dd>
+                                <dt>MEETUPS</dt>
+                                <dd><a href="https://luma.com/2performant" target="_blank" rel="noopener" data-i18n="dossier_events">Dublin, București &amp; sesiuni live pe Luma ↗</a></dd>
+                            </dl>
+                            <div class="bl-dossier-actions">
+                                <a class="bl-cta-btn" href="https://start.businessleague.com" target="_blank" rel="noopener">
+                                    <span data-i18n="dossier_hub_btn">Deschide Hub-ul</span>
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                                <a class="bl-filter-pill" href="https://businessleague.com/sign-up" target="_blank" rel="noopener" style="text-decoration:none;">
+                                    <span data-i18n="cta_join">Intră în Ligă</span>
+                                    <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </aside>
                     </div>
                 </div>
 
@@ -136,38 +168,6 @@
 
                     {{!-- Live Luma Next Community Events Card --}}
                     {{> "community-events-card"}}
-
-                    {{!-- Tilted Maverick Ecosystem Dossier Card (Inspired by start.businessleague.com tilted .issue) --}}
-                    <div class="bl-outlier-dossier-wrap">
-                        <aside class="bl-outlier-dossier" aria-label="BusinessLeague Community Hub">
-                            <header class="bl-dossier-header">
-                                <span class="bl-dossier-live">
-                                    <span class="bl-live-dot" aria-hidden="true"></span>
-                                    <span>COMMUNITY HUB</span>
-                                </span>
-                                <span class="bl-dossier-code">start.businessleague.com</span>
-                            </header>
-                            <h4 class="bl-dossier-title" data-i18n-html="eco_title_html">
-                                Campionatul care e, de fapt, <span class="bl-thin">o comunitate.</span>
-                            </h4>
-                            <dl class="bl-dossier-dl">
-                                <dt>PULSE</dt>
-                                <dd><a href="https://start.businessleague.com/pulse" target="_blank" rel="noopener" data-i18n="dossier_pulse">1 email/săptămână cu tot ce mișcă în Ligă ↗</a></dd>
-                                <dt>MEETUPS</dt>
-                                <dd><a href="https://luma.com/2performant" target="_blank" rel="noopener" data-i18n="dossier_events">Dublin, București &amp; sesiuni live pe Luma ↗</a></dd>
-                            </dl>
-                            <div class="bl-dossier-actions">
-                                <a class="bl-cta-btn" href="https://start.businessleague.com" target="_blank" rel="noopener">
-                                    <span data-i18n="dossier_hub_btn">Deschide Hub-ul</span>
-                                    <span aria-hidden="true">↗</span>
-                                </a>
-                                <a class="bl-filter-pill" href="https://businessleague.com/sign-up" target="_blank" rel="noopener" style="text-decoration:none;">
-                                    <span data-i18n="cta_join">Intră în Ligă</span>
-                                    <span aria-hidden="true">→</span>
-                                </a>
-                            </div>
-                        </aside>
-                    </div>
 
                     {{!-- Subscription Box to start.businessleague.com/pulse --}}
                     <aside class="bl-pulse-subscribe-card" aria-label="Subscribe to BusinessLeague Pulse">

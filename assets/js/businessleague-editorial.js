@@ -2922,66 +2922,59 @@
         start: '2026-10-20T11:00:00.000Z',
         end: '2026-10-20T12:00:00.000Z',
         url: 'https://luma.com/rxh8o5zf',
-        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/cc/91df108f-3d7e-4821-b9e3-e9dbbd35df6f.png',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/nn/24564114-1c79-45c0-a69f-1163a3785eb2.png',
         locationType: 'online',
+        locationLabel: 'Online · Zoom',
         isInPerson: false,
         hosts: ['Codruț Baciu']
       },
       {
         id: 'evt-lR3gR6U43f1c7vJ',
-        title: 'BusinessLeague Open Q&A — 12:00 (RO)',
+        title: 'Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 · Alexandra)',
         start: '2026-10-22T09:00:00.000Z',
         end: '2026-10-22T10:00:00.000Z',
         url: 'https://luma.com/ky6dsunb',
-        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/zk/64002ddd-652b-41e9-aecd-492f49e93c63.png',
         locationType: 'online',
+        locationLabel: 'Google Meet',
         isInPerson: false,
-        hosts: ['Codruț Baciu']
+        hosts: ['Alexandra']
       },
       {
         id: 'evt-xT2qL7W89k3m4nP',
-        title: 'BusinessLeague Open Q&A — 17:00 (EN)',
+        title: 'Black Friday Warm-up 2026: Atelier Operațional de Start (17:00 · Ștefan)',
         start: '2026-10-22T14:00:00.000Z',
         end: '2026-10-22T15:00:00.000Z',
         url: 'https://luma.com/3b0196ep',
-        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/6s/4135edfc-b1d7-4822-9b7c-dc0797663e87.png',
         locationType: 'online',
+        locationLabel: 'Google Meet',
         isInPerson: false,
-        hosts: ['Codruț Baciu']
+        hosts: ['Ștefan']
       },
       {
         id: 'evt-mP9vB4C12z8x5wQ',
-        title: 'BusinessLeague Open Q&A — 12:00 (RO)',
+        title: 'Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 · Alexandra)',
         start: '2026-10-29T10:00:00.000Z',
         end: '2026-10-29T11:00:00.000Z',
         url: 'https://luma.com/1swt7ayz',
-        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/zk/64002ddd-652b-41e9-aecd-492f49e93c63.png',
         locationType: 'online',
+        locationLabel: 'Google Meet',
         isInPerson: false,
-        hosts: ['Codruț Baciu']
-      },
-      {
-        id: 'evt-kN8bV3M56p2r9tY',
-        title: 'BusinessLeague Open Q&A — 17:00 (EN)',
-        start: '2026-10-29T15:00:00.000Z',
-        end: '2026-10-29T16:00:00.000Z',
-        url: 'https://luma.com/c6otould',
-        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
-        locationType: 'online',
-        isInPerson: false,
-        hosts: ['Codruț Baciu']
+        hosts: ['Alexandra']
       },
       {
         id: 'evt-dublin-meetup-2026-11-19',
-        title: 'Meet Your Next Big E-Commerce Client or Marketing Partner in Dublin!',
+        title: 'Affiliate Meetup Dublin, powered by BusinessLeague',
         start: '2026-11-19T18:00:00.000Z',
-        end: '2026-11-19T21:00:00.000Z',
-        url: 'https://www.eventbrite.ro/e/meet-your-next-big-e-commerce-client-or-marketing-partner-in-dublin-tickets-1984276468259',
-        cover: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179246753%2F2625989445221%2F1%2Foriginal.20260303-112202?w=600&auto=format%2Ccompress&q=75&sharp=10&s=51ba664d9e89da1f3e7b8a8559e9093e',
+        end: '2026-11-19T22:00:00.000Z',
+        url: 'https://www.eventbrite.ie/e/affiliate-meetup-dublin-powered-by-businessleague-tickets-2003303718349?aff=oddtdtcreator',
+        cover: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1195617175%2F3009927574801%2F1%2Foriginal.20261012-163345?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.023&fp-y=0.297&s=b458f83d0198cbc22322fa08a1fa02a8',
         locationType: 'offline',
-        locationLabel: 'The Mercantile Hotel · Dublin',
+        locationLabel: 'Dublin · In person',
         isInPerson: true,
-        hosts: ['Dorin Boerescu', '2Performant']
+        hosts: ['BusinessLeague']
       }
     ];
 
@@ -3028,7 +3021,7 @@
       } else {
         deltaStr = `${mins}${units.m}`;
       }
-      return `${dict.events_next_prefix || 'NEXT UP'} · ${dict.events_starts_in || 'starts in'} ${deltaStr}`;
+      return `${dict.events_next_prefix || 'NEXT UP'} · ${deltaStr}`;
     }
 
     function formatDateParts(startIso, lang) {
@@ -3043,12 +3036,15 @@
           month: 'short',
           timeZone: 'Europe/Bucharest'
         }).format(d);
-        const month = monthRaw.replace(/\.$/, '').toUpperCase();
+        const monthClean = monthRaw.replace(/\.$/, '');
+        const month = monthClean.toUpperCase();
         const weekdayRaw = new Intl.DateTimeFormat(locale, {
           weekday: 'short',
           timeZone: 'Europe/Bucharest'
         }).format(d);
         const weekday = weekdayRaw.replace(/\.$/, '');
+        const weekdayCap = weekday.charAt(0).toUpperCase() + weekday.slice(1);
+        const monthCap = monthClean.charAt(0).toUpperCase() + monthClean.slice(1);
         const time = new Intl.DateTimeFormat(locale, {
           hour: '2-digit',
           minute: '2-digit',
@@ -3058,15 +3054,15 @@
         return {
           day,
           month,
-          fullTime: `${weekday.charAt(0).toUpperCase() + weekday.slice(1)}, ${day} ${monthRaw.replace(/\.$/, '')} · ${time} EEST`,
-          shortTime: `${ weekday.charAt(0).toUpperCase() + weekday.slice(1) } · ${time} EEST`
+          fullTime: `${weekdayCap}, ${day} ${monthCap} · ${time} EEST`,
+          shortTime: `${weekdayCap}, ${day} ${monthCap} · ${time}`
         };
       } catch (_) {
         return {
           day: '20',
           month: 'OCT',
-          fullTime: '14:00 EEST',
-          shortTime: '14:00 EEST'
+          fullTime: 'Ma, 20 Oct · 14:00 EEST',
+          shortTime: '20 Oct · 14:00'
         };
       }
     }
@@ -3082,6 +3078,19 @@
       return upcoming.length > 0 ? upcoming : list.slice(0, 5);
     }
 
+    function pickAgendaItems(upcoming) {
+      const rest = upcoming.slice(1);
+      if (rest.length <= 3) return rest;
+      const picked = rest.slice(0, 2);
+      const inPerson = rest.slice(2).find((ev) => ev.isInPerson);
+      if (inPerson) {
+        picked.push(inPerson);
+      } else {
+        picked.push(rest[2]);
+      }
+      return picked;
+    }
+
     function renderWidgets(langInput) {
       const lang = langInput || (typeof getLang === 'function' ? getLang() : 'ro') || 'ro';
       const dict = I18N[lang] || I18N.ro;
@@ -3090,17 +3099,14 @@
 
       const upcoming = getUpcomingList(activeEvents);
       const featured = upcoming[0];
-      const agenda = upcoming.slice(1, 5);
+      const agenda = pickAgendaItems(upcoming);
       if (!featured) return;
 
       const featParts = formatDateParts(featured.start, lang);
       const countdownText = formatCountdown(featured.start, featured.end, lang);
-      const featHost = Array.isArray(featured.hosts) && featured.hosts.length
-        ? `Host: ${featured.hosts[0]}`
-        : '2Performant Community';
       const featLoc = featured.isInPerson
-        ? (featured.locationLabel || dict.events_in_person || 'In-Person')
-        : 'Online · Zoom';
+        ? (featured.locationLabel || dict.events_in_person || 'In person')
+        : (featured.locationLabel || 'Online · Zoom');
 
       widgets.forEach((widget) => {
         const featLink = widget.querySelector('[data-ev-featured]');
@@ -3116,16 +3122,10 @@
             imgEl.src = featured.cover;
             imgEl.alt = featured.title;
           }
-          const dayEl = featLink.querySelector('[data-ev-day]');
-          if (dayEl) dayEl.textContent = featParts.day;
-          const monthEl = featLink.querySelector('[data-ev-month]');
-          if (monthEl) monthEl.textContent = featParts.month;
           const titleEl = featLink.querySelector('[data-ev-title]');
           if (titleEl) titleEl.textContent = featured.title;
           const timeEl = featLink.querySelector('[data-ev-time]');
           if (timeEl) timeEl.textContent = featParts.fullTime;
-          const hostEl = featLink.querySelector('[data-ev-host]');
-          if (hostEl) hostEl.textContent = featHost;
         }
 
         const agendaContainer = widget.querySelector('[data-ev-agenda]');
@@ -3133,22 +3133,23 @@
           agendaContainer.innerHTML = agenda
             .map((ev) => {
               const parts = formatDateParts(ev.start, lang);
-              const badgeHtml = ev.isInPerson
-                ? `<span class="bl-ev-row-loc is-inperson">${escapeHtml(ev.locationLabel ? 'Dublin · IRL' : (dict.events_in_person || 'In-Person'))}</span>`
-                : `<span class="bl-ev-row-loc">Zoom</span>`;
+              const locLabel = ev.isInPerson
+                ? `Dublin · ${dict.events_in_person || 'In person'}`
+                : (ev.locationLabel || 'Google Meet');
+              const locClass = ev.isInPerson ? 'bl-ev-row-loc is-inperson' : 'bl-ev-row-loc';
+              const coverSrc = ev.cover || featured.cover || '';
               return `
                 <a href="${escapeHtml(ev.url)}" target="_blank" rel="noopener" class="bl-ev-row" data-ev-start="${escapeHtml(ev.start)}">
-                  <div class="bl-ev-row-date">
-                    <span class="bl-ev-row-day">${escapeHtml(parts.day)}</span>
-                    <span class="bl-ev-row-month">${escapeHtml(parts.month)}</span>
+                  <div class="bl-ev-row-thumb">
+                    <img src="${escapeHtml(coverSrc)}" alt="${escapeHtml(ev.title)}" width="160" height="160" loading="lazy" decoding="async" />
                   </div>
-                  <div class="bl-ev-row-info">
-                    <div class="bl-ev-row-title">${escapeHtml(ev.title)}</div>
+                  <div class="bl-ev-row-body">
                     <div class="bl-ev-row-meta">
-                      <span>${escapeHtml(parts.shortTime)}</span>
-                      <span class="bl-ev-dot-sep">·</span>
-                      ${badgeHtml}
+                      <span class="bl-ev-row-time">${escapeHtml(parts.shortTime)}</span>
+                      <span class="bl-ev-dot-sep" aria-hidden="true">·</span>
+                      <span class="${locClass}">${escapeHtml(locLabel)}</span>
                     </div>
+                    <h6 class="bl-ev-row-title">${escapeHtml(ev.title)}</h6>
                   </div>
                   <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
                 </a>

@@ -1,161 +1,106 @@
-{{!-- Next Community Events Card (Synced with luma.com/2performant & start.businessleague.com/api/luma-events) --}}
+{{!-- Next Community Events Card — Flat Editorial Layout (Synced with luma.com/2performant & start.businessleague.com/api/luma-events) --}}
 <aside class="bl-events-card" data-bl-events-widget aria-label="Next Community Events">
     <header class="bl-events-header">
-        <div class="bl-events-header-left">
-            <span class="bl-luma-candy-icon" aria-hidden="true" title="Luma · lu.ma/2performant">
-                <svg viewBox="0 0 133 134" fill="none">
-                    <path d="M133 67C96.282 67 66.5 36.994 66.5 0c0 36.994-29.782 67-66.5 67 36.718 0 66.5 30.006 66.5 67 0-36.994 29.782-67 66.5-67" fill="currentColor"/>
-                </svg>
+        <div class="bl-events-kicker-row">
+            <span class="bl-events-eyebrow">
+                <span class="bl-live-dot" aria-hidden="true"></span>
+                <span data-i18n="events_card_eyebrow">LUMA // LIVE CALENDAR</span>
             </span>
-            <div class="bl-events-heading-wrap">
-                <span class="bl-events-eyebrow">
-                    <span class="bl-live-dot" aria-hidden="true"></span>
-                    <span data-i18n="events_card_eyebrow">LIVE CALENDAR // LUMA</span>
-                </span>
-                <h4 class="bl-events-title" data-i18n="events_card_title">Next Community Events</h4>
-            </div>
+            <a class="bl-events-luma-link" href="https://luma.com/2performant" target="_blank" rel="noopener">
+                <span>luma.com/2performant</span>
+                <span aria-hidden="true">↗</span>
+            </a>
         </div>
-        <a class="bl-events-luma-pill" href="https://luma.com/2performant" target="_blank" rel="noopener" title="luma.com/2performant">
-            <span>luma.com/2performant</span>
-            <span aria-hidden="true">↗</span>
-        </a>
+        <h4 class="bl-events-title" data-i18n="events_card_title">Next Community Events</h4>
     </header>
 
-    {{!-- Featured Next Event (#1 Upcoming) --}}
+    {{!-- #1 Featured Upcoming Event (Flat, Large Poster, No Inner Box or Pills) --}}
     <a class="bl-ev-featured" data-ev-featured href="https://luma.com/rxh8o5zf" target="_blank" rel="noopener">
-        <div class="bl-ev-status-row">
-            <span class="bl-ev-countdown" data-ev-countdown data-ev-start="2026-10-20T11:00:00.000Z" data-ev-end="2026-10-20T12:00:00.000Z">
-                <span class="bl-ev-pulse" aria-hidden="true"></span>
-                <span data-ev-countdown-text data-i18n="events_next_up_badge">NEXT UP &bull; 20 OCT</span>
-            </span>
-            <span class="bl-ev-loc-chip" data-ev-featured-loc>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-                <span>Online &middot; Zoom</span>
-            </span>
+        <div class="bl-ev-poster">
+            <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/nn/24564114-1c79-45c0-a69f-1163a3785eb2.png"
+                 alt="Community Tuesdays: PHARMA"
+                 width="220"
+                 height="220"
+                 loading="lazy"
+                 decoding="async"
+                 data-ev-cover />
         </div>
-
-        <div class="bl-ev-featured-grid">
-            <div class="bl-ev-poster">
-                <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/nn/24564114-1c79-45c0-a69f-1163a3785eb2.png"
-                     alt="Community Tuesdays: PHARMA"
-                     width="160"
-                     height="160"
-                     loading="lazy"
-                     decoding="async"
-                     data-ev-featured-img />
-                <div class="bl-ev-date-badge" data-ev-featured-badge>
-                    <span class="bl-ev-date-day">20</span>
-                    <span class="bl-ev-date-mon">OCT</span>
-                </div>
+        <div class="bl-ev-featured-info">
+            <div class="bl-ev-kicker-line">
+                <span class="bl-ev-countdown-text" data-ev-countdown>URMEAZĂ &middot; ÎN 3Z 18H</span>
+                <span class="bl-ev-dot-sep" aria-hidden="true">&middot;</span>
+                <span class="bl-ev-loc-text" data-ev-loc>Online &middot; Zoom</span>
             </div>
-
-            <div class="bl-ev-featured-info">
-                <h5 class="bl-ev-featured-title" data-ev-featured-title>Community Tuesdays: PHARMA</h5>
-                <div class="bl-ev-featured-meta" data-ev-featured-meta data-ev-start="2026-10-20T11:00:00.000Z">
-                    Ma, 20 Oct &middot; 14:00 EEST
-                </div>
-                <div class="bl-ev-featured-cta-row">
-                    <span class="bl-ev-register-btn">
-                        <span data-i18n="events_register_cta">Înscrie-te pe Luma</span>
-                        <span aria-hidden="true">↗</span>
-                    </span>
-                </div>
-            </div>
+            <h5 class="bl-ev-featured-title" data-ev-title>Community Tuesdays: PHARMA</h5>
+            <div class="bl-ev-featured-meta" data-ev-time>Ma, 20 Oct &middot; 14:00 EEST</div>
+            <span class="bl-ev-flat-cta">
+                <span data-i18n="events_register_cta">Înscrie-te pe Luma</span>
+                <span aria-hidden="true">↗</span>
+            </span>
         </div>
     </a>
 
-    {{!-- Upcoming Agenda List --}}
-    <div class="bl-ev-agenda-wrap">
-        <div class="bl-ev-agenda-head">
-            <span data-i18n="events_upcoming_label">URMĂTOARELE SESIUNI &amp; MEETUPS</span>
-            <span class="bl-ev-count-pill" data-ev-total-badge>6 LIVE</span>
-        </div>
+    {{!-- Flat Upcoming Events List (Large Posters, Hairline Dividers, Zero Inner Boxes) --}}
+    <div class="bl-ev-agenda" data-ev-agenda>
+        <a class="bl-ev-row" href="https://luma.com/ky6dsunb" target="_blank" rel="noopener" data-ev-start="2026-10-22T09:00:00.000Z">
+            <div class="bl-ev-row-thumb">
+                <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/zk/64002ddd-652b-41e9-aecd-492f49e93c63.png"
+                     alt="Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 · Alexandra)"
+                     width="160"
+                     height="160"
+                     loading="lazy"
+                     decoding="async" />
+            </div>
+            <div class="bl-ev-row-body">
+                <div class="bl-ev-row-meta">
+                    <span class="bl-ev-row-time">Jo, 22 Oct &middot; 12:00</span>
+                    <span class="bl-ev-dot-sep" aria-hidden="true">&middot;</span>
+                    <span class="bl-ev-row-loc">Google Meet</span>
+                </div>
+                <h6 class="bl-ev-row-title">Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 &middot; Alexandra)</h6>
+            </div>
+            <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
+        </a>
 
-        <div class="bl-ev-agenda" data-ev-agenda>
-            <a class="bl-ev-row" href="https://luma.com/ky6dsunb" target="_blank" rel="noopener" data-ev-item data-ev-start="2026-10-22T09:00:00.000Z">
-                <div class="bl-ev-row-thumb">
-                    <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/zk/64002ddd-652b-41e9-aecd-492f49e93c63.png"
-                         alt="Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 · Alexandra)"
-                         width="88"
-                         height="88"
-                         loading="lazy"
-                         decoding="async" />
-                    <span class="bl-ev-mini-date"><b>22</b><small>OCT</small></span>
+        <a class="bl-ev-row" href="https://luma.com/3b0196ep" target="_blank" rel="noopener" data-ev-start="2026-10-22T14:00:00.000Z">
+            <div class="bl-ev-row-thumb">
+                <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/6s/4135edfc-b1d7-4822-9b7c-dc0797663e87.png"
+                     alt="Black Friday Warm-up 2026: Atelier Operațional de Start (17:00 · Ștefan)"
+                     width="160"
+                     height="160"
+                     loading="lazy"
+                     decoding="async" />
+            </div>
+            <div class="bl-ev-row-body">
+                <div class="bl-ev-row-meta">
+                    <span class="bl-ev-row-time">Jo, 22 Oct &middot; 17:00</span>
+                    <span class="bl-ev-dot-sep" aria-hidden="true">&middot;</span>
+                    <span class="bl-ev-row-loc">Google Meet</span>
                 </div>
-                <div class="bl-ev-row-body">
-                    <div class="bl-ev-row-top">
-                        <span class="bl-ev-row-time" data-ev-row-time="2026-10-22T09:00:00.000Z">Jo, 22 Oct &middot; 12:00</span>
-                        <span class="bl-ev-row-tag"><i style="background:#00d68f"></i>Webinar</span>
-                    </div>
-                    <h6 class="bl-ev-row-title">Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 &middot; Alexandra)</h6>
-                    <span class="bl-ev-row-loc" data-ev-loc-type="meet">Online &middot; Google Meet</span>
-                </div>
-                <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
-            </a>
+                <h6 class="bl-ev-row-title">Black Friday Warm-up 2026: Atelier Operațional de Start (17:00 &middot; Ștefan)</h6>
+            </div>
+            <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
+        </a>
 
-            <a class="bl-ev-row" href="https://luma.com/3b0196ep" target="_blank" rel="noopener" data-ev-item data-ev-start="2026-10-22T14:00:00.000Z">
-                <div class="bl-ev-row-thumb">
-                    <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/6s/4135edfc-b1d7-4822-9b7c-dc0797663e87.png"
-                         alt="Black Friday Warm-up 2026: Atelier Operațional de Start (17:00 · Ștefan)"
-                         width="88"
-                         height="88"
-                         loading="lazy"
-                         decoding="async" />
-                    <span class="bl-ev-mini-date"><b>22</b><small>OCT</small></span>
+        <a class="bl-ev-row" href="https://www.eventbrite.ie/e/affiliate-meetup-dublin-powered-by-businessleague-tickets-2003303718349?aff=oddtdtcreator" target="_blank" rel="noopener" data-ev-start="2026-11-19T18:00:00.000Z">
+            <div class="bl-ev-row-thumb">
+                <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1195617175%2F3009927574801%2F1%2Foriginal.20261012-163345?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.023&fp-y=0.297&s=b458f83d0198cbc22322fa08a1fa02a8"
+                     alt="Affiliate Meetup Dublin, powered by BusinessLeague"
+                     width="160"
+                     height="160"
+                     loading="lazy"
+                     decoding="async" />
+            </div>
+            <div class="bl-ev-row-body">
+                <div class="bl-ev-row-meta">
+                    <span class="bl-ev-row-time">Jo, 19 Nov &middot; 20:00</span>
+                    <span class="bl-ev-dot-sep" aria-hidden="true">&middot;</span>
+                    <span class="bl-ev-row-loc is-inperson">Dublin &middot; In person</span>
                 </div>
-                <div class="bl-ev-row-body">
-                    <div class="bl-ev-row-top">
-                        <span class="bl-ev-row-time" data-ev-row-time="2026-10-22T14:00:00.000Z">Jo, 22 Oct &middot; 17:00</span>
-                        <span class="bl-ev-row-tag"><i style="background:#a78bfa"></i>Affiliates</span>
-                    </div>
-                    <h6 class="bl-ev-row-title">Black Friday Warm-up 2026: Atelier Operațional de Start (17:00 &middot; Ștefan)</h6>
-                    <span class="bl-ev-row-loc" data-ev-loc-type="meet">Online &middot; Google Meet</span>
-                </div>
-                <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
-            </a>
-
-            <a class="bl-ev-row" href="https://luma.com/1swt7ayz" target="_blank" rel="noopener" data-ev-item data-ev-start="2026-10-29T10:00:00.000Z">
-                <div class="bl-ev-row-thumb">
-                    <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,quality=75,width=800/uploads/zk/64002ddd-652b-41e9-aecd-492f49e93c63.png"
-                         alt="Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 · Alexandra)"
-                         width="88"
-                         height="88"
-                         loading="lazy"
-                         decoding="async" />
-                    <span class="bl-ev-mini-date"><b>29</b><small>OCT</small></span>
-                </div>
-                <div class="bl-ev-row-body">
-                    <div class="bl-ev-row-top">
-                        <span class="bl-ev-row-time" data-ev-row-time="2026-10-29T10:00:00.000Z">Jo, 29 Oct &middot; 12:00</span>
-                        <span class="bl-ev-row-tag"><i style="background:#00d68f"></i>Webinar</span>
-                    </div>
-                    <h6 class="bl-ev-row-title">Black Friday Warm-up 2026: Atelier Operațional de Start (12:00 &middot; Alexandra)</h6>
-                    <span class="bl-ev-row-loc" data-ev-loc-type="meet">Online &middot; Google Meet</span>
-                </div>
-                <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
-            </a>
-
-            <a class="bl-ev-row" href="https://www.eventbrite.ie/e/affiliate-meetup-dublin-powered-by-businessleague-tickets-2003303718349?aff=oddtdtcreator" target="_blank" rel="noopener" data-ev-item data-ev-start="2026-11-19T18:00:00.000Z">
-                <div class="bl-ev-row-thumb">
-                    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1195617175%2F3009927574801%2F1%2Foriginal.20261012-163345?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.023&fp-y=0.297&s=b458f83d0198cbc22322fa08a1fa02a8"
-                         alt="Affiliate Meetup Dublin, powered by BusinessLeague"
-                         width="88"
-                         height="88"
-                         loading="lazy"
-                         decoding="async" />
-                    <span class="bl-ev-mini-date"><b>19</b><small>NOV</small></span>
-                </div>
-                <div class="bl-ev-row-body">
-                    <div class="bl-ev-row-top">
-                        <span class="bl-ev-row-time" data-ev-row-time="2026-11-19T18:00:00.000Z">Jo, 19 Nov &middot; 20:00</span>
-                        <span class="bl-ev-row-tag"><i style="background:#fb7185"></i>Meetup</span>
-                    </div>
-                    <h6 class="bl-ev-row-title">Affiliate Meetup Dublin, powered by BusinessLeague</h6>
-                    <span class="bl-ev-row-loc" data-ev-loc-type="offline" data-ev-city="Dublin">Dublin &middot; In person</span>
-                </div>
-                <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
-            </a>
-        </div>
+                <h6 class="bl-ev-row-title">Affiliate Meetup Dublin, powered by BusinessLeague</h6>
+            </div>
+            <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
+        </a>
     </div>
 
     <footer class="bl-ev-footer">
