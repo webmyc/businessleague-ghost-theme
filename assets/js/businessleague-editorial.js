@@ -156,7 +156,17 @@
       badge_general: 'EDITORIAL',
       load_more_btn: 'Încarcă mai multe articole',
       load_more_loading: 'Se încarcă arhiva...',
-      load_more_done: 'Toate articolele au fost încărcate'
+      load_more_done: 'Toate articolele au fost încărcate',
+      events_card_eyebrow: 'LIVE CALENDAR // LUMA',
+      events_card_title: 'Next Community Events',
+      events_upcoming_label: 'URMĂTOARELE SESIUNI & MEETUPS',
+      events_register_cta: 'Înscrie-te pe Luma',
+      events_all_link: 'Vezi tot calendarul pe Luma',
+      events_hub_link: 'Hub Evenimente',
+      events_next_prefix: 'URMEAZĂ',
+      events_starts_in: 'începe în',
+      events_live_now: 'LIVE ACUM',
+      events_in_person: 'În persoană'
     },
     en: {
       header_tagline: 'THE PERFORMANCE MARKETING JOURNAL',
@@ -286,7 +296,17 @@
       badge_general: 'EDITORIAL',
       load_more_btn: 'Load more articles',
       load_more_loading: 'Loading archive...',
-      load_more_done: 'All articles loaded'
+      load_more_done: 'All articles loaded',
+      events_card_eyebrow: 'LIVE CALENDAR // LUMA',
+      events_card_title: 'Next Community Events',
+      events_upcoming_label: 'UPCOMING SESSIONS & MEETUPS',
+      events_register_cta: 'Register on Luma',
+      events_all_link: 'Full calendar on Luma',
+      events_hub_link: 'Events Hub',
+      events_next_prefix: 'NEXT UP',
+      events_starts_in: 'starts in',
+      events_live_now: 'LIVE NOW',
+      events_in_person: 'In person'
     },
     bg: {
       header_tagline: 'ИЗДАНИЕ ЗА ПЪРФОРМАНС МАРКЕТИНГ',
@@ -416,7 +436,17 @@
       badge_general: 'РЕДАКЦИОННО',
       load_more_btn: 'Зареди още статии',
       load_more_loading: 'Зареждане на архива...',
-      load_more_done: 'Всички статии са заредени'
+      load_more_done: 'Всички статии са заредени',
+      events_card_eyebrow: 'LIVE CALENDAR // LUMA',
+      events_card_title: 'Next Community Events',
+      events_upcoming_label: 'ПРЕДСТОЯЩИ СЕСИИ И СРЕЩИ',
+      events_register_cta: 'Регистрация в Luma',
+      events_all_link: 'Целият календар в Luma',
+      events_hub_link: 'Хъб Събития',
+      events_next_prefix: 'СЛЕДВА',
+      events_starts_in: 'започва след',
+      events_live_now: 'НА ЖИВО СЕГА',
+      events_in_person: 'На живо'
     },
     es: {
       header_tagline: 'PUBLICACIÓN DE PERFORMANCE MARKETING',
@@ -545,7 +575,17 @@
       badge_general: 'EDITORIAL',
       load_more_btn: 'Cargar más artículos',
       load_more_loading: 'Cargando archivo...',
-      load_more_done: 'Todos los artículos cargados'
+      load_more_done: 'Todos los artículos cargados',
+      events_card_eyebrow: 'LIVE CALENDAR // LUMA',
+      events_card_title: 'Next Community Events',
+      events_upcoming_label: 'PRÓXIMAS SESIONES Y MEETUPS',
+      events_register_cta: 'Inscríbete en Luma',
+      events_all_link: 'Ver calendario en Luma',
+      events_hub_link: 'Hub de Eventos',
+      events_next_prefix: 'PRÓXIMO',
+      events_starts_in: 'empieza en',
+      events_live_now: 'EN VIVO AHORA',
+      events_in_person: 'Presencial'
     }
   };
 
@@ -2874,6 +2914,289 @@
     }
   }
 
+  function initCommunityEvents(getLang) {
+    const FALLBACK_EVENTS = [
+      {
+        id: 'evt-dGfdV9p6c2nT0kN',
+        title: 'Community Tuesdays: PHARMA',
+        start: '2026-10-20T11:00:00.000Z',
+        end: '2026-10-20T12:00:00.000Z',
+        url: 'https://luma.com/rxh8o5zf',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/cc/91df108f-3d7e-4821-b9e3-e9dbbd35df6f.png',
+        locationType: 'online',
+        isInPerson: false,
+        hosts: ['Codruț Baciu']
+      },
+      {
+        id: 'evt-lR3gR6U43f1c7vJ',
+        title: 'BusinessLeague Open Q&A — 12:00 (RO)',
+        start: '2026-10-22T09:00:00.000Z',
+        end: '2026-10-22T10:00:00.000Z',
+        url: 'https://luma.com/ky6dsunb',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
+        locationType: 'online',
+        isInPerson: false,
+        hosts: ['Codruț Baciu']
+      },
+      {
+        id: 'evt-xT2qL7W89k3m4nP',
+        title: 'BusinessLeague Open Q&A — 17:00 (EN)',
+        start: '2026-10-22T14:00:00.000Z',
+        end: '2026-10-22T15:00:00.000Z',
+        url: 'https://luma.com/3b0196ep',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
+        locationType: 'online',
+        isInPerson: false,
+        hosts: ['Codruț Baciu']
+      },
+      {
+        id: 'evt-mP9vB4C12z8x5wQ',
+        title: 'BusinessLeague Open Q&A — 12:00 (RO)',
+        start: '2026-10-29T10:00:00.000Z',
+        end: '2026-10-29T11:00:00.000Z',
+        url: 'https://luma.com/1swt7ayz',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
+        locationType: 'online',
+        isInPerson: false,
+        hosts: ['Codruț Baciu']
+      },
+      {
+        id: 'evt-kN8bV3M56p2r9tY',
+        title: 'BusinessLeague Open Q&A — 17:00 (EN)',
+        start: '2026-10-29T15:00:00.000Z',
+        end: '2026-10-29T16:00:00.000Z',
+        url: 'https://luma.com/c6otould',
+        cover: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g5/cf0bd668-d1c6-4847-8437-f3b3a6ab0c36.png',
+        locationType: 'online',
+        isInPerson: false,
+        hosts: ['Codruț Baciu']
+      },
+      {
+        id: 'evt-dublin-meetup-2026-11-19',
+        title: 'Meet Your Next Big E-Commerce Client or Marketing Partner in Dublin!',
+        start: '2026-11-19T18:00:00.000Z',
+        end: '2026-11-19T21:00:00.000Z',
+        url: 'https://www.eventbrite.ro/e/meet-your-next-big-e-commerce-client-or-marketing-partner-in-dublin-tickets-1984276468259',
+        cover: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179246753%2F2625989445221%2F1%2Foriginal.20260303-112202?w=600&auto=format%2Ccompress&q=75&sharp=10&s=51ba664d9e89da1f3e7b8a8559e9093e',
+        locationType: 'offline',
+        locationLabel: 'The Mercantile Hotel · Dublin',
+        isInPerson: true,
+        hosts: ['Dorin Boerescu', '2Performant']
+      }
+    ];
+
+    let activeEvents = FALLBACK_EVENTS.slice();
+
+    const LOCALE_MAP = {
+      ro: 'ro-RO',
+      en: 'en-GB',
+      bg: 'bg-BG',
+      es: 'es-ES'
+    };
+
+    const UNIT_LABELS = {
+      ro: { d: 'z', h: 'h', m: 'm' },
+      en: { d: 'd', h: 'h', m: 'm' },
+      bg: { d: 'д', h: 'ч', m: 'м' },
+      es: { d: 'd', h: 'h', m: 'm' }
+    };
+
+    function formatCountdown(startIso, endIso, lang) {
+      const dict = I18N[lang] || I18N.ro;
+      const units = UNIT_LABELS[lang] || UNIT_LABELS.ro;
+      const now = Date.now();
+      const startMs = new Date(startIso).getTime();
+      const endMs = endIso ? new Date(endIso).getTime() : startMs + 3600000;
+
+      if (now >= startMs && now <= endMs) {
+        return dict.events_live_now || 'LIVE NOW';
+      }
+      const diffMs = startMs - now;
+      if (diffMs <= 0) {
+        return dict.events_next_prefix || 'NEXT UP';
+      }
+      const totalMins = Math.max(1, Math.floor(diffMs / 60000));
+      const days = Math.floor(totalMins / 1440);
+      const hours = Math.floor((totalMins % 1440) / 60);
+      const mins = totalMins % 60;
+
+      let deltaStr = '';
+      if (days > 0) {
+        deltaStr = `${days}${units.d} ${hours}${units.h}`;
+      } else if (hours > 0) {
+        deltaStr = `${hours}${units.h} ${mins}${units.m}`;
+      } else {
+        deltaStr = `${mins}${units.m}`;
+      }
+      return `${dict.events_next_prefix || 'NEXT UP'} · ${dict.events_starts_in || 'starts in'} ${deltaStr}`;
+    }
+
+    function formatDateParts(startIso, lang) {
+      const locale = LOCALE_MAP[lang] || 'ro-RO';
+      const d = new Date(startIso);
+      try {
+        const day = new Intl.DateTimeFormat(locale, {
+          day: '2-digit',
+          timeZone: 'Europe/Bucharest'
+        }).format(d);
+        const monthRaw = new Intl.DateTimeFormat(locale, {
+          month: 'short',
+          timeZone: 'Europe/Bucharest'
+        }).format(d);
+        const month = monthRaw.replace(/\.$/, '').toUpperCase();
+        const weekdayRaw = new Intl.DateTimeFormat(locale, {
+          weekday: 'short',
+          timeZone: 'Europe/Bucharest'
+        }).format(d);
+        const weekday = weekdayRaw.replace(/\.$/, '');
+        const time = new Intl.DateTimeFormat(locale, {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+          timeZone: 'Europe/Bucharest'
+        }).format(d);
+        return {
+          day,
+          month,
+          fullTime: `${weekday.charAt(0).toUpperCase() + weekday.slice(1)}, ${day} ${monthRaw.replace(/\.$/, '')} · ${time} EEST`,
+          shortTime: `${ weekday.charAt(0).toUpperCase() + weekday.slice(1) } · ${time} EEST`
+        };
+      } catch (_) {
+        return {
+          day: '20',
+          month: 'OCT',
+          fullTime: '14:00 EEST',
+          shortTime: '14:00 EEST'
+        };
+      }
+    }
+
+    function getUpcomingList(list) {
+      const now = Date.now();
+      const upcoming = list
+        .filter((ev) => {
+          const endMs = new Date(ev.end || ev.start).getTime();
+          return !Number.isNaN(endMs) && endMs >= now - 1800000;
+        })
+        .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+      return upcoming.length > 0 ? upcoming : list.slice(0, 5);
+    }
+
+    function renderWidgets(langInput) {
+      const lang = langInput || (typeof getLang === 'function' ? getLang() : 'ro') || 'ro';
+      const dict = I18N[lang] || I18N.ro;
+      const widgets = document.querySelectorAll('[data-bl-events-widget]');
+      if (!widgets.length) return;
+
+      const upcoming = getUpcomingList(activeEvents);
+      const featured = upcoming[0];
+      const agenda = upcoming.slice(1, 5);
+      if (!featured) return;
+
+      const featParts = formatDateParts(featured.start, lang);
+      const countdownText = formatCountdown(featured.start, featured.end, lang);
+      const featHost = Array.isArray(featured.hosts) && featured.hosts.length
+        ? `Host: ${featured.hosts[0]}`
+        : '2Performant Community';
+      const featLoc = featured.isInPerson
+        ? (featured.locationLabel || dict.events_in_person || 'In-Person')
+        : 'Online · Zoom';
+
+      widgets.forEach((widget) => {
+        const featLink = widget.querySelector('[data-ev-featured]');
+        if (featLink) {
+          featLink.href = featured.url;
+          featLink.setAttribute('data-ev-start', featured.start);
+          const countdownEl = featLink.querySelector('[data-ev-countdown]');
+          if (countdownEl) countdownEl.textContent = countdownText;
+          const locEl = featLink.querySelector('[data-ev-loc]');
+          if (locEl) locEl.textContent = featLoc;
+          const imgEl = featLink.querySelector('[data-ev-cover]');
+          if (imgEl && featured.cover && imgEl.getAttribute('src') !== featured.cover) {
+            imgEl.src = featured.cover;
+            imgEl.alt = featured.title;
+          }
+          const dayEl = featLink.querySelector('[data-ev-day]');
+          if (dayEl) dayEl.textContent = featParts.day;
+          const monthEl = featLink.querySelector('[data-ev-month]');
+          if (monthEl) monthEl.textContent = featParts.month;
+          const titleEl = featLink.querySelector('[data-ev-title]');
+          if (titleEl) titleEl.textContent = featured.title;
+          const timeEl = featLink.querySelector('[data-ev-time]');
+          if (timeEl) timeEl.textContent = featParts.fullTime;
+          const hostEl = featLink.querySelector('[data-ev-host]');
+          if (hostEl) hostEl.textContent = featHost;
+        }
+
+        const agendaContainer = widget.querySelector('[data-ev-agenda]');
+        if (agendaContainer && agenda.length > 0) {
+          agendaContainer.innerHTML = agenda
+            .map((ev) => {
+              const parts = formatDateParts(ev.start, lang);
+              const badgeHtml = ev.isInPerson
+                ? `<span class="bl-ev-row-loc is-inperson">${escapeHtml(ev.locationLabel ? 'Dublin · IRL' : (dict.events_in_person || 'In-Person'))}</span>`
+                : `<span class="bl-ev-row-loc">Zoom</span>`;
+              return `
+                <a href="${escapeHtml(ev.url)}" target="_blank" rel="noopener" class="bl-ev-row" data-ev-start="${escapeHtml(ev.start)}">
+                  <div class="bl-ev-row-date">
+                    <span class="bl-ev-row-day">${escapeHtml(parts.day)}</span>
+                    <span class="bl-ev-row-month">${escapeHtml(parts.month)}</span>
+                  </div>
+                  <div class="bl-ev-row-info">
+                    <div class="bl-ev-row-title">${escapeHtml(ev.title)}</div>
+                    <div class="bl-ev-row-meta">
+                      <span>${escapeHtml(parts.shortTime)}</span>
+                      <span class="bl-ev-dot-sep">·</span>
+                      ${badgeHtml}
+                    </div>
+                  </div>
+                  <span class="bl-ev-row-arrow" aria-hidden="true">↗</span>
+                </a>
+              `;
+            })
+            .join('');
+        }
+      });
+    }
+
+    window.__blSyncCommunityEvents = renderWidgets;
+    renderWidgets();
+
+    const fetchLiveEvents = () => {
+      fetch('https://start.businessleague.com/api/luma-events', { mode: 'cors' })
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data && Array.isArray(data.events) && data.events.length > 0) {
+            const mapped = data.events
+              .filter((e) => e && e.title && e.start && e.url)
+              .map((e) => ({
+                id: e.id || e.url,
+                title: e.title,
+                start: e.start,
+                end: e.end || e.start,
+                url: e.url,
+                cover: e.cover || '',
+                locationType: e.locationType || 'online',
+                locationLabel: e.locationLabel || '',
+                isInPerson: Boolean(e.isInPerson || e.locationType === 'offline'),
+                hosts: Array.isArray(e.hosts) ? e.hosts : []
+              }));
+            if (mapped.length > 0) {
+              activeEvents = mapped;
+              renderWidgets();
+            }
+          }
+        })
+        .catch(() => {});
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(fetchLiveEvents, { timeout: 3500 });
+    } else {
+      setTimeout(fetchLiveEvents, 1800);
+    }
+  }
+
   function init() {
     let currentLang = resolveActiveLanguage();
     let currentPillar = resolveInitialPillar();
@@ -2906,6 +3229,7 @@
     initHeroMesh();
     initReadingControls();
     initSinglePostEnhancements();
+    initCommunityEvents(() => currentLang);
 
     if (currentPillar !== 'all') {
       const activeWs = document.querySelector(`.bl-lang-workspace[data-lang-panel="${currentLang}"]`);
@@ -3008,6 +3332,9 @@
 
           initWorkspacesAndSections(currentLang, currentPillar);
           applyTranslations(currentLang);
+          if (typeof window.__blSyncCommunityEvents === 'function') {
+            window.__blSyncCommunityEvents(currentLang);
+          }
         }
         return;
       }
