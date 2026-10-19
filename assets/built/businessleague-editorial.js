@@ -845,7 +845,9 @@
       id: 'cluster-tudor-stanica-2026',
       pillar: 'interviews',
       ro: 'tudor-stanica-pentru-surprize-ma-trezesc-in-fiecare-dimineata',
-      en: 'tudor-stanica-community-manager-businessleague-surprises-are-what-get-me-out-of-bed-every-morning'
+      en: 'tudor-stanica-community-manager-businessleague-surprises-are-what-get-me-out-of-bed-every-morning',
+      bg: 'tudor-stanica-community-manager-businessleague-iznenadite-sa-tova-zaradi-koeto-stavam-vsyaka-sutrin-bg',
+      es: 'tudor-stanica-community-manager-businessleague-las-sorpresas-son-lo-que-me-hace-levantarme-cada-manana-es'
     },
     {
       id: 'cluster-apiland-2026',

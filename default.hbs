@@ -121,10 +121,9 @@
         try {
             var rSize = localStorage.getItem('bl_reading_size') || 'md';
             var rFont = localStorage.getItem('bl_reading_font') || 'sans';
-            var rLayout = localStorage.getItem('bl_reading_layout') || 'standard';
             html.setAttribute('data-reading-size', rSize);
             html.setAttribute('data-reading-font', rFont);
-            html.setAttribute('data-reading-layout', rLayout);
+            html.setAttribute('data-reading-layout', 'standard');
         } catch (e) {}
     })();
     </script>
