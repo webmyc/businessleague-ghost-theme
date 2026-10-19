@@ -52,14 +52,22 @@
         {{/if}}
 
         <footer class="bl-card-footer">
-            {{#primary_author}}
-            <a class="bl-author-chip" href="{{url}}">
-                {{#if profile_image}}
-                    <img class="bl-author-avatar" src="{{img_url profile_image size="xs" format="webp"}}" alt="" width="28" height="28" loading="lazy" decoding="async" />
-                {{/if}}
-                <span>{{name}}</span>
-            </a>
-            {{/primary_author}}
+            {{#if authors}}
+            <div class="bl-author-chip">
+                <span class="bl-author-avatars">
+                    {{#foreach authors}}
+                        {{#if profile_image}}
+                            <a class="bl-author-avatar-link" href="{{url}}" title="{{name}}" aria-label="{{name}}">
+                                <img class="bl-author-avatar" src="{{img_url profile_image size="xs" format="webp"}}" alt="" width="28" height="28" loading="lazy" decoding="async" />
+                            </a>
+                        {{/if}}
+                    {{/foreach}}
+                </span>
+                <span class="bl-author-names">
+                    {{#foreach authors}}<a class="bl-author-name-link" href="{{url}}">{{name}}</a>{{#unless @last}}<span class="bl-author-sep">, </span>{{/unless}}{{/foreach}}
+                </span>
+            </div>
+            {{/if}}
 
             <a class="bl-read-cta" href="{{url}}" aria-label="{{title}}">
                 <span data-i18n="read_article">Citește</span>

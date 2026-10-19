@@ -1521,6 +1521,13 @@
         const excerpt = excerptEl ? excerptEl.textContent.trim() : '';
         const badgeText = dict[`badge_${pillar}`] || dict.badge_general;
         const safeTitle = title.replace(/"/g, '&quot;');
+        const sourceAuthorChip = sourceEl.querySelector('.bl-author-chip');
+        let authorChipHtml = '<span class="bl-author-chip"><span>BusinessLeague</span></span>';
+        if (sourceAuthorChip) {
+          const clonedChip = sourceAuthorChip.cloneNode(true);
+          clonedChip.removeAttribute('hidden');
+          authorChipHtml = clonedChip.outerHTML;
+        }
 
         const article = document.createElement('article');
         article.className = 'bl-card post-card';
@@ -1538,7 +1545,7 @@
             <h3 class="bl-card-title"><a href="${url}">${title}</a></h3>
             ${excerpt ? `<p class="bl-card-excerpt">${excerpt}</p>` : ''}
             <footer class="bl-card-footer">
-              <span class="bl-author-chip"><span>BusinessLeague</span></span>
+              ${authorChipHtml}
               <a class="bl-read-cta" href="${url}" aria-label="${safeTitle}">
                 <span data-i18n="read_article">${dict.read_article}</span>
                 <span aria-hidden="true">&rarr;</span>
@@ -3657,8 +3664,12 @@
                 : '';
               const primaryTagName =
                 (post.primary_tag && post.primary_tag.name) || 'BusinessLeague';
-              const primaryAuthor =
-                post.primary_author || (Array.isArray(post.authors) && post.authors[0]) || null;
+              const postAuthors =
+                Array.isArray(post.authors) && post.authors.length > 0
+                  ? post.authors
+                  : post.primary_author
+                    ? [post.primary_author]
+                    : [];
               const postUrl = post.url || `/${post.slug}/`;
 
               const article = document.createElement('article');
@@ -3701,18 +3712,24 @@
                      </div>
                    </div>`;
 
-              const authorHtml = primaryAuthor
-                ? `<a class="bl-author-chip" href="${esc(primaryAuthor.url || '#')}">
-                     ${
-                       primaryAuthor.profile_image
-                         ? `<img class="bl-author-avatar" src="${esc(
-                             primaryAuthor.profile_image
-                           )}" alt="" width="36" height="36" loading="lazy" decoding="async" />`
-                         : ''
-                     }
-                     <span>${esc(primaryAuthor.name || 'BusinessLeague')}</span>
-                   </a>`
-                : `<span class="bl-author-chip"><span>BusinessLeague</span></span>`;
+              const authorHtml =
+                postAuthors.length > 0
+                  ? `<div class="bl-author-chip">
+                       <span class="bl-author-avatars">${postAuthors
+                         .filter((a) => a && a.profile_image)
+                         .map(
+                           (a) =>
+                             `<a class="bl-author-avatar-link" href="${esc(a.url || '#')}" title="${esc(a.name || '')}" aria-label="${esc(a.name || '')}"><img class="bl-author-avatar" src="${esc(a.profile_image)}" alt="" width="28" height="28" loading="lazy" decoding="async" /></a>`
+                         )
+                         .join('')}</span>
+                       <span class="bl-author-names">${postAuthors
+                         .map(
+                           (a, idx) =>
+                             `<a class="bl-author-name-link" href="${esc(a.url || '#')}">${esc(a.name || 'BusinessLeague')}</a>${idx < postAuthors.length - 1 ? '<span class="bl-author-sep">, </span>' : ''}`
+                         )
+                         .join('')}</span>
+                     </div>`
+                  : `<span class="bl-author-chip"><span>BusinessLeague</span></span>`;
 
               article.innerHTML = `
                 <a class="bl-card-media" href="${esc(postUrl)}" aria-label="${esc(post.title)}">

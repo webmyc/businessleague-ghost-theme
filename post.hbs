@@ -49,13 +49,17 @@
                         "{{img_url feature_image size="xl" absolute="true"}}"
                     ],
                     {{/if}}
-                    {{#primary_author}}
-                    "author": {
-                        "@type": "Person",
-                        "name": "{{name}}",
-                        "url": "{{url absolute="true"}}"
-                    },
-                    {{/primary_author}}
+                    {{#if authors}}
+                    "author": [
+                        {{#foreach authors}}
+                        {
+                            "@type": "Person",
+                            "name": "{{name}}",
+                            "url": "{{url absolute="true"}}"
+                        }{{#unless @last}},{{/unless}}
+                        {{/foreach}}
+                    ],
+                    {{/if}}
                     "publisher": {
                         "@type": "Organization",
                         "name": "BusinessLeague by 2Performant",
@@ -122,21 +126,27 @@
                 {{!-- Author Byline & Share Actions --}}
                 <div class="bl-article-byline-bar">
                     <div class="bl-byline-author">
-                        {{#primary_author}}
-                            {{#if profile_image}}
-                                <a href="{{url}}" aria-label="{{name}}">
-                                    <img class="bl-byline-avatar" src="{{img_url profile_image size="s" format="webp"}}" alt="{{name}}" width="44" height="44" decoding="async" />
-                                </a>
-                            {{/if}}
-                            <div>
-                                <a class="bl-byline-name" href="{{url}}">{{name}}</a>
-                                <div class="bl-byline-meta">
-                                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
-                                    {{#if ../reading_time}} &bull; {{../reading_time}}{{/if}}
-                                    {{#if ../comments}} &bull; <a href="#bl-comments" class="bl-byline-comments-link">{{../comment_count empty="Comentează" singular="comentariu" plural="comentarii"}}</a>{{/if}}
-                                </div>
+                        {{#if authors}}
+                            <div class="bl-byline-avatars">
+                                {{#foreach authors}}
+                                    {{#if profile_image}}
+                                        <a class="bl-byline-avatar-link" href="{{url}}" title="{{name}}" aria-label="{{name}}">
+                                            <img class="bl-byline-avatar" src="{{img_url profile_image size="s" format="webp"}}" alt="{{name}}" width="44" height="44" decoding="async" />
+                                        </a>
+                                    {{/if}}
+                                {{/foreach}}
                             </div>
-                        {{/primary_author}}
+                        {{/if}}
+                        <div class="bl-byline-info">
+                            <div class="bl-byline-names">
+                                {{#foreach authors}}<a class="bl-byline-name" href="{{url}}">{{name}}</a>{{#unless @last}}<span class="bl-byline-sep">, </span>{{/unless}}{{/foreach}}
+                            </div>
+                            <div class="bl-byline-meta">
+                                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                                {{#if reading_time}} &bull; {{reading_time}}{{/if}}
+                                {{#if comments}} &bull; <a href="#bl-comments" class="bl-byline-comments-link">{{comment_count empty="Comentează" singular="comentariu" plural="comentarii"}}</a>{{/if}}
+                            </div>
+                        </div>
                     </div>
 
                     <div class="bl-share-group">
