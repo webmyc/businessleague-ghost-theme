@@ -842,6 +842,12 @@
    */
   const TRANSLATION_CLUSTERS = [
     {
+      id: 'cluster-tudor-stanica-2026',
+      pillar: 'interviews',
+      ro: 'tudor-stanica-pentru-surprize-ma-trezesc-in-fiecare-dimineata',
+      en: 'tudor-stanica-community-manager-businessleague-surprises-are-what-get-me-out-of-bed-every-morning'
+    },
+    {
       id: 'cluster-apiland-2026',
       pillar: 'interviews',
       ro: 'georgiana-irimus-apiland-ro-pregatim-reduceri-de-black-friday-dar-aniversarea-apiland-ramane-momentul-nostru-special-din-an',
@@ -2880,6 +2886,106 @@
           }
         });
       }
+    }
+
+    // Enhance Ghost Koenig Gallery cards (.kg-gallery-image): proportional flex ratios + <dialog> lightbox
+    const galleryImages = Array.from(document.querySelectorAll('.kg-gallery-image img'));
+    if (galleryImages.length > 0) {
+      galleryImages.forEach((img) => {
+        const container = img.closest('.kg-gallery-image');
+        if (!container) return;
+        const applyRatio = () => {
+          const w = parseFloat(img.getAttribute('width') || '') || img.naturalWidth || 0;
+          const h = parseFloat(img.getAttribute('height') || '') || img.naturalHeight || 0;
+          if (w > 0 && h > 0) {
+            const ratio = (w / h).toFixed(4);
+            if (container.style && typeof container.style.setProperty === 'function') {
+              container.style.setProperty('--kg-gallery-flex', ratio);
+            }
+          }
+        };
+        applyRatio();
+        if (typeof img.addEventListener === 'function') {
+          img.addEventListener('load', applyRatio, { once: true });
+        }
+      });
+
+      let dialogEl = null;
+      let lightboxImg = null;
+      let lightboxCounter = null;
+      let activeIdx = 0;
+
+      const updateLightboxSlide = (nextIndex) => {
+        activeIdx = (nextIndex + galleryImages.length) % galleryImages.length;
+        const target = galleryImages[activeIdx];
+        if (!target || !lightboxImg) return;
+        lightboxImg.src = target.currentSrc || target.getAttribute('src') || '';
+        lightboxImg.alt = target.getAttribute('alt') || 'BusinessLeague Gallery';
+        if (lightboxCounter) {
+          lightboxCounter.textContent = `${activeIdx + 1} / ${galleryImages.length}`;
+        }
+      };
+
+      const ensureLightboxDialog = () => {
+        if (dialogEl) return dialogEl;
+        dialogEl = document.createElement('dialog');
+        dialogEl.className = 'bl-gallery-lightbox';
+        dialogEl.setAttribute('closedby', 'any');
+        dialogEl.setAttribute('aria-label', 'Image gallery viewer');
+        dialogEl.innerHTML = `
+          <div class="bl-gallery-lightbox-inner">
+            <img class="bl-gallery-lightbox-img" src="" alt="" />
+            <div class="bl-gallery-lightbox-bar">
+              <button type="button" class="bl-gallery-lightbox-btn" data-gallery-prev aria-label="Previous image">← Prev</button>
+              <span data-gallery-counter>1 / ${galleryImages.length}</span>
+              <button type="button" class="bl-gallery-lightbox-btn" data-gallery-next aria-label="Next image">Next →</button>
+              <form method="dialog" style="margin:0;display:inline;">
+                <button type="submit" class="bl-gallery-lightbox-btn" aria-label="Close gallery">✕ ESC</button>
+              </form>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(dialogEl);
+        lightboxImg = dialogEl.querySelector('.bl-gallery-lightbox-img');
+        lightboxCounter = dialogEl.querySelector('[data-gallery-counter]');
+        const prevBtn = dialogEl.querySelector('[data-gallery-prev]');
+        const nextBtn = dialogEl.querySelector('[data-gallery-next]');
+        if (prevBtn) {
+          prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            updateLightboxSlide(activeIdx - 1);
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            updateLightboxSlide(activeIdx + 1);
+          });
+        }
+        dialogEl.addEventListener('click', (e) => {
+          if (e.target === dialogEl && typeof dialogEl.close === 'function') {
+            dialogEl.close();
+          }
+        });
+        dialogEl.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') updateLightboxSlide(activeIdx - 1);
+          else if (e.key === 'ArrowRight') updateLightboxSlide(activeIdx + 1);
+        });
+        return dialogEl;
+      };
+
+      galleryImages.forEach((img, idx) => {
+        const wrapper = img.closest('.kg-gallery-image') || img;
+        wrapper.addEventListener('click', () => {
+          const dlg = ensureLightboxDialog();
+          updateLightboxSlide(idx);
+          if (typeof dlg.showModal === 'function') {
+            dlg.showModal();
+          } else {
+            dlg.setAttribute('open', '');
+          }
+        });
+      });
     }
   }
 
