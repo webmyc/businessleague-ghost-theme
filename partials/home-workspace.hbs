@@ -1,7 +1,7 @@
 {{!-- BusinessLeague Per-Language Journalistic Magazine Workspace Partial --}}
 <div class="bl-lang-workspace{{#if is_default_lang}} is-active{{/if}}" data-lang-panel="{{lang_code}}" data-lang-filter="{{lang_filter}}"{{#unless is_default_lang}} hidden{{/unless}}>
     {{#unless is_default_lang}}<template data-ws-template="{{lang_code}}">{{/unless}}
-    {{#get "posts" filter=lang_filter include="tags,authors" limit="22" as |lang_posts|}}
+    {{#get "posts" filter=lang_filter include="tags,authors" order="featured desc, published_at desc" limit="22" as |lang_posts|}}
         {{#if lang_posts}}
             {{!-- 1. FRONT PAGE 7:5 CINEMATIC MAVERICK HERO SPLIT --}}
             <section class="bl-hero-split" data-hero-section>
@@ -24,6 +24,7 @@
                                  data-post-id="{{id}}"
                                  data-post-slug="{{slug}}"
                                  data-published="{{date format="YYYY-MM-DD"}}"
+                                 data-authors="{{#foreach authors}}{{slug}},{{/foreach}}"
                                  data-tags="{{#foreach tags visibility="all"}}{{slug}},{{/foreach}}">
                             <div class="bl-cover-topbar">
                                 <span class="bl-cover-issue-tag">
@@ -143,6 +144,7 @@
                              data-post-id="{{id}}"
                              data-post-slug="{{slug}}"
                              data-published="{{date format="YYYY-MM-DD"}}"
+                             data-authors="{{#foreach authors}}{{slug}},{{/foreach}}"
                              data-tags="{{#foreach tags visibility="all"}}{{slug}},{{/foreach}}">
                         <a class="bl-side-media" href="{{url}}" aria-label="{{title}}">
                             {{#if feature_image}}
@@ -282,8 +284,9 @@
                             <p class="bl-report-desc">Radiografia completă a categoriei Pharma în BusinessLeague: €38,15M vânzări fără TVA, 29 de farmacii și magazine analizate, sezonalitate și comportament de achiziție.</p>
                             <div class="bl-report-actions">
                                 <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/10/BusinessLeague_Pharma_RO_v6.pdf" target="_blank" rel="noopener">
+                                    <svg class="bl-report-pdf-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
                                     <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
-                                    <span aria-hidden="true">&#8599;</span>
+                                    <span class="bl-report-pdf-arrow" aria-hidden="true">&#8599;</span>
                                 </a>
                                 <div class="bl-report-subactions">
                                     <a class="bl-report-article-link" href="/pharma-peste-1-3-milioane-de-comenzi-unice-in-33-de-luni/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
@@ -319,8 +322,9 @@
                             <p class="bl-report-desc">Analiza celor 148 de magazine din categoria Electronics &amp; IT&amp;C: coș mediu de €173,7, evoluția Black Friday și distribuția comenzilor pe subcategorii.</p>
                             <div class="bl-report-actions">
                                 <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/09/BusinessLeague_Electronics_ITC_RO.pdf" target="_blank" rel="noopener">
+                                    <svg class="bl-report-pdf-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
                                     <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
-                                    <span aria-hidden="true">&#8599;</span>
+                                    <span class="bl-report-pdf-arrow" aria-hidden="true">&#8599;</span>
                                 </a>
                                 <div class="bl-report-subactions">
                                     <a class="bl-report-article-link" href="/electronics-it-c-428-184-comenzi-unice-in-26-de-luni/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
@@ -356,8 +360,9 @@
                             <p class="bl-report-desc">41,1% dintre comenzile de cărți conțin un singur produs. Radiografia completă a 1.236.336 de comenzi generate pentru 43 de librării online.</p>
                             <div class="bl-report-actions">
                                 <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/08/Cum-se-cumpara-carti-online-2026-1.pdf" target="_blank" rel="noopener">
+                                    <svg class="bl-report-pdf-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
                                     <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
-                                    <span aria-hidden="true">&#8599;</span>
+                                    <span class="bl-report-pdf-arrow" aria-hidden="true">&#8599;</span>
                                 </a>
                                 <div class="bl-report-subactions">
                                     <a class="bl-report-article-link" href="/41-1-dintre-comenzile-de-carti-online-contin-un-singur-produs-cum-arata-radiografia-completa-a-unei-piete-de-30-de-milioane-de-euro/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
@@ -393,8 +398,9 @@
                             <p class="bl-report-desc">Studiu pe 337.834 de comenzi și 229 de magazine Home &amp; Garden: de ce 84,5% dintre achiziții conțin un singur articol și când sunt vârfurile de conversie.</p>
                             <div class="bl-report-actions">
                                 <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/07/HG_report_RO--1-.pdf" target="_blank" rel="noopener">
+                                    <svg class="bl-report-pdf-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
                                     <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
-                                    <span aria-hidden="true">&#8599;</span>
+                                    <span class="bl-report-pdf-arrow" aria-hidden="true">&#8599;</span>
                                 </a>
                                 <div class="bl-report-subactions">
                                     <a class="bl-report-article-link" href="/84-5-din-toate-comenzile-home-garden-sunt-achizitii-cu-un-singur-produs/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>
@@ -430,8 +436,9 @@
                             <p class="bl-report-desc">25,1 milioane de click-uri, €49,9M vânzări și 186 de magazine Fashion analizate: diferențe iOS vs. Android, ore de vârf și rata de conversie.</p>
                             <div class="bl-report-actions">
                                 <a class="bl-report-pdf-btn" href="https://blog.businessleague.com/content/files/2026/06/BusinessLeague_Fashion_Buying_Report_EN-1.pdf" target="_blank" rel="noopener">
+                                    <svg class="bl-report-pdf-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
                                     <span data-i18n="report_open_pdf">Deschide PDF-ul</span>
-                                    <span aria-hidden="true">&#8599;</span>
+                                    <span class="bl-report-pdf-arrow" aria-hidden="true">&#8599;</span>
                                 </a>
                                 <div class="bl-report-subactions">
                                     <a class="bl-report-article-link" href="/userii-de-iphone-cheltuie-cu-24-mai-mult-pe-fashion-si-alte-5-lucruri-pe-care-ni-le-spun-datele/?lang=ro"><span data-i18n="report_read_article">Citește sinteza &rarr;</span></a>

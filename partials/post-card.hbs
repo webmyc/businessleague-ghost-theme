@@ -3,6 +3,7 @@
          data-post-id="{{id}}"
          data-post-slug="{{slug}}"
          data-published="{{date format="YYYY-MM-DD"}}"
+         data-authors="{{#foreach authors}}{{slug}},{{/foreach}}"
          data-tags="{{#foreach tags visibility="all"}}{{slug}},{{/foreach}}"
          data-pillar="auto">
 
@@ -69,7 +70,7 @@
             </div>
             {{/if}}
 
-            <a class="bl-read-cta" href="{{url}}" aria-label="{{title}}">
+            <a class="bl-read-cta" href="{{url}}">
                 <span data-i18n="read_article">Citește</span>
                 <span aria-hidden="true">&rarr;</span>
             </a>

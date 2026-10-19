@@ -50,6 +50,6 @@
                 "width": 2000
             }
         },
-        "card_assets": true
+        "card_assets": false
     }
 }

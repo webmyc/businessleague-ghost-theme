@@ -39,14 +39,31 @@
                 },
                 {
                     "@type": "BlogPosting",
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "{{url absolute="true"}}"
+                    },
                     "headline": "{{encode title}}",
-                    "description": "{{#if custom_excerpt}}{{encode custom_excerpt}}{{else}}{{encode excerpt}}{{/if}}",
+                    "description": "{{#if meta_description}}{{encode meta_description}}{{else if custom_excerpt}}{{encode custom_excerpt}}{{else}}{{encode excerpt}}{{/if}}",
                     "url": "{{url absolute="true"}}",
+                    "inLanguage": "{{#has tag="en"}}en{{else has tag="bg"}}bg{{else has tag="es"}}es{{else}}ro{{/has}}",
+                    "isAccessibleForFree": true,
                     "datePublished": "{{date format="YYYY-MM-DDTHH:mm:ssZ"}}",
                     "dateModified": "{{date updated_at format="YYYY-MM-DDTHH:mm:ssZ"}}",
+                    {{#primary_tag}}
+                    "articleSection": "{{encode name}}",
+                    {{/primary_tag}}
+                    {{#if tags}}
+                    "keywords": "{{#foreach tags visibility="public"}}{{encode name}}{{#unless @last}}, {{/unless}}{{/foreach}}",
+                    {{/if}}
                     {{#if feature_image}}
                     "image": [
-                        "{{img_url feature_image size="xl" absolute="true"}}"
+                        {
+                            "@type": "ImageObject",
+                            "url": "{{img_url feature_image size="xl" format="jpeg" absolute="true"}}",
+                            "width": 1200,
+                            "height": 675
+                        }
                     ],
                     {{/if}}
                     {{#if authors}}
@@ -63,6 +80,7 @@
                     "publisher": {
                         "@type": "Organization",
                         "name": "BusinessLeague by 2Performant",
+                        "url": "https://start.businessleague.com",
                         "logo": {
                             "@type": "ImageObject",
                             "url": "https://start.businessleague.com/img/logo-horizontal-dark.png"
@@ -132,11 +150,12 @@
                              {{img_url feature_image size="m" format="webp"}} 600w,
                              {{img_url feature_image size="l" format="webp"}} 1000w,
                              {{img_url feature_image size="xl" format="webp"}} 2000w"
-                     sizes="(max-width: 680px) 360px, (max-width: 1000px) 92vw, 960px"
-                     width="1000"
-                     height="563"
+                     sizes="(max-width: 680px) 340px, (max-width: 1200px) 80vw, 1000px"
+                     width="1160"
+                     height="653"
                      alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                     fetchpriority="high" />
+                     fetchpriority="high"
+                     decoding="async" />
                 {{#if feature_image_caption}}
                     <figcaption>{{feature_image_caption}}</figcaption>
                 {{/if}}
@@ -207,7 +226,7 @@
                             <div class="bl-comments-header">
                                 <div class="bl-comments-title-wrap">
                                     <span class="bl-section-eyebrow" data-i18n="comments_eyebrow">DISCUȚIE ÎN ARENĂ // COMUNITATE</span>
-                                    <h3 class="bl-comments-title" data-i18n="comments_title">Comentarii &amp; Dezbateri pe Cifre</h3>
+                                    <h2 class="bl-comments-title" data-i18n="comments_title">Comentarii &amp; Dezbateri pe Cifre</h2>
                                 </div>
                                 <span class="bl-comments-count-badge">
                                     {{comment_count empty="0 comentarii" singular="comentariu" plural="comentarii"}}
@@ -259,18 +278,18 @@
                     </div>
 
                     <div class="bl-rail-card" id="bl-toc-card" style="display:none;">
-                        <h4 class="bl-rail-title">
+                        <h2 class="bl-rail-title">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
                             <span data-i18n="toc_title">Cuprins Articol</span>
-                        </h4>
+                        </h2>
                         <ul class="bl-toc-list" id="bl-toc-list"></ul>
                     </div>
 
                     <div class="bl-rail-card">
-                        <h4 class="bl-rail-title">
+                        <h2 class="bl-rail-title">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                             <span data-i18n="rail_lang_title">Versiuni Disponibile</span>
-                        </h4>
+                        </h2>
                         <div class="bl-article-lang-pills" data-article-lang-pills style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
                             <a href="?lang=ro" class="bl-article-lang-pill" data-article-lang="ro">🇷🇴 Română</a>
                             <a href="?lang=en" class="bl-article-lang-pill" data-article-lang="en">🇬🇧 English</a>
@@ -284,7 +303,7 @@
 
                     <div class="bl-ecosystem-card">
                         <span class="bl-section-eyebrow">BUSINESSLEAGUE</span>
-                        <h4 class="bl-ecosystem-title" data-i18n="eco_title">Crește-ți vânzările sau câștigă comisioane prin performanță pură</h4>
+                        <h2 class="bl-ecosystem-title" data-i18n="eco_title">Crește-ți vânzările sau câștigă comisioane prin performanță pură</h2>
                         <p class="bl-ecosystem-desc" data-i18n="eco_desc">
                             Intră în campionatul de marketing descentralizat #1 din CEE.
                         </p>
