@@ -39,13 +39,48 @@
 
         <section class="bl-section">
             <div class="bl-grid-3">
-                {{#foreach posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
+                {{#tag}}
+                    {{#has slug="ro"}}
+                        {{#get "posts" filter="tag:-[en,hash-en,bg,hash-bg,es,hash-es]" include="tags,authors" limit="24" as |ro_hub_posts|}}
+                            {{#foreach ro_hub_posts}}
+                                {{> "post-card"}}
+                            {{/foreach}}
+                        {{/get}}
+                    {{else}}
+                        {{#foreach ../posts}}
+                            {{> "post-card"}}
+                        {{/foreach}}
+                    {{/has}}
+                {{/tag}}
             </div>
             <div class="bl-load-more-wrap">
                 {{pagination}}
             </div>
         </section>
+
+        {{#tag}}
+            {{#has slug="ro,en,bg,es,business-league,pentru-afiliati,pentru-furnizori,stiri-din-piata,interviuri-2,how-to,seo,ppc,afiliere-fashion,black-friday-2"}}
+            <nav class="bl-seo-hub-directory" aria-label="{{name}} Complete Archive">
+                <div class="bl-seo-hub-col">
+                    <h3>Arhiva Indexată — {{name}} (Top 100 Articole)</h3>
+                    <ul class="bl-seo-hub-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px 24px;">
+                        {{#has slug="ro"}}
+                            {{#get "posts" filter="tag:-[en,hash-en,bg,hash-bg,es,hash-es]" limit="100" fields="title,url" as |archive_posts|}}
+                                {{#foreach archive_posts}}
+                                    <li><a href="{{url}}">{{title}}</a></li>
+                                {{/foreach}}
+                            {{/get}}
+                        {{else}}
+                            {{#get "posts" filter="tag:{{slug}}" limit="100" fields="title,url" as |archive_posts|}}
+                                {{#foreach archive_posts}}
+                                    <li><a href="{{url}}">{{title}}</a></li>
+                                {{/foreach}}
+                            {{/get}}
+                        {{/has}}
+                    </ul>
+                </div>
+            </nav>
+            {{/has}}
+        {{/tag}}
     </div>
 </main>
