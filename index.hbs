@@ -82,6 +82,56 @@
         {{> "home-workspace" lang_code="en" lang_filter="tag:[en,hash-en]"}}
         {{> "home-workspace" lang_code="bg" lang_filter="tag:[bg,hash-bg]"}}
         {{> "home-workspace" lang_code="es" lang_filter="tag:[es,hash-es]"}}
+
+        {{!-- SSR International Editions & Topic Crawl Hub (Zero images, ensures 1st-wave Googlebot discovers EN/BG/ES editions & core categories at Depth 1) --}}
+        <nav class="bl-seo-hub-directory" aria-label="International Editions & Topics">
+            <div class="bl-seo-hub-grid">
+                <div class="bl-seo-hub-col">
+                    <h3>Ediții Internaționale & Categorii</h3>
+                    <ul class="bl-seo-hub-list">
+                        <li><a href="{{@site.url}}/tag/ro/">🇷🇴 Ediția în Română (RO)</a></li>
+                        <li><a href="{{@site.url}}/tag/en/">🇬🇧 English Edition (EN)</a></li>
+                        <li><a href="{{@site.url}}/tag/bg/">🇧🇬 Българско издание (BG)</a></li>
+                        <li><a href="{{@site.url}}/tag/es/">🇪🇸 Edición en Español (ES)</a></li>
+                        <li><a href="{{@site.url}}/tag/business-league/">BusinessLeague Reports & Analize</a></li>
+                        <li><a href="{{@site.url}}/tag/pentru-afiliati/">Strategii pentru Afiliați</a></li>
+                        <li><a href="{{@site.url}}/tag/pentru-furnizori/">Strategii pentru Magazine Online</a></li>
+                        <li><a href="{{@site.url}}/tag/interviuri-2/">Interviuri cu Performeri</a></li>
+                        <li><a href="{{@site.url}}/tag/stiri-din-piata/">Știri & Studii E-Commerce</a></li>
+                    </ul>
+                </div>
+                <div class="bl-seo-hub-col" lang="en">
+                    <h3>Latest in English (EN)</h3>
+                    <ul class="bl-seo-hub-list">
+                        {{#get "posts" filter="tag:[en,hash-en]" limit="6" fields="title,url" as |en_seo_posts|}}
+                            {{#foreach en_seo_posts}}
+                                <li><a href="{{url}}">{{title}}</a></li>
+                            {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </div>
+                <div class="bl-seo-hub-col" lang="bg">
+                    <h3>Последни статии (BG)</h3>
+                    <ul class="bl-seo-hub-list">
+                        {{#get "posts" filter="tag:[bg,hash-bg]" limit="6" fields="title,url" as |bg_seo_posts|}}
+                            {{#foreach bg_seo_posts}}
+                                <li><a href="{{url}}">{{title}}</a></li>
+                            {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </div>
+                <div class="bl-seo-hub-col" lang="es">
+                    <h3>Últimos artículos (ES)</h3>
+                    <ul class="bl-seo-hub-list">
+                        {{#get "posts" filter="tag:[es,hash-es]" limit="6" fields="title,url" as |es_seo_posts|}}
+                            {{#foreach es_seo_posts}}
+                                <li><a href="{{url}}">{{title}}</a></li>
+                            {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
     <script>
     (function(){

@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="{{#is "post"}}{{#post}}{{#has tag="en"}}en{{else has tag="bg"}}bg{{else has tag="es"}}es{{else}}ro{{/has}}{{/post}}{{else is "tag"}}{{#tag}}{{#match slug "en"}}en{{else match slug "bg"}}bg{{else match slug "es"}}es{{else}}ro{{/match}}{{/tag}}{{else}}{{@site.locale}}{{/is}}" data-theme="dark" data-bl-lang="{{#is "post"}}{{#post}}{{#has tag="en"}}en{{else has tag="bg"}}bg{{else has tag="es"}}es{{else}}ro{{/has}}{{/post}}{{else}}ro{{/is}}" class="dark-mode">
+<html lang="{{#is "post"}}{{#post}}{{#has tag="en"}}en{{else has tag="bg"}}bg{{else has tag="es"}}es{{else}}ro{{/has}}{{/post}}{{else is "tag"}}{{#tag}}{{#match slug "en"}}en{{else match slug "bg"}}bg{{else match slug "es"}}es{{else}}ro{{/match}}{{/tag}}{{else}}{{@site.locale}}{{/is}}" data-theme="dark" data-bl-lang="{{#is "post"}}{{#post}}{{#has tag="en"}}en{{else has tag="bg"}}bg{{else has tag="es"}}es{{else}}ro{{/has}}{{/post}}{{else is "tag"}}{{#tag}}{{#match slug "en"}}en{{else match slug "bg"}}bg{{else match slug "es"}}es{{else}}ro{{/match}}{{/tag}}{{else}}ro{{/is}}" data-ssr-lang="{{#is "post"}}{{#post}}{{#has tag="en"}}en{{else has tag="bg"}}bg{{else has tag="es"}}es{{else}}ro{{/has}}{{/post}}{{else is "tag"}}{{#tag}}{{#match slug "en"}}en{{else match slug "bg"}}bg{{else match slug "es"}}es{{else match slug "ro"}}ro{{/match}}{{/tag}}{{/is}}" class="dark-mode">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{#is "paged"}}
+    <meta name="robots" content="noindex, follow" />
+    {{else is "tag"}}
+        {{#tag}}
+            {{#if description}}
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "ro"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "en"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "bg"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "es"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "business-league"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "pentru-afiliati"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "pentru-furnizori"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "stiri-din-piata"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "interviuri-2"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "how-to"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "seo"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "ppc"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "afiliere-fashion"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else match slug "black-friday-2"}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            {{else}}
+    <meta name="robots" content="noindex, follow" />
+            {{/if}}
+        {{/tag}}
+    {{else}}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    {{/is}}
     <meta name="google-site-verification" content="UT1oN-h5ElyvHfRewqnOVPeUpzojVF9qsQIt_VWtUjI" />
 
     <title>{{meta_title}}</title>
@@ -13,6 +53,11 @@
     {{!-- Social Crawler / OpenGraph / X Card Metadata First (Must precede inline scripts for Twitterbot) --}}
     {{ghost_head exclude="search,cta_styles"}}
     {{#is "home"}}
+    <link rel="alternate" hreflang="ro" href="{{@site.url}}/" />
+    <link rel="alternate" hreflang="en" href="{{@site.url}}/tag/en/" />
+    <link rel="alternate" hreflang="bg" href="{{@site.url}}/tag/bg/" />
+    <link rel="alternate" hreflang="es" href="{{@site.url}}/tag/es/" />
+    <link rel="alternate" hreflang="x-default" href="{{@site.url}}/" />
     <meta name="twitter:image:src" content="https://storage.ghost.io/c/40/d5/40d5a77a-70f5-4c4e-843f-7671324e0972/content/images/2026/10/businessleague-og-home-ro-v3.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -130,9 +175,10 @@
             html.classList.remove('dark-mode');
         }
 
-        // 2. Language resolution: ?lang= param -> /tag/{lang}/ -> saved preference -> default 'ro'
+        // 2. Language resolution: ?lang= param -> SSR post/tag language -> /tag/{lang}/ -> saved preference -> default 'ro'
         var urlParams = new URLSearchParams(window.location.search);
         var queryLang = (urlParams.get('lang') || '').toLowerCase();
+        var ssrLang = (html.getAttribute('data-ssr-lang') || '').toLowerCase();
         var pathMatch = window.location.pathname.match(/^\/tag\/(ro|en|bg|es)(\/|$)/i);
         var pathLang = pathMatch ? pathMatch[1].toLowerCase() : '';
         var savedLang = '';
@@ -143,6 +189,8 @@
         var activeLang = 'ro';
         if (SUPPORTED.indexOf(queryLang) !== -1) {
             activeLang = queryLang;
+        } else if (SUPPORTED.indexOf(ssrLang) !== -1) {
+            activeLang = ssrLang;
         } else if (SUPPORTED.indexOf(pathLang) !== -1) {
             activeLang = pathLang;
         } else if (SUPPORTED.indexOf(savedLang) !== -1) {

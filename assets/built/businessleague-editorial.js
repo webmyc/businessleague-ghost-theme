@@ -122,6 +122,8 @@ toc_title: 'Cuprins Articol',
 rail_lang_title: 'Versiuni Disponibile',
 related_eyebrow: 'CONTINUĂ LECTURA',
 related_title: 'Articole Recomandate',
+prev_article: 'Articolul Anterior',
+next_article: 'Articolul Următor',
 reading_prefs_label: 'Mod Lectură & Tipografie',
 reading_font_sans: 'Sans',
 reading_font_serif: 'Editorial Serif',
@@ -262,6 +264,8 @@ toc_title: 'Table of Contents',
 rail_lang_title: 'Available Editions',
 related_eyebrow: 'CONTINUE READING',
 related_title: 'Recommended Stories',
+prev_article: 'Previous Article',
+next_article: 'Next Article',
 reading_prefs_label: 'Reading Mode & Typography',
 reading_font_sans: 'Sans',
 reading_font_serif: 'Editorial Serif',
@@ -402,6 +406,8 @@ toc_title: 'Съдържание',
 rail_lang_title: 'Налични Издания',
 related_eyebrow: 'ПРОДЪЛЖЕТЕ ЧЕТЕНЕТО',
 related_title: 'Препоръчани Статии',
+prev_article: 'Предишна статия',
+next_article: 'Следваща статия',
 reading_prefs_label: 'Режим на Четене',
 reading_font_sans: 'Sans',
 reading_font_serif: 'Editorial Serif',
@@ -542,6 +548,8 @@ toc_title: 'Índice del Artículo',
 rail_lang_title: 'Ediciones Disponibles',
 related_eyebrow: 'CONTINUAR LEYENDO',
 related_title: 'Artículos Recomendados',
+prev_article: 'Artículo Anterior',
+next_article: 'Artículo Siguiente',
 reading_prefs_label: 'Modo de Lectura y Tipografía',
 reading_font_sans: 'Sans',
 reading_font_serif: 'Editorial Serif',
@@ -1612,18 +1620,36 @@ return pathLang;
 }
 const articleEl = document.querySelector('.bl-article-shell[data-post-tags], .bl-article-shell[data-post-slug]');
 if (articleEl) {
-const explicitLang = (articleEl.getAttribute('data-post-lang') || '').toLowerCase();
-if (SUPPORTED_LANGS.includes(explicitLang)) {
-return explicitLang;
-}
+let detectedPostLang = (articleEl.getAttribute('data-post-lang') || '').toLowerCase();
+if (!SUPPORTED_LANGS.includes(detectedPostLang)) {
 const tags = (articleEl.getAttribute('data-post-tags') || '')
 .toLowerCase()
 .split(',')
 .map((t) => t.trim());
-if (tags.includes('en') || tags.includes('hash-en')) return 'en';
-if (tags.includes('bg') || tags.includes('hash-bg')) return 'bg';
-if (tags.includes('es') || tags.includes('hash-es')) return 'es';
-return 'ro';
+if (tags.includes('en') || tags.includes('hash-en')) detectedPostLang = 'en';
+else if (tags.includes('bg') || tags.includes('hash-bg')) detectedPostLang = 'bg';
+else if (tags.includes('es') || tags.includes('hash-es')) detectedPostLang = 'es';
+else {
+const postSlug = (articleEl.getAttribute('data-post-slug') || '').toLowerCase();
+const sibs = getTranslationSiblings(postSlug);
+if (sibs) {
+if (sibs.en === postSlug && sibs.ro !== postSlug) detectedPostLang = 'en';
+else if (sibs.bg === postSlug && sibs.ro !== postSlug) detectedPostLang = 'bg';
+else if (sibs.es === postSlug && sibs.ro !== postSlug) detectedPostLang = 'es';
+else detectedPostLang = 'ro';
+} else {
+detectedPostLang = 'ro';
+}
+}
+}
+document.documentElement.setAttribute('lang', detectedPostLang);
+document.documentElement.setAttribute('data-bl-lang', detectedPostLang);
+document.documentElement.setAttribute('data-active-lang', detectedPostLang);
+try {
+localStorage.setItem(STORAGE_KEY, detectedPostLang);
+localStorage.setItem('bl_lang', detectedPostLang);
+} catch (_) {}
+return detectedPostLang;
 }
 try {
 const saved = (localStorage.getItem(STORAGE_KEY) || localStorage.getItem('bl_lang') || '').toLowerCase();
@@ -1723,7 +1749,7 @@ badge.textContent = pillarLabel;
 if (badge.tagName === 'A' || badge.hasAttribute('data-pillar-link')) {
 badge.setAttribute('data-pillar-link', pillar);
 if (badge.tagName === 'A') {
-badge.setAttribute('href', `/?lang=${lang}#pillar-${pillar}`);
+badge.setAttribute('href', `/#pillar-${pillar}`);
 }
 }
 });
@@ -1792,7 +1818,7 @@ const pillLang = pill.getAttribute('data-article-lang');
 pill.classList.toggle('is-active', pillLang === lang);
 });
 document.querySelectorAll('.bl-breadcrumbs a[data-i18n="breadcrumb_home"]').forEach((homeCrumb) => {
-homeCrumb.setAttribute('href', `/?lang=${lang}`);
+homeCrumb.setAttribute('href', '/');
 });
 document.querySelectorAll('.bl-breadcrumbs a[data-pillar-badge]').forEach((badgeCrumb) => {
 const p =
@@ -1800,7 +1826,7 @@ badgeCrumb.getAttribute('data-pillar-type') ||
 badgeCrumb.getAttribute('data-pillar-link') ||
 'all';
 badgeCrumb.setAttribute('data-pillar-link', p);
-badgeCrumb.setAttribute('href', `/?lang=${lang}#pillar-${p}`);
+badgeCrumb.setAttribute('href', `/#pillar-${p}`);
 if (dict[`badge_${p}`]) {
 badgeCrumb.textContent = dict[`badge_${p}`];
 }
@@ -2117,7 +2143,7 @@ const metrics = Array.isArray(rep.metrics)
 ? rep.metrics
 : ((rep.metrics && (rep.metrics[panelLang] || rep.metrics.ro)) || []);
 const articleSlug = (rep.articleSlugs && (rep.articleSlugs[panelLang] || rep.articleSlugs.ro)) || '';
-const articleUrl = `/${articleSlug}/?lang=${panelLang}`;
+const articleUrl = `/${articleSlug}/`;
 const card = document.createElement('article');
 card.className = 'bl-report-card';
 card.setAttribute('data-report-id', rep.id);
@@ -3196,10 +3222,10 @@ document.querySelectorAll('[data-article-lang]').forEach((pill) => {
 const pillLang = (pill.getAttribute('data-article-lang') || '').toLowerCase();
 if (!SUPPORTED_LANGS.includes(pillLang)) return;
 if (siblings && siblings[pillLang]) {
-pill.setAttribute('href', `/${siblings[pillLang]}/?lang=${pillLang}`);
+pill.setAttribute('href', `/${siblings[pillLang]}/`);
 pill.setAttribute('data-has-translation', 'true');
 } else {
-pill.setAttribute('href', `/?lang=${pillLang}`);
+pill.setAttribute('href', `/tag/${pillLang}/`);
 pill.setAttribute('data-has-translation', 'false');
 }
 });
@@ -3760,15 +3786,15 @@ const articleShell = document.querySelector('.bl-article-shell[data-post-slug]')
 const currentSlug = articleShell ? articleShell.getAttribute('data-post-slug') : '';
 const siblings = getTranslationSiblings(currentSlug);
 if (siblings && siblings[currentLang]) {
-window.location.href = `/${siblings[currentLang]}/?lang=${currentLang}`;
+window.location.href = `/${siblings[currentLang]}/`;
 } else {
-window.location.href = `/?lang=${currentLang}`;
+window.location.href = '/';
 }
 return;
 }
 try {
 const url = new URL(window.location.href);
-url.searchParams.set('lang', currentLang);
+url.searchParams.delete('lang');
 window.history.replaceState({}, '', url.toString());
 } catch (_) {}
 safeRun('langSwitch:initWorkspacesAndSections', () => initWorkspacesAndSections(currentLang, currentPillar));
@@ -3792,7 +3818,7 @@ pillarBtn.getAttribute('data-pillar-filter') ||
 const hasWorkspaces = document.querySelectorAll('.bl-lang-workspace[data-lang-panel]').length > 0;
 if (!hasWorkspaces) {
 e.preventDefault();
-window.location.href = `/?lang=${currentLang}#pillar-${targetPillar}`;
+window.location.href = `/#pillar-${targetPillar}`;
 return;
 }
 e.preventDefault();
@@ -3800,7 +3826,7 @@ currentPillar = targetPillar;
 safeRun('pillarClick:syncPillarNavState', () => syncPillarNavState(currentPillar));
 try {
 const url = new URL(window.location.href);
-url.searchParams.set('lang', currentLang);
+url.searchParams.delete('lang');
 url.hash = currentPillar === 'all' ? '' : `pillar-${currentPillar}`;
 window.history.replaceState({}, '', url.toString());
 } catch (_) {}

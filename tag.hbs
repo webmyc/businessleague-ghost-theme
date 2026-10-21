@@ -3,6 +3,20 @@
 <main id="site-main" class="bl-main">
     <div class="bl-container">
         {{#tag}}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "{{encode name}} — BusinessLeague Blog",
+            "description": "{{#if description}}{{encode description}}{{else}}Articole, analize și studii de caz din colecția {{encode name}} pe BusinessLeague Blog.{{/if}}",
+            "url": "{{url absolute="true"}}",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "BusinessLeague Blog",
+                "url": "{{@site.url}}"
+            }
+        }
+        </script>
         <section class="bl-masthead">
             <div class="bl-masthead-top">
                 <div>

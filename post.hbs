@@ -108,32 +108,6 @@
                     <a href="{{@site.url}}/#pillar-all" class="bl-pillar-badge" data-pillar-badge data-pillar-link="all">Editorial</a>
                 </nav>
 
-                {{!-- IN-ARTICLE LANGUAGE SWITCHER BAR (Hidden above title per editorial layout) --}}
-                <div class="bl-article-lang-bar" id="bl-article-lang-bar" role="region" aria-label="Article Language Translations" hidden style="display:none !important;">
-                    <div class="bl-article-lang-label">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        <span data-i18n="article_lang_prompt">Citește acest articol în:</span>
-                    </div>
-                    <div class="bl-article-lang-pills" data-article-lang-pills>
-                        <a href="?lang=ro" class="bl-article-lang-pill" data-article-lang="ro">
-                            <span>🇷🇴</span>
-                            <span>Română</span>
-                        </a>
-                        <a href="?lang=en" class="bl-article-lang-pill" data-article-lang="en">
-                            <span>🇬🇧</span>
-                            <span>English</span>
-                        </a>
-                        <a href="?lang=bg" class="bl-article-lang-pill" data-article-lang="bg">
-                            <span>🇧🇬</span>
-                            <span>Български</span>
-                        </a>
-                        <a href="?lang=es" class="bl-article-lang-pill" data-article-lang="es">
-                            <span>🇪🇸</span>
-                            <span>Español</span>
-                        </a>
-                    </div>
-                </div>
-
                 {{!-- Article Headline & Dek --}}
                 <h1 class="bl-article-title">{{title}}</h1>
 
@@ -291,10 +265,10 @@
                             <span data-i18n="rail_lang_title">Versiuni Disponibile</span>
                         </h2>
                         <div class="bl-article-lang-pills" data-article-lang-pills style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-                            <a href="?lang=ro" class="bl-article-lang-pill" data-article-lang="ro">🇷🇴 Română</a>
-                            <a href="?lang=en" class="bl-article-lang-pill" data-article-lang="en">🇬🇧 English</a>
-                            <a href="?lang=bg" class="bl-article-lang-pill" data-article-lang="bg">🇧🇬 Български</a>
-                            <a href="?lang=es" class="bl-article-lang-pill" data-article-lang="es">🇪🇸 Español</a>
+                            <a href="{{@site.url}}/tag/ro/" class="bl-article-lang-pill" data-article-lang="ro">🇷🇴 Română</a>
+                            <a href="{{@site.url}}/tag/en/" class="bl-article-lang-pill" data-article-lang="en">🇬🇧 English</a>
+                            <a href="{{@site.url}}/tag/bg/" class="bl-article-lang-pill" data-article-lang="bg">🇧🇬 Български</a>
+                            <a href="{{@site.url}}/tag/es/" class="bl-article-lang-pill" data-article-lang="es">🇪🇸 Español</a>
                         </div>
                     </div>
 
@@ -315,8 +289,24 @@
                 </aside>
             </div>
 
+            {{!-- Chronological Prev / Next Article Chain (Eliminates Orphan Pages Across All 2,738 Posts) --}}
+            <nav class="bl-prev-next-nav" aria-label="Article chronological navigation">
+                {{#prev_post}}
+                <a class="bl-prev-next-card is-prev" href="{{url}}">
+                    <span class="bl-prev-next-label">← <span data-i18n="prev_article">Articolul Anterior</span></span>
+                    <span class="bl-prev-next-title">{{title}}</span>
+                </a>
+                {{/prev_post}}
+                {{#next_post}}
+                <a class="bl-prev-next-card is-next" href="{{url}}">
+                    <span class="bl-prev-next-label"><span data-i18n="next_article">Articolul Următor</span> →</span>
+                    <span class="bl-prev-next-title">{{title}}</span>
+                </a>
+                {{/next_post}}
+            </nav>
+
             {{!-- Related Articles in Same Language — All 4 on ONE Single Row on Desktop --}}
-            <section class="bl-section" style="margin-top:72px;">
+            <section class="bl-section" style="margin-top:56px;">
                 <div class="bl-section-header">
                     <div>
                         <span class="bl-section-eyebrow" data-i18n="related_eyebrow">CONTINUĂ LECTURA</span>
