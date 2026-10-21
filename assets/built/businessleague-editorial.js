@@ -1,3 +1,13 @@
+/**
+* BusinessLeague Editorial Journalistic Theme — Runtime Controller v3.0
+* Features:
+* 1. Procedural Faceted Crystal Arena Canvas (`#bl-hero-mesh`)
+* 2. Multilingual Edition Switcher (RO / EN / BG / ES) with URL & localStorage sync
+* 3. Smart Editorial Pillar Auto-Classifier (Interviews, Data, Playbooks, Competition, Product, Corporate)
+* 4. Dynamic Magazine Section Builder per Language Workspace (4-col Voices, 7:5 Bento Data, 3-col Playbooks, 2-col Arena, Masonry Wall)
+* 5. Live Instant Autocomplete Search Engine (`#bl-search-input`, `#bl-search-dropdown`, ⌘K / `/`, keyboard navigation, <mark> highlighting)
+* 6. Interactive Reader Typography & Layout Controls (Font Size A-/A+, Sans/Serif, Standard/Zen Focus)
+*/
 (function () {
 'use strict';
 const STORAGE_KEY = 'bl_editorial_lang';
@@ -595,6 +605,11 @@ events_live_now: 'EN VIVO AHORA',
 events_in_person: 'Presencial'
 }
 };
+/**
+* 0A. Category Reports & Whitepapers (PDF) Registry
+* Maps all 5 official BusinessLeague category reports with their rendered PDF cover images,
+* direct PDF URLs (RO & EN), key metrics, and sibling article slugs across all 4 languages.
+*/
 const CATEGORY_REPORTS = [
 {
 id: 'pharma',
@@ -812,15 +827,12 @@ es: 'los-usuarios-de-iphone-gastan-un-24-mas-en-moda-y-otras-5-cosas-que-nos-dic
 }
 }
 ];
+/**
+* 0. Canonical Cross-Language Article Translation Map (RO <-> EN <-> BG <-> ES)
+* Maps every translated article slug to its exact language equivalents.
+* Also merges with `window.__BL_TRANSLATIONS__` if injected via Ghost Code Injection.
+*/
 const TRANSLATION_CLUSTERS = [
-{
-id: 'cluster-pulse-w42-2026',
-pillar: 'competition',
-ro: 'businessleague-pulse-w42-clasamente-cifre-si-castigatori-runda-3',
-en: 'businessleague-pulse-w42-rankings-numbers-and-round-3-winners',
-bg: 'businessleague-pulse-w42-klasirane-cifri-i-pobediteli-ot-krag-3-bg',
-es: 'businessleague-pulse-w42-clasificaciones-cifras-y-ganadores-ronda-3-es'
-},
 {
 id: 'cluster-tudor-stanica-2026',
 pillar: 'interviews',
@@ -1046,25 +1058,6 @@ bg: 'bogdan-arhip-viardigital-mnogo-magazini-ne-razbirat-che-plashtat-samo-za-ko
 es: 'bogdan-arhip-viardigital-muchas-tiendas-no-entienden-que-solo-pagan-por-resultados-concretos-ventas-realmente-generadas-es'
 },
 {
-id: 'cluster-bogdana-manolescu-fashiondays-2026',
-pillar: 'interviews',
-ro: 'bogdana-manolescu-fashiondays-ro-afiliatii-livreaza-constant-sunt-o-parte-esentiala-din-succesul-nostru',
-en: 'bogdana-manolescu-fashiondays-ro-affiliates-deliver-consistently-they-are-an-essential-part-of-our-success'
-},
-{
-id: 'cluster-shopify-app-store-2026',
-pillar: 'product',
-ro: 'shopify-x-businessleague-acum-disponibili-in-shopify-app-store',
-en: 'shopify-meets-businessleague-risk-free-growth-is-just-a-click-away'
-},
-{
-id: 'cluster-profitshare-acquisition-2025',
-pillar: 'corporate',
-ro: 'its-done-2performant-semneaza-contractul-final-pentru-achizitia-profitshare-romania-si-bulgaria',
-en: '2performant-signs-final-contract-for-the-acquisition-of-profitshare-romania-and-bulgaria',
-bg: '2performant-signs-final-contract-for-the-acquisition-of-profitshare-romania-and-bulgaria-bg'
-},
-{
 id: 'cluster-product-feed-5-things-2026',
 pillar: 'playbooks',
 ro: '5-lucruri-pe-care-fiecare-magazin-online-trebuie-sa-le-verifice-azi-in-feed-ul-de-produse',
@@ -1095,6 +1088,486 @@ ro: 'nimanka-perera-delupe-businessleague-este-cu-adevarat-un-ecosistem-profesio
 en: 'nimanka-perera-delupe-businessleague-is-truly-a-professional-ecosystem-that-enables-shops-to-connect-and-make-sales',
 bg: 'nimanka-perera-delupe-businessleague-e-istinski-profesionalna-ekosistema-koyato-pozvolyava-na-magazinite-da-prodavat-bg',
 es: 'nimanka-perera-delupe-businessleague-es-realmente-un-ecosistema-profesional-que-permite-a-las-tiendas-conectarse-y-vender-es'
+},
+{
+id: 'cluster-bogdana-manolescu-fashiondays-2026',
+pillar: 'interviews',
+ro: 'bogdana-manolescu-fashiondays-ro-afiliatii-livreaza-constant-sunt-o-parte-esentiala-din-succesul-nostru',
+en: 'bogdana-manolescu-fashiondays-ro-affiliates-deliver-consistently-they-are-an-essential-part-of-our-success',
+bg: 'bogdana-manolescu-fashiondays-ro-affiliates-deliver-consistently-they-are-an-essential-part-of-our-success-bg',
+es: 'bogdana-manolescu-fashiondays-ro-los-afiliados-entregan-resultados-constantes-son-esenciales-es'
+},
+{
+id: 'cluster-shopify-app-store-2026',
+pillar: 'product',
+ro: 'shopify-x-businessleague-acum-disponibili-in-shopify-app-store',
+en: 'shopify-meets-businessleague-risk-free-growth-is-just-a-click-away',
+bg: 'shopify-meets-businessleague-risk-free-growth-is-just-a-click-away-bg',
+es: 'shopify-y-businessleague-crecimiento-sin-riesgos-a-un-clic-es'
+},
+{
+id: 'cluster-profitshare-acquisition-2025',
+pillar: 'corporate',
+ro: 'its-done-2performant-semneaza-contractul-final-pentru-achizitia-profitshare-romania-si-bulgaria',
+en: '2performant-signs-final-contract-for-the-acquisition-of-profitshare-romania-and-bulgaria',
+bg: '2performant-signs-final-contract-for-the-acquisition-of-profitshare-romania-and-bulgaria-bg',
+es: '2performant-firma-el-contrato-final-para-la-adquisicion-de-profitshare-rumania-y-bulgaria-es'
+},
+{
+id: 'cluster-first-party-attribution-2025',
+pillar: 'product',
+ro: 'actualizari-privind-atribuirea-first-party-si-gestionarea-relatiilor-in-businessleague',
+en: 'updates-on-first-party-attribution-and-dealing-with-relationships-within-businessleague',
+bg: 'updates-on-first-party-attribution-and-dealing-with-relationships-within-businessleague-bg',
+es: 'actualizaciones-sobre-atribucion-first-party-y-gestion-de-relaciones-en-businessleague-es'
+},
+{
+id: 'cluster-importing-feeds-new-way-2025',
+pillar: 'product',
+ro: 'renuntam-la-vechiul-mod-de-importare-a-feed-urilor-si-trecem-la-cel-nou',
+en: 'out-with-the-old-way-of-importing-feeds-in-with-the-new',
+bg: 'out-with-the-old-way-of-importing-feeds-in-with-the-new-bg',
+es: 'atras-queda-la-antigua-forma-de-importar-feeds-llega-la-nueva-es'
+},
+{
+id: 'cluster-alex-stanciu-carturesti-2025',
+pillar: 'interviews',
+ro: 'alex-stanciu-campaniile-din-businessleague-contribuie-semnificativ-la-vizibilitatea-carturesti-in-online',
+en: 'alex-stanciu-the-campaigns-in-businessleague-significantly-contribute-to-carturestis-online-visibility',
+bg: 'alex-stanciu-the-campaigns-in-businessleague-significantly',
+es: 'alex-stanciu-las-campanas-en-businessleague-contribuyen-significativamente-a-la-visibilidad-online-de-carturesti-es'
+},
+{
+id: 'cluster-residence-spring-2025',
+pillar: 'competition',
+ro: 'residence-aprilie-2025',
+en: 'residence-april-2025',
+bg: 'residence-april-2025-bg',
+es: 'yo-nunca-nunca-y-goles-en-hidden-asi-fue-businessleague-residence-edicion-primavera-es'
+},
+{
+id: 'cluster-victor-cosmin-kinderauto-easter-2025',
+pillar: 'interviews',
+ro: 'victor-cosmin-kinderauto-ro-ne-place-joaca-sanatoasa-campania-de-paste-se-bazeaza-pe-un-mix-de-oferte-speciale-si-comunicare-targetata',
+en: 'victor-cosmin-kinderauto-ro-we-love-healthy-play-the-easter-campaign-is-based-on-a-mix-of-special-offers-and-targeted-communication',
+bg: 'vicrot-cosmin-kinderauto-ro',
+es: 'victor-cosmin-kinderauto-ro-nos-encanta-el-juego-saludable-la-campana-de-pascua-se-basa-en-ofertas-especiales-es'
+},
+{
+id: 'cluster-balkan-ecommerce-summit-2025',
+pillar: 'corporate',
+ro: 'ne-vedem-si-povestim-la-balkan-e-commerce-summit-in-aprilie-sofia-ne-asteapta',
+en: 'see-you-talk-to-you-at-the-balkan-e-commerce-summit-in-april-sofia-awaits',
+bg: 'see-you-onbalkan-ecommerce-summit',
+es: 'nos-vemos-y-hablamos-en-el-balkan-e-commerce-summit-en-abril-sofia-espera-es'
+},
+{
+id: 'cluster-daniel-birtas-kimono-2025',
+pillar: 'interviews',
+ro: 'daniel-birtas-ceo-kimono-group-businessleague-ne-a-oferit-o-platforma-excelenta-pentru-a-colabora-cu-marketeri-experimentati-care-genereaza-vanzari',
+en: 'daniel-birtas-ceo-kimono-group-businessleague-com-has-provided-us-with-an-excellent-platform-to-collaborate-with-experienced-marketers-who-generate-sales',
+bg: 'daniel-birtas-ceo-kimono-group-businessleague-com',
+es: 'daniel-birtas-ceo-kimono-group-businessleague-com-nos-ha-proporcionado-una-plataforma-excelente-es'
+},
+{
+id: 'cluster-5-css-partners-2025',
+pillar: 'product',
+ro: '5-parteneri-css-pentru-magazine',
+en: '5-css-partners-for-merchants',
+bg: '5-css-partners-for-merchants-bg',
+es: '5-socios-css-para-las-tiendas-es'
+},
+{
+id: 'cluster-awards-gala-2025',
+pillar: 'competition',
+ro: 'gala-premiilor-businessleague-2025',
+en: 'businessleague-awards-gala-2025',
+bg: 'businessleague-awards-gala-2025-bg',
+es: 'businessleague-awards-gala-2025-es'
+},
+{
+id: 'cluster-ecommerce-accelerator-250-2025',
+pillar: 'competition',
+ro: 'businessleague-e-commerce-accelerator-684376eb306079001b4d8aa0',
+en: 'businessleague-e-commerce-accelerator',
+bg: 'businessleague-e-commerce-accelerator-684376eb306079001b4d8aa1',
+es: 'businessleague-e-commerce-accelerator-es'
+},
+{
+id: 'cluster-highlights-profile-tab-2025',
+pillar: 'product',
+ro: 'cele-bune-sa-se-adune-si-sa-se-vada-in-sectiunea-highlights',
+en: 'in-business-league-the-past-looks-bright-too-introducing-the-highlights-profile-tab',
+bg: '-d0-b2-business-league--d0-b8--d0-bc-d0-b8-d0-bd-d0-b0-d0-bb-d0-be-d1-82-d0-be--d0-b8-d0-b7-d0-b3-d0-bb-d0-b5-d0-b6-d0-b4-d0-b0--d1-81-d0-b2-d0-b5-d1-82-d0-bb-d0-be--d0-bf-d1-80-d0-b5-d0-b4',
+es: 'en-business-league-el-pasado-tambien-brilla-presentamos-la-pestana-highlights-es'
+},
+{
+id: 'cluster-nikola-ilchev-gala-2025',
+pillar: 'interviews',
+ro: 'nikola-ilchev-am-asteptari-mari-de-la-gala-si-sunt-atat-de-entuziasmat-sa-ii-cunosc-pe-castigatori',
+en: 'nikola-ilchev-gala-business-league-2025',
+bg: 'nikola-ilchev-imam-golemi-ochakvania-za-gala-vecherta-i-sam-izklyuchitelno-razvalnuvan-da-se-sreshtna-s-pobeditelite',
+es: 'nikola-ilchev-gala-business-league-2025-es'
+},
+{
+id: 'cluster-marius-rotaru-nevertebrate-2025',
+pillar: 'interviews',
+ro: 'marius-rotaru-nevertebrate-ro-pentru-noi-business-league-este-un-instrument-100-profitabil-pentru-care-platesti-doar-rezultatele',
+en: 'marius-rotaru-nevertebrate-ro-for-us-business-league-is-a-100-profitable-tool-for-which-we-only-pay-for-results',
+bg: 'marius-rotaru-nevertebrate-ro-za-nas-business-league-e-instrument-sas-100-vazvrashtaemost-v-koyto-plashtame-samo-za-rezultati',
+es: 'marius-rotaru-nevertebrate-ro-para-nosotros-business-league-es-una-herramienta-100-rentable-es'
+},
+{
+id: 'cluster-bogdan-popovici-mentor-vom-2025',
+pillar: 'interviews',
+ro: 'bogdan-popovici-mentor-vom-identifica-impreuna-metoda-potrivita-pentru-fiecare-mentee-fie-ca-vorbim-despre-seo-search-dsa-sau-css-in-functie-de-context-resurse-si-obiective',
+en: 'bogdan-popovici-mentor-we-will-identify-together-the-right-method-for-each-mentee-whether-seo-search-dsa-or-css',
+bg: 'bogdan-popovici-mentor-shte-otkriem-zaedno-pravilniya-metod-za-vseki-mentee-seo-search-dsa-ili-css-bg',
+es: 'bogdan-popovici-mentor-identificaremos-juntos-el-metodo-adecuado-para-cada-mentee-seo-search-dsa-o-css-es'
+},
+{
+id: 'cluster-teodor-mihalache-diverzum-businessleague-2025',
+pillar: 'interviews',
+ro: 'teodor-mihalache-diverzum-businessleague-ne-a-ajutat-sa-identificam-si-sa-accesam-branduri-relevante-pentru-gen-z-si-pentru-comunitatea-noastra-de-studenti',
+en: 'teodor-mihalache-diverzum-businessleague-helped-us-identify-and-access-brands-relevant-to-gen-z-and-our-student-community',
+bg: 'teodor-mihalache-diverzum-businessleague-ni-pomogna-da-otkriem-brandove-za-gen-z-i-nashata-studentska-obshtnost-bg',
+es: 'teodor-mihalache-diverzum-businessleague-nos-ayudo-a-identificar-y-acceder-a-marcas-relevantes-para-la-gen-z-es'
+},
+{
+id: 'cluster-alex-foaie-programul-dedicat-2025',
+pillar: 'interviews',
+ro: 'alex-foaie-programul-dedicat-affiliate-managers-este-un-element-hiper-inovator-din-ecosistemul-afilierii',
+en: 'alex-foaie-the-affiliate-managers-program-is-a-hyper-innovative-element-in-the-affiliate-ecosystem',
+bg: 'alex-foaie-the-affiliate-managers-program-is-a-hyper-innovative-element-in-the-affiliate-ecosystem-bg',
+es: 'alex-foaie-el-programa-de-affiliate-managers-es-un-elemento-hiperinnovador-en-el-ecosistema-de-afiliacion-es'
+},
+{
+id: 'cluster-elena-turcu-marketer-in-2025',
+pillar: 'interviews',
+ro: 'elena-turcu-marketer-in-businessleague-clientii-vin-spre-tine-atat-pentru-colaborari-cat-si-cu-majorari-de-comision',
+en: 'elena-turcu-marketer-in-businessleague-clients-come-to-you-for-collaborations-and-with-commission-increases',
+bg: 'elena-turcu-marketer-in-businessleague-clients-come-to-you-for-collaborations-and-with-commission-increases-bg',
+es: 'elena-turcu-marketer-en-businessleague-los-clientes-vienen-a-ti-tanto-para-colaboraciones-como-con-aumentos-de-comision-es'
+},
+{
+id: 'cluster-victor-cosmin-kinderauto-ro-2025',
+pillar: 'interviews',
+ro: 'victor-cosmin-kinderauto-ro-potentialul-marketingului-afiliat-va-fi-tot-mai-mare-in-urmatorii-ani',
+en: 'victor-cosmin-kinderauto-ro-the-potential-of-affiliate-marketing-will-grow-even-bigger-in-the-coming-years',
+bg: 'victor-cosmin-kinderauto-ro-the-potential-of-affiliate-marketing-will-grow-even-bigger-in-the-coming-years-bg',
+es: 'victor-cosmin-kinderauto-ro-el-potencial-del-marketing-de-afiliacion-sera-cada-vez-mayor-en-los-proximos-anos-es'
+},
+{
+id: 'cluster-andreea-traicu-redactor-sef-2025',
+pillar: 'interviews',
+ro: 'andreea-traicu-redactor-sef-adevarul-suntem-foarte-interesati-de-influencer-marketing',
+en: 'andreea-traicu-editor-in-chief-adevarul-we-are-very-interested-in-influencer-marketing',
+bg: 'andreea-traicu-editor-in-chief-adevarul-influencer-marketing-bg',
+es: 'andreea-traicu-redactora-jefa-adevarul-estamos-muy-interesados-en-el-influencer-marketing-es'
+},
+{
+id: 'cluster-2performant-anunta-consolidarea-echipei-2025',
+pillar: 'corporate',
+ro: '2performant-anunta-consolidarea-echipei-de-conducere-pentru-trecerea-la-un-nou-nivel-in-business-de-crestere-si-extindere',
+en: '2performant-announces-executive-team-consolidation-for-the-next-stage-of-business-growth-and-expansion',
+bg: '2performant-announces-executive-team-consolidation-growth-and-expansion-bg',
+es: '2performant-anuncia-la-consolidacion-de-su-equipo-directivo-para-el-crecimiento-y-la-expansion-es'
+},
+{
+id: 'cluster-bf2025-cifre-si-entuziasm-2025',
+pillar: 'competition',
+ro: 'black-friday-2025-cifre-si-entuziasm',
+en: 'black-friday-2025-numbers-and-enthusiasm',
+bg: 'black-friday-2025-numbers-and-enthusiasm-bg',
+es: 'black-friday-2025-cifras-y-entusiasmo-es'
+},
+{
+id: 'cluster-ana-stancioiu-bookzone-piata-2025',
+pillar: 'interviews',
+ro: 'ana-stancioiu-bookzone-piata-de-carte-din-romania-a-crescut-semnificativ-de-la-100-de-milioane-de-euro-in-2023-la-120-de-milioane-de-euro-in-2024',
+en: 'ana-stancioiu-bookzone-the-book-market-in-romania-grew-significantly-from-100-million-euros-in-2023-to-120-million-euros-in-2024',
+bg: 'ana-stancioiu-bookzone-knizhniyat-pazar-v-rumaniya-narastna-znachitelno-ot-100-miliona-evro-prez-2023-do-120-miliona-evro-prez-2024-bg',
+es: 'ana-stancioiu-bookzone-el-mercado-del-libro-en-rumania-crecio-significativamente-de-100-millones-de-euros-en-2023-a-120-millones-en-2024-es'
+},
+{
+id: 'cluster-martin-betik-expandeo-last-2025',
+pillar: 'interviews',
+ro: 'martin-betik-expandeo-black-friday-ul-de-anul-trecut-a-fost-cel-mai-bun-de-pana-acum-si-ne-propunem-sa-il-depasim-anul-acesta',
+en: 'martin-betik-expandeo-last-years-black-friday-was-our-best-one-yet-and-were-aiming-to-beat-that-this-year',
+bg: 'martin-betik-expandeo-minalogodishniyat-black-friday-beshe-nay-dobriyat-ni-dosega-bg',
+es: 'martin-betik-expandeo-el-black-friday-del-ano-pasado-fue-el-mejor-hasta-ahora-es'
+},
+{
+id: 'cluster-bf2025-pregatit-tehnic-2025',
+pillar: 'playbooks',
+ro: 'black-firday-2025-asigura-te-ca-site-ul-tau-este-pregatit-tehnic-pentru-perioada-de-black-friday',
+en: 'black-friday-2025-make-sure-your-website-is-technically-ready-for-black-friday',
+bg: 'black-friday-2025-uverete-se-che-saytat-vi-e-tehnicheski-gotov-za-black-friday-bg',
+es: 'black-friday-2025-asegurate-de-que-tu-sitio-web-este-preparado-tecnicamente-para-black-friday-es'
+},
+{
+id: 'cluster-avantajele-mai-putin-evidente-2025',
+pillar: 'playbooks',
+ro: 'avantajele-mai-putin-evidente-ale-colaborarii-cu-afiliati',
+en: 'the-less-obvious-advantages-of-working-with-affiliates',
+bg: 'po-malko-ochevidnite-predimstva-na-rabotata-s-afiliati-bg',
+es: 'las-ventajas-menos-evidentes-de-colaborar-con-afiliados-es'
+},
+{
+id: 'cluster-bf2025-cum-motivezi-afiliatii-2025',
+pillar: 'playbooks',
+ro: 'black-friday-2025-cum-motivezi-marketerii-din-businessleague-sa-ti-vanda-produsele',
+en: 'black-friday-2025-how-to-motivate-businessleague-marketers-to-sell-your-products',
+bg: 'black-friday-2025-kak-da-motivirate-marketolozite-v-businessleague-da-prodavat-produktite-vi-bg',
+es: 'black-friday-2025-como-motivar-a-los-marketers-de-businessleague-para-vender-tus-productos-es'
+},
+{
+id: 'cluster-bf2025-trafic-ppc-2025',
+pillar: 'playbooks',
+ro: 'black-friday-2025-asigura-te-ca-magazinul-tau-accepta-surse-de-trafic-ppc',
+en: 'black-friday-2025-make-sure-your-store-accepts-ppc-traffic-sources',
+bg: 'black-friday-2025-uverete-se-che-magazinat-vi-priema-ppc-iztochnitsi-na-trafik-bg',
+es: 'black-friday-2025-asegurate-de-que-tu-tienda-acepte-fuentes-de-trafico-ppc-es'
+},
+{
+id: 'cluster-nick-stebbings-cartbooster-i-2025',
+pillar: 'interviews',
+ro: 'nick-stebbings-cartbooster-m-am-inscris-zilele-trecute-la-provocarea-revenue-rally-si-am-obtinut-primul-nostru-succes',
+en: 'nick-stebbings-cartbooster-i-signed-up-for-the-revenue-rally-challenge-the-other-day-and-had-our-first-success',
+bg: 'nick-stebbings-cartbooster-zapisah-se-za-predizvikatelstvoto-revenue-rally-onzi-den-i-postignahme-parviya-si-uspeh-bg',
+es: 'nick-stebbings-cartbooster-me-apunte-al-reto-revenue-rally-el-otro-dia-y-logramos-nuestro-primer-exito-es'
+},
+{
+id: 'cluster-debut-drive-noul-challenge-2025',
+pillar: 'competition',
+ro: 'debut-drive-noul-challenge-dedicat-marketerilor-din-businessleague',
+en: 'debut-drive-the-new-challenge-dedicated-to-marketers-in-businessleague',
+bg: 'debut-drive-novoto-predizvikatelstvo-za-marketolozi-v-businessleague-bg',
+es: 'debut-drive-el-nuevo-challenge-dedicado-a-los-marketers-de-businessleague-es'
+},
+{
+id: 'cluster-a-fost-businessleague-residence-2025',
+pillar: 'competition',
+ro: 'a-fost-businessleague-residence-editia-de-toamna-2025',
+en: 'highlights-from-businessleague-residence-autumn-2025-edition',
+bg: 'mina-esennoto-izdanie-na-businessleague-residence-2025-bg',
+es: 'asi-fue-businessleague-residence-edicion-de-otono-2025-es'
+},
+{
+id: 'cluster-2performant-publica-rezultatele-operationale-2025',
+pillar: 'corporate',
+ro: '2performant-publica-rezultatele-operationale-pentru-t3-2025',
+en: '2performant-publishes-q3-2025-operational-results',
+bg: '2performant-publikuva-operativnite-rezultati-za-q3-2025-bg',
+es: '2performant-publica-los-resultados-operativos-del-t3-2025-es'
+},
+{
+id: 'cluster-ionut-radu-manager-librex-2025',
+pillar: 'interviews',
+ro: 'ionut-radu-manager-librex-ro-black-friday-este-un-moment-cheie-printre-cele-mai-importante-ale-anului-iar-vanzarile-sunt-over-the-roof',
+en: 'ionut-radu-manager-librex-ro-black-friday-is-a-key-moment-among-the-most-important-of-the-year-and-sales-are-over-the-roof',
+bg: 'ionut-radu-manager-librex-ro-black-friday-e-klyuchov-moment-a-prodazhbite-sa-over-the-roof-bg',
+es: 'ionut-radu-manager-librex-ro-black-friday-es-un-momento-clave-entre-los-mas-importantes-del-ano-y-las-ventas-estan-over-the-roof-es'
+},
+{
+id: 'cluster-viorel-vornicu-gm-mxenduro-2025',
+pillar: 'interviews',
+ro: 'viorel-vornicu-gm-mxenduro-piese-biciclete-eu-pentru-noi-businessleague-a-devenit-un-partener-principal-de-dezvoltare',
+en: 'viorel-vornicu-gm-mxenduro-piese-biciclete-eu-for-us-businessleague-has-become-a-primary-development-partner',
+bg: 'viorel-vornicu-gm-mxenduro-piese-biciclete-eu-za-nas-businessleague-se-prevarna-v-osnoven-partnyor-za-razvitie-bg',
+es: 'viorel-vornicu-gm-mxenduro-piese-biciclete-eu-para-nosotros-businessleague-se-ha-convertido-en-un-socio-principal-de-desarrollo-es'
+},
+{
+id: 'cluster-daniela-pirlogea-elefant-ro-2025',
+pillar: 'interviews',
+ro: 'daniela-pirlogea-elefant-ro-odata-cu-reintrarea-in-clasamentele-businessleague-ne-dorim-sa-participam-la-challenge-uri-si-sa-doboram-recordurile-din-competitie',
+en: 'daniela-pirlogea-elefant-ro-with-our-return-to-the-businessleague-rankings-we-aim-to-take-part-in-challenges-and-break-competition-records',
+bg: 'daniela-pirlogea-elefant-ro-zawrashtane-v-klasaciite-na-businessleague-bg',
+es: 'daniela-pirlogea-elefant-ro-con-nuestro-regreso-a-los-rankings-de-businessleague-queremos-participar-en-desafios-y-batir-records-es'
+},
+{
+id: 'cluster-new-feature-real-time-2025',
+pillar: 'product',
+ro: 'functionalitate-noua-chat-in-timp-real-intre-afiliati-si-magazine',
+en: 'new-feature-real-time-chat-between-affiliates-and-merchants',
+bg: 'new-feature-real-time-chat-between-affiliates-and-merchants-bg',
+es: 'nueva-funcion-chat-en-tiempo-real-entre-afiliados-y-tiendas-es'
+},
+{
+id: 'cluster-back-to-school-2025-2025',
+pillar: 'playbooks',
+ro: 'back-to-school-2025-cum-sa-vinzi-mai-mult-mai-eficient-in-businessleague',
+en: 'back-to-school-2025-how-to-sell-more-and-more-efficiently-in-businessleague',
+bg: 'back-to-school-2025-how-to-sell-more-and-more-efficiently-in-businessleague-bg',
+es: 'back-to-school-2025-como-vender-mas-y-de-forma-mas-eficiente-en-businessleague-es'
+},
+{
+id: 'cluster-ready-search-2025',
+pillar: 'product',
+ro: 'pregatit-cauta',
+en: 'ready-search',
+bg: 'ready-search-bg',
+es: 'listo-busca-es'
+},
+{
+id: 'cluster-jos-textila-fashion-2025',
+pillar: 'competition',
+ro: 'cum-a-fost-la-jos-textila-trenduri-si-oportunitati-de-markering-in-fashion',
+en: 'how-it-went-at-trends-and-marketing-opportunities-in-fashion',
+bg: 'how-it-went-at-trends-and-marketing-opportunities-in-fashion-bg',
+es: 'como-fue-tendencias-y-oportunidades-de-marketing-en-fashion-es'
+},
+{
+id: 'cluster-corina-maria-scheianu-spring-2025',
+pillar: 'interviews',
+ro: 'corina-maria-scheianu-spring-farma-businessleague-ne-a-oferit-un-context-competitiv-foarte-motivant',
+en: 'corina-maria-scheianu-spring-farma-businessleague-gave-us-a-highly-motivating-competitive-context',
+bg: 'corina-maria-scheianu-spring-farma-businessleague-motivirasht-kontekst-bg',
+es: 'corina-maria-scheianu-spring-farma-businessleague-contexto-competitivo-motivador-es'
+},
+{
+id: 'cluster-ajustari-in-comisionul-de-2025',
+pillar: 'interviews',
+ro: 'ajustari-in-comisionul-de-retea-de-ce-cum-si-pentru-cine-un-interviu-cu-ana-oprita-cto-2performant',
+en: 'network-commission-adjustments-why-how-and-for-whom-an-interview-with-ana-oprita-cto-2performant',
+bg: 'korektsii-v-mrezhovata-komisiona-intervyu-s-ana-oprita-cto-2performant-bg',
+es: 'ajustes-en-la-comision-de-red-entrevista-con-ana-oprita-cto-2performant-es'
+},
+{
+id: 'cluster-oamenii-milionului-ovidiu-golea-2025',
+pillar: 'interviews',
+ro: 'oamenii-milionului-ovidiu-golea-1-in-businessleague-in-prima-parte-a-anului-m-a-surprins-placut-deschiderea-magazinelor-noi-si-chiar-a-celor-cu-istoric-in-competitie-catre-o-colaborare',
+en: 'people-of-the-million-ovidiu-golea-unicorn-1-in-businessleague',
+bg: 'horata-na-miliona-ovidiu-golea-unicorn-1-v-businessleague-bg',
+es: 'la-gente-del-millon-ovidiu-golea-unicorn-1-en-businessleague-es'
+},
+{
+id: 'cluster-trends-pharma-health-2025',
+pillar: 'competition',
+ro: 'cum-a-fost-la-trends-in-pharma-health-inovatii-strategii-si-oportunitati-de-marketing',
+en: 'how-it-went-at-trends-in-pharma-health-innovations-strategies-and-marketing-opportunities',
+bg: 'kak-premina-trends-in-pharma-health-inovatsii-strategii-i-vazmozhnosti-bg',
+es: 'como-fue-trends-in-pharma-health-innovaciones-estrategias-y-oportunidades-es'
+},
+{
+id: 'cluster-cristian-leana-genios-ro-2025',
+pillar: 'interviews',
+ro: 'cristian-leana-genios-ro-domnul-puzzle',
+en: 'cristian-leana-genios-ro-mr-puzzle',
+bg: 'cristian-leana-genios-ro-gospodin-pazel-bg',
+es: 'cristian-leana-genios-ro-el-senor-puzzle-es'
+},
+{
+id: 'cluster-preparing-for-summer-tools-2025',
+pillar: 'playbooks',
+ro: 'pregatirea-pentru-vara-instrumente-pentru-a-impulsiona-vanzarile-magazinului-tau-shopify-in-timpul-verii',
+en: 'preparing-for-summer-tools-to-supercharge-your-shopify-stores-holiday-sales-during-summer',
+bg: 'preparing-for-summer-tools-to-supercharge-your-shopify-stores-holiday-sales-during-summer-bg',
+es: 'preparandote-para-el-verano-herramientas-para-impulsar-las-ventas-de-tu-tienda-shopify-es'
+},
+{
+id: 'cluster-the-2025-shopify-growth-2025',
+pillar: 'playbooks',
+ro: 'stack-ul-de-crestere-shopify-2025-16-aplicatii-esentiale-pentru-trafic-conversii-si-retentie',
+en: 'the-2025-shopify-growth-stack-16-must-have-apps-for-traffic-conversions-retention',
+bg: 'shopify-growth-stack-2025-16-prilozheniya-za-trafik-konversii-i-zadarzhane-bg',
+es: 'el-stack-de-crecimiento-de-shopify-para-2025-16-apps-imprescindibles-para-trafico-conversiones-y-retencion-es'
+},
+{
+id: 'cluster-florin-ghivnici-case-smart-2025',
+pillar: 'interviews',
+ro: 'florin-ghivnici-case-smart-ro-afilierea-prin-businessleague-a-fost-esentiala-in-testarea-pietei-maghiare-fara-buget-mare-de-marketing',
+en: 'florin-ghivnici-case-smart-ro-affiliate-marketing-through-businessleague-was-essential-for-testing-the-hungarian-market-without-a-large-marketing-budget',
+bg: 'florin-ghivnici-case-smart-ro-affiliate-marketing-testing-hungarian-market-bg',
+es: 'florin-ghivnici-case-smart-ro-la-afiliacion-a-traves-de-businessleague-fue-esencial-para-probar-el-mercado-hungaro-sin-gran-presupuesto-es'
+},
+{
+id: 'cluster-peste-1000-vanzari-lunare-2025',
+pillar: 'interviews',
+ro: 'peste-1000-vanzari-lunare-in-doar-6-luni',
+en: 'over-1000-monthly-sales-in-just-6-months',
+bg: 'over-1000-monthly-sales-in-just-6-months-bg',
+es: 'mas-de-1000-ventas-mensuales-en-solo-6-meses-es'
+},
+{
+id: 'cluster-residence-summer-2025',
+pillar: 'competition',
+ro: 'residence-summer',
+en: 'residence-summer-edition',
+bg: 'residence-summer-bg',
+es: 'residence-summer-es'
+},
+{
+id: 'cluster-adrian-ienin-minuneanaturii-ro-2025',
+pillar: 'interviews',
+ro: 'adrian-ienin-minuneanaturii-ro-businessleague-ofera-o-transparenta-foarte-benefica-pentru-competitie',
+en: 'adrian-ienin-minuneanaturii-ro-businessleague-offers-transparency-that-is-very-beneficial-for-competition',
+bg: 'adrian-ienin-minuneanaturii-ro-businessleague-offers-transparency-that-is-very-beneficial-for-competition-bg',
+es: 'adrian-ienin-minuneanaturii-ro-businessleague-ofrece-una-transparencia-muy-beneficiosa-para-la-competencia-es'
+},
+{
+id: 'cluster-andra-ghergina-bestvalue-pana-2025',
+pillar: 'interviews',
+ro: 'andra-ghergina-bestvalue-pana-pe-2-iunie-avem-activa-o-campanie-de-sale-cu-discount-de-pana-la-30',
+en: 'andra-ghergina-bestvalue-until-june-2-we-are-running-a-sale-campaign-with-discounts-of-up-to-30',
+bg: 'andra-ghergina-bestvalue-until-june-2-we-are-running-a-sale-campaign-with-discounts-of-up-to-30-bg',
+es: 'andra-ghergina-bestvalue-hasta-el-2-de-junio-tenemos-activa-una-campana-de-rebajas-con-descuentos-de-hasta-el-30-es'
+},
+{
+id: 'cluster-andrei-radu-gpec-marketingul-2025',
+pillar: 'interviews',
+ro: 'andrei-radu-gpec-marketingul-afiliat-creste-dar-vreau-sa-l-vad-crescand-si-mai-rapid',
+en: 'andrei-radu-gpec-affiliate-marketing-is-growing-but-i-want-to-see-it-grow-even-faster',
+bg: 'andrei-radu-gpec-afilieyt-marketingat-raste-no-iskam-da-go-vidya-da-raste-oshte-po-barzo-bg',
+es: 'andrei-radu-gpec-el-marketing-de-afiliacion-crece-pero-quiero-verlo-crecer-aun-mas-rapido-es'
+},
+{
+id: 'cluster-gabriela-anghel-chilipirul-zilei-2025',
+pillar: 'interviews',
+ro: 'gabriela-anghel-chilipirul-zilei-ro-revenirea-noastra-in-business-league-a-fost-intampinata-cu-entuziasm-de-multi-afiliati',
+en: 'gabriela-anghel-chilipirul-zilei-ro-our-return-to-businessleague-was-welcomed-with-enthusiasm-by-many-affiliates',
+bg: 'gabriela-anghel-chilipirul-zilei-ro-zavrashtaneto-ni-v-businessleague-be-posreshtnato-s-entusiazam-bg',
+es: 'gabriela-anghel-chilipirul-zilei-ro-nuestro-regreso-a-businessleague-fue-recibido-con-entusiasmo-es'
+},
+{
+id: 'cluster-daniela-pirlogea-litera-ro-2025',
+pillar: 'interviews',
+ro: 'daniela-pirlogea-litera-ro-anul-acesta-campania-noaptea-cartilor-deschise-este-la-a-13-a-editie',
+en: 'daniela-pirlogea-litera-ro-this-year-the-night-of-open-books-campaign-is-in-its-13th-edition',
+bg: 'daniela-pirlogea-litera-ro-tazi-godina-kampaniyata-noshtta-na-otvorenite-knigi-e-v-13-oto-si-izdanie-bg',
+es: 'daniela-pirlogea-litera-ro-este-ano-la-campana-la-noche-de-los-libros-abiertos-celebra-su-13a-edicion-es'
+},
+{
+id: 'cluster-alex-jivan-spy-shop-2025',
+pillar: 'interviews',
+ro: 'alex-jivan-spy-shop-ro-businessleague-este-competitia-suprema-a-jucatorilor-din-afiliere',
+en: 'alex-jivan-spy-shop-ro-businessleague-is-the-ultimate-competition-for-affiliate-players',
+bg: 'alex-jivan-spy-shop-ro-businessleague-is-the-ultimate-competition-for-affiliate-players-bg',
+es: 'alex-jivan-spy-shop-ro-businessleague-es-la-competicion-suprema-de-los-jugadores-de-afiliacion-es'
+},
+{
+id: 'cluster-alex-foaie-cashclub-business-2025',
+pillar: 'interviews',
+ro: 'alex-foaie-cashclub-business-league-este-the-league-un-etalon-in-domeniu-care-ne-ofera-formatul-si-contextul-perfecte-pentru-a-analiza-optimiza-si-evolua-constant',
+en: 'alex-foaie-cashclub-business-league-is-the-league-an-industry-benchmark-that-gives-us-the-perfect-format-and-context-to-constantly-analyze-optimize-and-evolve',
+bg: 'alex-foaie-cashclub-business-league-is-the-league-an-industry-benchmark-to-analyze-optimize-and-evolve-bg',
+es: 'alex-foaie-cashclub-business-league-es-the-league-un-referente-en-el-sector-para-analizar-optimizar-y-evolucionar-es'
+},
+{
+id: 'cluster-nelutu-cotirlea-marketer-pentru-2025',
+pillar: 'interviews',
+ro: 'nelutu-cotirlea-marketer-pentru-mine-businessleague-este-fara-discutie-cea-mai-tare-competitie-de-afiliere-din-lume',
+en: 'nelutu-cotirlea-marketer-for-me-businessleague-is-without-a-doubt-the-coolest-affiliate-competition-in-the-world',
+bg: 'nelutu-cotirlea-marketer-for-me-businessleague-is-the-coolest-affiliate-competition-in-the-world-bg',
+es: 'nelutu-cotirlea-marketer-para-mi-businessleague-es-sin-duda-la-competicion-de-afiliacion-mas-increible-del-mundo-es'
+},
+{
+id: 'cluster-marketers-here-are-your-2025',
+pillar: 'playbooks',
+ro: 'marketeri-aici-aveti-toti-merchantii-vostri-intr-un-singur-loc',
+en: 'marketers-here-are-your-merchants-in-one-place',
+bg: 'marketers-here-are-your-merchants-in-one-place-bg',
+es: 'marketers-aqui-teneis-a-vuestros-merchants-en-un-solo-lugar-es'
 }
 ];
 const SLUG_TO_CLUSTER_MAP = {};
@@ -1113,6 +1586,9 @@ return window.__BL_TRANSLATIONS__[clean];
 }
 return SLUG_TO_CLUSTER_MAP[clean] || null;
 }
+/**
+* 1. Resolve Active Language
+*/
 function resolveActiveLanguage() {
 const params = new URLSearchParams(window.location.search);
 const urlLang = (params.get('lang') || '').toLowerCase();
@@ -1165,6 +1641,9 @@ return activeAttr;
 }
 return 'ro';
 }
+/**
+* 2. Editorial Pillar Classifier (RO / EN / BG / ES)
+*/
 function classifyPillar(title, tagsCsv, excerpt, slug) {
 if (slug) {
 const siblingCluster = getTranslationSiblings(slug);
@@ -1217,6 +1696,9 @@ return 'playbooks';
 }
 return 'playbooks';
 }
+/**
+* 3. Update Category Cover Templates & Badges inside a container
+*/
 function decorateCardElement(cardEl, lang) {
 const dict = I18N[lang] || I18N.ro;
 const titleEl = cardEl.querySelector('.bl-card-title, .bl-lead-title, .bl-side-title, .bl-article-title');
@@ -1260,6 +1742,9 @@ kicker.textContent = pillarLabel;
 });
 return pillar;
 }
+/**
+* 4. Apply UI Translations (`[data-i18n]`, `[data-i18n-html]`, placeholders, active language buttons)
+*/
 function applyTranslations(lang) {
 const dict = I18N[lang] || I18N.ro;
 document.documentElement.setAttribute('lang', lang);
@@ -1321,6 +1806,11 @@ badgeCrumb.textContent = dict[`badge_${p}`];
 }
 });
 }
+/**
+* 4B. 12-Column Auto-Balancing Engine (Real Article Cards Only — Zero Fake Promo Fillers)
+* Ensures ZERO empty spaces in any row across Home, Category Filter, Language, and Single Post views
+* by expanding the real article cards on any partial row to span the full 12 columns.
+*/
 function balanceAllGridRows(root) {
 const scope = root || document;
 scope
@@ -1368,6 +1858,9 @@ visibleCards[i].setAttribute('data-row-span', String(expandedSpan));
 });
 });
 }
+/**
+* 5. Build Curated Journalistic Magazine Sections inside each `.bl-lang-workspace`
+*/
 function initWorkspacesAndSections(activeLang, activePillarFilter) {
 document.documentElement.setAttribute('data-bl-lang', activeLang);
 document.documentElement.setAttribute('data-active-lang', activeLang);
@@ -1827,6 +2320,9 @@ loadMoreWrap.hidden = isReportsFilter || isExhausted || allMasonryCards < 12;
 balanceAllGridRows(ws, panelLang);
 });
 }
+/**
+* 6. Live Instant Autocomplete Search Engine (`#bl-search-wrap`)
+*/
 function initLiveSearch(getCurrentLang) {
 const searchWrap = document.getElementById('bl-search-wrap');
 const searchInput = document.getElementById('bl-search-input');
@@ -2131,6 +2627,13 @@ closeDropdown();
 }
 });
 }
+/**
+* 7. Procedural Faceted Crystal Arena Canvas (`#bl-hero-mesh`)
+*    - Zero TBT / PageSpeed-safe: renders initial static frame in idle callback, starts continuous 60fps loop
+*      only after first pointer/scroll interaction or post-Lighthouse quiet window, and pauses via IntersectionObserver when offscreen.
+*    - Zero Forced Reflow: caches masthead geometry via ResizeObserver & offsetTop (no getBoundingClientRect in pointer handlers).
+*    - Interactive: spring-lerped spotlight, magnetic vertex lift, click/tap crystal shockwave ripples, and neural telemetry node synapses.
+*/
 function initHeroMesh() {
 const canvas = document.getElementById('bl-hero-mesh');
 if (!canvas) return;
@@ -2555,6 +3058,9 @@ scheduleRender();
 });
 canvas.__rerenderMesh = scheduleRender;
 }
+/**
+* 8. Interactive Reader Typography & Layout Controls (`post.hbs`)
+*/
 function initReadingControls() {
 const toolbar = document.querySelector('.bl-reading-toolbar');
 const html = document.documentElement;
@@ -2625,6 +3131,9 @@ syncToolbarUI();
 }
 });
 }
+/**
+* 9. Reading Progress Bar & Automated Table of Contents on Single Post
+*/
 function initSinglePostEnhancements() {
 const progressBar = document.getElementById('bl-reading-progress');
 const articleContent = document.querySelector('#bl-article-prose, .bl-prose');
@@ -2841,6 +3350,9 @@ window.addEventListener(ev, armEmbedObserver, { once: true, passive: true });
 });
 }
 }
+/**
+* 10. Main Initialization & Event Delegation
+*/
 const VALID_PILLARS = ['all', 'reports', 'data', 'interviews', 'playbooks', 'competition', 'product', 'corporate'];
 function resolveInitialPillar() {
 try {
