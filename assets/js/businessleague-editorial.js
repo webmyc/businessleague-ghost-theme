@@ -842,6 +842,22 @@ es: 'los-usuarios-de-iphone-gastan-un-24-mas-en-moda-y-otras-5-cosas-que-nos-dic
 */
 const TRANSLATION_CLUSTERS = [
 {
+id: 'cluster-alina-cuzmin-rowenta-2026',
+pillar: 'interviews',
+ro: 'alina-cuzmin-e-commerce-lead-sce-rowenta-afilierea-nu-mai-este-un-canal-de-test-ca-la-inceput-ci-un-pilon-important-in-mixul-nostru-de-performance-marketing',
+en: 'alina-cuzmin-e-commerce-lead-sce-rowenta-affiliate-marketing-is-no-longer-a-test-channel-but-an-important-pillar-of-our-performance-marketing-mix',
+bg: 'alina-cuzmin-e-commerce-lead-sce-rowenta-afilieyt-marketingat-veche-ne-e-testov-kanal-a-vazhen-stalb-v-nashiya-performance-miks-bg',
+es: 'alina-cuzmin-e-commerce-lead-sce-rowenta-el-marketing-de-afiliacion-ya-no-es-un-canal-de-prueba-sino-un-pilar-importante-es'
+},
+{
+id: 'cluster-pulse-w43-2026',
+pillar: 'competition',
+ro: 'businessleague-pulse-w43-clasamente-cifre-si-castigatori-runda-3',
+en: 'businessleague-pulse-w43-rankings-numbers-and-round-3-winners',
+bg: 'businessleague-pulse-w43-klasirane-cifri-i-pobediteli-ot-krag-3-bg',
+es: 'businessleague-pulse-w43-clasificaciones-cifras-y-ganadores-ronda-3-es'
+},
+{
 id: 'cluster-tudor-stanica-2026',
 pillar: 'interviews',
 ro: 'tudor-stanica-pentru-surprize-ma-trezesc-in-fiecare-dimineata',
@@ -1936,7 +1952,7 @@ const bestCodrut = codrutCards[0];
 if (bestCodrut && bestCodrut !== leadCardCheck) {
 const readCardModel = (el) => {
 const titleLink = el.querySelector('.bl-lead-title a, .bl-card-title a, .bl-side-title a');
-const mediaLink = el.querySelector('.bl-lead-media, .bl-card-media, .bl-side-thumb');
+const mediaLink = el.querySelector('.bl-lead-media, .bl-card-media, .bl-side-media, .bl-side-thumb');
 const excerptNode = el.querySelector('.bl-lead-excerpt, .bl-card-excerpt');
 const badgeNode = el.querySelector('[data-pillar-badge]');
 const timeNode = el.querySelector('.bl-meta-time');
@@ -1957,6 +1973,36 @@ timeDatetime: timeNode ? timeNode.getAttribute('datetime') || '' : '',
 authorChipHtml: authorChipNode ? authorChipNode.outerHTML : ''
 };
 };
+const adaptSwappedMediaImg = (cardEl, mediaLink) => {
+const img = mediaLink ? mediaLink.querySelector('img') : null;
+if (!img) return;
+const rawSrc = img.getAttribute('src') || '';
+const sizeRegex = /\/content\/images\/size\/w\d+(?:\/format\/webp)?\//;
+if (!sizeRegex.test(rawSrc)) return;
+const makeSizedUrl = (w) => rawSrc.replace(sizeRegex, `/content/images/size/w${w}/format/webp/`);
+if (cardEl.classList.contains('bl-lead-card')) {
+img.setAttribute('src', makeSizedUrl(600));
+img.setAttribute(
+'srcset',
+`${makeSizedUrl(300)} 300w, ${makeSizedUrl(600)} 600w, ${makeSizedUrl(1000)} 1000w, ${makeSizedUrl(2000)} 2000w`
+);
+img.setAttribute('sizes', '(max-width: 680px) 320px, (max-width: 1120px) 52vw, 600px');
+img.setAttribute('width', '600');
+img.setAttribute('height', '338');
+} else if (cardEl.classList.contains('bl-side-card')) {
+img.setAttribute('src', makeSizedUrl(300));
+img.setAttribute('srcset', `${makeSizedUrl(100)} 100w, ${makeSizedUrl(300)} 300w`);
+img.setAttribute('sizes', '116px');
+img.setAttribute('width', '300');
+img.setAttribute('height', '169');
+} else {
+img.setAttribute('src', makeSizedUrl(600));
+img.setAttribute('srcset', `${makeSizedUrl(300)} 300w, ${makeSizedUrl(600)} 600w`);
+img.setAttribute('sizes', '(max-width: 680px) 320px, (max-width: 1120px) 280px, 340px');
+img.setAttribute('width', '600');
+img.setAttribute('height', '338');
+}
+};
 const applyCardModel = (el, m) => {
 el.setAttribute('data-post-id', m.id);
 el.setAttribute('data-post-slug', m.slug);
@@ -1969,11 +2015,14 @@ if (titleLink) {
 titleLink.textContent = m.title;
 titleLink.setAttribute('href', m.url);
 }
-const mediaLink = el.querySelector('.bl-lead-media, .bl-card-media, .bl-side-thumb');
+const mediaLink = el.querySelector('.bl-lead-media, .bl-card-media, .bl-side-media, .bl-side-thumb');
 if (mediaLink) {
 mediaLink.setAttribute('href', m.url);
 mediaLink.setAttribute('aria-label', m.title);
-if (m.mediaHtml) mediaLink.innerHTML = m.mediaHtml;
+if (m.mediaHtml) {
+mediaLink.innerHTML = m.mediaHtml;
+adaptSwappedMediaImg(el, mediaLink);
+}
 }
 const ctaLink = el.querySelector('.bl-cover-cta-btn, .bl-read-cta');
 if (ctaLink) {
@@ -2000,6 +2049,14 @@ if (existingChip) {
 existingChip.outerHTML = m.authorChipHtml;
 } else if (footer) {
 footer.insertAdjacentHTML('afterbegin', m.authorChipHtml);
+}
+const updatedChip = el.querySelector('.bl-author-chip');
+if (updatedChip) {
+if (el.classList.contains('bl-side-card')) {
+updatedChip.setAttribute('hidden', '');
+} else {
+updatedChip.removeAttribute('hidden');
+}
 }
 }
 };
