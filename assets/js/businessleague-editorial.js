@@ -896,7 +896,9 @@ es: 'businessleague-pulse-w44-clasificaciones-cifras-y-ganadores-ronda-3-es'
 id: 'cluster-adrian-batea-cartepedia-2026',
 pillar: 'interviews',
 ro: 'adrian-batea-cartepedia-ro-black-friday-la-carte-e-pentru-cititorii-care-cumpara-tot-anul-reduceri-mai-mari-transport-gratuit-sau-carti-cadou',
-en: 'adrian-batea-cartepedia-ro-black-friday-in-books-is-for-readers-who-buy-all-year-round-bigger-discounts-free-shipping-or-free-books'
+en: 'adrian-batea-cartepedia-ro-black-friday-in-books-is-for-readers-who-buy-all-year-round-bigger-discounts-free-shipping-or-free-books',
+bg: 'adrian-batea-cartepedia-ro-black-friday-pri-knigite-e-za-chitatelite-koito-kupuvat-prez-cyalata-godina-po-golemi-otstapki-bezplatna-dostavka-ili-knigi-podarak-bg',
+es: 'adrian-batea-cartepedia-ro-el-black-friday-en-libros-es-para-los-lectores-que-compran-todo-el-ano-mayores-descuentos-envio-gratis-o-libros-de-regalo-es'
 },
 {
 id: 'cluster-babies-kids-toys-2026',
