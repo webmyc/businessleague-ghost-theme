@@ -3590,13 +3590,25 @@ title: 'Affiliate Meetup Dublin, powered by BusinessLeague',
 start: '2026-11-19T18:00:00.000Z',
 end: '2026-11-19T22:00:00.000Z',
 url: 'https://www.eventbrite.ie/e/affiliate-meetup-dublin-powered-by-businessleague-tickets-2003303718349?aff=oddtdtcreator',
-cover: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1195617175%2F3009927574801%2F1%2Foriginal.20261012-163345?crop=focalpoint&fit=crop&w=200&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.023&fp-y=0.297&s=b458f83d0198cbc22322fa08a1fa02a8',
+cover: '/assets/images/events/dublin-meetup.webp',
 locationType: 'offline',
 locationLabel: 'Dublin · In person',
 isInPerson: true,
 hosts: ['BusinessLeague']
 }
 ];
+const DUBLIN_LOCAL_COVER = '/assets/images/events/dublin-meetup.webp';
+function resolveEventCover(rawUrl, targetWidth) {
+const url = String(rawUrl || '').trim();
+if (!url) return DUBLIN_LOCAL_COVER;
+if (url.includes('evbuc.com') || url.includes('3009927574801') || url.includes('dublin-meetup')) {
+return DUBLIN_LOCAL_COVER;
+}
+if (url.includes('images.lumacdn.com')) {
+return url.replace(/width=\d+/, `width=${targetWidth || 220}`);
+}
+return url;
+}
 let activeEvents = FALLBACK_EVENTS.slice();
 const LOCALE_MAP = {
 ro: 'ro-RO',
@@ -3725,12 +3737,17 @@ if (countdownEl) countdownEl.textContent = countdownText;
 const locEl = featLink.querySelector('[data-ev-loc]');
 if (locEl) locEl.textContent = featLoc;
 const imgEl = featLink.querySelector('[data-ev-cover]');
-const featCoverSized = (featured.cover || '')
-.replace(/width=\d+/, 'width=220')
-.replace(/([?&])w=\d+/, '$1w=200');
-if (imgEl && featCoverSized && imgEl.getAttribute('src') !== featCoverSized) {
+const featCoverSized = resolveEventCover(featured.cover, 220);
+if (imgEl && featCoverSized) {
+if (imgEl.getAttribute('src') !== featCoverSized) {
 imgEl.src = featCoverSized;
+}
 imgEl.alt = featured.title;
+imgEl.onerror = function () {
+if (this.src && !this.src.endsWith(DUBLIN_LOCAL_COVER)) {
+this.src = DUBLIN_LOCAL_COVER;
+}
+};
 }
 const titleEl = featLink.querySelector('[data-ev-title]');
 if (titleEl) titleEl.textContent = featured.title;
@@ -3738,21 +3755,21 @@ const timeEl = featLink.querySelector('[data-ev-time]');
 if (timeEl) timeEl.textContent = featParts.fullTime;
 }
 const agendaContainer = widget.querySelector('[data-ev-agenda]');
-if (agendaContainer && agenda.length > 0) {
+if (agendaContainer) {
+if (agenda.length > 0) {
+agendaContainer.style.display = '';
 agendaContainer.innerHTML = agenda
 .map((ev) => {
 const parts = formatDateParts(ev.start, lang);
 const locLabel = ev.isInPerson
-? `Dublin · ${dict.events_in_person || 'In person'}`
+? (ev.locationLabel || `Dublin · ${dict.events_in_person || 'In person'}`)
 : (ev.locationLabel || 'Google Meet');
 const locClass = ev.isInPerson ? 'bl-ev-row-loc is-inperson' : 'bl-ev-row-loc';
-const coverSrc = (ev.cover || featured.cover || '')
-.replace(/width=\d+/, 'width=160')
-.replace(/([?&])w=\d+/, '$1w=200');
+const coverSrc = resolveEventCover(ev.cover || featured.cover, 160);
 return `
 <a href="${escapeHtml(ev.url)}" target="_blank" rel="noopener" class="bl-ev-row" data-ev-start="${escapeHtml(ev.start)}">
 <div class="bl-ev-row-thumb">
-<img src="${escapeHtml(coverSrc)}" alt="${escapeHtml(ev.title)}" width="160" height="160" loading="lazy" decoding="async" />
+<img src="${escapeHtml(coverSrc)}" alt="${escapeHtml(ev.title)}" width="160" height="160" loading="lazy" decoding="async" onerror="if(!this.src.endsWith('/assets/images/events/dublin-meetup.webp'))this.src='/assets/images/events/dublin-meetup.webp';" />
 </div>
 <div class="bl-ev-row-body">
 <div class="bl-ev-row-meta">
@@ -3767,6 +3784,10 @@ return `
 `;
 })
 .join('');
+} else {
+agendaContainer.innerHTML = '';
+agendaContainer.style.display = 'none';
+}
 }
 });
 }
@@ -3776,21 +3797,25 @@ const fetchLiveEvents = () => {
 fetch('https://start.businessleague.com/api/luma-events', { mode: 'cors' })
 .then((res) => (res.ok ? res.json() : null))
 .then((data) => {
-if (data && Array.isArray(data.events) && data.events.length > 0) {
-const mapped = data.events
-.filter((e) => e && e.title && e.start && e.url)
-.map((e) => ({
-id: e.id || e.url,
-title: e.title,
+const rawList = Array.isArray(data) ? data : (data && Array.isArray(data.events) ? data.events : []);
+if (rawList.length > 0) {
+const mapped = rawList
+.filter((e) => e && (e.title || e.name) && e.start && e.url)
+.map((e) => {
+const isOffline = Boolean(e.isInPerson || e.locationType === 'offline' || e.location === 'offline');
+return {
+id: e.id || e.slug || e.url,
+title: e.title || e.name,
 start: e.start,
 end: e.end || e.start,
 url: e.url,
-cover: (e.cover || '').replace(/width=\d+/, 'width=160').replace(/([?&])w=\d+/, '$1w=200'),
-locationType: e.locationType || 'online',
-locationLabel: e.locationLabel || '',
-isInPerson: Boolean(e.isInPerson || e.locationType === 'offline'),
+cover: resolveEventCover(e.cover, 220),
+locationType: isOffline ? 'offline' : (e.locationType || 'online'),
+locationLabel: e.locationLabel || (isOffline ? `${e.city || 'Dublin'} · In person` : ''),
+isInPerson: isOffline,
 hosts: Array.isArray(e.hosts) ? e.hosts : []
-}));
+};
+});
 if (mapped.length > 0) {
 activeEvents = mapped;
 renderWidgets();
