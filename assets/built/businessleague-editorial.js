@@ -885,6 +885,20 @@ es: 'los-usuarios-de-iphone-gastan-un-24-mas-en-moda-y-otras-5-cosas-que-nos-dic
 */
 const TRANSLATION_CLUSTERS = [
 {
+id: 'cluster-pulse-w44-2026',
+pillar: 'competition',
+ro: 'businessleague-pulse-w44-clasamente-cifre-si-castigatori-runda-3',
+en: 'businessleague-pulse-w44-rankings-numbers-and-round-3-winners',
+bg: 'businessleague-pulse-w44-klasirane-cifri-i-pobediteli-ot-krag-3-bg',
+es: 'businessleague-pulse-w44-clasificaciones-cifras-y-ganadores-ronda-3-es'
+},
+{
+id: 'cluster-adrian-batea-cartepedia-2026',
+pillar: 'interviews',
+ro: 'adrian-batea-cartepedia-ro-black-friday-la-carte-e-pentru-cititorii-care-cumpara-tot-anul-reduceri-mai-mari-transport-gratuit-sau-carti-cadou',
+en: 'adrian-batea-cartepedia-ro-black-friday-in-books-is-for-readers-who-buy-all-year-round-bigger-discounts-free-shipping-or-free-books'
+},
+{
 id: 'cluster-babies-kids-toys-2026',
 pillar: 'data',
 ro: 'babies-kids-toys-268-168-de-comenzi-si-16-59-milioane-eur-in-34-de-luni',
