@@ -620,6 +620,49 @@ events_in_person: 'Presencial'
 */
 const CATEGORY_REPORTS = [
 {
+id: 'babies-kids-toys',
+clusterId: 'cluster-babies-kids-toys-2026',
+dateLabel: 'NOV 2026',
+kicker: {
+ro: 'RAPORT CATEGORIE // BABIES, KIDS & TOYS',
+en: 'SECTOR REPORT // BABIES, KIDS & TOYS',
+bg: 'СЕКТОРЕН ДОКЛАД // ДЕЦА И ИГРАЧКИ',
+es: 'INFORME SECTORIAL // BEBÉS, NIÑOS Y JUGUETES'
+},
+title: {
+ro: 'Babies, Kids & Toys: 268.168 comenzi și €16,59M în 34 de luni',
+en: 'Babies, Kids & Toys: 268,168 Orders & €16.59M in 34 Months',
+bg: 'Бебета, Деца и Играчки: 268 168 поръчки и €16,59M за 34 месеца',
+es: 'Bebés, Niños y Juguetes: 268.168 pedidos y €16,59M en 34 meses'
+},
+desc: {
+ro: 'Radiografia completă a categoriei Babies, Kids & Toys în BusinessLeague: 63 de magazine, 481 de afiliați activi, coș mediu de €61,86 și diferențe majore mobil vs. desktop.',
+en: 'Complete breakdown of the Babies, Kids & Toys vertical in BusinessLeague: 63 stores, 481 active affiliates, €61.86 average order value, and mobile vs. desktop behavior.',
+bg: 'Пълна рентгенова снимка на категория Бебета, Деца и Играчки в BusinessLeague: 63 магазина, 481 активни афилиейти и средна поръчка €61,86.',
+es: 'Radiografía completa de la categoría Bebés, Niños y Juguetes en BusinessLeague: 63 tiendas, 481 afiliados activos y ticket medio de €61,86.'
+},
+metrics: {
+ro: ['268.168 comenzi', '€16,59M vânzări', '63 magazine'],
+en: ['268,168 orders', '€16.59M sales', '63 stores'],
+bg: ['268 168 поръчки', '€16,59M продажби', '63 магазина'],
+es: ['268.168 pedidos', '€16,59M ventas', '63 tiendas']
+},
+pdf: {
+ro: 'https://blog.businessleague.com/content/files/2026/11/BusinessLeague_Babies_Kids_Toys_RO.pdf',
+en: 'https://blog.businessleague.com/content/files/2026/11/BusinessLeague_Babies_Kids_Toys_EN.pdf'
+},
+cover: {
+ro: '/assets/images/reports/babies-kids-toys-ro.webp',
+en: '/assets/images/reports/babies-kids-toys-en.webp'
+},
+articleSlugs: {
+ro: 'babies-kids-toys-268-168-de-comenzi-si-16-59-milioane-eur-in-34-de-luni',
+en: 'babies-kids-toys-268-168-orders-and-eur16-59-million-in-34-months',
+bg: 'babies-kids-toys-268-168-porachki-i-16-59-mln-evro-za-34-meseca-bg',
+es: 'babies-kids-toys-268-168-pedidos-y-16-59-millones-de-euros-en-34-meses-es'
+}
+},
+{
 id: 'pharma',
 clusterId: 'cluster-pharma-1-3m-2026',
 dateLabel: 'OCT 2026',
@@ -841,6 +884,14 @@ es: 'los-usuarios-de-iphone-gastan-un-24-mas-en-moda-y-otras-5-cosas-que-nos-dic
 * Also merges with `window.__BL_TRANSLATIONS__` if injected via Ghost Code Injection.
 */
 const TRANSLATION_CLUSTERS = [
+{
+id: 'cluster-babies-kids-toys-2026',
+pillar: 'data',
+ro: 'babies-kids-toys-268-168-de-comenzi-si-16-59-milioane-eur-in-34-de-luni',
+en: 'babies-kids-toys-268-168-orders-and-eur16-59-million-in-34-months',
+bg: 'babies-kids-toys-268-168-porachki-i-16-59-mln-evro-za-34-meseca-bg',
+es: 'babies-kids-toys-268-168-pedidos-y-16-59-millones-de-euros-en-34-meses-es'
+},
 {
 id: 'cluster-alina-cuzmin-rowenta-2026',
 pillar: 'interviews',
