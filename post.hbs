@@ -289,34 +289,35 @@
                 </aside>
             </div>
 
-            {{!-- Chronological Prev / Next Article Chain (Same-Language First via primary_tag, Fallback to Global Chain) --}}
+            {{!-- Chronological Prev / Next Article Chain (Same-Language via primary_tag for RO/EN/BG/ES, Global Chain Fallback for Legacy Posts) --}}
             <nav class="bl-prev-next-nav" aria-label="Article chronological navigation">
-                {{#prev_post in="primary_tag"}}
-                <a class="bl-prev-next-card is-prev" href="{{url}}" data-slug="{{slug}}">
-                    <span class="bl-prev-next-label">← <span data-i18n="prev_article">Articolul Anterior</span></span>
-                    <span class="bl-prev-next-title">{{title}}</span>
-                </a>
+                {{#has tag="ro, en, bg, es"}}
+                    {{#prev_post in="primary_tag"}}
+                    <a class="bl-prev-next-card is-prev" href="{{url}}" data-slug="{{slug}}">
+                        <span class="bl-prev-next-label">← <span data-i18n="prev_article">Articolul Anterior</span></span>
+                        <span class="bl-prev-next-title">{{title}}</span>
+                    </a>
+                    {{/prev_post}}
+                    {{#next_post in="primary_tag"}}
+                    <a class="bl-prev-next-card is-next" href="{{url}}" data-slug="{{slug}}">
+                        <span class="bl-prev-next-label"><span data-i18n="next_article">Articolul Următor</span> →</span>
+                        <span class="bl-prev-next-title">{{title}}</span>
+                    </a>
+                    {{/next_post}}
                 {{else}}
-                {{#prev_post}}
-                <a class="bl-prev-next-card is-prev" href="{{url}}" data-slug="{{slug}}">
-                    <span class="bl-prev-next-label">← <span data-i18n="prev_article">Articolul Anterior</span></span>
-                    <span class="bl-prev-next-title">{{title}}</span>
-                </a>
-                {{/prev_post}}
-                {{/prev_post}}
-                {{#next_post in="primary_tag"}}
-                <a class="bl-prev-next-card is-next" href="{{url}}" data-slug="{{slug}}">
-                    <span class="bl-prev-next-label"><span data-i18n="next_article">Articolul Următor</span> →</span>
-                    <span class="bl-prev-next-title">{{title}}</span>
-                </a>
-                {{else}}
-                {{#next_post}}
-                <a class="bl-prev-next-card is-next" href="{{url}}" data-slug="{{slug}}">
-                    <span class="bl-prev-next-label"><span data-i18n="next_article">Articolul Următor</span> →</span>
-                    <span class="bl-prev-next-title">{{title}}</span>
-                </a>
-                {{/next_post}}
-                {{/next_post}}
+                    {{#prev_post}}
+                    <a class="bl-prev-next-card is-prev" href="{{url}}" data-slug="{{slug}}">
+                        <span class="bl-prev-next-label">← <span data-i18n="prev_article">Articolul Anterior</span></span>
+                        <span class="bl-prev-next-title">{{title}}</span>
+                    </a>
+                    {{/prev_post}}
+                    {{#next_post}}
+                    <a class="bl-prev-next-card is-next" href="{{url}}" data-slug="{{slug}}">
+                        <span class="bl-prev-next-label"><span data-i18n="next_article">Articolul Următor</span> →</span>
+                        <span class="bl-prev-next-title">{{title}}</span>
+                    </a>
+                    {{/next_post}}
+                {{/has}}
             </nav>
 
             {{!-- Related Articles in Same Language — All 4 on ONE Single Row on Desktop --}}
