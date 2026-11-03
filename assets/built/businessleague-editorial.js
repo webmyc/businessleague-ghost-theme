@@ -885,6 +885,14 @@ es: 'los-usuarios-de-iphone-gastan-un-24-mas-en-moda-y-otras-5-cosas-que-nos-dic
 */
 const TRANSLATION_CLUSTERS = [
 {
+id: 'cluster-gabriel-bonciu-2026',
+pillar: 'interviews',
+ro: 'gabriel-bonciu-afilierea-este-100-incredere-altfel-nu-functioneaza',
+en: 'gabriel-bonciu-affiliate-marketing-is-100-trust-otherwise-it-doesnt-work',
+bg: 'gabriel-bonciu-afilieyt-marketingat-e-100-doverie-inache-ne-raboti-bg',
+es: 'gabriel-bonciu-el-marketing-de-afiliacion-es-100-confianza-de-lo-contrario-no-funciona-es'
+},
+{
 id: 'cluster-pulse-w44-2026',
 pillar: 'competition',
 ro: 'businessleague-pulse-w44-clasamente-cifre-si-castigatori-runda-3',
